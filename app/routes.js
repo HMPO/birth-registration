@@ -31,3 +31,23 @@ router.post('*/are-you-married', function (req, res) {
     res.redirect('/triage/v1/are-you-married')
   }
 })
+
+// Show different pages based on value of areYouMarried
+router.post('*/registering-other-parent', function (req, res) {
+  var MarriedOrInPartnership = req.session.data['areYouMarried']
+  if (MarriedOrInPartnership === 'yes') {
+    res.redirect('/triage/v1/outcome-mum-married')
+  } else {
+    res.redirect('/triage/v1/registering-other-parent')
+  }
+})
+
+// Show different pages based on value of registeringOtherParent
+router.post('*/outcome-mum-single', function (req, res) {
+  var otherParent = req.session.data['registeringOtherParent']
+  if (otherParent === 'yes') {
+    res.redirect('/triage/v1/outcome-mum-unmarried')
+  } else {
+    res.redirect('/triage/v1/outcome-mum-single')
+  }
+})

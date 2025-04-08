@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Are you married or in civil partnership? – {{ serviceName }} – GOV.UK Prototype Kit
+  Registering other parent – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,18 +16,20 @@ Are you married or in civil partnership? – {{ serviceName }} – GOV.UK Protot
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-
-      <form class="form" action="registering-other-parent" method="post">
+      <form class="form" action="outcome-mum-single" method="post">
 
         {{ govukRadios({
-          idPrefix: "are-you-married",
-          name: "areYouMarried",
+          idPrefix: "registering-other-parent",
+          name: "registeringOtherParent",
           fieldset: {
             legend: {
-              text: "Are you married or in a civil partnership?",
+              text: "Are you registering the other parent?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
+          },
+          hint: {
+            text: "A birth can be registered with only the birth mother. You can pay a fee to add another parent after the registration.."
           },
           items: [
             { value: "yes", text: "Yes" },
