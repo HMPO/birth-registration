@@ -1,0 +1,67 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "https://www.gov.uk/"
+      },
+      {
+        text: "Pregnancy and birth",
+        href: "https://www.gov.uk/browse/childcare-parenting/pregnancy-birth"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        {{ serviceName }}
+      </h1>
+
+  
+      <p>Births must be registered within 42 days.</p>
+      <p>You can register in person at a register office, or online.</p>
+
+      <h2 class="govuk-heading-l">
+        Who registers the births
+      </h2>
+
+      <p>You’ll need to be a legal parent or related to the child. </p>
+
+      <h2 class="govuk-heading-l">
+        Check what to do
+      </h2>
+
+      <p>Enter your details to find out whether you can register online or register in person.</p>
+
+
+      {{ govukButton({
+        text: "Start now",
+        href: "where-the-child-was-born",
+        isStartButton: true
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+{% endblock %}

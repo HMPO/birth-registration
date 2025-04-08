@@ -1,0 +1,51 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Relationship to child – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="are-you-married" method="post">
+
+        {{ govukRadios({
+          idPrefix: "relationship-to-child",
+          name: "relationshipToChild",
+          fieldset: {
+            legend: {
+              text: "What is your relationship to the child?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "Only certain people can register the birth."
+          },
+          items: [
+            { value: "birth-mother", text: "Birth mother" },
+            { value: "father", text: "Father" },
+            { value: "female-parent", text: "Another female parent" },
+            { value: "someone-else", text: "Someone else, such as a family member" }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

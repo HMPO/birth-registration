@@ -1,0 +1,35 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <h1 class="govuk-heading-xl">
+      {{ serviceName + ' prototypes' }}
+    </h1>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <h2 class="govuk-heading-l">Triage journey</h2>
+    <p class="govuk-body">
+      Users checks eligebility for service channels  and is directed to right guidance and options. 
+    </p>
+
+    <p class="govuk-body">
+      <a href="triage/v1/start-page.html" class="govuk-link">Version 1</a> - no document upload and only one user is the informant.
+    </p>
+
+    <p class="govuk-body-s govuk-!-margin-top-6">Got a question? Team 3: Aga, Stefan or Sian</p>
+    
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+  </div>
+</div>
+
+{% endblock %}
