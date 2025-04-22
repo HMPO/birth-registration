@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Registering other parent – {{ serviceName }} – GOV.UK Prototype Kit
+  Parental responsibility – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,20 +16,20 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="outcome-single" method="post">
+      <form class="form" action="outcome-married" method="post">
 
         {{ govukRadios({
-          idPrefix: "registering-other-parent",
-          name: "registeringOtherParent",
+          idPrefix: "parental-responsibility",
+          name: "parentalResponsibility",
           fieldset: {
             legend: {
-              text: "Are you registering the child’s other parent?",
+              text: "Do you have a document showing parental responsibility?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
           },
           hint: {
-            text: "A birth can be registered with only the birth mother. You can pay a fee to add another parent after the registration."
+            text: "You can register a birth without a document, but it changes who can register the birth and how"
           },
           items: [
             { value: "yes", text: "Yes" },

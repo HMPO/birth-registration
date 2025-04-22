@@ -36,18 +36,38 @@ router.post('*/are-you-married', function (req, res) {
 router.post('*/registering-other-parent', function (req, res) {
   var MarriedOrInPartnership = req.session.data['areYouMarried']
   if (MarriedOrInPartnership === 'yes') {
-    res.redirect('/triage/v1/outcome-mum-married')
+    res.redirect('/triage/v1/outcome-married')
   } else {
     res.redirect('/triage/v1/registering-other-parent')
   }
 })
 
 // Show different pages based on value of registeringOtherParent
-router.post('*/outcome-mum-single', function (req, res) {
+router.post('*/outcome-single', function (req, res) {
   var otherParent = req.session.data['registeringOtherParent']
   if (otherParent === 'yes') {
-    res.redirect('/triage/v1/outcome-mum-unmarried')
+    res.redirect('/triage/v1/outcome-unmarried')
   } else {
-    res.redirect('/triage/v1/outcome-mum-single')
+    res.redirect('/triage/v1/outcome-single')
+  }
+})
+
+// Show different pages based on value of parental-responsibility
+router.post('*/outcome-married', function (req, res) {
+  var parentalResponsibilityDoc = req.session.data['parentalResponsibility']
+  if (parentalResponsibilityDoc === 'yes') {
+    res.redirect('/triage/v1/outcome-married')
+  } else {
+    res.redirect('/triage/v1/outcome-unmarried')
+  }
+})
+
+// Take user to OneLogin or find your local council page
+router.post( '/', function (req, res) {
+  var registrationChannel = req.session.data['registerMethod']
+  if (registrationChannel === 'inPerson') {
+    res.redirect('https://www.gov.uk/register-offices')
+  } else {
+    res.redirect('https://www.gov.uk/using-your-gov-uk-one-login')
   }
 })

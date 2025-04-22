@@ -1,0 +1,72 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Register the birth online or in person (single mother)
+      </h1>
+
+      <h2 class="govuk-heading-m">
+        Registering online
+      </h2>
+
+      <p class="govuk-body">If you register online:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>a local register office will check the information</li>
+        <li>birth certificates are sent by post</li>
+        <li>you’ll verify your identity with GOV.UK One Login</li>
+      </ul>
+
+      <h2 class="govuk-heading-m">
+        Registering in person
+      </h2>
+
+      <p class="govuk-body">If you register in person:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>you’ll visit the register office in the area your child was born</li>
+        <li>you must book an appointment</li>
+        <li>staff will enter the information about both parents and your child</li>
+        <li>you do not need to take your child</li>
+        <li>you’ll get birth certificate at the appointment</li>
+      </ul>
+
+      <form class="form" action="/" method="post">
+        {{ govukRadios({
+          idPrefix: "register-method",
+          name: "registerMethod",
+          fieldset: {
+            legend: {
+              text: "Select how you’ll register the birth",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            { value: "online", text: "Register online" },
+            { value: "inPerson", text: "Register in person" }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
