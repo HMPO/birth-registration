@@ -38,7 +38,12 @@ router.post('*/registering-other-parent', function (req, res) {
   if (MarriedOrInPartnership === 'yes') {
     res.redirect('/triage/v1/outcome-married')
   } else {
-    res.redirect('/triage/v1/registering-other-parent')
+    var Informant = req.session.data['relationshipToChild']
+    if (Informant === 'birth-mother') {
+      res.redirect('/triage/v1/registering-other-parent')
+    } else {
+      res.redirect('/triage/v1/parental-responsibility')
+    }
   }
 })
 
@@ -71,3 +76,4 @@ router.post( '/', function (req, res) {
     res.redirect('https://www.gov.uk/using-your-gov-uk-one-login')
   }
 })
+
