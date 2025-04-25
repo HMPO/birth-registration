@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+   {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
@@ -36,20 +36,28 @@
       </h1>
 
   
-      <p>Births must be registered within 42 days.</p>
-      <p>You can register in person at a register office, or online.</p>
+      <p>Births in England and Wales must be registered (online or in-person) within 42 days.</p>
+      <p>After a birth registration, you can apply for government services, such as child benefit or your child’s passport.</p>
 
       <h2 class="govuk-heading-l">
-        Who registers the births
+        What you need to provide
       </h2>
 
-      <p>You’ll need to be a legal parent or related to the child. </p>
+      <p class="govuk-body">To register you’ll give:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>child’s name, date of birth and NHS number </li>
+        <li>birth mother’s details</li>
+        <li>father (or female parent) details</li>
+        <li>proof of identification (a document or online with GOV.UK One Login)/li>
+      </ul>
 
       <h2 class="govuk-heading-l">
-        Check what to do
+        How to register
       </h2>
 
-      <p>Enter your details to find out whether you can register online or register in person.</p>
+      <p>Depending on your situation, you may need to provide other documents.</p>
+
+      <p>Enter your details to find out how to register.</p>
 
 
       {{ govukButton({
