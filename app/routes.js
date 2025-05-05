@@ -51,9 +51,14 @@ router.post('*/registering-other-parent', function (req, res) {
 router.post('*/outcome-single', function (req, res) {
   var otherParent = req.session.data['registeringOtherParent']
   if (otherParent === 'yes') {
-    res.redirect('/triage/v1/outcome-unmarried')
+    res.redirect('/triage/v1/parental-responsibility')
   } else {
-    res.redirect('/triage/v1/outcome-single')
+    var Informant = req.session.data['relationshipToChild']
+    if (Informant === 'birth-mother') {
+      res.redirect('/triage/v1/outcome-single')
+    } else {
+      res.redirect('/triage/v1/parental-responsibility')
+    }
   }
 })
 
