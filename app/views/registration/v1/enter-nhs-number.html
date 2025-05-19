@@ -1,0 +1,65 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Find NHS record – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="enter-child-date-of-birth" method="post">
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-form-group">
+        <span class="govuk-caption-xl">Find NHS record</span>
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="child-nhs-number">
+            Enter child’s NHS number
+          </label>
+        </h1>
+        <div id="child-nhs-number-hint" class="govuk-hint">
+          It’s a 10-digit number, for example 987 654 3210
+        </div>
+        <input class="govuk-input" id="child-nhs-number" name="child-nhs-number" value="{{data['child-nhs-number']}}"  aria-describedby="child-nhs-number-hint" >
+      </div>    
+
+      <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Where to find NHS number
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        Red book, hospital paperwork/records, NHS App (not confirmed how common this).
+      </div>
+      </details>
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }} 
+
+      
+      
+    </div>
+
+
+  </div>
+
+ </form> 
+
+{% endblock %}
