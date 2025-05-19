@@ -1,0 +1,74 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Sex – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="nhs-record-found" method="post">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Child's details</span>
+      <h1 class="govuk-heading-xl">
+        Sex
+      </h1>
+     
+
+      <p class="govuk-body govuk-!-margin-bottom-2">Child’s sex on NHS Record:</p>
+      <p class="govuk-!-font-weight-bold govuk-!-margin-top-0">Male</p>
+        
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Is this the correct sex? 
+              </h1>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="child-name" name="child-name" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="child-name">
+                  Yes, register the child as this sex
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="child-name" name="child-name" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="child-name">
+                  No, register the child with a different sex
+                </label>
+              </div>
+            </div>
+        </fieldset>
+      </div>
+     
+
+
+      {{ govukButton({
+        text: "Continue",
+        href: "place-of-birth"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}
