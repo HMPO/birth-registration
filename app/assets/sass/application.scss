@@ -4,3 +4,8 @@
 // 
 
 // Add extra styles here
+.autocomplete__wrapper * {
+
+  @include govuk-typography-common();
+
+}

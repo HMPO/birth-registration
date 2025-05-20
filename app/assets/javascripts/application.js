@@ -4,5 +4,13 @@
 //
 
 window.GOVUKPrototypeKit.documentReady(() => {
-  // Add JavaScript here
-})
+  let selectElement = document.querySelector('#choose-country')
+
+    accessibleAutocomplete.enhanceSelectElement({
+
+      defaultValue: '',
+
+      selectElement: selectElement
+
+    })
+    })
