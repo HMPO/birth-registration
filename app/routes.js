@@ -82,3 +82,12 @@ router.post( '/', function (req, res) {
   }
 })
 
+// Search for NHS record again or search of local regiser office
+router.post('*/search-again', function (req, res) {
+  var searchAgain = req.session.data['searchAgain']
+  if (searchAgain === 'yes') {
+    res.redirect('enter-nhs-number')
+  } else {
+    res.redirect('https://www.gov.uk/register-offices')
+  }
+})

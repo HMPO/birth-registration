@@ -20,9 +20,11 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+
+    {% if data['child-nhs-number'] == '123 456 7890' and data['child-birth-day'] == '17' and data['child-birth-month'] == 'May' and data['child-birth-year'] == '2025' and data['mother-last-name'] == 'Williams' %}
       
       <h1 class="govuk-heading-xl">
-          NHS record found
+          NHS record not found
       </h1>
   
       <dl class="govuk-summary-list">
@@ -59,9 +61,44 @@
       }) }}
 
       
+     {% else %}
+       <h1 class="govuk-heading-xl">
+          NHS record not found
+      </h1>
+
+      <p class="govuk-body">Register the birth in person if you cannot access NHS record.</p>
+      <p class="govuk-body">NHS records might not be available if:</p>
+       <ul class="govuk-list govuk-list--bullet">
+          <li>NHS records have not been updated (it usually takes up to 36 hours)  </li>
+          <li>there’s an error in the information provided </li>
+        </ul>
+
+          <form class="form" action="search-again" method="post">
+            {{ govukRadios({
+              idPrefix: "search-again",
+              name: "searchAgain",
+              fieldset: {
+                legend: {
+                  text: "Do you want to search again? ",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              items: [
+                { value: "yes", text: "Yes, re-enter information to find NHS record" },
+                { value: "no", text: "No, I’ll contact the local register office" }
+              ]
+            }) }}
+
+            {{ govukButton({
+            text: "Continue"
+          }) }}
+
+          </form>
+
+     {% endif %} 
+    
     </div>
-
-
   </div>
 
 {% endblock %}
