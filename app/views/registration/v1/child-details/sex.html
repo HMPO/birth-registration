@@ -18,7 +18,7 @@
 
 {% block content %}
 
-<form class="form" action="nhs-record-found" method="post">
+<form class="form" action="child-sex-correct" method="post">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -41,14 +41,14 @@
             </legend>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="child-name" name="child-name" type="radio" value="yes">
-                <label class="govuk-label govuk-radios__label" for="child-name">
+                <input class="govuk-radios__input" id="sex" name="sex" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="sex">
                   Yes, register the child as this sex
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="child-name" name="child-name" type="radio" value="no">
-                <label class="govuk-label govuk-radios__label" for="child-name">
+                <input class="govuk-radios__input" id="sex" name="sex" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="sex">
                   No, register the child with a different sex
                 </label>
               </div>
@@ -59,8 +59,7 @@
 
 
       {{ govukButton({
-        text: "Continue",
-        href: "place-of-birth"
+        text: "Continue"
       }) }}
 
       

@@ -91,3 +91,33 @@ router.post('*/search-again', function (req, res) {
     res.redirect('https://www.gov.uk/register-offices')
   }
 })
+
+// Child name routing
+router.post('*/child-name-correct', function (req, res) {
+  var childNameCorrect = req.session.data['child-name']
+  if (childNameCorrect === 'yes') {
+    res.redirect('sex')
+  } else {
+    res.redirect('name-change')
+  }
+})
+
+// Child sex routing
+router.post('*/child-sex-correct', function (req, res) {
+  var childSexCorrect = req.session.data['sex']
+  if (childSexCorrect === 'yes') {
+    res.redirect('place-of-birth')
+  } else {
+    res.redirect('sex-change')
+  }
+})
+
+// Child place of birth routing
+router.post('*/child-place-of-birth-correct', function (req, res) {
+  var childPlaceOfBirth = req.session.data['child-place-of-birth']
+  if (childPlaceOfBirth === 'yes') {
+    res.redirect('child-details')
+  } else {
+    res.redirect('place-of-birth-change')
+  }
+})

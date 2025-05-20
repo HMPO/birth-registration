@@ -18,7 +18,7 @@
 
 {% block content %}
 
-<form class="form" action="nhs-record-found" method="post">
+<form class="form" action="child-place-of-birth-correct" method="post">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -29,7 +29,7 @@
       </h1>     
 
       <p class="govuk-body govuk-!-margin-bottom-2">Child’s place of birth on NHS Record:</p>
-      <p class="govuk-!-font-weight-bold govuk-!-margin-top-0">Hospital, Long Street, N16 9RE</p>
+      <p class="govuk-!-font-weight-bold govuk-!-margin-top-0">St Mary's Hospital, 107 Long Street, N16 9RE</p>
         
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
@@ -40,14 +40,14 @@
             </legend>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="child-name" name="child-name" type="radio" value="yes">
-                <label class="govuk-label govuk-radios__label" for="child-name">
+                <input class="govuk-radios__input" id="child-place-of-birth" name="child-place-of-birth" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="child-place-of-birth">
                   Yes, register this as the child’s place of birth
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="child-name" name="child-name" type="radio" value="no">
-                <label class="govuk-label govuk-radios__label" for="child-name">
+                <input class="govuk-radios__input" id="child-place-of-birth" name="child-place-of-birth" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="child-place-of-birth">
                    No, change the address
                 </label>
               </div>
@@ -58,8 +58,7 @@
 
 
       {{ govukButton({
-        text: "Continue",
-        href: "child-details"
+        text: "Continue"
       }) }}
 
       

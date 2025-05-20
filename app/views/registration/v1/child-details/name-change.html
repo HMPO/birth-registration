@@ -18,7 +18,7 @@
 
 {% block content %}
 
-<form class="form" action="child-details" method="post">
+<form class="form" action="sex" method="post">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -34,24 +34,23 @@
             <label class="govuk-label" for="child-first-name">
               Enter child’s first name
             </label>
-            <input class="govuk-input" id="child-first-name" name="child-first-name" type="text" value="{{ data['child-first-name'] or 'Baby' }}">
+            <input class="govuk-input" id="child-first-name" name="child-first-name" type="text" value="{{ data['child-first-name'] }}">
           </div>
            <div class="govuk-form-group">
             <label class="govuk-label" for="child-middle-name">
               Enter child’s middle names
             </label>
-            <input class="govuk-input" id="child-middle-name" name="child-middle-name" type="text" value="{{ data['child-middle-name'] or '' }}">
+            <input class="govuk-input" id="child-middle-name" name="child-middle-name" type="text" value="{{ data['child-middle-name'] }}">
           </div>
            <div class="govuk-form-group">
             <label class="govuk-label" for="child-last-name">
               Enter child’s last name
             </label>
-            <input class="govuk-input" id="child-last-name" name="child-last-name" type="text" value="{{ data['child-last-name'] or 'Wimbledon' }}">
+            <input class="govuk-input" id="child-last-name" name="child-last-name" type="text" value="{{ data['child-last-name'] }}">
           </div>
         </fieldset>
       </div>
      
-
 
       {{ govukButton({
         text: "Continue"
