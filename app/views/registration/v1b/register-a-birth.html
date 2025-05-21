@@ -1,0 +1,46 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Register a birth – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+            Register a birth
+        </h1>
+
+        <p class="govuk-body">There are four sections:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Child’s details</li>
+          <li>Birth mother’s details</li>
+          <li>Second parent’s details</li>
+          <li>Information for national statistics</li>
+        </ul>
+
+
+      {{ govukButton({
+        text: "Continue",
+        href: "child-details/child-details"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

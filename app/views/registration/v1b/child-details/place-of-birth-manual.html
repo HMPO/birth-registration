@@ -1,0 +1,118 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Child's place of birth – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="child-details" method="post">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Child's details</span>
+      <h1 class="govuk-heading-xl">
+       Place of birth
+      </h1>
+
+      <h2 class="govuk-heading-m">
+       Enter the address
+      </h2>
+        
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+           <div class="govuk-form-group">
+            <label class="govuk-label" for="child-place-of-birth-flat">
+              Flat number or name
+            </label>
+            <input class="govuk-input" id="child-place-of-birth-flat" name="child-place-of-birth-flat" type="text" value="{{ data['child-place-of-birth-flat'] }}">
+          </div>
+           <div class="govuk-form-group">
+            <label class="govuk-label" for="child-place-of-birth-building-name">
+              Building name (optional)
+            </label>
+            <input class="govuk-input" id="child-place-of-birth-building-name" name="child-place-of-birth-building-name" type="text" value="{{ data['child-place-of-birth-building-name'] }}">
+          </div>
+           <div class="govuk-form-group">
+            <label class="govuk-label" for="child-place-of-birth-building-number">
+              Building number
+            </label>
+            <input class="govuk-input govuk-input--width-10" id="child-place-of-birth-building-number" name="child-place-of-birth-building-number" type="text" value="{{ data['child-place-of-birth-building-number'] }}">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="child-place-of-birthline-1">
+             Street address line 1
+            </label>
+            <input class="govuk-input" id="child-place-of-birth-line-1" name="child-place-of-birth-line-1" type="text" value="{{ data['child-place-of-birth-line-1'] }}">
+          </div>
+         
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="child-place-of-birth-line-2">
+             Street address line 2 (optional)
+            </label>
+            <input class="govuk-input" id="child-place-of-birth-line-2" name="child-place-of-birth-line-2" type="text" value="{{ data['child-place-of-birth-line-2'] }}">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="child-place-of-birth-line-3">
+             Street address line 3 (optional)
+            </label>
+            <input class="govuk-input" id="child-place-of-birth-line-3" name="child-place-of-birth-line-3" type="text" value="{{ data['child-place-of-birth-line-3'] }}">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="child-place-of-birth-line-4">
+             Street address line 4 (optional)
+            </label>
+            <input class="govuk-input" id="child-place-of-birth-line-4" name="child-place-of-birth-line-4" type="text" value="{{ data['child-place-of-birth-line-4'] }}">
+          </div>
+          
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="child-place-of-birth-town">
+             Town or city
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="child-place-of-birth-town" name="child-place-of-birth-town" type="text" value="{{ data['child-place-of-birth-town'] }}">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="child-place-of-birth-county">
+             County (optional)
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="child-place-of-birth-county" name="child-place-of-birth-county" type="text" value="{{ data['child-place-of-birth-county'] }}">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="child-place-of-birth-postcode">
+             Postcode
+            </label>
+            <input class="govuk-input govuk-input--width-10" id="child-place-of-birth-postcode" name="child-place-of-birth-postcode" type="text" value="{{ data['child-place-of-birth-postcode'] }}">
+          </div>
+
+        </fieldset>
+      </div>
+
+      <p class="govuk-body">
+        <a class="govuk-link" href="place-of-birth-search.html">
+          Search by postcode
+        </a>
+      </p>
+      
+     
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

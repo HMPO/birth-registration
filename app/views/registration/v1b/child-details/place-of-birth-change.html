@@ -1,0 +1,76 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Child's place of birth – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="place-of-birth-search" method="post">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Child's details</span>
+      <h1 class="govuk-heading-xl">
+        Place of birth
+      </h1>     
+
+      
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              Where was the baby born?
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="place-of-birth" name="place-of-birth" type="radio" value="ce">
+              <label class="govuk-label govuk-radios__label" for="place-of-birth">
+                Hospital, birth centre, or other medical location
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="place-of-birth-2" name="place-of-birth" type="radio" value="home">
+              <label class="govuk-label govuk-radios__label" for="place-of-birth-2">
+                Home
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="place-of-birth-3" name="place-of-birth" type="radio" value="in-transit">
+              <label class="govuk-label govuk-radios__label" for="place-of-birth-3">
+                On the way somewhere, such as a hospital
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="place-of-birth-4" name="place-of-birth" type="radio" value="another-location">
+              <label class="govuk-label govuk-radios__label" for="place-of-birth-4">
+                Another location
+              </label>
+            </div>
+          </div>
+        </fieldset>
+</div>
+     
+
+
+      {{ govukButton({
+        text: "Continue",
+        href: "place-of-birth-search.html"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

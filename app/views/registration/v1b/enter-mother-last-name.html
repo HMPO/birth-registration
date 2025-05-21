@@ -1,0 +1,47 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Mother's last name – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="nhs-record-found" method="post">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+     
+
+      <div class="govuk-form-group">
+        <span class="govuk-caption-xl">Find NHS record</span>
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="mother-last-name">
+            Enter mother’s last name
+          </label>
+        </h1>
+        
+        <input class="govuk-input" id="mother-last-name" name="mother-last-name" value="{{data['mother-last-name']}}" type="text" aria-describedby="mother-last-name-hint">
+      </div>    
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

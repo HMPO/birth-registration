@@ -15,24 +15,19 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
+      
+        <span class="govuk-caption-xl">Find NHS record</span>
         <h1 class="govuk-heading-xl">
-            Register a birth
+             Find NHS record 
         </h1>
-
-        <p class="govuk-body">There are four sections:</p>
-
-        <ul class="govuk-list govuk-list--bullet">
-          <li>Child’s details</li>
-          <li>Birth mother’s details</li>
-          <li>Second parent’s details</li>
-          <li>Information for national statistics</li>
-        </ul>
+  
+      <p class="govuk-body">Your hospital or doctor shares the NHS record for your child’s birth.</p>
+      <p class="govuk-body">This information will confirm details for the registration.</p>
 
 
       {{ govukButton({
         text: "Continue",
-        href: "child-details/name"
+        href: "enter-nhs-number"
       }) }}
 
       
@@ -40,7 +35,5 @@
 
 
   </div>
-
-</form>  
 
 {% endblock %}

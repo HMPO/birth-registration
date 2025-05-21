@@ -1,0 +1,62 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Child's name – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="child-details" method="post">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Child's details</span>
+      <h1 class="govuk-heading-xl">
+        Name
+      </h1>
+        
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+           <div class="govuk-form-group">
+            <label class="govuk-label" for="child-first-name">
+              Enter child’s first name
+            </label>
+            <input class="govuk-input" id="child-first-name" name="child-first-name" type="text" value="{{ data['child-first-name'] }}">
+          </div>
+           <div class="govuk-form-group">
+            <label class="govuk-label" for="child-middle-name">
+              Enter child’s middle names
+            </label>
+            <input class="govuk-input" id="child-middle-name" name="child-middle-name" type="text" value="{{ data['child-middle-name'] }}">
+          </div>
+           <div class="govuk-form-group">
+            <label class="govuk-label" for="child-last-name">
+              Enter child’s last name
+            </label>
+            <input class="govuk-input" id="child-last-name" name="child-last-name" type="text" value="{{ data['child-last-name'] }}">
+          </div>
+        </fieldset>
+      </div>
+     
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}
