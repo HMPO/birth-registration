@@ -104,7 +104,7 @@ router.post('*/child-name-correct', function (req, res) {
 
 // Child sex routing
 router.post('*/child-sex-correct', function (req, res) {
-  var childSexCorrect = req.session.data['sex']
+  var childSexCorrect = req.session.data['sex-correct']
   if (childSexCorrect === 'yes') {
     res.redirect('place-of-birth')
   } else {

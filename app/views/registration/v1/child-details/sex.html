@@ -4,11 +4,6 @@
    Sex – GOV.UK Prototype Kit
 {% endblock %}
 
-{% block header %}
-  <!-- Blank header with no service name for the start page -->
-  {{ govukHeader() }}
-{% endblock %}
-
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
@@ -41,15 +36,15 @@
             </legend>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="sex" name="sex" type="radio" value="yes">
-                <label class="govuk-label govuk-radios__label" for="sex">
-                  Yes, register the child as this sex
+                <input class="govuk-radios__input" id="sex-correct" name="sex-correct" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="sex-correct">
+                  Yes, register the child as this sex-correct
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="sex" name="sex" type="radio" value="no">
-                <label class="govuk-label govuk-radios__label" for="sex">
-                  No, register the child with a different sex
+                <input class="govuk-radios__input" id="sex-correct" name="sex-correct" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="sex-correct">
+                  No, register the child with a different sex-correct
                 </label>
               </div>
             </div>
