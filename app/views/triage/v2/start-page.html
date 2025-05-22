@@ -40,34 +40,30 @@
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h2 class="govuk-fieldset__heading">
-                Select who is registering a birth
+                Who is being registered as parents?
               </h2>
             </legend>
             <p>In current UK law the process is slightly different depending on legal relationship between parents.</p>
 
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="who-registers" name="who-registers" type="radio" value="unmarrried">
-                <label class="govuk-label govuk-radios__label" for="who-registers">
-                  Parents who are not married
-                </label>
-              </div>
-              <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="who-registers-2" name="who-registers" type="radio" value="marrried">
                 <label class="govuk-label govuk-radios__label" for="who-registers-2">
-                  Parents who are married to each other (or in civil partnership)
+                  Both parents, who are married to each other (or in a legal Civil Partnership)
                 </label>
               </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="who-registers" name="who-registers" type="radio" value="unmarrried">
+                <label class="govuk-label govuk-radios__label" for="who-registers">
+                  Both parents, not married to each other (or in a legal Civil Partnership)
+                </label>
+              </div>
+
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="who-registers-3" name="who-registers" type="radio" value="single-mother">
                 <label class="govuk-label govuk-radios__label" for="who-registers-3">
                   Birth mother only
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="who-registers-4" name="who-registers" type="radio" value="outcome-other">
-                <label class="govuk-label govuk-radios__label" for="who-registers-4">
-                  Not a parent, for example healthcare worker or family member 
                 </label>
               </div>
             </div>
