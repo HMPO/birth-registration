@@ -121,3 +121,12 @@ router.post('*/child-place-of-birth-correct', function (req, res) {
     res.redirect('place-of-birth-change')
   }
 })
+
+// Triage routing for v.2
+router.post('*/who-registers-outcomes', function (req, res) {
+  var WhoRegistersOutcomes = req.session.data['who-registers']
+  if (WhoRegistersOutcomes === 'marrried')  { res.redirect('outcome-married') }
+  else if (WhoRegistersOutcomes === 'unmarrried') { res.redirect('outcome-unmarried') } 
+  else if (WhoRegistersOutcomes === 'single-mother') { res.redirect('outcome-single') }
+  else { res.redirect('outcome-other') }       
+})

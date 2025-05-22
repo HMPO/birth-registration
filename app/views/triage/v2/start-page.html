@@ -1,0 +1,104 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "https://www.gov.uk/"
+      },
+      {
+        text: "Pregnancy and birth",
+        href: "https://www.gov.uk/browse/childcare-parenting/pregnancy-birth"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        {{ serviceName }}
+      </h1>
+
+  
+      <p>You’ll need to register a birth (in person or online) within 42 days (6 weeks).</p>
+      <p>Local register offices will contact you if do not register a birth in this time.</p>
+
+      <form class="form" action="who-registers-outcomes" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h2 class="govuk-fieldset__heading">
+                Select who is registering a birth
+              </h2>
+            </legend>
+            <p>In current UK law the process is slightly different depending on legal relationship between parents.</p>
+
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="who-registers" name="who-registers" type="radio" value="unmarrried">
+                <label class="govuk-label govuk-radios__label" for="who-registers">
+                  Parents who are not married
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="who-registers-2" name="who-registers" type="radio" value="marrried">
+                <label class="govuk-label govuk-radios__label" for="who-registers-2">
+                  Parents who are married to each other (or in civil partnership)
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="who-registers-3" name="who-registers" type="radio" value="single-mother">
+                <label class="govuk-label govuk-radios__label" for="who-registers-3">
+                  Birth mother only
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="who-registers-4" name="who-registers" type="radio" value="outcome-other">
+                <label class="govuk-label govuk-radios__label" for="who-registers-4">
+                  Not a parent, for example healthcare worker or family member 
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        {{ govukButton({
+          text: "Start now",
+          isStartButton: true
+        }) }}
+
+      </form>
+
+      <h2 class="govuk-heading-l">
+       What happens next
+      </h2>
+
+      <p>After a birth registration, you can apply for government services, such as child benefit or your child’s passport. </p>
+
+      <h2 class="govuk-heading-l">
+       Births outside England and Wales
+      </h2>
+
+      <p>The process is different for children born in 
+        <a href="https://www.nrscotland.gov.uk/registration/registering-a-birth/">Scotland</a>, 
+        <a href="https://www.nidirect.gov.uk/information-and-services/births-deaths-marriages-and-civil-partnerships/births-and-registration">Northern Ireland</a>, or 
+        <a href="https://www.gov.uk/register-birth-abroad">outside the UK</a>.</p>
+
+    </div>
+
+
+  </div>
+
+{% endblock %}
