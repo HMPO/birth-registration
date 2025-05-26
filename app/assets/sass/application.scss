@@ -16,3 +16,36 @@
     margin-bottom: 50px;
     background: #f3f2f1;
 }
+
+@media screen and (min-width: 767px) {
+    .language-select {
+        margin-bottom: -10px;
+    }
+}
+
+.language-select {
+    margin: 15px 0 5px 0;
+}
+
+nav {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+.language-select__list {
+    margin-top: 1em;
+    text-align: right;
+}
+
+.language-select__list-item {
+    display: inline-block;
+}
+
+.language-select__list {
+    margin-top: 1em;
+    text-align: right;
+}
+
+.language-select__list-item a, .language-select__list-item [aria-current] {
+    padding: 0.3125em;
+}
