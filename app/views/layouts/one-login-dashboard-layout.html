@@ -20,6 +20,32 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 
 {% endblock %}
 
+{% block header %}
+{{ govukHeader({
+  classes: "govuk-header--full-width-border",
+  serviceName: "One Login"
+}) }}
+
+{{ govukServiceNavigation({
+  navigation: [
+    {
+      href: "#",
+      text: "Your services",
+      active: true
+    },
+    {
+      href: "#",
+      text: "Security"
+    },
+    {
+      href: "#",
+      text: "Sign out"
+    }
+  ]
+}) }}
+
+
+{% endblock %}
 
 
 
