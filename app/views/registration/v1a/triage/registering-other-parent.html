@@ -1,0 +1,50 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/one-login.html" %}
+
+{% block pageTitle %}
+  Registering other parent – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="outcome-single" method="post">
+
+        {{ govukRadios({
+          idPrefix: "registering-other-parent",
+          name: "registeringOtherParent",
+          fieldset: {
+            legend: {
+              text: "Should the other parents details be included on the birth certificate?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+                text: "You can add the other parent’s details to the bith certificate later after the registration is done. It's called reregistration and you will need to book appointment to do this. You will need to attend the appointment together."
+              },
+          items: [
+            { value: "yes", text: "Yes" },
+            { value: "no", text: "No" }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

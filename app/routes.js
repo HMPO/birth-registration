@@ -122,11 +122,36 @@ router.post('*/child-place-of-birth-correct', function (req, res) {
   }
 })
 
-// Triage routing for v.2
+// Triage routing for v.2 (start page)
 router.post('*/who-registers-outcomes', function (req, res) {
   var WhoRegistersOutcomes = req.session.data['who-registers']
   if (WhoRegistersOutcomes === 'marrried')  { res.redirect('outcome-married') }
   else if (WhoRegistersOutcomes === 'unmarrried') { res.redirect('outcome-unmarried') } 
   else if (WhoRegistersOutcomes === 'single-mother') { res.redirect('outcome-single') }
   else { res.redirect('outcome-other') }       
+})
+
+// Triage routing for v.2 (after OneLogin)
+router.post('*/are-you-married2', function (req, res) {
+  var whoIsTheInformant2 = req.session.data['relationshipToChild']
+  if (whoIsTheInformant2 === 'someone-else') {
+    res.redirect('outcome-other')
+  } else {
+    res.redirect('are-you-married')
+  }
+})
+
+// Show different pages based on value of areYouMarried
+router.post('*/registering-other-parent2', function (req, res) {
+  var MarriedOrInPartnership2 = req.session.data['areYouMarried']
+  if (MarriedOrInPartnership2 === 'yes') {
+    res.redirect('../find-nhs-record')
+  } else {
+    var Informant = req.session.data['relationshipToChild']
+    if (Informant === 'birth-mother') {
+      res.redirect('email')
+    } else {
+      res.redirect('/triage/v1/parental-responsibility')
+    }
+  }
 })
