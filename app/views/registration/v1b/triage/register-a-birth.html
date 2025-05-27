@@ -1,0 +1,50 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/one-login.html" %}
+
+{% block pageTitle %}
+   Register a birth – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+            Register a birth
+        </h1>
+
+        <h2 class="govuk-heading-l">
+            Before you start
+        </h2>
+
+        <p class="govuk-body">We will ask few questions to check:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li> if you have right to apply for the child registration</li>
+          <li>who are you and what is your family situation</li>
+          <li>what information we need to collect for the birth certificate</li>
+        </ul>
+
+
+      {{ govukButton({
+        text: "Continue",
+        href: "relationship-to-child"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

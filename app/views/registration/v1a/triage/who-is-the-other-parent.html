@@ -1,0 +1,58 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/one-login.html" %}
+
+{% block pageTitle %}
+  Who is the other parent – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="#" method="post">
+
+        {{ govukRadios({
+          idPrefix: "relationship-to-child",
+          name: "relationshipToChild",
+          fieldset: {
+            legend: {
+              text: "Who is the other parent?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            { value: "birth-mother", 
+              text: "Birth mother", 
+              hint: { text: "The person who gave birth to the child" }
+            },
+            { value: "father", 
+              text: "Father", 
+              hint: { text: "Biological father or person involved in fertility treatment" }
+            }, 
+            { value: "female-parent", 
+              text: "Female parent", 
+              hint: { text: "Person who ..." }
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue",
+          href: "../find-nhs-record"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

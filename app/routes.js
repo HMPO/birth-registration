@@ -149,9 +149,19 @@ router.post('*/registering-other-parent2', function (req, res) {
   } else {
     var Informant = req.session.data['relationshipToChild']
     if (Informant === 'birth-mother') {
-      res.redirect('email')
+      res.redirect('registering-other-parent')
     } else {
-      res.redirect('/triage/v1/parental-responsibility')
+      res.redirect('enter-email')
     }
+  }
+})
+
+// Show different pages based on value of registeringOtherParent
+router.post('*/enter-email', function (req, res) {
+  var registeringOtherParent2 = req.session.data['registeringOtherParent']
+  if (registeringOtherParent2 === 'yes') {
+    res.redirect('enter-email')
+  } else {
+    res.redirect('../find-nhs-record')
   }
 })

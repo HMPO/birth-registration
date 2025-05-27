@@ -1,0 +1,59 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/one-login.html" %}
+
+{% block pageTitle %}
+   Enter email address – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="enter-email-address" method="post">
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+              Enter email address of the other parent
+      </h1>
+
+      <p class="govuk-body">We will use this email to send a link to the other parent so they can add their details.</p>
+
+      <div class="govuk-form-group">
+          <label class="govuk-label" for="email-address">
+            Enter email address of the other parent
+          </label>
+        <input class="govuk-input" id="email-address" name="email-address" value="{{data['email-address']}}"  aria-describedby="email-address-hint" >
+      </div>  
+      <div class="govuk-form-group">
+          <label class="govuk-label" for="email-address2">
+            Re enter email address of the other parent
+          </label>
+        <input class="govuk-input" id="email-address2" name="email-address2" value="{{data['email-address2']}}"  aria-describedby="email-address-hint" >
+      </div>     
+
+      
+
+
+      {{ govukButton({
+        text: "Continue",
+        href: "who-is-the-other-parent"
+      }) }} 
+
+      
+      
+    </div>
+
+
+  </div>
+
+ </form> 
+
+{% endblock %}
