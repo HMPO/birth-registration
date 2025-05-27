@@ -78,7 +78,7 @@ router.post( '/', function (req, res) {
   if (registrationChannel === 'inPerson') {
     res.redirect('https://www.gov.uk/register-offices')
   } else {
-    res.redirect('https://www.gov.uk/using-your-gov-uk-one-login')
+    res.redirect('https://signin.account.gov.uk/sign-in-or-create')
   }
 })
 

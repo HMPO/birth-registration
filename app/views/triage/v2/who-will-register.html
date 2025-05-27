@@ -1,0 +1,68 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="who-registers-outcomes" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-fieldset__heading">
+                Who is being registered as parents?
+              </h1>
+            </legend>
+            <p>In current UK law the process is slightly different depending on legal relationship between parents.</p>
+
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="who-registers-2" name="who-registers" type="radio" value="marrried">
+                <label class="govuk-label govuk-radios__label" for="who-registers-2">
+                  Both parents, who are married to each other (or in a legal Civil Partnership)
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="who-registers" name="who-registers" type="radio" value="unmarrried">
+                <label class="govuk-label govuk-radios__label" for="who-registers">
+                  Both parents, not married to each other (or in a legal Civil Partnership)
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="who-registers-3" name="who-registers" type="radio" value="single-mother">
+                <label class="govuk-label govuk-radios__label" for="who-registers-3">
+                  Birth mother only
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+
+    </div>
+
+
+  </div>
+
+{% endblock %}
