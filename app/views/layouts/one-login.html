@@ -21,28 +21,22 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 {% endblock %}
 
 {% block header %}
-{{ govukHeader({
-  classes: "govuk-header--full-width-border"
-}) }}
-{{ govukServiceNavigation({
-  serviceName: "Register a birth",
-  navigation: [
-    {
-      href: "#",
-      text: "Navigation item 1"
-    },
-    {
-      href: "#",
-      text: "Navigation item 2",
-      active: true
-    },
-    {
-      href: "#",
-      text: "Navigation item 3"
-    }
-  ]
-}) }}
+{{ govukOneLoginServiceHeader({ 
+            navigationItems: [
+            {
+              href: "#example1",
+              text: '',
+              id: 'id1'
+            }], 
+            serviceName: "Register a birth", 
+            activeLinkId: "/registration/v1b/child-details/one-login-dashboard.html", 
+            signOutLink: "/test" 
+            }) 
+          }}
+
 {% endblock %}
+
+
 
 
 
