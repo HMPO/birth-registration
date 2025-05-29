@@ -21,18 +21,20 @@
             Register a birth
         </h1>
 
-        <p class="govuk-body">There are four sections:</p>
+        <p class="govuk-body">We’ll collect details - such as names, addresses, dates of birth - in sections about the:</p>
 
-        <ul class="govuk-list govuk-list--bullet">
-          <li>Child’s details</li>
-          <li>Birth mother’s details</li>
-          <li>Second parent’s details</li>
-          <li>Information for national statistics</li>
-        </ul>
+        <ol class="govuk-list govuk-list--bullet">
+          <li>Child</li>
+          <li>Birth mother</li>
+          <li>Second parent</li>
+        </ol>
 
+       <p class="govuk-body">Some addition questions are for government statistics. For example, parents' occupations or previous pregnancies.</p>
+
+        <p class="govuk-body">You can save your answers if you need to close the service.</p>
 
       {{ govukButton({
-        text: "Continue",
+        text: "Continue to child’s details",
         href: "child-details/name"
       }) }}
 

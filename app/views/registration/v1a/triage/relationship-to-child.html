@@ -16,7 +16,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
+   
       <form class="form" action="are-you-married2" method="post">
 
         {{ govukRadios({
@@ -24,13 +24,13 @@
           name: "relationshipToChild",
           fieldset: {
             legend: {
-              text: "Who are you to the child?",
+              text: "Your relationship to the child",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
           },
           hint: {
-            text: "Only certain people can register the birth"
+            text: "The law about who can register a birth depends on your relationship to the child and their other parent"
           },
           items: [
             { value: "birth-mother", 
@@ -39,15 +39,15 @@
             },
             { value: "father", 
               text: "Father", 
-              hint: { text: "Biological father or person involved in fertility treatment" }
+              hint: { text: "The biological father, or the father to a child conceived through fertility treatment" }
             }, 
             { value: "female-parent", 
               text: "Female parent", 
-              hint: { text: "Person who ..." }
+              hint: { text: "You and the birth mother conceived together through fertility treatment" }
             }, 
             { value: "someone-else", 
               text: "Someone else, such as a family member", 
-              hint: { text: "In certain circumstances person other than parent can provide information for the birth registration" }
+              hint: { text: "" }
             }
           ]
         }) }}
