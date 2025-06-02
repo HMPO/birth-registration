@@ -165,3 +165,13 @@ router.post('*/enter-email', function (req, res) {
     res.redirect('../find-nhs-record')
   }
 })
+
+// Show different pages after email based on value of relationshipToChild - who is the other parent or nothing
+router.post('*/who-is-the-other-parent', function (req, res) {
+  var whoIsTheOtherParent = req.session.data['relationshipToChild']
+  if (whoIsTheOtherParent === 'birth-mother') {
+    res.redirect('who-is-the-other-parent')
+  } else {
+    res.redirect('../find-nhs-record')
+  }
+})

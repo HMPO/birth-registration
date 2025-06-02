@@ -14,17 +14,17 @@
 
 {% block content %}
 
-<form class="form" action="enter-email-address" method="post">
+<form class="form" action="who-is-the-other-parent" method="post">
 
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">
-              Enter email address of the other parent
+              Other parent to be included in this registration
       </h1>
 
-      <p class="govuk-body">We will use this email to send a link to the other parent so they can add their details.</p>
+      <p class="govuk-body">The other parent will confirm the information for the register</p>
 
       <div class="govuk-form-group">
           <label class="govuk-label" for="email-address">
@@ -34,7 +34,7 @@
       </div>  
       <div class="govuk-form-group">
           <label class="govuk-label" for="email-address2">
-            Re enter email address of the other parent
+            Re-enter email address of the other parent
           </label>
         <input class="govuk-input" id="email-address2" name="email-address2" value="{{data['email-address2']}}"  aria-describedby="email-address-hint" >
       </div>     
@@ -43,8 +43,7 @@
 
 
       {{ govukButton({
-        text: "Sent and continue",
-        href: "who-is-the-other-parent"
+        text: "Continue"
       }) }} 
 
       

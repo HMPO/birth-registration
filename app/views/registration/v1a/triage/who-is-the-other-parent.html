@@ -20,8 +20,8 @@
       <form class="form" action="#" method="post">
 
         {{ govukRadios({
-          idPrefix: "relationship-to-child",
-          name: "relationshipToChild",
+          idPrefix: "who-is-the-other-parent",
+          name: "whoIsTheOtherParent",
           fieldset: {
             legend: {
               text: "Who is the other parent?",
@@ -30,17 +30,13 @@
             }
           },
           items: [
-            { value: "birth-mother", 
-              text: "Birth mother", 
-              hint: { text: "The person who gave birth to the child" }
-            },
             { value: "father", 
               text: "Father", 
               hint: { text: "The biological father, or the father to a child conceived through fertility treatment" }
             }, 
             { value: "female-parent", 
-              text: "Female parent", 
-              hint: { text: "You and the birth mother conceived together through fertility treatment" }
+              text: "Parent", 
+              hint: { text: "The mother’s female partner, and the person that conceived the child with the mother through fertility treatment" }
             }
           ]
         }) }}
