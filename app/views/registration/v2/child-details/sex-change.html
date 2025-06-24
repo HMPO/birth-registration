@@ -1,0 +1,74 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/one-login.html" %}
+
+
+{% block pageTitle %}
+   Sex – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="place-of-birth-change" method="post">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <span class="govuk-caption-xl">Part 1 of 4: Child’s details</span>    
+              <h1 class="govuk-fieldset__heading">
+                Sex
+              </h1>
+            </legend>
+            <div id="account-number-hint" class="govuk-hint">
+              By law, sex must be assigned ‘Male’ or ‘Female’ at birth. These are medical categories defined in legislation, and are not the same as a person’s gender identity.
+            </div>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="sex" name="sex" type="radio" value="Female" {{checked("sex", "Female")}}>
+                <label class="govuk-label govuk-radios__label" for="sex">
+                 Female
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="sex" name="sex" type="radio" value="Male" {{checked("sex", "Male")}}>
+                <label class="govuk-label govuk-radios__label" for="sex">
+                  Male
+                </label>
+              </div>
+            </div>
+        </fieldset>
+      </div>
+     
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Intersex child registration
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          If your child is intersex according to sex assigned at birth <a href="https://www.gov.uk/register-offices" class="govuk-link">book appointment at your local register office</a>.
+        </div>
+      </details>
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

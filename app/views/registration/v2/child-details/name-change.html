@@ -1,0 +1,98 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/one-login.html" %}
+
+{% block pageTitle %}
+   Child's name – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="sex-change" method="post">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Part 1 of 4: Child’s details</span>
+      <h1 class="govuk-heading-xl">
+        Name
+      </h1>
+        
+      <p class="govuk-body">
+          This will be the full legal name, recorded on official documents. 
+      </p>
+      <p class="govuk-body">
+          The child cannot be given a name that is any of the following:
+      </p>
+
+      <ol class="govuk-list govuk-list--bullet">
+        <li>spelt in numerals</li>
+        <li>impossible to say out loud in any spoken language</li>
+        <li>impossible to say out loud in any spoken language</li>
+        <li>misleading (for example, adding a title/prefix such as ‘Duke’ or ‘Baroness’)</li>
+      </ol>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="prefix">
+              Prefix (optional)
+            </label>
+            <div id="prefix-hint" class="govuk-hint">
+              This is usually a legal status inherited by birth, for example ‘Lady’ or ‘Lord’
+            </div>
+            <input class="govuk-input" id="prefixt" name="prefix" type="text" value="{{ data['prefix'] }}">
+          </div>
+           <div class="govuk-form-group">
+            <label class="govuk-label" for="child-first-name">
+              Child’s first name
+            </label>
+            <div id="child-first-name-hint" class="govuk-hint">
+              For example, Aimee-Lou not Aimee Lou
+            </div>
+            <input class="govuk-input" id="child-first-name" name="child-first-name" type="text" value="{{ data['child-first-name'] }}">
+          </div>
+           <div class="govuk-form-group">
+            <label class="govuk-label" for="child-middle-name">
+              Child’s middle names (optional)
+            </label>
+            <input class="govuk-input" id="child-middle-name" name="child-middle-name" type="text" value="{{ data['child-middle-name'] }}">
+          </div>
+           <div class="govuk-form-group">
+            <label class="govuk-label" for="child-last-name">
+              Child’s last name
+            </label>
+            <input class="govuk-input" id="child-last-name" name="child-last-name" type="text" value="{{ data['child-last-name'] }}">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="suffix">
+              Suffix
+            </label>
+            <div id="suffix-hint" class="govuk-hint">
+              For example ‘Junior’ or ‘III’
+            </div>
+            <input class="govuk-input" id="suffix" name="suffix" type="text" value="{{ data['suffix'] }}">
+          </div>
+        </fieldset>
+      </div>
+     
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}
