@@ -1,0 +1,78 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/one-login.html" %}
+
+{% block pageTitle %}
+   Mother's name – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="is-the-name-maiden-name" method="post">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Part 2 of 4: Mother’s details</span>
+      <h1 class="govuk-heading-xl">
+        Name
+      </h1>
+        
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="prefix">
+              Prefix (optional)
+            </label>
+            
+            <input class="govuk-input" id="prefixt" name="prefix" type="text" value="{{ data['prefix'] }}">
+          </div>
+           <div class="govuk-form-group">
+            <label class="govuk-label" for="mother-first-name">
+              Mother’s first name
+            </label>
+            
+            <input class="govuk-input" id="mother-first-name" name="mother-first-name" type="text" value="{{ data['mother-first-name'] }}">
+          </div>
+           <div class="govuk-form-group">
+            <label class="govuk-label" for="mother-middle-name">
+              Mother’s middle names (optional)
+            </label>
+            <input class="govuk-input" id="mother-middle-name" name="mother-middle-name" type="text" value="{{ data['mother-middle-name'] }}">
+          </div>
+           <div class="govuk-form-group">
+            <label class="govuk-label" for="mother-last-name">
+              Mother’s last name
+            </label>
+            <input class="govuk-input" id="mother-last-name" name="mother-last-name" type="text" value="{{ data['mother-last-name'] }}">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="suffix">
+              Suffix (optional)
+            </label>
+           
+            <input class="govuk-input" id="suffix" name="suffix" type="text" value="{{ data['suffix'] }}">
+          </div>
+        </fieldset>
+      </div>
+     
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

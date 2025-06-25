@@ -1,0 +1,52 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/one-login.html" %}
+
+{% block pageTitle %}
+   Mother's name – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="maiden-name" method="post">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+        
+           <div class="govuk-form-group">
+            <span class="govuk-caption-xl">Part 2 of 4: Mother’s details</span>
+             <h1 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--l" for="mother-maiden-name">
+                Mother’s maiden name
+              </label>
+            </h1>
+            <input class="govuk-input" id="mother-maiden-name" name="mother-maiden-name" type="text" value="{{ data['mother-maiden-name'] }}">
+          </div>
+          
+        </fieldset>
+      </div>
+     
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

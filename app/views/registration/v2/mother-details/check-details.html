@@ -2,7 +2,7 @@
 {% extends "layouts/one-login.html" %}
 
 {% block pageTitle %}
-   Child's details – GOV.UK Prototype Kit
+   Mother's details – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -14,15 +14,15 @@
 
 {% block content %}
 
-<form class="form" action="child-details" method="post">
+<form class="form" action="mother-details" method="post">
 
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       
-     <span class="govuk-caption-xl">Part 1 of 4: Child’s details</span>
+     <span class="govuk-caption-xl">Mother's details</span>
       <h1 class="govuk-heading-xl">
-        Child's details
+        Mother's details
       </h1>
 
       <div class="govuk-inset-text">
@@ -35,7 +35,7 @@
             Name
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['prefix'] }} {{ data['child-first-name'] or 'Ann'}} {{ data['child-middle-name'] or 'Sylvia'}} {{ data['child-last-name'] or 'Willson' }} {{ data['suffix'] }}
+            {{ data['prefix'] }} {{ data['mother-first-name'] }} {{ data['mother-middle-name'] }} {{ data['mother-last-name'] }} {{ data['suffix'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="name-change.html">Change<span class="govuk-visually-hidden">name</span></a>
@@ -83,7 +83,7 @@
 
       {{ govukButton({
         text: "Continue to Mother’s details",
-        href: "../mother-details/name-change.html"
+        href
       }) }}
 
       

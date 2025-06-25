@@ -1,0 +1,47 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/one-login.html" %}
+
+
+{% block pageTitle %}
+   City or town mother was born – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="address-birth-search" method="post">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+            <legend label class="govuk-label govuk-label--l" for="mother-city-of-birth">
+              <span class="govuk-caption-xl">Part 2 of 4: Mother’s details</span>    
+              <h1 class="govuk-fieldset__heading">
+               City or town where mother was born
+              </h1>
+            </legend>
+          <input class="govuk-input" id="mother-city-of-birth" name="mother-city-of-birth" type="text" value="{{ data['mother-city-of-birth'] }}">
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}
