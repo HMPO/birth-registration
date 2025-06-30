@@ -23,32 +23,32 @@
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <span class="govuk-caption-xl">Part 2 of 4: Mother’s details</span>    
+              <span class="govuk-caption-xl">Part 3 of 4: Father’s details</span>    
               <h1 class="govuk-fieldset__heading">
-                Is {{data['mother-last-name']}} the current’s legal name?
+                Has the father’s last name changed since birth of the child?
               </h1>
             </legend>
             
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="is-name-current" name="is-name-current" type="radio" value="yes" {{checked("is-name-current", "Yes")}}>
-                <label class="govuk-label govuk-radios__label" for="is-name-current">
+                <input class="govuk-radios__input" id="is-name-current-parent" name="is-name-current-parent" type="radio" value="yes" {{checked("is-name-current-parent", "Yes")}} data-aria-controls="conditional-current">
+                <label class="govuk-label govuk-radios__label" for="is-name-current-parent">
                  Yes
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="is-name-current" name="is-name-current" type="radio" value="no" {{checked("is-name-current", "No")}} data-aria-controls="conditional-current">
-                <label class="govuk-label govuk-radios__label" for="is-name-current">
-                  No
                 </label>
               </div>
               <div class="govuk-radios__conditional" id="conditional-current">
                 <div class="govuk-form-group">
-                  <label class="govuk-label" for="mother-current">
+                  <label class="govuk-label" for="father-current">
                     Current legal name
                   </label>
-                  <input class="govuk-input govuk-!-width-one-half" id="mother-current" name="mother-current" type="name" spellcheck="false" aria-describedby="mother-current" value="{{ data['mother-current'] }}" >
+                  <input class="govuk-input govuk-!-width-one-half" id="father-current" name="father-current" type="name" spellcheck="false" aria-describedby="father-current" value="{{ data['father-current'] }}" >
                 </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="is-name-current-parent" name="is-name-current-parent" type="radio" value="no" {{checked("is-name-current-parent", "No")}} >
+                <label class="govuk-label govuk-radios__label" for="is-name-current-parent">
+                  No
+                </label>
               </div>
             </div>
         </fieldset>

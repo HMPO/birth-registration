@@ -2,7 +2,7 @@
 {% extends "layouts/one-login.html" %}
 
 {% block pageTitle %}
-   Mother's details – GOV.UK Prototype Kit
+   father's details – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -14,15 +14,15 @@
 
 {% block content %}
 
-<form class="form" action="../parent-details/name-change" method="post">
+<form class="form" action="../statistical/info-for-services" method="post">
 
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       
-     <span class="govuk-caption-xl">Part 2 of 4: Mother’s details</span>
+     <span class="govuk-caption-xl">Part 3 of 4: Father’s details</span>
       <h1 class="govuk-heading-xl">
-        Mother's details
+       Father's details
       </h1>
 
       <div class="govuk-inset-text">
@@ -35,33 +35,20 @@
             Name at the time of birth
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['mother-prefix'] }} {{ data['mother-first-name'] }} {{ data['mother-middle-name'] }} {{ data['mother-last-name'] }} {{ data['mother-suffix'] }}
+            {{ data['father-prefix'] }} {{ data['father-first-name'] }} {{ data['father-middle-name'] }} {{ data['father-last-name'] }} {{ data['father-suffix'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="name-change.html">Change<span class="govuk-visually-hidden">name</span></a>
           </dd>
         </div>
 
-       
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Maiden name
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['maiden-name'] }} 
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="is-the-name-maiden-name.html">Change<span class="govuk-visually-hidden">maiden name</span></a>
-          </dd>
-        </div>
-
-        {% if data['mother-current'] %}
+        {% if data['father-current'] %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Current last name
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['mother-current'] }} 
+            {{ data['father-current'] }} 
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="is-name-current-legal-name.html">Change<span class="govuk-visually-hidden">maiden name</span></a>
@@ -87,10 +74,10 @@
             City of town of birth
           </dt>
           <dd class="govuk-summary-list__value">
-          {{data['mother-city-of-birth'] or 'Cardiff'}} 
+          {{data['father-city-of-birth'] or 'Cardiff'}} 
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="city-mother-was-born.html">Change<span class="govuk-visually-hidden">place of birth</span></a>
+            <a class="govuk-link" href="city-father-was-born.html">Change<span class="govuk-visually-hidden">place of birth</span></a>
           </dd>
         </div>
 
@@ -99,10 +86,10 @@
             Address at the time of birth
           </dt>
           <dd class="govuk-summary-list__value">
-          {{data['mother-city-of-birth'] or 'Cardiff'}} 
+          {{data['father-city-of-birth'] or 'Cardiff'}} 
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="city-mother-was-born.html">Change<span class="govuk-visually-hidden">place of birth</span></a>
+            <a class="govuk-link" href="city-father-was-born.html">Change<span class="govuk-visually-hidden">place of birth</span></a>
           </dd>
         </div>
 
@@ -111,7 +98,7 @@
             Occupation
           </dt>
           <dd class="govuk-summary-list__value">
-          {{data['mother-job-role'] or 'Train driver'}} 
+          {{data['father-job-role'] or 'Train driver'}} 
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="job-role.html">Change<span class="govuk-visually-hidden">place of birth</span></a>
@@ -122,7 +109,7 @@
 
 
       {{ govukButton({
-        text: "Continue to Father’s details"
+        text: "Continue to information for government services"
       }) }}
 
       

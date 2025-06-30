@@ -1,0 +1,58 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/one-login.html" %}
+
+{% block pageTitle %}
+  Information for government services – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+            Information for government services
+        </h1>
+      
+          <p class="govuk-body">Your answers will not be recorded on the birth certificate.</p>
+
+          <p class="govuk-body">They provide other government services with information about giving birth in the UK. </p>
+
+          <p class="govuk-body">Some information is legally required.</p>
+
+         <p class="govuk-body">
+          It is anonymous and will not be recorded on the birth certificate. 
+         </p>
+
+        <p class="govuk-body">
+          Each question will explain: 
+        </p>
+
+         <ul class="govuk-list govuk-list--bullet">
+            <li>what information is being collected</li>
+            <li>your legal rights to refuse to answer</li>
+          </ul>
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        href: "spanish-national-mother"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

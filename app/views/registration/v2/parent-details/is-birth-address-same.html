@@ -1,0 +1,63 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/one-login.html" %}
+
+
+{% block pageTitle %}
+   Has the mother changes the address – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="changed-address" method="post">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <span class="govuk-caption-xl">Part 3 of 4: Father’s details</span>    
+              <h1 class="govuk-fieldset__heading">
+               Did both parents live at the same address when the child was born?
+              </h1>
+            </legend>
+
+            <p class="govuk-body">Mother’s address at time of birth: Small town, Long street, S4 NE</p>
+            
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="father-address-changed" name="father-address-changed" type="radio" value="yes" {{checked("father-address-changed", "Yes")}}>
+                <label class="govuk-label govuk-radios__label" for="father-address-changed">
+                 Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="father-address-changed" name="father-address-changed" type="radio" value="no" {{checked("father-address-changed", "No")}}>
+                <label class="govuk-label govuk-radios__label" for="father-address-changed">
+                  No
+                </label>
+              </div>
+            </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}
