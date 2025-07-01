@@ -1,0 +1,111 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/one-login.html" %}
+
+
+{% block pageTitle %}
+   Mother’s previous marriages or Civil Partnerships – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="employment-parent" method="post">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+     
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <span class="govuk-caption-xl">Part 4 of 4: Information for government services</span>    
+                <h1 class="govuk-heading-xl">
+                Mother’s employment status (optional)
+                </h1>
+              </legend>
+
+              <p class="govuk-body">
+                This question is not required by law. Information provided is used in national statistics.
+              </p>
+            
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="date-of-birth-mother" name="date-of-birth-mother" type="radio" value="yes" {{checked("date-of-birth-mother", "Yes")}} data-aria-controls="conditional-DOB">
+                <label class="govuk-label govuk-radios__label" for="date-of-birth-mother">
+                Employed
+                </label>
+              </div>
+              <div class="govuk-radios__conditional" id="conditional-DOB">
+                <div class="govuk-form-group">
+                      <div class="govuk-date-input" id="mother-DOB">
+                        <div class="govuk-date-input__item">
+                          <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="mother-DOB-day">
+                              Name of industry
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-10" id="mother-DOB-day" name="mother-DOB-day" type="text" inputmode="numeric" value="{{ data['mother-DOB-day'] }}" >
+                          </div>
+                        </div>
+                      </div>
+                </div>
+              </div>
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="date-of-birth-mother" name="date-of-birth-mother" type="radio" value="no" {{checked("date-of-birth-mother", "No, I do not know the date of birth")}} >
+                <label class="govuk-label govuk-radios__label" for="date-of-birth-mother">
+                 Employed and a supervisor or a manager
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="date-of-birth-mother" name="date-of-birth-mother" type="radio" value="dont-want-to-asnwer" {{checked("date-of-birth-mother", "I do not want to answer")}} >
+                <label class="govuk-label govuk-radios__label" for="date-of-birth-mother">
+                  Self-employed
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="date-of-birth-mother" name="date-of-birth-mother" type="radio" value="dont-want-to-asnwer" {{checked("date-of-birth-mother", "I do not want to answer")}} >
+                <label class="govuk-label govuk-radios__label" for="date-of-birth-mother">
+                  Self-employed and a supervisor or a manager
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="date-of-birth-mother" name="date-of-birth-mother" type="radio" value="dont-want-to-asnwer" {{checked("date-of-birth-mother", "I do not want to answer")}} >
+                <label class="govuk-label govuk-radios__label" for="date-of-birth-mother">
+                  No gainful employment
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="date-of-birth-mother" name="date-of-birth-mother" type="radio" value="dont-want-to-asnwer" {{checked("date-of-birth-mother", "I do not want to answer")}} >
+                <label class="govuk-label govuk-radios__label" for="date-of-birth-mother">
+                  I don’t know
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="date-of-birth-mother" name="date-of-birth-mother" type="radio" value="dont-want-to-asnwer" {{checked("date-of-birth-mother", "I do not want to answer")}} >
+                <label class="govuk-label govuk-radios__label" for="date-of-birth-mother">
+                  I don’t want to answer
+                </label>
+              </div>
+            </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}
