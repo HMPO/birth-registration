@@ -15,79 +15,79 @@
 
 {% block content %}
 
-<form class="form" action="address-current-search" method="post">
+<form class="form" action="job-role" method="post">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
       <span class="govuk-caption-xl">Part 2 of 4: Mother’s details</span>
       <h1 class="govuk-heading-xl">
-       Address at the time of birth
+       Current address
       </h1>
         
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
            <div class="govuk-form-group">
-            <label class="govuk-label" for="mother-place-of-birth-flat">
+            <label class="govuk-label" for="mother-current-flat">
               Flat number or name
             </label>
-            <input class="govuk-input" id="mother-place-of-birth-flat" name="mother-place-of-birth-flat" type="text" value="{{ data['mother-place-of-birth-flat'] }}">
+            <input class="govuk-input" id="mother-current-flat" name="mother-current-flat" type="text" value="{{ data['mother-current-flat'] }}">
           </div>
            <div class="govuk-form-group">
-            <label class="govuk-label" for="mother-place-of-birth-building-name">
+            <label class="govuk-label" for="mother-current-building-name">
               Building name (optional)
             </label>
-            <input class="govuk-input" id="mother-place-of-birth-building-name" name="mother-place-of-birth-building-name" type="text" value="{{ data['mother-place-of-birth-building-name'] }}">
+            <input class="govuk-input" id="mother-current-building-name" name="mother-current-building-name" type="text" value="{{ data['mother-current-building-name'] }}">
           </div>
            <div class="govuk-form-group">
-            <label class="govuk-label" for="mother-place-of-birth-building-number">
+            <label class="govuk-label" for="mother-current-building-number">
               Building number
             </label>
-            <input class="govuk-input govuk-input--width-10" id="mother-place-of-birth-building-number" name="mother-place-of-birth-building-number" type="text" value="{{ data['mother-place-of-birth-building-number'] }}">
+            <input class="govuk-input govuk-input--width-10" id="mother-current-building-number" name="mother-current-building-number" type="text" value="{{ data['mother-current-building-number'] }}">
           </div>
           <div class="govuk-form-group">
-            <label class="govuk-label" for="mother-place-of-birthline-1">
+            <label class="govuk-label" for="mother-currentline-1">
              Street address line 1
             </label>
-            <input class="govuk-input" id="mother-place-of-birth-line-1" name="mother-place-of-birth-line-1" type="text" value="{{ data['mother-place-of-birth-line-1'] }}">
+            <input class="govuk-input" id="mother-current-line-1" name="mother-current-line-1" type="text" value="{{ data['mother-current-line-1'] }}">
           </div>
          
           <div class="govuk-form-group">
-            <label class="govuk-label" for="mother-place-of-birth-line-2">
+            <label class="govuk-label" for="mother-current-line-2">
              Street address line 2 (optional)
             </label>
-            <input class="govuk-input" id="mother-place-of-birth-line-2" name="mother-place-of-birth-line-2" type="text" value="{{ data['mother-place-of-birth-line-2'] }}">
+            <input class="govuk-input" id="mother-current-line-2" name="mother-current-line-2" type="text" value="{{ data['mother-current-line-2'] }}">
           </div>
           <div class="govuk-form-group">
-            <label class="govuk-label" for="mother-place-of-birth-line-3">
+            <label class="govuk-label" for="mother-current-line-3">
              Street address line 3 (optional)
             </label>
-            <input class="govuk-input" id="mother-place-of-birth-line-3" name="mother-place-of-birth-line-3" type="text" value="{{ data['mother-place-of-birth-line-3'] }}">
+            <input class="govuk-input" id="mother-current-line-3" name="mother-current-line-3" type="text" value="{{ data['mother-current-line-3'] }}">
           </div>
           <div class="govuk-form-group">
-            <label class="govuk-label" for="mother-place-of-birth-line-4">
+            <label class="govuk-label" for="mother-current-line-4">
              Street address line 4 (optional)
             </label>
-            <input class="govuk-input" id="mother-place-of-birth-line-4" name="mother-place-of-birth-line-4" type="text" value="{{ data['mother-place-of-birth-line-4'] }}">
+            <input class="govuk-input" id="mother-current-line-4" name="mother-current-line-4" type="text" value="{{ data['mother-current-line-4'] }}">
           </div>
           
           <div class="govuk-form-group">
-            <label class="govuk-label" for="mother-place-of-birth-town">
+            <label class="govuk-label" for="mother-current-town">
              Town or city
             </label>
-            <input class="govuk-input govuk-!-width-two-thirds" id="mother-place-of-birth-town" name="mother-place-of-birth-town" type="text" value="{{ data['mother-place-of-birth-town'] }}">
+            <input class="govuk-input govuk-!-width-two-thirds" id="mother-current-town" name="mother-current-town" type="text" value="{{ data['mother-current-town'] }}">
           </div>
           <div class="govuk-form-group">
-            <label class="govuk-label" for="mother-place-of-birth-county">
+            <label class="govuk-label" for="mother-current-county">
              County (optional)
             </label>
-            <input class="govuk-input govuk-!-width-two-thirds" id="mother-place-of-birth-county" name="mother-place-of-birth-county" type="text" value="{{ data['mother-place-of-birth-county'] }}">
+            <input class="govuk-input govuk-!-width-two-thirds" id="mother-current-county" name="mother-current-county" type="text" value="{{ data['mother-current-county'] }}">
           </div>
           <div class="govuk-form-group">
-            <label class="govuk-label" for="mother-place-of-birth-postcode">
+            <label class="govuk-label" for="mother-current-postcode">
              Postcode
             </label>
-            <input class="govuk-input govuk-input--width-10" id="mother-place-of-birth-postcode" name="mother-place-of-birth-postcode" type="text" value="{{ data['mother-place-of-birth-postcode'] }}">
+            <input class="govuk-input govuk-input--width-10" id="mother-current-postcode" name="mother-current-postcode" type="text" value="{{ data['mother-current-postcode'] }}">
           </div>
 
         </fieldset>

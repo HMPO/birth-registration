@@ -179,7 +179,7 @@ router.post('*/who-is-the-other-parent', function (req, res) {
 // Show different pages if mother changes address since birth
 router.post('*/mother-changed-address', function (req, res) {
   var didMotherChangedAddress = req.session.data['address-changed']
-  if (didMotherChangedAddress === 'yes') {
+  if (didMotherChangedAddress === 'Yes') {
     res.redirect('address-current-search')
   } else {
     res.redirect('job-role')
