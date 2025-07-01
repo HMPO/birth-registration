@@ -153,11 +153,15 @@
 
     </dl>
 
-
+    {% if data['who-registers'] == 'marrried' %}
       {{ govukButton({
         text: "Continue to Father’s details"
       }) }}
-
+    {% else %}
+      {{ govukButton({
+        text: "Continue to information about government services"
+      }) }}
+    {% endif %}
       
     </div>
 

@@ -35,14 +35,14 @@
             Name at the time of birth
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['father-prefix'] }} {{ data['father-first-name'] }} {{ data['father-middle-name'] }} {{ data['father-last-name'] }} {{ data['father-suffix'] }}
+            {{ data['parent-prefix'] }} {{ data['parent-first-name'] }} {{ data['parent-middle-name'] }} {{ data['parent-last-name'] }} {{ data['parent-suffix'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="name-change.html">Change<span class="govuk-visually-hidden">name</span></a>
           </dd>
         </div>
 
-        {% if data['father-current'] %}
+        {% if data['is-name-current-parent'] === 'Yes' %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Current last name
@@ -62,7 +62,7 @@
             Country of birth
           </dt>
           <dd class="govuk-summary-list__value">
-          {{data['country-of-birth'] or 'Wales'}} 
+          {{data['country-of-birth-parent']}} 
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="country-of-birth.html">Change<span class="govuk-visually-hidden">place of birth</span></a>
@@ -74,10 +74,10 @@
             City of town of birth
           </dt>
           <dd class="govuk-summary-list__value">
-          {{data['father-city-of-birth'] or 'Cardiff'}} 
+          {{data['parent-city-of-birth']}} 
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="city-father-was-born.html">Change<span class="govuk-visually-hidden">place of birth</span></a>
+            <a class="govuk-link" href="city-of-birth.html">Change<span class="govuk-visually-hidden">place of birth</span></a>
           </dd>
         </div>
 
@@ -86,7 +86,7 @@
             Address at the time of birth
           </dt>
           <dd class="govuk-summary-list__value">
-          {{data['father-city-of-birth'] or 'Cardiff'}} 
+          {{data['father-city-of-birth']}} 
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="city-father-was-born.html">Change<span class="govuk-visually-hidden">place of birth</span></a>
