@@ -1,0 +1,326 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/one-login.html" %}
+
+{% block pageTitle %}
+   Birth registration details – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="" method="post">
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+     <span class="govuk-caption-xl">Birth registration details</span>
+      <h1 class="govuk-heading-xl">
+        Birth certificate details
+      </h1>
+
+      <div class="govuk-inset-text">
+        Check carefully. This Information will be shown on the birth certificate exactly as provided in this service.
+      </div>
+
+      <h2 class="govuk-heading-m">
+            Child
+      </h2>
+  
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['prefix'] }} {{ data['child-first-name'] or 'Ann'}} {{ data['child-middle-name'] or 'Sylvia'}} {{ data['child-last-name'] or 'Willson' }} {{ data['suffix'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="name-change.html">Change<span class="govuk-visually-hidden">name</span></a>
+          </dd>
+        </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['child-DOB-day'] or '15'}} {{ data['child-DOB-month'] or 'June' }} {{ data['child-DOB-year'] or '2025' }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="date-of-birth.html">Change<span class="govuk-visually-hidden">date of birth</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Sex
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["sex"] or 'Male' }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="sex-change.html">Change<span class="govuk-visually-hidden">sex</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Place of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+            {{data['choose-country'] or 'Hospital, Long Street, N16 9RE'}} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="place-of-birth-change.html">Change<span class="govuk-visually-hidden">place of birth</span></a>
+            </dd>
+          </div>
+    </dl>
+
+    <h2 class="govuk-heading-m">
+        Mother
+    </h2>
+
+    <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name at the time of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['mother-prefix'] }} {{ data['mother-first-name'] }} {{ data['mother-middle-name'] }} {{ data['mother-last-name'] }} {{ data['mother-suffix'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="name-change.html">Change<span class="govuk-visually-hidden">name</span></a>
+          </dd>
+        </div>
+
+       
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Maiden name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['maiden-name'] }} 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="is-the-name-maiden-name.html">Change<span class="govuk-visually-hidden">maiden name</span></a>
+          </dd>
+        </div>
+
+        {% if data['mother-current'] %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Current last name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['mother-current'] }} 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="is-name-current-legal-name.html">Change<span class="govuk-visually-hidden">maiden name</span></a>
+          </dd>
+        </div>
+        {% else %}
+        {% endif %}
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Country of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+          {{data['country-of-birth'] or 'Wales'}} 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="country-of-birth.html">Change<span class="govuk-visually-hidden">place of birth</span></a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            City of town of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+          {{data['mother-city-of-birth'] or 'Cardiff'}} 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="city-mother-was-born.html">Change<span class="govuk-visually-hidden">place of birth</span></a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Address at the time of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+          {{ data['mother-place-of-birth-flat'] }} 
+          {{ data['mother-place-of-birth-building-name'] }}
+          {{ data['mother-place-of-birth-number'] }} 
+          {{ data['mother-place-of-birth-street'] }} 
+          {{ data['mother-place-of-birth-line-2'] }} 
+          {{ data['mother-place-of-birth-line-3'] }} 
+          {{ data['mother-place-of-birth-line-4'] }} 
+          {{ data['mother-place-of-birth-town'] }} 
+          {{ data['mother-place-of-birth-county'] }} 
+          {{ data['mother-place-of-birth-postcode'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="address-birth-manual.html">Change<span class="govuk-visually-hidden">place of birth</span></a>
+          </dd>
+        </div>
+
+        {% if (data['address-changed'] == "Yes") %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Current address
+          </dt>
+          <dd class="govuk-summary-list__value">
+          {{ data['mother-current-flat'] }} 
+          {{ data['mother-current-building-name'] }}
+          {{ data['mother-current-number'] }} 
+          {{ data['mother-current-street'] }} 
+          {{ data['mother-current-line-2'] }} 
+          {{ data['mother-current-line-3'] }} 
+          {{ data['mother-current-line-4'] }} 
+          {{ data['mother-current-town'] }} 
+          {{ data['mother-current-county'] }} 
+          {{ data['mother-current-postcode'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="changed-address.html">Change<span class="govuk-visually-hidden">place of birth</span></a>
+          </dd>
+        </div>
+        {% else %}
+        {% endif %}
+
+         <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Occupation
+          </dt>
+          <dd class="govuk-summary-list__value">
+          {{data['mother-job-role'] or 'Train driver'}} 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="job-role.html">Change<span class="govuk-visually-hidden">place of birth</span></a>
+          </dd>
+        </div>
+
+    </dl>
+
+    <h2 class="govuk-heading-m">
+        Father
+    </h2>
+
+    <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name at the time of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['parent-prefix'] }} {{ data['parent-first-name'] }} {{ data['parent-middle-name'] }} {{ data['parent-last-name'] }} {{ data['parent-suffix'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="name-change.html">Change<span class="govuk-visually-hidden">name</span></a>
+          </dd>
+        </div>
+
+        {% if data['is-name-current-parent'] === 'Yes' %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Current last name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['father-current'] }} 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="is-name-current-legal-name.html">Change<span class="govuk-visually-hidden">maiden name</span></a>
+          </dd>
+        </div>
+        {% else %}
+        {% endif %}
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Country of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+          {{data['country-of-birth-parent']}} 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="country-of-birth.html">Change<span class="govuk-visually-hidden">place of birth</span></a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            City of town of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+          {{data['parent-city-of-birth']}} 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="city-of-birth.html">Change<span class="govuk-visually-hidden">place of birth</span></a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Address at the time of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+          {{data['father-city-of-birth']}} 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="city-father-was-born.html">Change<span class="govuk-visually-hidden">place of birth</span></a>
+          </dd>
+        </div>
+
+         <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Occupation
+          </dt>
+          <dd class="govuk-summary-list__value">
+          {{data['father-job-role'] or 'Train driver'}} 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="job-role.html">Change<span class="govuk-visually-hidden">place of birth</span></a>
+          </dd>
+        </div>
+
+    </dl>
+
+
+    <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      
+    </legend>
+    
+    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+          I confirm that the particulars given by me are true to the best of my knowledge and belief.
+        </label>
+      </div>
+      
+    </div>
+  </fieldset>
+</div>
+
+      {{ govukButton({
+        text: "Continue to payment"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+</form>
+
+{% endblock %}

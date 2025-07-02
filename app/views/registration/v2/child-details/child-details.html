@@ -42,42 +42,41 @@
           </dd>
         </div>
 
-        <dl class="govuk-summary-list">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Date of birth
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['child-DOB-day'] or '15'}} {{ data['child-DOB-month'] or 'June' }} {{ data['child-DOB-year'] or '2025' }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="date-of-birth.html">Change<span class="govuk-visually-hidden">date of birth</span></a>
-          </dd>
-        </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['child-DOB-day'] or '15'}} {{ data['child-DOB-month'] or 'June' }} {{ data['child-DOB-year'] or '2025' }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="date-of-birth.html">Change<span class="govuk-visually-hidden">date of birth</span></a>
+            </dd>
+          </div>
 
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Sex
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data["sex"] or 'Male' }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="sex-change.html">Change<span class="govuk-visually-hidden">sex</span></a>
-          </dd>
-        </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Sex
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["sex"] or 'Male' }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="sex-change.html">Change<span class="govuk-visually-hidden">sex</span></a>
+            </dd>
+          </div>
 
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Place of birth
-          </dt>
-          <dd class="govuk-summary-list__value">
-          {{data['choose-country'] or 'Hospital, Long Street, N16 9RE'}} 
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="place-of-birth-change.html">Change<span class="govuk-visually-hidden">place of birth</span></a>
-          </dd>
-        </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Place of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+            {{data['choose-country'] or 'Hospital, Long Street, N16 9RE'}} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="place-of-birth-change.html">Change<span class="govuk-visually-hidden">place of birth</span></a>
+            </dd>
+          </div>
     </dl>
 
 

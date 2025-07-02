@@ -29,7 +29,17 @@
               </h1>
             </legend>
 
-            <p class="govuk-body">Mother’s address at time of birth: Small town, Long street, S4 NE</p>
+            <p class="govuk-body">Mother’s address at time of birth: 
+          {{ data['mother-place-of-birth-flat'] }} 
+          {{ data['mother-place-of-birth-building-name'] }}
+          {{ data['mother-place-of-birth-number'] }} 
+          {{ data['mother-place-of-birth-street'] }} 
+          {{ data['mother-place-of-birth-line-2'] }} 
+          {{ data['mother-place-of-birth-line-3'] }} 
+          {{ data['mother-place-of-birth-line-4'] }} 
+          {{ data['mother-place-of-birth-town'] }} 
+          {{ data['mother-place-of-birth-county'] }} 
+          {{ data['mother-place-of-birth-postcode'] }}</p>
             
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
