@@ -1,0 +1,69 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/one-login.html" %}
+
+
+{% block pageTitle %}
+   Is the current name maiden name – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="country-of-birth" method="post">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <span class="govuk-caption-xl">Part 3 of 4: Father’s details</span>    
+              <h1 class="govuk-fieldset__heading">
+                Is {{data['parent-first-name']}} {{data['parent-middle-name']}} {{data['parent-last-name']}} the current’s legal name?
+              </h1>
+            </legend>
+            
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="is-name-current-1" name="is-name-current" type="radio" value="Yes" {{checked("is-name-current", "Yes")}}>
+                <label class="govuk-label govuk-radios__label" for="is-name-current-1">
+                 Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="is-name-current-2" name="is-name-current" type="radio" value="No" {{checked("is-name-current", "No")}} data-aria-controls="conditional-current">
+                <label class="govuk-label govuk-radios__label" for="is-name-current-2">
+                  No
+                </label>
+              </div>
+              <div class="govuk-radios__conditional" id="conditional-current">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="mother-current">
+                    Current legal name
+                  </label>
+                  <input class="govuk-input govuk-!-width-one-half" id="mother-current" name="mother-current" type="name" spellcheck="false" aria-describedby="mother-current" value="{{ data['mother-current'] }}" >
+                </div>
+              </div>
+            </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

@@ -185,3 +185,13 @@ router.post('*/mother-changed-address', function (req, res) {
     res.redirect('job-role')
   }
 })
+
+// Show different pages if father's address is the same as mother's
+router.post('*/is-mother-and-father-address-same', function (req, res) {
+  var isMotherAndFatherAddressSame = req.session.data['father-address-same']
+  if (isMotherAndFatherAddressSame === 'Yes') {
+    res.redirect('job-role')
+  } else {
+    res.redirect('address-current-search')
+  }
+})

@@ -15,7 +15,7 @@
 
 {% block content %}
 
-<form class="form" action="job-role" method="post">
+<form class="form" action="is-mother-and-father-address-same" method="post">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -43,14 +43,14 @@
             
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="father-address-changed" name="father-address-changed" type="radio" value="yes" {{checked("father-address-changed", "Yes")}}>
-                <label class="govuk-label govuk-radios__label" for="father-address-changed">
+                <input class="govuk-radios__input" id="father-address-same1" name="father-address-same" type="radio" value="Yes" {{checked("father-address-same", "Yes")}}>
+                <label class="govuk-label govuk-radios__label" for="father-address-same1">
                  Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="father-address-changed" name="father-address-changed" type="radio" value="no" {{checked("father-address-changed", "No")}}>
-                <label class="govuk-label govuk-radios__label" for="father-address-changed">
+                <input class="govuk-radios__input" id="father-address-same2" name="father-address-same" type="radio" value="No" {{checked("father-address-same", "No")}}>
+                <label class="govuk-label govuk-radios__label" for="father-address-same2">
                   No
                 </label>
               </div>
