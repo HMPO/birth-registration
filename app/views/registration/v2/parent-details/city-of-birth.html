@@ -15,17 +15,17 @@
 
 {% block content %}
 
-<form class="form" action="is-birth-address-same" method="post">
+<form class="form" action="is-current-address-same" method="post">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
-            <legend label class="govuk-label govuk-label--l" for="parent-city-of-birth">
+            <legend label class="govuk-label govuk-label--xl" for="parent-city-of-birth">
               <span class="govuk-caption-xl">Part 3 of 4: Father’s details</span>    
               <h1 class="govuk-fieldset__heading">
-               City or town where parent was born
+               City or town where father was born
               </h1>
             </legend>
           <input class="govuk-input" id="parent-city-of-birth" name="parent-city-of-birth" type="text" value="{{ data['parent-city-of-birth'] }}">

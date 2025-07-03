@@ -15,12 +15,21 @@
 
 {% block content %}
 
+
+{% if data['who-registers'] == 'single-mother' %}
+<form class="form" action="spanish-national-mother" method="post">
+{% else %} 
 <form class="form" action="date-of-birth-parent" method="post">
+{% endif %}
+
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-      <span class="govuk-caption-xl">Part 4 of 4: Information for government services</span>    
+      {% if data['who-registers'] == 'single-mother' %}
+        <span class="govuk-caption-xl">Part 3 of 3: Information for government services</span>  
+      {%else %}
+        <span class="govuk-caption-xl">Part 4 of 4: Information for government services</span>  
+      {% endif %}
       <h1 class="govuk-heading-xl">
         Mother’s date of birth
       </h1>

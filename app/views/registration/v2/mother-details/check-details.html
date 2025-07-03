@@ -14,7 +14,11 @@
 
 {% block content %}
 
+{% if data['who-registers'] == 'single-mother' %}
+<form class="form" action="../statistical/info-for-services" method="post">
+{% else %}
 <form class="form" action="../parent-details/name-change" method="post">
+{% endif %}
 
 
   <div class="govuk-grid-row">
@@ -153,13 +157,13 @@
 
     </dl>
 
-    {% if data['who-registers'] == 'marrried' %}
-      {{ govukButton({
-        text: "Continue to Father’s details"
-      }) }}
-    {% else %}
+    {% if data['who-registers'] == 'single-mother' %}
       {{ govukButton({
         text: "Continue to information about government services"
+      }) }}
+    {% else %}
+       {{ govukButton({
+        text: "Continue to Father’s details"
       }) }}
     {% endif %}
       

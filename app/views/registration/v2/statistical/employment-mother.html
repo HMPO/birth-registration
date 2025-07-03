@@ -15,7 +15,13 @@
 
 {% block content %}
 
-<form class="form" action="employment-parent" method="post">
+{% if data['who-registers'] == 'single-mother' %}
+<form class="form" action="../declaration/submitting-registration-data" method="post">
+{% else %} 
+<form class="form" action="employment-parent" method="post">>
+{% endif %}
+
+
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -24,7 +30,11 @@
         <fieldset class="govuk-fieldset">
           
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-              <span class="govuk-caption-xl">Part 4 of 4: Information for government services</span>    
+              {% if data['who-registers'] == 'single-mother' %}
+                <span class="govuk-caption-xl">Part 3 of 3: Information for government services</span>  
+              {%else %}
+                <span class="govuk-caption-xl">Part 4 of 4: Information for government services</span>  
+              {% endif %}
                 <h1 class="govuk-heading-xl">
                 Mother’s employment status (optional)
                 </h1>
