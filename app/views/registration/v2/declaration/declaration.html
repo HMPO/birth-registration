@@ -211,6 +211,9 @@
 
     </dl>
 
+     {% if data['who-registers'] == 'single-mother' %}
+     {% else %}
+
     <h2 class="govuk-heading-m">
         Father
     </h2>
@@ -292,6 +295,7 @@
         </div>
 
     </dl>
+    {% endif %}
 
 
     <div class="govuk-form-group">
