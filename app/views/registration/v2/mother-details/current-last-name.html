@@ -14,7 +14,9 @@
 
 {% block content %}
 
-{% if data['change-link-mother'] == 'true' %}
+{% if data ['declaration-change'] == 'true'%}
+  <form class="form" action="../declaration/declaration" method="post">
+{% elif data['change-link-mother'] == 'true' %}
   <form class="form" action="check-details" method="post">
 {% else %}
 <form class="form" action="current-last-name" method="post">

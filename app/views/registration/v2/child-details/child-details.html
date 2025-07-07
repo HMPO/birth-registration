@@ -38,7 +38,7 @@
             {{ data['prefix'] }} {{ data['child-first-name']}} {{ data['child-middle-name']}} {{ data['child-last-name'] }} {{ data['suffix'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="name-change.html">Change<span class="govuk-visually-hidden">name</span></a>
+            <a class="govuk-link" href="name-change?change-link=true">Change<span class="govuk-visually-hidden">name</span></a>
           </dd>
         </div>
 
@@ -71,7 +71,7 @@
               Place of birth
             </dt>
             <dd class="govuk-summary-list__value">
-            {{data['choose-country']}} 
+            {{data['choose-country'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="place-of-birth-change?change-link=true">Change<span class="govuk-visually-hidden">place of birth</span></a>

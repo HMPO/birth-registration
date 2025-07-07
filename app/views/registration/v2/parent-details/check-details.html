@@ -38,7 +38,7 @@
             {{ data['parent-prefix'] }} {{ data['parent-first-name'] }} {{ data['parent-middle-name'] }} {{ data['parent-last-name'] }} {{ data['parent-suffix'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="name-change.html">Change<span class="govuk-visually-hidden">name</span></a>
+            <a class="govuk-link" href="name-change?change-link-parent=true">Change<span class="govuk-visually-hidden">name</span></a>
           </dd>
         </div>
 
@@ -51,7 +51,7 @@
             {{ data['parent-current'] }} 
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="is-name-current-legal-name.html">Change<span class="govuk-visually-hidden">maiden name</span></a>
+            <a class="govuk-link" href="is-name-current-legal-name?change-link-parent=true">Change<span class="govuk-visually-hidden">maiden name</span></a>
           </dd>
         </div>
         {% else %}
@@ -69,7 +69,7 @@
           {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="country-of-birth.html">Change<span class="govuk-visually-hidden">place of birth</span></a>
+            <a class="govuk-link" href="country-of-birth?change-link-parent=true">Change<span class="govuk-visually-hidden">place of birth</span></a>
           </dd>
         </div>
 
@@ -81,7 +81,7 @@
           {{data['parent-city-of-birth']}} 
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="city-of-birth.html">Change<span class="govuk-visually-hidden">place of birth</span></a>
+            <a class="govuk-link" href="city-of-birth?change-link-parent=true">Change<span class="govuk-visually-hidden">place of birth</span></a>
           </dd>
         </div>
 
@@ -130,7 +130,7 @@
           {%endif%}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="is-current-address-same.html">Change<span class="govuk-visually-hidden">place of birth</span></a>
+            <a class="govuk-link" href="is-current-address-same?change-link-parent=true">Change<span class="govuk-visually-hidden">place of birth</span></a>
           </dd>
         </div>
 

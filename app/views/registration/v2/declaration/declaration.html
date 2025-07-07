@@ -42,7 +42,7 @@
             {{ data['prefix'] }} {{ data['child-first-name']}} {{ data['child-middle-name']}} {{ data['child-last-name']}} {{ data['suffix'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="../child-details/name-change.html">Change<span class="govuk-visually-hidden">name</span></a>
+            <a class="govuk-link" href="../child-details/name-change?declaration-change=true">Change<span class="govuk-visually-hidden">name</span></a>
           </dd>
         </div>
 
@@ -54,7 +54,7 @@
               {{ data['child-DOB-day']}} {{ data['child-DOB-month']}} {{ data['child-DOB-year'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="../child-details/date-of-birth.html">Change<span class="govuk-visually-hidden">date of birth</span></a>
+              <a class="govuk-link" href="../child-details/date-of-birth?declaration-change=true">Change<span class="govuk-visually-hidden">date of birth</span></a>
             </dd>
           </div>
 
@@ -66,7 +66,7 @@
               {{ data["sex"]}}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="../child-details/sex-change.html">Change<span class="govuk-visually-hidden">sex</span></a>
+              <a class="govuk-link" href="../child-details/sex-change?declaration-change=true">Change<span class="govuk-visually-hidden">sex</span></a>
             </dd>
           </div>
 
@@ -75,10 +75,10 @@
               Place of birth
             </dt>
             <dd class="govuk-summary-list__value">
-            {{data['choose-country']}} 
+            {{ data['choose-country']}} 
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="../child-details/place-of-birth-change.html">Change<span class="govuk-visually-hidden">place of birth</span></a>
+              <a class="govuk-link" href="../child-details/place-of-birth-change?declaration-change=true">Change<span class="govuk-visually-hidden">place of birth</span></a>
             </dd>
           </div>
     </dl>
@@ -96,7 +96,7 @@
             {{ data['mother-prefix'] }} {{ data['mother-first-name'] }} {{ data['mother-middle-name'] }} {{ data['mother-last-name'] }} {{ data['mother-suffix'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="../mother-details/name-change.html">Change<span class="govuk-visually-hidden">name</span></a>
+            <a class="govuk-link" href="../mother-details/name-change?declaration-change=true">Change<span class="govuk-visually-hidden">name</span></a>
           </dd>
         </div>
 
@@ -109,7 +109,7 @@
             {{ data['maiden-name'] }} 
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="../mother-details/is-the-name-maiden-name.html">Change<span class="govuk-visually-hidden">maiden name</span></a>
+            <a class="govuk-link" href="../mother-details/is-the-name-maiden-name?declaration-change=true">Change<span class="govuk-visually-hidden">maiden name</span></a>
           </dd>
         </div>
 
@@ -122,7 +122,7 @@
             {{ data['mother-current'] }} 
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="../mother-details/is-name-current-legal-name.html">Change<span class="govuk-visually-hidden">maiden name</span></a>
+            <a class="govuk-link" href="../mother-details/is-name-current-legal-name?declaration-change=true">Change<span class="govuk-visually-hidden">maiden name</span></a>
           </dd>
         </div>
         {% else %}
@@ -140,7 +140,7 @@
           {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="../mother-details/country-of-birth.html">Change<span class="govuk-visually-hidden">place of birth</span></a>
+            <a class="govuk-link" href="../mother-details/country-of-birth?declaration-change=true">Change<span class="govuk-visually-hidden">place of birth</span></a>
           </dd>
         </div>
 
@@ -152,7 +152,7 @@
           {{data['mother-city-of-birth']}} 
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="../mother-details/city-mother-was-born.html">Change<span class="govuk-visually-hidden">place of birth</span></a>
+            <a class="govuk-link" href="../mother-details/city-mother-was-born?declaration-change=true">Change<span class="govuk-visually-hidden">place of birth</span></a>
           </dd>
         </div>
 
@@ -173,7 +173,7 @@
           {{ data['mother-place-of-birth-postcode'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="../mother-details/address-birth-manual.html">Change<span class="govuk-visually-hidden">place of birth</span></a>
+            <a class="govuk-link" href="../mother-details/address-birth-manual?declaration-change=true">Change<span class="govuk-visually-hidden">place of birth</span></a>
           </dd>
         </div>
 
@@ -195,7 +195,7 @@
           {{ data['mother-current-postcode'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="../mother-details/changed-address.html">Change<span class="govuk-visually-hidden">place of birth</span></a>
+            <a class="govuk-link" href="../mother-details/changed-address?declaration-change=true">Change<span class="govuk-visually-hidden">place of birth</span></a>
           </dd>
         </div>
         {% else %}
@@ -209,7 +209,7 @@
           {{data['mother-job-role']}} 
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="../mother-details/job-role.html">Change<span class="govuk-visually-hidden">place of birth</span></a>
+            <a class="govuk-link" href="../mother-details/job-role?declaration-change=true">Change<span class="govuk-visually-hidden">place of birth</span></a>
           </dd>
         </div>
 
@@ -231,7 +231,7 @@
             {{ data['parent-prefix'] }} {{ data['parent-first-name'] }} {{ data['parent-middle-name'] }} {{ data['parent-last-name'] }} {{ data['parent-suffix'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="../parent-details/name-change.html">Change<span class="govuk-visually-hidden">name</span></a>
+            <a class="govuk-link" href="../parent-details/name-change?declaration-change=true">Change<span class="govuk-visually-hidden">name</span></a>
           </dd>
         </div>
 
@@ -244,7 +244,7 @@
             {{ data['father-current'] }} 
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="../parent-details/is-name-current-legal-name.html">Change<span class="govuk-visually-hidden">maiden name</span></a>
+            <a class="govuk-link" href="../parent-details/is-name-current-legal-name?declaration-change=true">Change<span class="govuk-visually-hidden">maiden name</span></a>
           </dd>
         </div>
         {% else %}
@@ -262,7 +262,7 @@
           {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="../parent-details/country-of-birth.html">Change<span class="govuk-visually-hidden">place of birth</span></a>
+            <a class="govuk-link" href="../parent-details/country-of-birth?declaration-change=true">Change<span class="govuk-visually-hidden">place of birth</span></a>
           </dd>
         </div>
 
@@ -274,7 +274,7 @@
           {{data['parent-city-of-birth']}} 
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="../parent-details/city-of-birth.html">Change<span class="govuk-visually-hidden">place of birth</span></a>
+            <a class="govuk-link" href="../parent-details/city-of-birth?declaration-change=true">Change<span class="govuk-visually-hidden">place of birth</span></a>
           </dd>
         </div>
 
@@ -286,7 +286,7 @@
           {{data['father-city-of-birth']}} 
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="../parent-details/is-current-address-same.html">Change<span class="govuk-visually-hidden">place of birth</span></a>
+            <a class="govuk-link" href="../parent-details/is-current-address-same?declaration-change=true">Change<span class="govuk-visually-hidden">place of birth</span></a>
           </dd>
         </div>
 
@@ -298,7 +298,7 @@
           {{data['father-job-role']}} 
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="../parent-details/job-role.html">Change<span class="govuk-visually-hidden">place of birth</span></a>
+            <a class="govuk-link" href="../parent-details/job-role?declaration-change=true">Change<span class="govuk-visually-hidden">place of birth</span></a>
           </dd>
         </div>
 
