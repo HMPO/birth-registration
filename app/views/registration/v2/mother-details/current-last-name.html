@@ -14,7 +14,12 @@
 
 {% block content %}
 
+{% if data['change-link-mother'] == 'true' %}
+  <form class="form" action="check-details" method="post">
+{% else %}
 <form class="form" action="current-last-name" method="post">
+{% endif %}
+
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
