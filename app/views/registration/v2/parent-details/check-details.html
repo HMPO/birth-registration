@@ -86,32 +86,43 @@
             Current address
           </dt>
           <dd class="govuk-summary-list__value">
-           {%if data['father-address-same'] === 'Yes'%}
-            <p class="govuk-body">Mother’s current address:
-            {{ data['mother-current-flat'] }} 
-          {{ data['mother-current-building-name'] }}
-          {{ data['mother-current-building-number'] }} 
-          {{ data['mother-current-street'] }} 
-          {{ data['mother-current-line-2'] }} 
-          {{ data['mother-current-line-3'] }} 
-          {{ data['mother-current-line-4'] }} 
-          {{ data['mother-current-town'] }} 
-          {{ data['mother-current-county'] }} 
-          {{ data['mother-current-postcode'] }}
-          </p>
+           {%if data['father-address-same'] == 'Yes'%}
+              {% if data['address-changed'] == 'Yes' %}
+                {{ data['mother-current-flat'] }} 
+                {{ data['mother-current-building-name'] }}
+                {{ data['mother-current-building-number'] }} 
+                {{ data['mother-current-street'] }} 
+                {{ data['mother-current-line-2'] }} 
+                {{ data['mother-current-line-3'] }} 
+                {{ data['mother-current-line-4'] }} 
+                {{ data['mother-current-town'] }} 
+                {{ data['mother-current-county'] }} 
+                {{ data['mother-current-postcode'] }}
+              {% else %}
+                {{ data['mother-place-of-birth-flat'] }} 
+                {{ data['mother-place-of-birth-building-name'] }}
+                {{ data['mother-place-of-birth-building-number'] }} 
+                {{ data['mother-place-of-birth-street'] }} 
+                {{ data['mother-place-of-birth-line-2'] }} 
+                {{ data['mother-place-of-birth-line-3'] }} 
+                {{ data['mother-place-of-birth-line-4'] }} 
+                {{ data['mother-place-of-birth-town'] }} 
+                {{ data['mother-place-of-birth-county'] }} 
+                {{ data['mother-place-of-birth-postcode']}}
+              {% endif %}
+             
           {% else %}
-           <p class="govuk-body">Mother’s current address:
-          {{ data['mother-place-of-birth-flat'] }} 
-          {{ data['mother-place-of-birth-building-name'] }}
-          {{ data['mother-place-of-birth-building-number'] }} 
-          {{ data['mother-place-of-birth-street'] }} 
-          {{ data['mother-place-of-birth-line-2'] }} 
-          {{ data['mother-place-of-birth-line-3'] }} 
-          {{ data['mother-place-of-birth-line-4'] }} 
-          {{ data['mother-place-of-birth-town'] }} 
-          {{ data['mother-place-of-birth-county'] }} 
-          {{ data['mother-place-of-birth-postcode'] }}
-           </p>
+          {{ data['parent-current-flat'] }} 
+          {{ data['parent-current-building-name'] }}
+          {{ data['parent-current-building-number'] }} 
+          {{ data['parent-current-street'] }} 
+          {{ data['parent-current-line-2'] }} 
+          {{ data['parent-current-line-3'] }} 
+          {{ data['parent-current-line-4'] }} 
+          {{ data['parent-current-town'] }} 
+          {{ data['parent-current-county'] }} 
+          {{ data['parent-current-postcode'] }}
+          
           {%endif%}
           </dd>
           <dd class="govuk-summary-list__actions">
