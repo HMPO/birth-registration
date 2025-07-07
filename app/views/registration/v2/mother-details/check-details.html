@@ -79,7 +79,11 @@
             Country of birth
           </dt>
           <dd class="govuk-summary-list__value">
-          {{data['country-of-birth'] or 'Wales'}} 
+          {% if data['country-of-birth'] == 'Outside of the UK' %}
+            {{data['other-country']}}
+          {% else %}
+            {{data['country-of-birth']}}
+          {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="country-of-birth.html">Change<span class="govuk-visually-hidden">place of birth</span></a>
@@ -91,7 +95,7 @@
             City of town of birth
           </dt>
           <dd class="govuk-summary-list__value">
-          {{data['mother-city-of-birth'] or 'Cardiff'}} 
+          {{data['mother-city-of-birth']}} 
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="city-mother-was-born.html">Change<span class="govuk-visually-hidden">place of birth</span></a>
@@ -148,7 +152,7 @@
             Occupation
           </dt>
           <dd class="govuk-summary-list__value">
-          {{data['mother-job-role'] or 'Train driver'}} 
+          {{data['mother-job-role']}} 
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="job-role.html">Change<span class="govuk-visually-hidden">place of birth</span></a>

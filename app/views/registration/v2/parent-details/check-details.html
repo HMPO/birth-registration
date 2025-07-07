@@ -62,7 +62,11 @@
             Country of birth
           </dt>
           <dd class="govuk-summary-list__value">
-          {{data['country-of-birth-parent']}} 
+            {% if data['country-of-birth-parent'] == 'Outside of the UK' %}
+            {{data['other-country-parent']}}
+          {% else %}
+            {{data['country-of-birth-parent']}}
+          {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="country-of-birth.html">Change<span class="govuk-visually-hidden">place of birth</span></a>

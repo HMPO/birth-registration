@@ -54,11 +54,19 @@
               </label>
             </div>
              <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="country-of-birth-parent-5" name="country-of-birth-parent" type="radio" value="Outside of the UK" {{checked("country-of-birth-parent", "Outside of the UK")}}>
+              <input class="govuk-radios__input" id="country-of-birth-parent-5" name="country-of-birth-parent" type="radio" value="Outside of the UK" {{checked("country-of-birth-parent", "Outside of the UK")}} data-aria-controls="conditional-outside-uk">
               <label class="govuk-label govuk-radios__label" for="country-of-birth-parent-5">
                 Outside of the UK
               </label>
             </div>
+            <div class="govuk-radios__conditional" id="conditional-outside-uk">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="other-country-parent">
+                    Country of birth
+                  </label>
+                  <input class="govuk-input" id="other-country-parent" name="other-country-parent" spellcheck="false" aria-describedby="other-country-parent" value="{{ data['other-country-parent'] }}" >
+                </div>
+              </div>
              <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="country-of-birth-parent-6" name="country-of-birth-parent" type="radio" value="Unknown" {{checked("country-of-birth-parent", "Unknown")}}>
               <label class="govuk-label govuk-radios__label" for="country-of-birth-parent-6">
