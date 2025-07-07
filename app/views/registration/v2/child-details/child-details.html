@@ -35,7 +35,7 @@
             Name
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['prefix'] }} {{ data['child-first-name'] or 'Ann'}} {{ data['child-middle-name'] or 'Sylvia'}} {{ data['child-last-name'] or 'Willson' }} {{ data['suffix'] }}
+            {{ data['prefix'] }} {{ data['child-first-name']}} {{ data['child-middle-name']}} {{ data['child-last-name'] }} {{ data['suffix'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="name-change.html">Change<span class="govuk-visually-hidden">name</span></a>
@@ -47,7 +47,7 @@
               Date of birth
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['child-DOB-day'] or '15'}} {{ data['child-DOB-month'] or 'June' }} {{ data['child-DOB-year'] or '2025' }}
+              {{ data['child-DOB-day']}} {{ data['child-DOB-month']}} {{ data['child-DOB-year']}}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="date-of-birth.html">Change<span class="govuk-visually-hidden">date of birth</span></a>
@@ -59,7 +59,7 @@
               Sex
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data["sex"] or 'Male' }}
+              {{ data["sex"] }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="sex-change.html">Change<span class="govuk-visually-hidden">sex</span></a>
@@ -71,7 +71,7 @@
               Place of birth
             </dt>
             <dd class="govuk-summary-list__value">
-            {{data['choose-country'] or 'Hospital, Long Street, N16 9RE'}} 
+            {{data['choose-country']}} 
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="place-of-birth-change.html">Change<span class="govuk-visually-hidden">place of birth</span></a>
