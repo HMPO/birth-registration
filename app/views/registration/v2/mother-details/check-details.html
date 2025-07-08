@@ -46,7 +46,7 @@
           </dd>
         </div>
 
-       
+        {% if data['maiden-name'] %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Maiden name
@@ -58,6 +58,8 @@
             <a class="govuk-link" href="is-the-name-maiden-name?change-link-mother=true">Change<span class="govuk-visually-hidden">maiden name</span></a>
           </dd>
         </div>
+        {% else %}
+        {% endif %}
 
         {% if data['mother-current'] %}
         <div class="govuk-summary-list__row">
@@ -68,7 +70,7 @@
             {{ data['mother-current'] }} 
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="is-name-current-legal-name?change-link-mother=true">Change<span class="govuk-visually-hidden">maiden name</span></a>
+            <a class="govuk-link" href="is-name-current-legal-name?change-link-mother=true">Change<span class="govuk-visually-hidden">current name</span></a>
           </dd>
         </div>
         {% else %}
