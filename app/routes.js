@@ -180,7 +180,7 @@ router.post('*/who-is-the-other-parent', function (req, res) {
 router.post('*/mother-changed-address', function (req, res) {
   var didMotherChangedAddress = req.session.data['address-changed']
   if (didMotherChangedAddress === 'Yes') {
-    res.redirect('address-current-search')
+    res.redirect('address-current-manual')
   } else {
     res.redirect('job-role')
   }
@@ -192,6 +192,6 @@ router.post('*/is-mother-and-father-address-same', function (req, res) {
   if (isMotherAndFatherAddressSame === 'Yes') {
     res.redirect('job-role')
   } else {
-    res.redirect('address-current-search')
+    res.redirect('address-current-manual')
   }
 })
