@@ -1,0 +1,45 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Checking details – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+            Checking a few details
+        </h1>
+       
+         <p class="govuk-body">We need to confirm a few details before you can start:</p>
+
+          <ol class="govuk-list govuk-list--number">
+            <li>your relationship to the child</li>
+            <li>if another parent is being registered</li>
+            <li>your relationship to the other parent</li>
+          </ol>
+
+
+      {{ govukButton({
+        text: "Continue to child’s details",
+        href: "triage/relationship-to-child.html"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

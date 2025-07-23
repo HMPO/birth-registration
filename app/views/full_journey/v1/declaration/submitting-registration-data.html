@@ -1,0 +1,51 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Register a birth – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+            Submitting registration information
+        </h1>
+
+       <p class="govuk-body">Next you can review all details that will show on the birth certificate.</p>
+
+
+         <p class="govuk-body">
+          Check carefully and change where necessary to avoid corrections or problems with other public services that require a birth certificate.
+         </p>
+
+        <p class="govuk-body">
+          The details you will submit will be reviewed by registrar. 
+        </p>
+
+        <p class="govuk-body">
+          After payment you will find out what will happen next.
+        </p>
+
+      {{ govukButton({
+        text: "Continue",
+        href: "declaration.html"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

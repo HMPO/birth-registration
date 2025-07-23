@@ -1,0 +1,162 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   father's details – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="../statistical/info-for-services" method="post">
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+     <span class="govuk-caption-xl">Part 3 of 4: Father’s details</span>
+      <h1 class="govuk-heading-xl">
+       Father's details
+      </h1>
+
+      <div class="govuk-inset-text">
+        Information will be shown on the birth certificate exactly as provided in this service
+      </div>
+  
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name at the time of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['parent-prefix'] }} {{ data['parent-first-name'] }} {{ data['parent-middle-name'] }} {{ data['parent-last-name'] }} {{ data['parent-suffix'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="name?change-link-parent=true">Change<span class="govuk-visually-hidden">name</span></a>
+          </dd>
+        </div>
+
+        {% if data['is-name-current-parent'] === 'No' %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Current last name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['parent-current'] }} 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="is-name-current-legal-name?change-link-parent=true">Change<span class="govuk-visually-hidden">maiden name</span></a>
+          </dd>
+        </div>
+        {% else %}
+        {% endif %}
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Country of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['country-of-birth-parent'] == 'Outside of the UK' %}
+            {{data['other-country-parent']}}
+          {% else %}
+            {{data['country-of-birth-parent']}}
+          {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="country-of-birth?change-link-parent=true">Change<span class="govuk-visually-hidden">place of birth</span></a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            City of town of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+          {{data['parent-city-of-birth']}} 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="city-of-birth?change-link-parent=true">Change<span class="govuk-visually-hidden">place of birth</span></a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Current address
+          </dt>
+          <dd class="govuk-summary-list__value">
+           {%if data['father-address-same'] == 'Yes'%}
+              {% if data['address-changed'] == 'Yes' %}
+                {{ data['mother-current-flat'] }} 
+                {{ data['mother-current-building-name'] }}
+                {{ data['mother-current-building-number'] }} 
+                {{ data['mother-current-street'] }} 
+                {{ data['mother-current-line-2'] }} 
+                {{ data['mother-current-line-3'] }} 
+                {{ data['mother-current-line-4'] }} 
+                {{ data['mother-current-town'] }} 
+                {{ data['mother-current-county'] }} 
+                {{ data['mother-current-postcode'] }}
+              {% else %}
+                {{ data['mother-place-of-birth-flat'] }} 
+                {{ data['mother-place-of-birth-building-name'] }}
+                {{ data['mother-place-of-birth-building-number'] }} 
+                {{ data['mother-place-of-birth-street'] }} 
+                {{ data['mother-place-of-birth-line-2'] }} 
+                {{ data['mother-place-of-birth-line-3'] }} 
+                {{ data['mother-place-of-birth-line-4'] }} 
+                {{ data['mother-place-of-birth-town'] }} 
+                {{ data['mother-place-of-birth-county'] }} 
+                {{ data['mother-place-of-birth-postcode']}}
+              {% endif %}
+             
+          {% else %}
+          {{ data['parent-current-flat'] }} 
+          {{ data['parent-current-building-name'] }}
+          {{ data['parent-current-building-number'] }} 
+          {{ data['parent-current-street'] }} 
+          {{ data['parent-current-line-2'] }} 
+          {{ data['parent-current-line-3'] }} 
+          {{ data['parent-current-line-4'] }} 
+          {{ data['parent-current-town'] }} 
+          {{ data['parent-current-county'] }} 
+          {{ data['parent-current-postcode'] }}
+          
+          {%endif%}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="is-current-address-same?change-link-parent=true">Change<span class="govuk-visually-hidden">place of birth</span></a>
+          </dd>
+        </div>
+
+         <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Occupation
+          </dt>
+          <dd class="govuk-summary-list__value">
+          {{data['father-job-role']}} 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="job-role.html">Change<span class="govuk-visually-hidden">place of birth</span></a>
+          </dd>
+        </div>
+
+    </dl>
+
+
+      {{ govukButton({
+        text: "Continue to information for government services"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+</form>
+
+{% endblock %}

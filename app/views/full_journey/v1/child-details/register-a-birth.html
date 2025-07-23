@@ -1,0 +1,83 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Register a birth – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+            Register a birth
+        </h1>
+
+        <h2 class="govuk-heading-l">
+            Before you start
+        </h2>
+
+        <p class="govuk-body">You can save your progress if you need to stop and continue later.</p>
+        <p class="govuk-body">Before you submit, you can review all the information provided.</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>whether you can register the birth</li>
+          <li>what information you’ll need to give</li>
+          <li>if you need to provide any documents</li>
+        </ul>
+
+      <div class="govuk-inset-text">
+        Information will be shown on the birth certificate exactly as provided in this service
+      </div>
+
+        <h2 class="govuk-heading-l">
+            What you need to provide
+        </h2>
+        
+        <!-- if parents and married -->
+
+        {% if data['areYouMarried'] === 'yes' %}
+
+          <p class="govuk-body">There are four parts to the registration:</p>
+
+          <ul class="govuk-list govuk-list--number">
+            <li>Child’s details</li>
+            <li>Mother’s details</li>
+            <li>Father or Parent’s details</li>
+            <li>Survey questions for government statistics</li>
+          </ul>
+        
+        <!-- single mother -->
+        {% else %}
+
+          <p class="govuk-body">There are three parts to the registration:</p>
+
+          <ul class="govuk-list govuk-list--number">
+            <li>Child’s details</li>
+            <li>Mother’s details</li>
+            <li>Survey questions for government statistics</li>
+          </ul>
+
+        {% endif%}
+
+      {{ govukButton({
+        text: "Continue to child’s details",
+        href: "name"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

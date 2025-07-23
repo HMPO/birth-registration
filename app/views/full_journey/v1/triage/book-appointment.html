@@ -1,0 +1,64 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+Both parents need to attend an appointment – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      
+
+      <h1 class="govuk-heading-xl">
+        Both parents need to attend an appointment
+      </h1>
+
+      <p class="govuk-body">At the moment, the online service can only register two parents if they’re married or in a civil partnership.</p>
+
+      <p class="govuk-body">You’ll need to either:</p>
+
+      <ol class="govuk-list govuk-list--bullet">
+            <li>attend an appointment together</li>
+            <li>only register the birth mother in the online service</li>
+          </ol>
+
+      
+      <form class="form" action="continue-to-registration" method="post">
+
+          {{ govukRadios({
+            idPrefix: "registering-other-parent",
+            name: "registeringOtherParent",
+            fieldset: {
+              legend: {
+                text: "How do you want to continue?",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            items: [
+              { value: "yes", text: "Find a register office for an in -person appointment " },
+              { value: "no", text: "Register online with only the birth mother’s details" }
+            ]
+          }) }}
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

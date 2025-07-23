@@ -1,0 +1,80 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageScripts %}
+  <script src="/public/javascripts/application.js"></script>
+{% endblock %}
+
+{% block pageTitle %}
+   Child's place of birth – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+{% if data['declaration-change'] == 'true' %}
+  <form class="form" action="../declaration/declaration" method="post">
+{% else %}
+<form class="form" action="check-details" method="post">
+{% endif %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Part 1 of 4: Child’s details</span>
+      <h1 class="govuk-heading-xl">
+       Place of birth
+      </h1>
+        
+      <div class="govuk-form-group">
+        <form action="" method="get">
+        <label class="govuk-label" for="choose-country">Enter name or postcode where baby was born</label>
+        <div id="autocomple-hint" class="govuk-hint">
+              For example, EH3 4BD
+            </div>
+          <select class="govuk-select" name="choose-country" id="choose-country">
+            <option value="">Start typing here</option>
+            <option value="Chelsea and Westminster Hospital, 369 Fulham Rd., London SW10 9NH">Chelsea and Westminster Hospital, 369 Fulham Rd., London SW10 9NH</option>
+            <option value="Newham University Hospital, Glen Rd, London E13 8SL">Newham University Hospital, Glen Rd, London E13 8SL</option>
+            <option value="The Royal London Hospital, Whitechapel Rd, London E1 1FR">The Royal London Hospital, Whitechapel Rd, London E1 1FR</option>
+            <option value="United Lincolnshire Hospitals NHS Trust, 101 Manthorpe Rd, Grantham NG31 8DG">United Lincolnshire Hospitals NHS Trust, 101 Manthorpe Rd, Grantham NG31 8DG</option>
+            <option value="Manchester Royal Infirmary, Oxford Road, Manchester M13 9WL, United Kingdom">Manchester Royal Infirmary, Oxford Road, Manchester M13 9WL, United Kingdom</option>
+            <option value="St Bartholomew’s Hospital (Barts), West Smithfield, London EC1A 7BE, United Kingdom">St Bartholomew’s Hospital (Barts), West Smithfield, London EC1A 7BE, United Kingdom</option>
+            <option value="Guy’s and St Thomas’ NHS Foundation Trust, Westminster Bridge Road, London SE1 7EH, United Kingdom">Guy’s and St Thomas’ NHS Foundation Trust, Westminster Bridge Road, London SE1 7EH, United Kingdom</option>
+            <option value="Queen Elizabeth Hospital Birmingham, Mindelsohn Way, Birmingham B15 2GW, United Kingdom">Queen Elizabeth Hospital Birmingham, Mindelsohn Way, Birmingham B15 2GW, United Kingdom</option>
+            <option value="Addenbrooke’s Hospital, Hills Rd, Cambridge CB2 0QQ, United Kingdom">Addenbrooke’s Hospital, Hills Rd, Cambridge CB2 0QQ, United Kingdom</option>
+            <option value="University Hospital of Wales (UHW), Heath Park Way, Cardiff CF14 4XW, Wales">University Hospital of Wales (UHW), Heath Park Way, Cardiff CF14 4XW, Wales</option>
+            <option value="Morriston Hospital, Heol Maes Eglwys, Morriston, Swansea SA6 6NL, Wales">Morriston Hospital, Heol Maes Eglwys, Morriston, Swansea SA6 6NL, Wales</option>
+          </select>
+      </form>
+    
+       
+      </div>
+
+      <p class="govuk-body">
+        <a class="govuk-link" href="place-of-birth-manual.html">
+          I can’t find the address
+        </a>
+      </p>
+      
+     
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

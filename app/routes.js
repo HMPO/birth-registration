@@ -195,3 +195,30 @@ router.post('*/is-mother-and-father-address-same', function (req, res) {
     res.redirect('address-current-manual')
   }
 })
+
+// ---- full journey v.1 -----
+
+// Show different pages based on value of areYouMarried
+router.post('*/married-parents', function (req, res) {
+  var MarriedOrInPartnership2 = req.session.data['areYouMarried']
+  if (MarriedOrInPartnership2 === 'yes') {
+    res.redirect('../find-nhs-record/find-nhs-record')
+  } else {
+    var Informant = req.session.data['relationshipToChild']
+    if (Informant === 'birth-mother') {
+      res.redirect('registering-other-parent')
+    } else {
+      res.redirect('book-appointment')
+    }
+  }
+})
+
+// Show different pages based on value of registeringOtherParent
+router.post('*/continue-to-registration', function (req, res) {
+  var registeringOtherParent2 = req.session.data['registeringOtherParent']
+  if (registeringOtherParent2 === 'no') {
+    res.redirect('../find-nhs-record/find-nhs-record')
+  } else {
+    res.redirect('book-appointment')
+  }
+})

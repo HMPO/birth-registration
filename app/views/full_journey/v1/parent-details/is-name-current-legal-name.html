@@ -1,0 +1,74 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+   Is the current name maiden name – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+{% if data ['declaration-change'] == 'true'%}
+  <form class="form" action="../declaration/declaration" method="post">
+{% elif data['change-link-parent'] == 'true' %}
+  <form class="form" action="check-details" method="post">
+{% else %}
+<form class="form" action="country-of-birth" method="post">
+{% endif %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <span class="govuk-caption-xl">Part 3 of 4: Father’s details</span>    
+              <h1 class="govuk-fieldset__heading">
+                Is {{data['parent-first-name']}} {{data['parent-middle-name']}} {{data['parent-last-name']}} the current’s legal name?
+              </h1>
+            </legend>
+            
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="is-name-current-parent-1" name="is-name-current-parent" type="radio" value="Yes" {{checked("is-name-current-parent", "Yes")}}>
+                <label class="govuk-label govuk-radios__label" for="is-name-current-parent-1">
+                 Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="is-name-current-parent-2" name="is-name-current-parent" type="radio" value="No" {{checked("is-name-current-parent", "No")}} data-aria-controls="conditional-current">
+                <label class="govuk-label govuk-radios__label" for="is-name-current-parent-2">
+                  No
+                </label>
+              </div>
+              <div class="govuk-radios__conditional" id="conditional-current">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="parent-current">
+                    Current legal name
+                  </label>
+                  <input class="govuk-input govuk-!-width-one-half" id="parent-current" name="parent-current" type="name" spellcheck="false" aria-describedby="parent-current" value="{{ data['parent-current'] }}" >
+                </div>
+              </div>
+            </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

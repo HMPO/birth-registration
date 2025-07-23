@@ -1,0 +1,60 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Relationship to child – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+   
+      <form class="form" action="are-you-married2" method="post">
+
+        {{ govukRadios({
+          name: "relationshipToChild",
+          fieldset: {
+            legend: {
+              text: "Your relationship to the child",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          hint: {
+            text: "This is the relationship defined by law, which is used to confirm that you’re eligible to register this birth"
+          },
+          items: [
+            { value: "birth-mother", 
+              text: "Mother", 
+              hint: { text: "The person who gave birth to the child" }
+            },
+            { value: "father", 
+              text: "Father", 
+              hint: { text: "The biological father, or the father to a child conceived through fertility treatment" }
+            }, 
+            { value: "female-parent", 
+              text: "Parent", 
+              hint: { text: "The mother’s female partner, and the person that conceived the child with the mother through fertility treatment" }
+            }
+          ]
+        }) }}
+
+        <p class="govuk-body"><a href="https://www.gov.uk/register-offices" class="govuk-link">Contact the register office</a> if none of these apply to you.</p>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

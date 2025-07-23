@@ -1,0 +1,121 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   parent's place of birth – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+{% if data ['declaration-change'] == 'true'%}
+  <form class="form" action="../declaration/declaration" method="post">
+{% elif data['change-link-parent'] == 'true' %}
+  <form class="form" action="check-details" method="post">
+{% else %}
+<form class="form" action="job-role" method="post">
+{% endif %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Part 3 of 4: Father’s details</span>
+      <h1 class="govuk-heading-xl">
+       Current address
+      </h1>
+        
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+           <div class="govuk-form-group">
+            <label class="govuk-label" for="parent-current-flat">
+              Flat number or name
+            </label>
+            <input class="govuk-input" id="parent-current-flat" name="parent-current-flat" type="text" value="{{ data['parent-current-flat'] }}">
+          </div>
+           <div class="govuk-form-group">
+            <label class="govuk-label" for="parent-current-building-name">
+              Building name (optional)
+            </label>
+            <input class="govuk-input" id="parent-current-building-name" name="parent-current-building-name" type="text" value="{{ data['parent-current-building-name'] }}">
+          </div>
+           <div class="govuk-form-group">
+            <label class="govuk-label" for="parent-current-building-number">
+              Building number
+            </label>
+            <input class="govuk-input govuk-input--width-10" id="parent-current-building-number" name="parent-current-building-number" type="text" value="{{ data['parent-current-building-number'] }}">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="parent-currentline-1">
+             Street address line 1
+            </label>
+            <input class="govuk-input" id="parent-current-line-1" name="parent-current-line-1" type="text" value="{{ data['parent-current-line-1'] }}">
+          </div>
+         
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="parent-current-line-2">
+             Street address line 2 (optional)
+            </label>
+            <input class="govuk-input" id="parent-current-line-2" name="parent-current-line-2" type="text" value="{{ data['parent-current-line-2'] }}">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="parent-current-line-3">
+             Street address line 3 (optional)
+            </label>
+            <input class="govuk-input" id="parent-current-line-3" name="parent-current-line-3" type="text" value="{{ data['parent-current-line-3'] }}">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="parent-current-line-4">
+             Street address line 4 (optional)
+            </label>
+            <input class="govuk-input" id="parent-current-line-4" name="parent-current-line-4" type="text" value="{{ data['parent-current-line-4'] }}">
+          </div>
+          
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="parent-current-town">
+             Town or city
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="parent-current-town" name="parent-current-town" type="text" value="{{ data['parent-current-town'] }}">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="parent-current-county">
+             County (optional)
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="parent-current-county" name="parent-current-county" type="text" value="{{ data['parent-current-county'] }}">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="parent-current-postcode">
+             Postcode
+            </label>
+            <input class="govuk-input govuk-input--width-10" id="parent-current-postcode" name="parent-current-postcode" type="text" value="{{ data['parent-current-postcode'] }}">
+          </div>
+
+        </fieldset>
+      </div>
+
+      <p class="govuk-body">
+        <a class="govuk-link" href="address-current-search.html">
+          Search by postcode
+        </a>
+      </p>
+      
+     
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}
