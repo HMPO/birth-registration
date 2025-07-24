@@ -1,0 +1,65 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Relationship to child – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+   
+      <form class="form" action="../find-nhs-record/find-nhs-record" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-fieldset__heading">
+                Who is the other parent?
+              </h1>
+            </legend>
+            <div id="signIn-hint" class="govuk-hint">
+            This is the relationship defined by law, which is used to confirm that you’re eligible to register this birth
+            </div>
+            <div class="govuk-radios" data-module="govuk-radios">
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="second-parent-2" name="second-parent" type="radio" value="Father"  {{checked("second-parent", "Father")}}>
+                <label class="govuk-label govuk-radios__label" for="second-parent-2">
+                  Father
+                </label>
+                <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                  The biological father, or the father to a child conceived through fertility treatment
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="second-parent-3" name="second-parent" type="radio" value="Parent"  {{checked("second-parent", "Parent")}}>
+                <label class="govuk-label govuk-radios__label" for="second-parent-3">
+                  Parent
+                </label>
+                <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                  The mother’s female partner, and the person that conceived the child with the mother through fertility treatment
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

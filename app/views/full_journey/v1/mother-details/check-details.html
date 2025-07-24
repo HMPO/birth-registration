@@ -166,8 +166,12 @@
       {{ govukButton({
         text: "Continue to survey for government statistic"
       }) }}
-    {% else %}
+    {% elif data['who-registers'] == 'Father' %}
        {{ govukButton({
+        text: "Continue to father details"
+        }) }}
+    {% else %}
+    {{ govukButton({
         text: "Continue to parent details"
         }) }}
     {% endif %}
