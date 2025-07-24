@@ -14,10 +14,10 @@
 
 {% block content %}
 
-{% if data['who-registers'] == 'single-mother' %}
+{% if data['registeringOtherParent'] == 'no' %}
 <form class="form" action="was-mother-married-before" method="post">
 {% else %} 
-<form class="form" action="spanish-national-parent" method="post">
+<form class="form" action="date-of-birth-parent" method="post">
 {% endif %}
 
 
