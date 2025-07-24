@@ -205,7 +205,7 @@ router.post('*/married-parents', function (req, res) {
     res.redirect('../find-nhs-record/find-nhs-record')
   } else {
     var Informant = req.session.data['relationshipToChild']
-    if (Informant === 'birth-mother') {
+    if (Informant === 'Mother') {
       res.redirect('registering-other-parent')
     } else {
       res.redirect('book-appointment')
@@ -213,9 +213,9 @@ router.post('*/married-parents', function (req, res) {
   }
 })
 
-// Show different pages based on value of registeringOtherParent
+// Show different pages based on value of registrationOptions
 router.post('*/continue-to-registration', function (req, res) {
-  var registeringOtherParent2 = req.session.data['registeringOtherParent']
+  var registeringOtherParent2 = req.session.data['registrationOptions']
   if (registeringOtherParent2 === 'no') {
     res.redirect('../find-nhs-record/find-nhs-record')
   } else {

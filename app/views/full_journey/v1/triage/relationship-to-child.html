@@ -18,33 +18,49 @@
    
       <form class="form" action="are-you-married2" method="post">
 
-        {{ govukRadios({
-          name: "relationshipToChild",
-          fieldset: {
-            legend: {
-              text: "Your relationship to the child",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--xl"
-            }
-          },
-          hint: {
-            text: "This is the relationship defined by law, which is used to confirm that you’re eligible to register this birth"
-          },
-          items: [
-            { value: "birth-mother", 
-              text: "Mother", 
-              hint: { text: "The person who gave birth to the child" }
-            },
-            { value: "father", 
-              text: "Father", 
-              hint: { text: "The biological father, or the father to a child conceived through fertility treatment" }
-            }, 
-            { value: "female-parent", 
-              text: "Parent", 
-              hint: { text: "The mother’s female partner, and the person that conceived the child with the mother through fertility treatment" }
-            }
-          ]
-        }) }}
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-fieldset__heading">
+                Your relationship to the child
+              </h1>
+            </legend>
+            <div id="signIn-hint" class="govuk-hint">
+            This is the relationship defined by law, which is used to confirm that you’re eligible to register this birth
+            </div>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="who-registers" name="who-registers" type="radio" value="Mother" {{checked("who-registers", "Mother")}}>
+                <label class="govuk-label govuk-radios__label" for="who-registers">
+                  Mother
+                </label>
+                <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                  The person who gave birth to the child
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="who-registers-2" name="who-registers" type="radio" value="Father"  {{checked("who-registers", "Father")}}>
+                <label class="govuk-label govuk-radios__label" for="who-registers-2">
+                  Father
+                </label>
+                <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                  The biological father, or the father to a child conceived through fertility treatment
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="who-registers-3" name="who-registers" type="radio" value="Parent"  {{checked("who-registers", "Parent")}}>
+                <label class="govuk-label govuk-radios__label" for="who-registers-3">
+                  Parent
+                </label>
+                <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                  The mother’s female partner, and the person that conceived the child with the mother through fertility treatment
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+      
 
         <p class="govuk-body"><a href="https://www.gov.uk/register-offices" class="govuk-link">Contact the register office</a> if none of these apply to you.</p>
 

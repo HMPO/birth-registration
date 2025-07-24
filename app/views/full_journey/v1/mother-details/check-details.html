@@ -13,7 +13,7 @@
 
 {% block content %}
 
-{% if data['who-registers'] == 'single-mother' %}
+{% if data['who-registers'] == 'Mother' and data['registeringOtherParent'] == 'no' %}
 <form class="form" action="../statistical/info-for-services" method="post">
 {% else %}
 <form class="form" action="../parent-details/name" method="post">
@@ -153,7 +153,7 @@
             Occupation
           </dt>
           <dd class="govuk-summary-list__value">
-          {{data['mother-job-role']}} 
+          {{data['mother-job-role']}}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="job-role.html">Change<span class="govuk-visually-hidden">place of birth</span></a>
@@ -162,14 +162,14 @@
 
     </dl>
 
-    {% if data['who-registers'] == 'single-mother' %}
+   {% if data['registrationOptions'] == 'mother-only' %}
       {{ govukButton({
-        text: "Continue to information about government services"
+        text: "Continue to survey for government statistic"
       }) }}
     {% else %}
        {{ govukButton({
-        text: "Continue to Father’s details"
-      }) }}
+        text: "Continue to parent details"
+        }) }}
     {% endif %}
       
     </div>

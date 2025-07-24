@@ -29,7 +29,13 @@
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
             <legend label class="govuk-label govuk-label--xl" for="parent-city-of-birth">
-              <span class="govuk-caption-xl">Part 3 of 4: Father’s details</span>    
+              <span class="govuk-caption-xl">
+                 {%if data['who-registers'] == 'Father'%}
+                Part 3 of 4: Father’s details
+                {%else%}
+                Part 3 of 4: Parent’s details
+                {%endif%}   
+              </span>    
               <h1 class="govuk-fieldset__heading">
                City or town where father was born
               </h1>

@@ -36,8 +36,8 @@ Both parents need to attend an appointment – {{ serviceName }} – GOV.UK Prot
       <form class="form" action="continue-to-registration" method="post">
 
           {{ govukRadios({
-            idPrefix: "registering-other-parent",
-            name: "registeringOtherParent",
+            idPrefix: "registration-options",
+            name: "registrationOptions",
             fieldset: {
               legend: {
                 text: "How do you want to continue?",
@@ -46,8 +46,8 @@ Both parents need to attend an appointment – {{ serviceName }} – GOV.UK Prot
               }
             },
             items: [
-              { value: "yes", text: "Find a register office for an in -person appointment " },
-              { value: "no", text: "Register online with only the birth mother’s details" }
+              { value: "appointment", text: "Find a register office for an in -person appointment " },
+              { value: "mother-only", text: "Register online with only the birth mother’s details" }
             ]
           }) }}
 

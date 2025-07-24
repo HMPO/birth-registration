@@ -28,7 +28,13 @@
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-              <span class="govuk-caption-xl">Part 3 of 4: Father’s details</span>    
+              <span class="govuk-caption-xl">
+                 {%if data['who-registers'] == 'Father'%}
+                  Part 3 of 4: Father’s details
+                  {%else%}
+                  Part 3 of 4: Parent’s details
+                  {%endif%}   
+              </span>    
               <h1 class="govuk-fieldset__heading">
                Is father’s current address same as mother’s?
               </h1>

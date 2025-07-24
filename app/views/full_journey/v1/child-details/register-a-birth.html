@@ -41,9 +41,21 @@
             What you need to provide
         </h2>
         
-        <!-- if parents and married -->
+       
+      <!-- single mother -->
+        {% if data['registrationOptions'] == 'mother-only' %}
 
-        {% if data['areYouMarried'] === 'yes' %}
+         <p class="govuk-body">There are three parts to the registration:</p>
+
+          <ul class="govuk-list govuk-list--number">
+            <li>Child’s details</li>
+            <li>Mother’s details</li>
+            <li>Survey questions for government statistics</li>
+          </ul>
+       
+        {% else %}
+
+         <!-- if parents and married -->
 
           <p class="govuk-body">There are four parts to the registration:</p>
 
@@ -51,17 +63,6 @@
             <li>Child’s details</li>
             <li>Mother’s details</li>
             <li>Father or Parent’s details</li>
-            <li>Survey questions for government statistics</li>
-          </ul>
-        
-        <!-- single mother -->
-        {% else %}
-
-          <p class="govuk-body">There are three parts to the registration:</p>
-
-          <ul class="govuk-list govuk-list--number">
-            <li>Child’s details</li>
-            <li>Mother’s details</li>
             <li>Survey questions for government statistics</li>
           </ul>
 

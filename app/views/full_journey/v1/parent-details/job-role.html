@@ -26,7 +26,14 @@
         <fieldset class="govuk-fieldset">
         
            <div class="govuk-form-group">
-            <span class="govuk-caption-xl">Part 3 of 4: Father’s details</span>
+            <span class="govuk-caption-xl">
+               {%if data['who-registers'] == 'Father'%}
+                Part 3 of 4: Father’s details
+                {%else%}
+                Part 3 of 4: Parent’s details
+                {%endif%}   
+            </span>
+            
              <h1 class="govuk-label-wrapper">
               <label class="govuk-label govuk-label--xl" for="father-job-role">
                 Job role or occupation
