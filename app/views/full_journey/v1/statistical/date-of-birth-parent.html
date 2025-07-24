@@ -21,7 +21,7 @@
 
       <span class="govuk-caption-xl">Part 4 of 4: Information for government services</span>    
       <h1 class="govuk-heading-xl">
-        {%if data['who-registers'] == 'Father'%}
+        {%if data['second-parent'] == 'Father' or data['who-registers'] == 'Father'%}
             Father’s date of birth
         {%else%}
             Parent’s date of birth
@@ -35,7 +35,7 @@
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                {%if data['who-registers'] == 'Father'%}
+                {%if data['second-parent'] == 'Father' or data['who-registers'] == 'Father'%}
                      Do you know the father’s date of birth?
                 {%else%}
                     Do you know the parent’s date of birth?

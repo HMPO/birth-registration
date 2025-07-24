@@ -29,14 +29,14 @@
         <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
               <span class="govuk-caption-xl">
-                 {%if data['who-registers'] == 'Father'%}
+                 {%if data['second-parent'] == 'Father' or data['who-registers'] == 'Father' %}
                   Part 3 of 4: Father’s details
                   {%else%}
                   Part 3 of 4: Parent’s details
                   {%endif%}   
               </span>    
               <h1 class="govuk-fieldset__heading">
-                {%if data['who-registers'] == 'Father'%}
+                {%if data['second-parent'] == 'Father' or data['who-registers'] == 'Father' %}
                   Is father’s current address same as mother’s?
                   {%else%}
                   Is parent’s current address same as mother’s?

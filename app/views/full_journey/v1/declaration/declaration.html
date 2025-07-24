@@ -220,7 +220,7 @@
      {% else %}
 
     <h2 class="govuk-heading-m">
-       {%if data['who-registers'] == 'Father'%}
+       {%if data['second-parent'] == 'Father' or data['who-registers'] == 'Father'%}
        Father
         {%else%}
        Parent

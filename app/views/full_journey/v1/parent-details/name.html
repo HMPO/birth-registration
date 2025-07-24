@@ -25,7 +25,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       <span class="govuk-caption-xl">
-        {%if data['who-registers'] == 'Father'%}
+        {%if data['second-parent'] == 'Father' or data['who-registers'] == 'Father' %}
         Part 3 of 4: Father’s details
         {%else%}
         Part 3 of 4: Parent’s details
@@ -33,7 +33,7 @@
       </span>
 
       <h1 class="govuk-heading-xl">
-        {%if data['who-registers'] == 'Father'%}
+        {%if data['second-parent'] == 'Father' or data['who-registers'] == 'Father' %}
         Father's name
         {%else%}
         Parent's name
@@ -83,7 +83,7 @@
      
 
       {{ govukButton({
-        text: "Continue"
+        text: "Save and continue"
       }) }}
 
       

@@ -24,7 +24,7 @@
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
               <span class="govuk-caption-xl">Part 4 of 4: Information for government services</span>    
               <h1 class="govuk-fieldset__heading">
-                 {%if data['who-registers'] == 'Father'%}
+                 {%if data['second-parent'] == 'Father' or data['who-registers'] == 'Father'%}
                     Is the father a Spanish national?
                 {%else%}
                     Is the parent a Spanish national?

@@ -62,7 +62,11 @@
           <ul class="govuk-list govuk-list--number">
             <li>Child’s details</li>
             <li>Mother’s details</li>
-            <li>Father or Parent’s details</li>
+            {% if data['second-parent'] == 'Father' or data['who-registers'] == 'Father' %}
+            <li>Father's details</li>
+            {% else %}
+            <li>Parent's details</li>
+            {% endif %}
             <li>Survey questions for government statistics</li>
           </ul>
 
