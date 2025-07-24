@@ -24,7 +24,12 @@
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
               <span class="govuk-caption-xl">Part 4 of 4: Information for government services</span>    
               <h1 class="govuk-fieldset__heading">
-               Is the father a Spanish national?
+                 {%if data['who-registers'] == 'Father'%}
+                    Is the father a Spanish national?
+                {%else%}
+                    Is the parent a Spanish national?
+                {%endif%}  
+               
               </h1>
             </legend>
 

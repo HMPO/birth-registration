@@ -37,7 +37,12 @@
                 {%endif%}   
               </span>    
               <h1 class="govuk-fieldset__heading">
-               City or town where father was born
+                {%if data['who-registers'] == 'Father'%}
+                City or town where father was born
+                {%else%}
+                City or town where parent was born
+                {%endif%}  
+               
               </h1>
             </legend>
           <input class="govuk-input" id="parent-city-of-birth" name="parent-city-of-birth" type="text" value="{{ data['parent-city-of-birth'] }}">

@@ -36,7 +36,12 @@
                   {%endif%}   
               </span>    
               <h1 class="govuk-fieldset__heading">
-               Is father’s current address same as mother’s?
+                {%if data['who-registers'] == 'Father'%}
+                  Is father’s current address same as mother’s?
+                  {%else%}
+                  Is parent’s current address same as mother’s?
+                  {%endif%} 
+               
               </h1>
             </legend>
 

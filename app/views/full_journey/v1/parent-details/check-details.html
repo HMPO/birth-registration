@@ -28,7 +28,12 @@
     </span>
 
       <h1 class="govuk-heading-xl">
-       Father's details
+        {%if data['who-registers'] == 'Father'%}
+        Check father's details
+        {%else%}
+        Check parent’s details
+        {%endif%}   
+      
       </h1>
 
       <div class="govuk-inset-text">
@@ -38,7 +43,7 @@
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Name at the time of birth
+            Name 
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['parent-prefix'] }} {{ data['parent-first-name'] }} {{ data['parent-middle-name'] }} {{ data['parent-last-name'] }} {{ data['parent-suffix'] }}

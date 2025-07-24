@@ -216,17 +216,21 @@
 
     </dl>
 
-     {% if data['who-registers'] == 'single-mother' %}
+     {% if data['registrationOptions'] == 'mother-only' %}
      {% else %}
 
     <h2 class="govuk-heading-m">
-        Father
+       {%if data['who-registers'] == 'Father'%}
+       Father
+        {%else%}
+       Parent
+        {%endif%}   
     </h2>
 
     <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Name at the time of birth
+            Name 
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['parent-prefix'] }} {{ data['parent-first-name'] }} {{ data['parent-middle-name'] }} {{ data['parent-last-name'] }} {{ data['parent-suffix'] }}

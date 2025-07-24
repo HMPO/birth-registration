@@ -21,7 +21,11 @@
 
       <span class="govuk-caption-xl">Part 4 of 4: Information for government services</span>    
       <h1 class="govuk-heading-xl">
-        Father’s date of birth
+        {%if data['who-registers'] == 'Father'%}
+            Father’s date of birth
+        {%else%}
+            Parent’s date of birth
+        {%endif%}   
       </h1>
 
       <p class="govuk-body">
@@ -31,7 +35,12 @@
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-               Do you know the parent’s date of birth?
+                {%if data['who-registers'] == 'Father'%}
+                     Do you know the father’s date of birth?
+                {%else%}
+                    Do you know the parent’s date of birth?
+                {%endif%}   
+               
             </legend>
             
             <div class="govuk-radios" data-module="govuk-radios">
@@ -46,7 +55,7 @@
 
                     <fieldset class="govuk-fieldset" role="group" aria-describedby="parent-DOB-hint">
                       <legend class="govuk-fieldset__legend">
-                        Father’s date of birth
+                        Date of birth
                       </legend>
                       <div id="parent-DOB-hint" class="govuk-hint">
                         For example, 23 11 2024
