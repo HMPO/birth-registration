@@ -201,15 +201,16 @@ router.post('*/is-mother-and-father-address-same', function (req, res) {
 // Show different pages based on value of areYouMarried
 router.post('*/married-parents', function (req, res) {
   var MarriedOrInPartnership2 = req.session.data['areYouMarried']
-  if (MarriedOrInPartnership2 === 'yes') {
-    res.redirect('../find-nhs-record/find-nhs-record')
+  var Informant = req.session.data['who-registers']
+  
+if (MarriedOrInPartnership2 === 'yes' && Informant === 'Mother') {
+    res.redirect('second-parent');
+  } else if (MarriedOrInPartnership2 === 'no' && Informant === 'Mother') {
+    res.redirect('registering-other-parent');
+  } else if (MarriedOrInPartnership2 === 'yes' && (Informant === 'Father' || Informant === 'Parent')) {
+    res.redirect('../child-details/register-a-birth');
   } else {
-    var Informant = req.session.data['relationshipToChild']
-    if (Informant === 'Mother') {
-      res.redirect('registering-other-parent')
-    } else {
-      res.redirect('book-appointment')
-    }
+    res.redirect('book-appointment');
   }
 })
 
