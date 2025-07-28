@@ -223,3 +223,33 @@ router.post('*/continue-to-registration', function (req, res) {
     res.redirect('book-appointment')
   }
 })
+
+// Show name input page based on value of former-name (Mother)
+router.post('*/formerly-known-as', function (req, res) {
+  var formerlyKnownAs = req.session.data['former-name']
+  if (formerlyKnownAs === 'Yes') {
+    res.redirect('name-formerly')
+  } else {
+    res.redirect('is-the-name-now')
+  }
+})
+
+// Show name input page based on value of name-now (Mother)
+router.post('*/now-known-as', function (req, res) {
+  var nowKnownAs = req.session.data['name-now']
+  if (nowKnownAs === 'No') {
+    res.redirect('name-now')
+  } else {
+    res.redirect('add-other-current-names')
+  }
+})
+
+// Show name input page based on value of name-now (Mother)
+router.post('*/otherwise', function (req, res) {
+  var nowKnownAs = req.session.data['name-now']
+  if (nowKnownAs === 'No') {
+    res.redirect('name-now')
+  } else {
+    res.redirect('add-other-current-names')
+  }
+})
