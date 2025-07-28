@@ -208,7 +208,7 @@ if (MarriedOrInPartnership2 === 'yes' && Informant === 'Mother') {
   } else if (MarriedOrInPartnership2 === 'no' && Informant === 'Mother') {
     res.redirect('registering-other-parent');
   } else if (MarriedOrInPartnership2 === 'yes' && (Informant === 'Father' || Informant === 'Parent')) {
-    res.redirect('../child-details/register-a-birth');
+    res.redirect('../find-nhs-record/find-nhs-record');
   } else {
     res.redirect('book-appointment');
   }
