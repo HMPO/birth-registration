@@ -53,16 +53,45 @@
           </dd>
         </div>
 
-        {% if data['is-name-current-parent'] === 'No' %}
+         {% if data['former-name'] == 'Yes' %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Current last name
+            Formerly known as
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['parent-current'] }} 
+            {{ data['parent-formerly-known-us-first-name'] }} 
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="is-name-current-legal-name?change-link-parent=true">Change<span class="govuk-visually-hidden">maiden name</span></a>
+            <a class="govuk-link" href="add-previous-names?change-link-parent-true">Change<span class="govuk-visually-hidden">maiden name</span></a>
+          </dd>
+        </div>
+        {% else %}
+        {% endif %}
+
+        {% if data['name-now'] == 'No' %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Now known as
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['parent-now-first-name'] }} 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="is-the-name-now?change-link-parent-true">Change<span class="govuk-visually-hidden">maiden name</span></a>
+          </dd>
+        </div>
+        {% else %}
+        {% endif %}
+         {% if data['other-names'] == 'Yes' %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Otherwise known as
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['parent-otherwise-first-name'] }} 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="previous-married-name?change-link-parent-true">Change<span class="govuk-visually-hidden">maiden name</span></a>
           </dd>
         </div>
         {% else %}
@@ -103,27 +132,27 @@
           <dd class="govuk-summary-list__value">
            {%if data['father-address-same'] == 'Yes'%}
               {% if data['address-changed'] == 'Yes' %}
-                {{ data['mother-current-flat'] }} 
-                {{ data['mother-current-building-name'] }}
-                {{ data['mother-current-building-number'] }} 
-                {{ data['mother-current-street'] }} 
-                {{ data['mother-current-line-2'] }} 
-                {{ data['mother-current-line-3'] }} 
-                {{ data['mother-current-line-4'] }} 
-                {{ data['mother-current-town'] }} 
-                {{ data['mother-current-county'] }} 
-                {{ data['mother-current-postcode'] }}
+                {{ data['parent-current-flat'] }} 
+                {{ data['parent-current-building-name'] }}
+                {{ data['parent-current-building-number'] }} 
+                {{ data['parent-current-street'] }} 
+                {{ data['parent-current-line-2'] }} 
+                {{ data['parent-current-line-3'] }} 
+                {{ data['parent-current-line-4'] }} 
+                {{ data['parent-current-town'] }} 
+                {{ data['parent-current-county'] }} 
+                {{ data['parent-current-postcode'] }}
               {% else %}
-                {{ data['mother-place-of-birth-flat'] }} 
-                {{ data['mother-place-of-birth-building-name'] }}
-                {{ data['mother-place-of-birth-building-number'] }} 
-                {{ data['mother-place-of-birth-street'] }} 
-                {{ data['mother-place-of-birth-line-2'] }} 
-                {{ data['mother-place-of-birth-line-3'] }} 
-                {{ data['mother-place-of-birth-line-4'] }} 
-                {{ data['mother-place-of-birth-town'] }} 
-                {{ data['mother-place-of-birth-county'] }} 
-                {{ data['mother-place-of-birth-postcode']}}
+                {{ data['parent-place-of-birth-flat'] }} 
+                {{ data['parent-place-of-birth-building-name'] }}
+                {{ data['parent-place-of-birth-building-number'] }} 
+                {{ data['parent-place-of-birth-street'] }} 
+                {{ data['parent-place-of-birth-line-2'] }} 
+                {{ data['parent-place-of-birth-line-3'] }} 
+                {{ data['parent-place-of-birth-line-4'] }} 
+                {{ data['parent-place-of-birth-town'] }} 
+                {{ data['parent-place-of-birth-county'] }} 
+                {{ data['parent-place-of-birth-postcode']}}
               {% endif %}
              
           {% else %}
