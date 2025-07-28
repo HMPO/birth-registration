@@ -56,20 +56,66 @@
         {% else %}
         {% endif %}
 
-        {% if data['mother-current'] %}
+        {% if data['previous-married-name-value'] %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Current last name
+            Last name at time of current marriage
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['mother-current'] }} 
+            {{ data['previous-married-name-value'] }} 
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="is-name-current-legal-name?change-link-mother=true">Change<span class="govuk-visually-hidden">current name</span></a>
+            <a class="govuk-link" href="previous-married-name?change-link-mother-true">Change<span class="govuk-visually-hidden">maiden name</span></a>
           </dd>
         </div>
         {% else %}
         {% endif %}
+
+        {% if data['former-name'] == 'Yes' %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Formerly known as
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['mother-formerly-known-us-first-name'] }} 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="add-previous-names?change-link-mother-true">Change<span class="govuk-visually-hidden">maiden name</span></a>
+          </dd>
+        </div>
+        {% else %}
+        {% endif %}
+
+        {% if data['name-now'] == 'No' %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Now known as
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['mother-mother-now-first-name'] }} 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="is-the-name-now?change-link-mother-true">Change<span class="govuk-visually-hidden">maiden name</span></a>
+          </dd>
+        </div>
+        {% else %}
+        {% endif %}
+
+        {% if data['other-names'] == 'Yes' %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Otherwise known as
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['mother-otherwise-first-name'] }} 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="previous-married-name?change-link-mother-true">Change<span class="govuk-visually-hidden">maiden name</span></a>
+          </dd>
+        </div>
+        {% else %}
+        {% endif %}
+        
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
