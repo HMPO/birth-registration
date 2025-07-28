@@ -1,0 +1,85 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+   Is the current name maiden name – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+{% if data ['declaration-change'] == 'true'%}
+  <form class="form" action="../declaration/declaration" method="post">
+{% elif data['change-link-mother'] == 'true' %}
+  <form class="form" action="check-details" method="post">
+{% else %}
+<form class="form" action="country-of-birth" method="post">
+{% endif %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+       <span class="govuk-caption-xl">Part 2 of 4: Mother’s details</span>    
+        <h1 class="govuk-heading-xl">
+          Other currently used names
+        </h1>
+
+      <p class="govuk-body">
+      Names that the mother is known by in addition to their legal name. This includes a nickname, professional name, or anglicised version of a name.
+      </p>
+
+      <p class="govuk-body">
+        It’s a personal choice to include other names.
+      </p>
+        
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h2 class="govuk-fieldset__heading">
+               Add another name?
+              </h2>
+            </legend>
+           
+            <div id="changedName-hint" class="govuk-hint">
+              Other currently used names are printed on the birth certificate alongside name at time of birth
+            </div>
+            
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="former-name-1" name="former-name" type="radio" value="Yes" {{checked("former-name", "Yes")}} >
+                <label class="govuk-label govuk-radios__label" for="former-name-1">
+                 Yes
+                </label>
+              </div>
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="former-name-2" name="former-name" type="radio" value= "No" {{checked("former-name", "No")}} >
+                <label class="govuk-label govuk-radios__label" for="former-name-2">
+                  No
+                </label>
+              </div>
+              
+            </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}
