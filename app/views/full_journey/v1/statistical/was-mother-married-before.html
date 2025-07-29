@@ -14,7 +14,7 @@
 
 {% block content %}
 
-<form class="form" action="previous-births" method="post">
+<form class="form" action="previous-pregnancies" method="post">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -23,20 +23,18 @@
       {%else %}
         <span class="govuk-caption-xl">Part 4 of 4: Survey for government statistics and reporting</span>  
       {% endif %}  
-      <h1 class="govuk-heading-xl">
-       Mother’s previous marriages or civil partnerships
-      </h1>
-
-      <p class="govuk-body">
-        This information is required by law. Statistics are used by the UK Statistics Authority to measure when married or civil partnered parents have children.
-      </p>
         
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-               Has the mother been married or in a civil partnership?
+          <h1 class="govuk-heading-xl">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+               Is this the mother’s first marriage or civil partnership?
             </legend>
-            
+          </h1>
+          <div id="changedName-hint" class="govuk-hint">
+            This information is required by law. Statistics are used by the UK Statistics Authority to measure when married or civil partnered parents have children.
+          </div>
+
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="date-of-birth-mother" name="date-of-birth-mother" type="radio" value="yes" {{checked("date-of-birth-mother", "Yes")}}>

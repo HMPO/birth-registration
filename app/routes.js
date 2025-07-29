@@ -283,3 +283,13 @@ router.post('*/otherwise', function (req, res) {
     res.redirect('country-of-birth')
   }
 })
+
+// Skip two stats pages based on skip-stats
+router.post('*/skip-stats-pages', function (req, res) {
+  var skipPages = req.session.data['skip-stats']
+  if (skipPages === 'yes') {
+    res.redirect('previous-births')
+  } else {
+    res.redirect('employment-mother')
+  }
+})
