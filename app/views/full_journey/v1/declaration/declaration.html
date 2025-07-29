@@ -114,16 +114,61 @@
         {% else %}
         {% endif %}
 
-        {% if data['mother-current'] %}
+         {% if data['previous-married-name-value'] %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Current last name
+            Last name at time of current marriage
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['mother-current'] }} 
+            {{ data['previous-married-name-value'] }} 
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="../mother-details/is-name-current-legal-name?declaration-change=true">Change<span class="govuk-visually-hidden">maiden name</span></a>
+            <a class="govuk-link" href="previous-married-name?change-link-mother-true">Change<span class="govuk-visually-hidden">maiden name</span></a>
+          </dd>
+        </div>
+        {% else %}
+        {% endif %}
+
+        {% if data['former-name'] == 'Yes' %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Formerly known as
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['mother-formerly-known-us-first-name'] }} 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="add-previous-names?change-link-mother-true">Change<span class="govuk-visually-hidden">maiden name</span></a>
+          </dd>
+        </div>
+        {% else %}
+        {% endif %}
+
+         {% if data['name-now'] == 'No' %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Now known as
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['mother-mother-now-first-name'] }} 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="is-the-name-now?change-link-mother-true">Change<span class="govuk-visually-hidden">maiden name</span></a>
+          </dd>
+        </div>
+        {% else %}
+        {% endif %}
+
+         {% if data['other-names'] == 'Yes' %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Otherwise known as
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['mother-otherwise-first-name'] }} 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="previous-married-name?change-link-mother-true">Change<span class="govuk-visually-hidden">maiden name</span></a>
           </dd>
         </div>
         {% else %}
@@ -162,7 +207,7 @@
             Address at the time of birth
           </dt>
           <dd class="govuk-summary-list__value">
-          {{ data['mother-place-of-birth-street'] }} 
+          {{ data['mother-place-of-birth-line-1'] }} 
           {{ data['mother-place-of-birth-line-2'] }} 
           {{ data['mother-place-of-birth-town'] }} 
           {{ data['mother-place-of-birth-county'] }} 
@@ -173,22 +218,42 @@
           </dd>
         </div>
 
-        {% if (data['address-changed'] == "Yes") %}
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Current address
-          </dt>
-          <dd class="govuk-summary-list__value">
-          {{ data['mother-current-street'] }} 
-          {{ data['mother-current-line-2'] }} 
-          {{ data['mother-current-town'] }} 
-          {{ data['mother-current-county'] }} 
-          {{ data['mother-current-postcode'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="../mother-details/changed-address?declaration-change=true">Change<span class="govuk-visually-hidden">place of birth</span></a>
-          </dd>
-        </div>
+        {% if data['who-registers'] == 'Mother' %}
+        
+          {% if (data['address-changed'] == "Yes") %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Current address
+            </dt>
+            <dd class="govuk-summary-list__value">
+            {{ data['mother-current-line-1'] }} 
+            {{ data['mother-current-line-2'] }} 
+            {{ data['mother-current-town'] }} 
+            {{ data['mother-current-county'] }} 
+            {{ data['mother-current-postcode'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="changed-address?change-link-mother=true">Change<span class="govuk-visually-hidden">place of birth</span></a>
+            </dd>
+          </div>
+          {% else %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Current address
+            </dt>
+            <dd class="govuk-summary-list__value">
+          {{ data['mother-place-of-birth-line-1'] }} 
+          {{ data['mother-place-of-birth-line-2'] }} 
+          {{ data['mother-place-of-birth-town'] }} 
+          {{ data['mother-place-of-birth-county'] }} 
+          {{ data['mother-place-of-birth-postcode'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="changed-address?change-link-mother=true">Change<span class="govuk-visually-hidden">place of birth</span></a>
+            </dd>
+          </div>
+
+          {% endif %}
         {% else %}
         {% endif %}
 
@@ -230,16 +295,46 @@
           </dd>
         </div>
 
-        {% if data['is-name-current-parent'] === 'Yes' %}
+        {% if data['former-name'] == 'Yes' %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Current last name
+            Formerly known as
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['father-current'] }} 
+            {{ data['parent-formerly-known-us-first-name'] }} 
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="../parent-details/is-name-current-legal-name?declaration-change=true">Change<span class="govuk-visually-hidden">maiden name</span></a>
+            <a class="govuk-link" href="add-previous-names?change-link-parent-true">Change<span class="govuk-visually-hidden">maiden name</span></a>
+          </dd>
+        </div>
+        {% else %}
+        {% endif %}
+
+         {% if data['name-now'] == 'No' %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Now known as
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['parent-now-first-name'] }} 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="is-the-name-now?change-link-parent-true">Change<span class="govuk-visually-hidden">maiden name</span></a>
+          </dd>
+        </div>
+        {% else %}
+        {% endif %}
+
+         {% if data['other-names'] == 'Yes' %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Otherwise known as
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['parent-otherwise-first-name'] }} 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="previous-married-name?change-link-parent-true">Change<span class="govuk-visually-hidden">maiden name</span></a>
           </dd>
         </div>
         {% else %}
@@ -273,17 +368,43 @@
           </dd>
         </div>
 
+         {% if data['who-registers'] == 'Father' or data['who-registers'] == 'Parent' %}
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Address at the time of birth
+            Current address
           </dt>
           <dd class="govuk-summary-list__value">
-          {{data['father-city-of-birth']}} 
+           {%if data['father-address-same'] == 'Yes'%}
+              {% if data['address-changed'] == 'Yes' %}
+                {{ data['mother-current-line-1'] }} 
+                {{ data['mother-current-line-2'] }} 
+                {{ data['mother-current-town'] }} 
+                {{ data['mother-current-county'] }} 
+                {{ data['mother-current-postcode'] }}
+              {% else %}
+                {{ data['mother-place-of-birth-line-1'] }} 
+                {{ data['mother-place-of-birth-line-2'] }} 
+                {{ data['mother-place-of-birth-town'] }} 
+                {{ data['mother-place-of-birth-county'] }} 
+                {{ data['mother-place-of-birth-postcode']}}
+              {% endif %}
+             
+          {% else %}
+          
+          {{ data['parent-current-line-1'] }} 
+          {{ data['parent-current-line-2'] }} 
+          {{ data['parent-current-town'] }} 
+          {{ data['parent-current-county'] }} 
+          {{ data['parent-current-postcode'] }}
+          
+          {%endif%}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="../parent-details/is-current-address-same?declaration-change=true">Change<span class="govuk-visually-hidden">place of birth</span></a>
+            <a class="govuk-link" href="is-current-address-same?change-link-parent=true">Change<span class="govuk-visually-hidden">place of birth</span></a>
           </dd>
         </div>
+        {%endif%}
 
          <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">

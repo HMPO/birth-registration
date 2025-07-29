@@ -82,6 +82,7 @@
         </div>
         {% else %}
         {% endif %}
+        
          {% if data['other-names'] == 'Yes' %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -125,6 +126,10 @@
           </dd>
         </div>
 
+      
+       
+      {% if data['who-registers'] == 'Father' or data['who-registers'] == 'Parent' %}
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Current address
@@ -132,37 +137,23 @@
           <dd class="govuk-summary-list__value">
            {%if data['father-address-same'] == 'Yes'%}
               {% if data['address-changed'] == 'Yes' %}
-                {{ data['parent-current-flat'] }} 
-                {{ data['parent-current-building-name'] }}
-                {{ data['parent-current-building-number'] }} 
-                {{ data['parent-current-street'] }} 
-                {{ data['parent-current-line-2'] }} 
-                {{ data['parent-current-line-3'] }} 
-                {{ data['parent-current-line-4'] }} 
-                {{ data['parent-current-town'] }} 
-                {{ data['parent-current-county'] }} 
-                {{ data['parent-current-postcode'] }}
+                {{ data['mother-current-line-1'] }} 
+                {{ data['mother-current-line-2'] }} 
+                {{ data['mother-current-town'] }} 
+                {{ data['mother-current-county'] }} 
+                {{ data['mother-current-postcode'] }}
               {% else %}
-                {{ data['parent-place-of-birth-flat'] }} 
-                {{ data['parent-place-of-birth-building-name'] }}
-                {{ data['parent-place-of-birth-building-number'] }} 
-                {{ data['parent-place-of-birth-street'] }} 
-                {{ data['parent-place-of-birth-line-2'] }} 
-                {{ data['parent-place-of-birth-line-3'] }} 
-                {{ data['parent-place-of-birth-line-4'] }} 
-                {{ data['parent-place-of-birth-town'] }} 
-                {{ data['parent-place-of-birth-county'] }} 
-                {{ data['parent-place-of-birth-postcode']}}
+                {{ data['mother-place-of-birth-line-1'] }} 
+                {{ data['mother-place-of-birth-line-2'] }} 
+                {{ data['mother-place-of-birth-town'] }} 
+                {{ data['mother-place-of-birth-county'] }} 
+                {{ data['mother-place-of-birth-postcode']}}
               {% endif %}
              
           {% else %}
-          {{ data['parent-current-flat'] }} 
-          {{ data['parent-current-building-name'] }}
-          {{ data['parent-current-building-number'] }} 
-          {{ data['parent-current-street'] }} 
+          
+          {{ data['parent-current-line-1'] }} 
           {{ data['parent-current-line-2'] }} 
-          {{ data['parent-current-line-3'] }} 
-          {{ data['parent-current-line-4'] }} 
           {{ data['parent-current-town'] }} 
           {{ data['parent-current-county'] }} 
           {{ data['parent-current-postcode'] }}
@@ -173,6 +164,7 @@
             <a class="govuk-link" href="is-current-address-same?change-link-parent=true">Change<span class="govuk-visually-hidden">place of birth</span></a>
           </dd>
         </div>
+        {%endif%}
 
          <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">

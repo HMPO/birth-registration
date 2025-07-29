@@ -47,7 +47,7 @@
 
             {%if data['address-changed'] === 'Yes'%}
             <p class="govuk-body">Mother’s current address:
-          {{ data['mother-current-street'] }} 
+          {{ data['mother-current-line-1'] }} 
           {{ data['mother-current-line-2'] }} 
           {{ data['mother-current-town'] }} 
           {{ data['mother-current-county'] }} 
@@ -55,7 +55,7 @@
           </p>
           {% else %}
            <p class="govuk-body">Mother’s current address:
-          {{ data['mother-place-of-birth-street'] }} 
+          {{ data['mother-place-of-birth-line-1'] }} 
           {{ data['mother-place-of-birth-line-2'] }} 
           {{ data['mother-place-of-birth-town'] }} 
           {{ data['mother-place-of-birth-county'] }} 
