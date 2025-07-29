@@ -295,7 +295,7 @@
           </dd>
         </div>
 
-        {% if data['former-name'] == 'Yes' %}
+        {% if data['former-name-father'] == 'Yes' %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Formerly known as
@@ -310,7 +310,7 @@
         {% else %}
         {% endif %}
 
-         {% if data['name-now'] == 'No' %}
+         {% if data['parent-name-now'] == 'No' %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Now known as
@@ -325,7 +325,7 @@
         {% else %}
         {% endif %}
 
-         {% if data['other-names'] == 'Yes' %}
+         {% if data['other-names-father'] == 'Yes' %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Otherwise known as
