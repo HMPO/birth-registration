@@ -1,0 +1,73 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Contact preference – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">  
+
+              <h1 class="govuk-heading-l">
+                Getting the birth certificate
+              </h1>
+              <p class="govuk-body">
+                You’ll need to order copies of the birth certificate, if you need one. You can also order them after the registration is approved.
+              </p>
+              <p class="govuk-body">
+                We send them by post when the registration is approved. 
+              </p>
+              <p class="govuk-body">
+                You do not pay a fee for the registration. 
+              </p>
+              <form action="delivery-options" method="post" novalidate>
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                      Do you want to order certificates?
+                    </legend>
+                    <div id="dob-hint" class="govuk-hint">
+                      Copies of the certificate are used to apply for the child’s first passport and other government services
+                    </div>
+                    <div class="govuk-radios" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="interviewNeeds" name="interviewNeeds" type="radio" value="yes">
+                        <label class="govuk-label govuk-radios__label" for="interviewNeeds">
+                          Yes, I’ll order certificates
+                        </label>
+                        <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                          Certificates are £12.50 for each copy
+                        </div>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="interviewNeeds-2" name="interviewNeeds" type="radio" value="no">
+                        <label class="govuk-label govuk-radios__label" for="interviewNeeds-2">
+                          No, I do not want to order certificates
+                        </label>
+                        <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                          You’ll get a receipt to confirm that the birth has been registered
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+
+            {{ govukButton({
+              text: "Continue"
+            }) }}
+      </form>  
+    </div>
+
+  </div>
+
+</form>  
+
+{% endblock %}

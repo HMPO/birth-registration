@@ -1,0 +1,103 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Birth registration details – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="#ß" method="post">
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+      <h1 class="govuk-heading-xl">
+        Your certificate order
+      </h1>
+
+  
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Certificate order option
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['prefix'] }} {{ data['child-first-name']}} {{ data['child-middle-name']}} {{ data['child-last-name']}} {{ data['suffix'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="../child-details/name?declaration-change=true">Change<span class="govuk-visually-hidden">name</span></a>
+          </dd>
+        </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Certificate quantity
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['child-birth-day']}} {{ data['child-birth-month']}} {{ data['child-birth-year'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="../child-details/date-of-birth?declaration-change=true">Change<span class="govuk-visually-hidden">date of birth</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Delivery address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["sex"]}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="../child-details/sex-change?declaration-change=true">Change<span class="govuk-visually-hidden">sex</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Contact email
+            </dt>
+            <dd class="govuk-summary-list__value">
+            {{ data['choose-country']}} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="../child-details/place-of-birth-change?declaration-change=true">Change<span class="govuk-visually-hidden">place of birth</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Contact phone number
+            </dt>
+            <dd class="govuk-summary-list__value">
+            {{ data['choose-country']}} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="../child-details/place-of-birth-change?declaration-change=true">Change<span class="govuk-visually-hidden">place of birth</span></a>
+            </dd>
+          </div>
+    </dl>
+
+      {{ govukButton({
+        text: "Continue to payment",
+        href: "payment.html"
+      }) }}
+
+      <p class="govuk-body"><a href="#" class="govuk-link">Save and complete later</a></p>
+
+      
+    </div>
+
+
+  </div>
+</form>
+
+{% endblock %}

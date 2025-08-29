@@ -49,3 +49,10 @@ nav {
 .language-select__list-item a, .language-select__list-item [aria-current] {
     padding: 0.3125em;
 }
+
+.payment-summary {
+    border-top: 2px solid #1d70b8;
+    padding: 15px;
+    background-color: #f3f2f1;
+    margin-bottom: 25px;
+}

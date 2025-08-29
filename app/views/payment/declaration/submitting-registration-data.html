@@ -1,0 +1,71 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Register a birth – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+            Before you submit
+        </h1>
+
+        <h2 class="govuk-heading-l">
+            Check your answers
+        </h2>
+
+       <p class="govuk-body">
+        Check the answers you’ve provided. Make any changes or correct any mistakes or errors.
+       </p>
+
+         <p class="govuk-body">
+          Mistakes or errors can be changed after the registration - there's usually a fee.
+         </p>
+
+         <h2 class="govuk-heading-l">
+            Sign a declaration
+        </h2>
+
+        <p class="govuk-body">
+         Digitally sign a statement that that you’ve completed the registration honestly.
+
+        <h2 class="govuk-heading-l">
+            Order copies of the birth certificate (optional)
+        </h2>
+
+        <p class="govuk-body">
+          You can order certificates after you submit. They are £12.50 each, including delivery by post.
+        </p>
+
+        <p class="govuk-body">
+          You can order copies at any time after the registration. 
+        </p>
+
+        <p class="govuk-body">
+          You must have a birth certificate to apply for the child’s first passport and any child benefits, as well as other services, such a GP. 
+        </p>
+
+      {{ govukButton({
+        text: "Continue",
+        href: "declaration.html"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

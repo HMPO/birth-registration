@@ -1,0 +1,58 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        titleText: "Application complete",
+        html: "Your reference number<br><strong>HDJ2123F</strong>"
+      }) }}
+
+      <p>
+        We have sent you a confirmation email.
+      </p>
+
+      <h2 class="govuk-heading-m">
+        What happens next
+      </h2>
+
+      <p>
+       We sent your information.. Registrar will review submitted information.
+      </p>
+
+      <p>
+        We will contact you..
+      </p>
+
+      <p>
+       If everything ok... certificate should reach you ..
+      </p>
+
+      <h2 class="govuk-heading-m">
+        If you need to contact us
+      </h2>
+
+      <p>
+       Contact us if...
+      </p>
+       <p>
+       Contact details.. 
+      </p>
+
+      <p>
+        <a href="#">
+          What did you think of this service?
+        </a> (takes 30 seconds)
+      </p>
+
+
+    </div>
+  </div>
+
+{% endblock %}

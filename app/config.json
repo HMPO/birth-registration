@@ -1,3 +1,9 @@
 {
-  "serviceName": "Register a birth"
+  "serviceName": "Register a birth",
+   "plugins": {
+    "govuk-frontend": {
+      "rebrand": true
+    }
+  }
 }
+
