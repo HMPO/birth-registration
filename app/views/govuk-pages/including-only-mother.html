@@ -1,0 +1,202 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Mainstream guide example
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for this page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "http://gov.uk"
+      },
+      {
+        text: "Childcare and parenting",
+        href: "https://www.gov.uk/browse/childcare-parenting"
+      },
+      {
+        text: "Pregnancy and birth",
+        href: "https://www.gov.uk/browse/childcare-parenting/pregnancy-birth"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Registering a birth (England and Wales)
+      </h1>
+
+      <aside class="govuk-prototype-kit-common-templates-mainstream-guide-contents-list" role="complementary">
+        <nav class="govuk-prototype-kit-common-templates-contents-list" aria-label="Pages in this guide" role="navigation">
+          <h2 class="govuk-prototype-kit-common-templates-contents-list__title">
+            Contents
+          </h2>
+          <ol class="govuk-prototype-kit-common-templates-contents-list__list">
+            <li aria-current="true" class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed govuk-prototype-kit-common-templates-contents-list__list-item--active">
+                Overview
+            </li>
+            <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+               <a href="#">
+                Registering both parents
+               </a>
+            </li>
+            <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+              <a href="#">
+                Including only the mother
+              </a>
+            </li>
+             <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+              <a href="#">
+                Registering when you are not the parent 
+              </a>
+            </li>
+             <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+              <a href="#">
+                Getting birth certificates
+              </a>
+            </li>
+          </ol>
+        </nav>
+      </aside>
+
+    </div>
+
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds govuk-prototype-kit-common-templates-mainstream-guide-body">
+      
+      <h2 class="govuk-heading-l">
+        Registering both parents
+      </h2>
+      
+      <h3 class="govuk-heading-m">
+        Registering online
+      </h3>
+
+      <h4 class="govuk-heading-s">
+        Married or civil-partner parents
+      </h4>
+
+      <p>Either parent can register the birth of your child online if you are married to each other (including civil partnerships).</p>
+      <p>One parent can provide the details for the registration online. Afterwards, it’s checked and approved by a registrar (at local council Register Office).</p>
+
+
+       <h4 class="govuk-heading-s">
+        Unmarried parents
+      </h4>
+
+      <p>Parents who are not married must attend an in-person registration appointment together.</p>
+      <p>One parent get can attend on their own if they have a document showing the other parent agrees to be recorded on the birth certificate. For example:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>court order </li>
+        <li>parental agreement </li>
+        <li>evidence of treatment as a couple at a licensed fertility clinic </li>
+      </ul>
+
+      <p>It might be possible to add the father’s details at a later date by completing an <a href="https://www.gov.uk/government/publications/application-to-re-register-a-childs-birth-and-add-the-natural-fathers-details">for the re-registration of a child’s birth.</a></p>
+
+      <h3 class="govuk-heading-m">
+        Registering in person
+      </h3>
+
+      <p>Births in England and Wales must be registered (online or in-person) within 42 days (6 weeks). After 6 weeks the local council may contact you.</p>
+
+      <p>Find the register office by post code look up.</p>
+
+      <p>If the parents are married, only one parents parent needs to attend the appointment (with ID). You do not need to bring your child.</p>
+
+      <p>Parents who are not married must attend the appointment together.</p>
+
+      <p>Birth certificate given at the appointment. They cost £12 each.  </p>
+
+      <p>Female couples can include both their names on their child’s birth certificate when registering the birth.</p>
+
+      <h2 class="govuk-heading-m">
+        Same-sex male couples
+      </h2>
+
+      <p>Male couples must <a href="https://www.gov.uk/legal-rights-when-using-surrogates-and-donors/become-the-childs-legal-parent">get a parental order </a>from the court before they can be registered as parents.</p>
+
+
+      <nav class="govuk-prototype-kit-common-templates-pagination" role="navigation" aria-label="Pagination">
+
+      {{ govukPagination({
+        previous: {
+          labelText: "Overview",
+          href: "overview.html"
+        },
+        next: {
+          labelText: "Including only mother",
+          href: "#"
+        }
+      }) }}
+
+      <p>
+        <a href="#">
+          View a printable version of the whole guide
+        </a>
+      </p>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related content
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="https://www.gov.uk/order-copy-birth-death-marriage-certificate">
+                Order a birth, death, marriage or civil partnership certificate
+              </a>
+            </li>
+            <li>
+              <a href="https://www.gov.uk/parental-rights-responsibilities">
+                Parental rights and responsibilities
+              </a>
+            </li>
+             <li>
+              <a href="https://www.gov.uk/register-offices">
+                Find a register office
+              </a>
+            </li>
+             <li>
+              <a href="https://www.gov.uk/child-benefit">
+                Child Benefit
+              </a>
+            </li>
+            
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+
+  </main>
+</div>
+
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}
