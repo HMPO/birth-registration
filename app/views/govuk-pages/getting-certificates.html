@@ -45,18 +45,20 @@
             Contents
           </h2>
           <ol class="govuk-prototype-kit-common-templates-contents-list__list">
-            <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed govuk-prototype-kit-common-templates-contents-list__list-item--active">
-              <a href="overview.html">  
-              Overview
+            <li aria-current="true" class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed govuk-prototype-kit-common-templates-contents-list__list-item--active">
+              <a href="overview.html"> 
+                Overview
               </a>
             </li>
             <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
-               <a href="registering-both-parents.html">
+              <a href="registering-both-parents.html">  
                 Registering both parents
-               </a>
+              </a>
             </li>
-            <li aria-current="true" class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+            <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+              <a href="including-only-mother.html">
                 Including only the mother
+              </a>
             </li>
              <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
               <a href="not-the-parent.html">
@@ -64,9 +66,7 @@
               </a>
             </li>
              <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
-              <a href="getting-certificates.html">
                 Getting birth certificates
-              </a>
             </li>
           </ol>
         </nav>
@@ -80,25 +80,46 @@
     <div class="govuk-grid-column-two-thirds govuk-prototype-kit-common-templates-mainstream-guide-body">
       
       <h2 class="govuk-heading-l">
-        Including only the mother
+        Getting birth certificates
       </h2>
-      
-      <p>You can choose to register only the mother (the person who gave birth to the child) at a registration.</p>
-      <p>You can either:</p>
+
+      <p>You can get birth certificates: </p>
+
       <ul class="govuk-list govuk-list--bullet">
-        <li>register online</li>
-        <li>register in person at register office</li>
+        <li>immediately if you register in person</li>
+        <li>by post if you register online</li>
       </ul>
 
-      
+      <h3 class="govuk-heading-m">
+        Online registration
+      </h3>
+
+      <p>You can order copies of the birth certificate as part of the online service.</p>
+
+      <p>They cost:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>£12 for standard delivery (around 12 working days)</li>
+        <li>£38 for next day delivery</li>
+        <li>£11 to collect in person</li>
+      </ul>
+
+      <p>Delivery estimates are from the time the certificates are sent.</p>
+
+      <h3 class="govuk-heading-m">
+        In-person registration
+      </h3>
+
+      <p>You can buy certificates at the appointment.</p>
+      <p>They cost £12 each.</p>
+
+      <p>You can <a href="https://www.gov.uk/order-copy-birth-death-marriage-certificate">buy extra copies of the birth certificate </a>from the register office at any time.</p>
+
+
       <nav class="govuk-prototype-kit-common-templates-pagination" role="navigation" aria-label="Pagination">
 
       {{ govukPagination({
         previous: {
-          labelText: "Registering both parents",
-          href: "registering-both-parents.html"
-        },
-        next: {
           labelText: "Registering when you are not the parent",
           href: "not-the-parent.html"
         }
