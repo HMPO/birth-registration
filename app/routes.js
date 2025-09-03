@@ -293,3 +293,27 @@ router.post('*/skip-stats-pages', function (req, res) {
     res.redirect('employment-mother')
   }
 })
+
+// ---- gov.uk v3 A -----
+
+// Show different pages based on value of married and relationship-type
+router.post('*/what-is-your-situation', function (req, res) {
+  var realtionshipType = req.session.data['relationship-type']
+  var marriedRelationshipType = req.session.data['married-relationship-type']
+  var unmarriedRelationshipType = req.session.data['unmarried-relationship-type']
+
+  
+if (realtionshipType=== 'yes' && marriedRelationshipType === 'same-sex') {
+    res.redirect('outcome-married-same');
+  } else if (realtionshipType === 'yes' && marriedRelationshipType === 'opposite-sex') {
+    res.redirect('outcome-married-opposite');
+  } else if (realtionshipType === 'no' && unmarriedRelationshipType=== 'same-sex') {
+    res.redirect('outcome-unmarried-same');
+  } else if (realtionshipType === 'no' && unmarriedRelationshipType === 'opposite-sex') {
+    res.redirect('outcome-unmarried-opposite');
+  } else if (realtionshipType === 'no' && unmarriedRelationshipType === 'single-mother') {
+    res.redirect('outcome-single-mother');
+  } else {
+    res.redirect('outcome-other');
+  }
+})

@@ -1,0 +1,152 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Registering a birth (England and Wales)
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for this page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "http://gov.uk"
+      },
+      {
+        text: "Childcare and parenting",
+        href: "https://www.gov.uk/browse/childcare-parenting"
+      },
+      {
+        text: "Pregnancy and birth",
+        href: "https://www.gov.uk/browse/childcare-parenting/pregnancy-birth"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Register a birth in England or Wales
+      </h1>
+
+    </div>
+
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds govuk-prototype-kit-common-templates-mainstream-guide-body">
+      
+      <h2 class="govuk-heading-l">
+        Overview
+      </h2>
+      
+      <p>You’ll need to register a birth within 42 days (6 weeks).
+      </p>
+
+      <p>You can provide the information online or in person.</p>
+
+      <p>A register office will contact you if do not register a birth in this time.</p>
+
+      <p>You must register a birth to apply for services such as child benefit, your child’s passport, or your child’s GP. </p>
+      
+       <h2 class="govuk-heading-l">
+        How to register
+      </h2>
+
+      <p>How you register - including what documents to provide - are different depending on who is being registered as parents.</p>
+     
+      <a href="your-situation.html" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-bottom-2" data-module="govuk-button">
+        Start now
+        <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+        </svg>
+      </a>
+      <p class="govuk-body">to find out more and register</p>
+
+
+      <h3 class="govuk-heading-m">
+        Births outside England and Wales
+      </h3>
+
+      <p>
+        There are different rules for 
+        <a href="https://www.nrscotland.gov.uk/registration/registering-a-birth/">registering a birth in Scotland</a>, 
+        <a href="https://www.nidirect.gov.uk/articles/registering-and-naming-your-baby">registering a birth in Northern Ireland</a> and 
+        <a href="https://www.gov.uk/register-birth-abroad">registering a birth abroad</a>.
+      </p>
+
+
+
+      <nav class="govuk-prototype-kit-common-templates-pagination" role="navigation" aria-label="Pagination">
+
+      {{ govukPagination({
+        next: {
+          labelText: "Registering both parents",
+          href: "registering-both-parents.html"
+        }
+      }) }}
+
+      <p>
+        <a href="#">
+          View a printable version of the whole guide
+        </a>
+      </p>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related content
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="https://www.gov.uk/order-copy-birth-death-marriage-certificate">
+                Order a birth, death, marriage or civil partnership certificate
+              </a>
+            </li>
+            <li>
+              <a href="https://www.gov.uk/parental-rights-responsibilities">
+                Parental rights and responsibilities
+              </a>
+            </li>
+             <li>
+              <a href="https://www.gov.uk/register-offices">
+                Find a register office
+              </a>
+            </li>
+             <li>
+              <a href="https://www.gov.uk/child-benefit">
+                Child Benefit
+              </a>
+            </li>
+            
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+
+  </main>
+</div>
+
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

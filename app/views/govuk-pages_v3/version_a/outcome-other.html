@@ -1,0 +1,61 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Outcome: Someone else
+      </h1>
+
+      <p class="govuk-body">Content placeholder</p>
+
+      <p class="govuk-body">Content placeholder</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>option 1</li>
+        <li>option 2</li>
+        <li>option 3</li>
+      </ul>
+
+      <p>
+       Content with a link <a href="https://www.gov.uk/register-offices">to do something</a> .
+      </p>
+
+      <form class="form" action="/" method="post">
+        {{ govukRadios({
+          idPrefix: "register-method",
+          name: "registerMethod",
+          fieldset: {
+            legend: {
+              text: "Select how you’ll register the birth",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            { value: "online", text: "Online" },
+            { value: "inPerson", text: "In person" }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

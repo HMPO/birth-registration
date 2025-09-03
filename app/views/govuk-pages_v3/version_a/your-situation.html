@@ -1,0 +1,106 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="what-is-your-situation" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-fieldset__heading">
+                What best describes your family situation
+              </h1>
+            </legend>
+
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="relationship-type-1" name="relationship-type" type="radio" value="yes"  data-aria-controls="married-relationship-type">
+                <label class="govuk-label govuk-radios__label" for="relationship-type-1">
+                  I am a parent and married or in the civil partnership
+                </label>
+              </div>
+                  <div class="govuk-radios__conditional" id="married-relationship-type">
+                    <legend class="govuk-fieldset__legend">
+                      Which relationship you are in?
+                    </legend>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="married-relationship-type-1" name="married-relationship-type" type="radio" value="same-sex">
+                      <label class="govuk-label govuk-radios__label" for="married-relationship-type-1">
+                        same sex couple
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="relationship-type-2" name="married-relationship-type" type="radio" value="opposite-sex">
+                      <label class="govuk-label govuk-radios__label" for="relationship-type-2">
+                        opposite sex couple
+                      </label>
+                    </div>
+                  </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="relationship-type-2" name="relationship-type" type="radio" value="no" data-aria-controls="unmarried-relationship-type">
+                <label class="govuk-label govuk-radios__label" for="relationship-type-2">
+                  I am a parent who is unmarried and not in the civil partnership
+                </label>
+              </div>
+                  <div class="govuk-radios__conditional" id="unmarried-relationship-type">
+                    <legend class="govuk-fieldset__legend">
+                      Which relationship you are in?
+                    </legend>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="unmarried-relationship-type-1" name="unmarried-relationship-type" type="radio" value="same-sex">
+                      <label class="govuk-label govuk-radios__label" for="unmarried-relationship-type-1">
+                        same sex couple
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="unmarried-relationship-type-2" name="unmarried-relationship-type" type="radio" value="opposite-sex">
+                      <label class="govuk-label govuk-radios__label" for="unmarried-relationship-type-2">
+                        opposite sex couple
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="unmarried-relationship-type-3" name="unmarried-relationship-type" type="radio" value="single-mother">
+                      <label class="govuk-label govuk-radios__label" for="unmarried-relationship-type-3">
+                        not applicable - single mother
+                      </label>
+                    </div>
+                  </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="relationship-type-3" name="relationship-type" type="radio" value="other">
+                <label class="govuk-label govuk-radios__label" for="relationship-type-3">
+                  I am someone else, not related to the child
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+
+    </div>
+
+
+  </div>
+
+{% endblock %}
