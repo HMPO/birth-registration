@@ -39,21 +39,19 @@ Registering a birth (England and Wales)
         Registering a birth (England and Wales)
       </h1>
 
-       <aside class="govuk-prototype-kit-common-templates-mainstream-guide-contents-list" role="complementary">
+      <aside class="govuk-prototype-kit-common-templates-mainstream-guide-contents-list" role="complementary">
         <nav class="govuk-prototype-kit-common-templates-contents-list" aria-label="Pages in this guide" role="navigation">
           <h2 class="govuk-prototype-kit-common-templates-contents-list__title">
-            <a href="overview.html">
             Contents
-            </a>
           </h2>
           <ol class="govuk-prototype-kit-common-templates-contents-list__list">
-            <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed govuk-prototype-kit-common-templates-contents-list__list-item--active">
+            <li aria-current="true" class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed govuk-prototype-kit-common-templates-contents-list__list-item--active">
+              <a href="overview.html"> 
                 Overview
+              </a>
             </li>
              <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
-              <a href="getting-certificates.html">
                 Getting birth certificates
-              </a>
             </li>
           </ol>
         </nav>
@@ -67,52 +65,47 @@ Registering a birth (England and Wales)
     <div class="govuk-grid-column-two-thirds govuk-prototype-kit-common-templates-mainstream-guide-body">
       
       <h2 class="govuk-heading-l">
-        Overview
-      </h2>
-      
-      <p>You’ll need to register a birth within 42 days (6 weeks).
-      </p>
-
-      <p>You can provide the information online or in person.</p>
-
-      <p>A register office will contact you if do not register a birth in this time.</p>
-
-      <p>You must register a birth to apply for services such as child benefit, your child’s passport, or your child’s GP. </p>
-      
-       <h2 class="govuk-heading-l">
-        How to register
+        Getting birth certificates
       </h2>
 
-      <p>How you register - including what documents to provide - are different depending on who is being registered as parents.</p>
-     
-      <a href="your-situation.html" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-bottom-2" data-module="govuk-button">
-        Start now
-        <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
-          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
-        </svg>
-      </a>
-      <p class="govuk-body">to find out more and register</p>
+      <p>You can get birth certificates: </p>
 
+      <ul class="govuk-list govuk-list--bullet">
+        <li>immediately if you register in person</li>
+        <li>by post if you register online</li>
+      </ul>
 
       <h3 class="govuk-heading-m">
-        Births outside England and Wales
+        Online registration
       </h3>
 
-      <p>
-        There are different rules for 
-        <a href="https://www.nrscotland.gov.uk/registration/registering-a-birth/">registering a birth in Scotland</a>, 
-        <a href="https://www.nidirect.gov.uk/articles/registering-and-naming-your-baby">registering a birth in Northern Ireland</a> and 
-        <a href="https://www.gov.uk/register-birth-abroad">registering a birth abroad</a>.
-      </p>
+      <p>You can order copies of the birth certificate as part of the online service.</p>
 
+      <p>They cost:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>£12 for standard delivery (around 12 working days)</li>
+        <li>£38 for next day delivery</li>
+      </ul>
+
+      <p>Delivery estimates are from the time the certificates are sent.</p>
+
+      <h3 class="govuk-heading-m">
+        In-person registration
+      </h3>
+
+      <p>You can buy certificates at the appointment.</p>
+      <p>They cost £12 each.</p>
+
+      <p>You can <a href="https://www.gov.uk/order-copy-birth-death-marriage-certificate">buy extra copies of the birth certificate </a>from the register office at any time.</p>
 
 
       <nav class="govuk-prototype-kit-common-templates-pagination" role="navigation" aria-label="Pagination">
 
       {{ govukPagination({
-        next: {
-          labelText: "Registering both parents",
-          href: "registering-both-parents.html"
+        previous: {
+          labelText: "Registering when you are not the parent",
+          href: "not-the-parent.html"
         }
       }) }}
 
