@@ -1,0 +1,72 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Contact preference – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">  
+             
+              <form action="enter-phone-number" method="post">
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                     <h1 class="govuk-heading-l">
+                      Which email address should we use for contacting you?
+                    </h1>
+                    </legend>
+                    
+                    <div class="govuk-radios" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="email-address-1" name="email-address" type="radio" value="email123@gmail.com">
+                        <label class="govuk-label govuk-radios__label" for="email-addre-1">
+                          Use email123@gmail.com
+                        </label>
+                        <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                          This is the email you have used to register your One Login account
+                        </div>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="email-address-2" name="email-address" type="radio" value="" data-aria-controls="conditional-different-email">
+                        <label class="govuk-label govuk-radios__label" for="email-address-2">
+                         Use a different email address
+                        </label>
+                      </div>
+                      <div class="govuk-radios__conditional" id="conditional-different-email">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="different-email">
+                          Enter email address
+                        </label>
+                        <input class="govuk-input govuk-!-width-one-half" id="different-email" name="different-email" type="name" spellcheck="false" aria-describedby="different-email" value="{{ data['different-email'] }}" >
+                      </div>
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="different-email-2">
+                          Re-enter email address
+                        </label>
+                        <input class="govuk-input govuk-!-width-one-half" id="different-email-2" name="different-email-2" type="name" spellcheck="false" aria-describedby="different-email-2" value="{{ data['different-email-2'] }}" >
+                      </div>
+                    </div>
+                    </div>
+                  </fieldset>
+                </div>
+
+            {{ govukButton({
+              text: "Continue"
+            }) }}
+      </form>  
+    </div>
+
+  </div>
+
+</form>  
+
+{% endblock %}

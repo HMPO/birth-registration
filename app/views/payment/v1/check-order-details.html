@@ -13,7 +13,7 @@
 
 {% block content %}
 
-<form class="form" action="#ß" method="post">
+<form class="form" action="declaration" method="post">
 
 
   <div class="govuk-grid-row">
@@ -30,10 +30,10 @@
             Certificate order option
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['prefix'] }} {{ data['child-first-name']}} {{ data['child-middle-name']}} {{ data['child-last-name']}} {{ data['suffix'] }}
+            {{ data['certificate-price'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="../child-details/name?declaration-change=true">Change<span class="govuk-visually-hidden">name</span></a>
+            <a class="govuk-link" href="delivery-options.html">Change<span class="govuk-visually-hidden">Certificate order option</span></a>
           </dd>
         </div>
 
@@ -42,10 +42,10 @@
               Certificate quantity
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['child-birth-day']}} {{ data['child-birth-month']}} {{ data['child-birth-year'] }}
+              {{ data["quantity"] or data ["quantity-custom"]}}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="../child-details/date-of-birth?declaration-change=true">Change<span class="govuk-visually-hidden">date of birth</span></a>
+              <a class="govuk-link" href="number-of-certiifcates.html">Change<span class="govuk-visually-hidden">Certificate quantity</span></a>
             </dd>
           </div>
 
@@ -54,10 +54,10 @@
               Delivery address
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data["sex"]}}
+              {{ data["delivery-address"] }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="../child-details/sex-change?declaration-change=true">Change<span class="govuk-visually-hidden">sex</span></a>
+              <a class="govuk-link" href="address.html">Change<span class="govuk-visually-hidden">Delivery address</span></a>
             </dd>
           </div>
 
@@ -66,10 +66,10 @@
               Contact email
             </dt>
             <dd class="govuk-summary-list__value">
-            {{ data['choose-country']}} 
+            {{ data['email-address'] or data['different-email'] }} 
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="../child-details/place-of-birth-change?declaration-change=true">Change<span class="govuk-visually-hidden">place of birth</span></a>
+              <a class="govuk-link" href="email-options.html">Change<span class="govuk-visually-hidden">Contact email</span></a>
             </dd>
           </div>
 
@@ -78,17 +78,28 @@
               Contact phone number
             </dt>
             <dd class="govuk-summary-list__value">
-            {{ data['choose-country']}} 
+            {{ data['phone-number']}} 
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="../child-details/place-of-birth-change?declaration-change=true">Change<span class="govuk-visually-hidden">place of birth</span></a>
+              <a class="govuk-link" href="enter-phone-number.html">Change<span class="govuk-visually-hidden">Contact phone number</span></a>
+            </dd>
+          </div>
+
+           <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Contact preference
+            </dt>
+            <dd class="govuk-summary-list__value">
+            {{ data['contact-preference']}} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="contact-preference.html">Change<span class="govuk-visually-hidden">Contact preference</span></a>
             </dd>
           </div>
     </dl>
 
       {{ govukButton({
-        text: "Continue to payment",
-        href: "payment.html"
+        text: "Continue"
       }) }}
 
       <p class="govuk-body"><a href="#" class="govuk-link">Save and complete later</a></p>

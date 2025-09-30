@@ -1,0 +1,67 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Birth registration details – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="#ß" method="post">
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+      <h1 class="govuk-heading-xl">
+        Declaration
+      </h1>
+
+      <p class="govuk-body">By continuing, you are confirming that:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the information you’ve given is correct</li>
+        <li>you agree to <a class="govuk-link" href="#">terms and conditions</a></li>
+        <li>GRO will record, store, use and share your data in accordance with our <a class="govuk-link" href="#">privacy policy</a></li>
+      </ul>
+
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+          If you give untrue or misleading information for the birth registration you could be prosecuted.
+        </strong>
+      </div>
+
+    <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      
+    </legend>
+    
+    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="agree" name="agree" type="checkbox" value="yes">
+        <label class="govuk-label govuk-checkboxes__label" for="agree">
+          I agree
+        </label>
+      </div>
+      
+          </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: "Continue to payment",
+        href: "payment"
+      }) }}
+    </div>
+  </div>
+</form>
+
+{% endblock %}
