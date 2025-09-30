@@ -15,50 +15,54 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">  
+       <h1 class="govuk-heading-xl">Number of certificates</h1>
 
-             
+       <p class="govuk-body">
+          You may need more than one certificate to apply for different services. 
+        </p>
+
+        <p class="govuk-body">
+          For example, if you send a certificate for a passport application, but need to show a certificate to a GP surgery in the meantime.
+        </p>
+
               <form action="address" method="post" novalidate>
                <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
                   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                    <h1 class="govuk-fieldset__heading">
-                      How many certificates do you want to order?
-                    </h1>
+                      Select number of certificates
                   </legend>
-                  <div id="signIn-hint" class="govuk-hint">
-                    Usually you need only couple of certificates 
-                  </div>
+                  
                   <div class="govuk-radios" data-module="govuk-radios">
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
-                      <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                      <input class="govuk-radios__input" id="quantity" name="quantity" type="radio" value="1">
+                      <label class="govuk-label govuk-radios__label" for="quantity">
                         1
                       </label>
                     </div>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
-                      <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+                      <input class="govuk-radios__input" id="quantity-2" name="quantity" type="radio" value="2">
+                      <label class="govuk-label govuk-radios__label" for="quantity-2">
                         2
                       </label>
                     </div>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
-                      <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+                      <input class="govuk-radios__input" id="quantity-2" name="quantity" type="radio" value="3">
+                      <label class="govuk-label govuk-radios__label" for="quantity-2">
                         3
                       </label>
                     </div>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland" data-aria-controls="conditional-more">
-                      <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+                      <input class="govuk-radios__input" id="quantity-2" name="quantity" type="radio" value="" data-aria-controls="conditional-more">
+                      <label class="govuk-label govuk-radios__label" for="quantity-2">
                         More
                       </label>
                     </div>
                     <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-more">
                     <div class="govuk-form-group">
-                      <label class="govuk-label" for="contact-by-email">
+                      <label class="govuk-label" for="quantity-custom">
                         Enter number of certificates
                       </label>
-                      <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
+                      <input class="govuk-input govuk-!-width-one-third" id="quantity-custom" name="quantity-custom">
                     </div>
                     </div>
                     

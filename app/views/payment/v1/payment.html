@@ -20,10 +20,9 @@
                     
         <div class="payment-summary">
         <h2 class="govuk-heading-m">Payment summary</h2>
-        <p class="govuk-body">Passport application fee</p>
         <p class="govuk-body govuk-!-margin-bottom-0">
           Total amount:
-          <span id="amount" class="amount govuk-!-font-size-36 govuk-!-font-weight-bold">£12.50</span>
+          <span id="amount" class="amount govuk-!-font-size-36 govuk-!-font-weight-bold">£{{ data['certificate-price'] * data['quantity']}}</span>
         </p>
         </div>
 
