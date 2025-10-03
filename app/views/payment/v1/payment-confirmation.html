@@ -43,7 +43,8 @@
               Expiry date
             </dt>
             <dd class="govuk-summary-list__value">
-              12/2027
+              {{data['cardExpiryMonth']}}/{{data['cardExpiryYear']}}
+
             </dd>
            
           </div>
@@ -53,7 +54,7 @@
               Name on card
             </dt>
             <dd class="govuk-summary-list__value">
-            Mr John Smith
+            {{data['cardName']}}
             </dd>
            
           </div>

@@ -30,19 +30,19 @@
           </div>
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="contact-preference" name="contact-preference" type="checkbox" value="Phone">
+              <input class="govuk-checkboxes__input" id="contact-preference" name="contact-preference" type="checkbox" value="Phone" {{ checked('contact-preference', 'Phone') }}>
               <label class="govuk-label govuk-checkboxes__label" for="contact-preference-1">
                 Phone
               </label>
             </div>
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="contact-preference" name="contact-preference" type="checkbox" value="Email">
+              <input class="govuk-checkboxes__input" id="contact-preference" name="contact-preference" type="checkbox" value="Email" {{ checked('contact-preference', 'Email') }}>
               <label class="govuk-label govuk-checkboxes__label" for="contact-preference-2">
                Email
               </label>
             </div>
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="contact-preference" name="contact-preference" type="checkbox" value="Text message">
+              <input class="govuk-checkboxes__input" id="contact-preference" name="contact-preference" type="checkbox" value="Text message" {{ checked('contact-preference', 'Text message') }}>
               <label class="govuk-label govuk-checkboxes__label" for="contact-preference-3">
                 Text message
               </label>

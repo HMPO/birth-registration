@@ -317,3 +317,15 @@ if (realtionshipType=== 'yes' && marriedRelationshipType === 'same-sex') {
     res.redirect('outcome-other');
   }
 })
+
+// ---- Payment -----
+
+//no payment route
+router.post('*/certificate-choice', function (req, res) {
+  var skipPaymentPages = req.session.data['certificate-order']
+  if (skipPaymentPages === 'yes') {
+    res.redirect('delivery-options')
+  } else {
+    res.redirect('confirmation-page-no-payment')
+  }
+})

@@ -31,7 +31,7 @@
               <p class="govuk-body">
                 You do not pay a fee for the registration. 
               </p>
-              <form action="delivery-options" method="post" novalidate>
+              <form action="certificate-choice" method="post">
                 <div class="govuk-form-group">
                   <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -42,8 +42,8 @@
                     </div>
                     <div class="govuk-radios" data-module="govuk-radios">
                       <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="interviewNeeds" name="interviewNeeds" type="radio" value="yes">
-                        <label class="govuk-label govuk-radios__label" for="interviewNeeds">
+                        <input class="govuk-radios__input" id="certificate-order" name="certificate-order" type="radio" value="yes" {{checked('certificate-order', 'yes') }}>
+                        <label class="govuk-label govuk-radios__label" for="certificate-order">
                           Yes, I’ll order certificates
                         </label>
                         <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
@@ -51,8 +51,8 @@
                         </div>
                       </div>
                       <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="interviewNeeds-2" name="interviewNeeds" type="radio" value="no">
-                        <label class="govuk-label govuk-radios__label" for="interviewNeeds-2">
+                        <input class="govuk-radios__input" id="certificate-order-2" name="certificate-order" type="radio" value="no" {{checked('certificate-order', 'no') }}>
+                        <label class="govuk-label govuk-radios__label" for="certificate-order-2">
                           No, I do not want to order certificates
                         </label>
                         <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">

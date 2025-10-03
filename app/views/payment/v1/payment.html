@@ -26,7 +26,7 @@
         </p>
         </div>
 
-    <form action="/payment/card-details" method="POST" autocomplete="off" novalidate="true" spellcheck="false">
+    <form action="payment-confirmation" method="POST" autocomplete="off" novalidate="true" spellcheck="false">
       <div class="govuk-form-group">
         <label class="govuk-label govuk-label--s" for="cardNumber">
           Card number
@@ -41,7 +41,7 @@
         <label class="govuk-label govuk-label--s" for="cardName">
           Name on card
         </label>
-        <input class="govuk-input govuk-!-width-three-quarters" id="cardName" name="cardName" type="text">
+        <input class="govuk-input govuk-!-width-three-quarters" id="cardName" name="cardName" type="text" value="{{data['cardName']}}">
       </div>
 
         <div class="govuk-form-group">
@@ -58,7 +58,7 @@
                   <label class="govuk-label govuk-date-input__label" for="cardExpiry-cardExpiryMonth">
                     Month
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="cardExpiry-cardExpiryMonth" name="cardExpiryMonth" type="text" inputmode="numeric">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="cardExpiry-cardExpiryMonth" name="cardExpiryMonth" type="text" inputmode="numeric" value={{data['cardExpiryMonth']}}>
                 </div>
               </div>
               <div class="govuk-date-input__item">
@@ -66,7 +66,7 @@
                   <label class="govuk-label govuk-date-input__label" for="cardExpiry-cardExpiryYear">
                     Year
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="cardExpiry-cardExpiryYear" name="cardExpiryYear" type="text" inputmode="numeric">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="cardExpiry-cardExpiryYear" name="cardExpiryYear" type="text" inputmode="numeric" value="{{data['cardExpiryYear']}}">
                 </div>
               </div>
           </fieldset>
@@ -84,9 +84,10 @@
 
       <div class="govuk-button-group">
         {{ govukButton({
-          text: "Continue",
-          href: "payment-confirmation.html"
+          text: "Continue"
         }) }}
+
+         </form>
 
         {{ govukButton({
           text: "Cancel payment",
@@ -95,7 +96,7 @@
       </div>
       
     
-    </form>
+   
   </div>
   </div>
 </main>

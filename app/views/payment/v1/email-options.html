@@ -27,7 +27,7 @@
                     
                     <div class="govuk-radios" data-module="govuk-radios">
                       <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="email-address-1" name="email-address" type="radio" value="email123@gmail.com">
+                        <input class="govuk-radios__input" id="email-address-1" name="email-address" type="radio" value="email123@gmail.com" {{checked('email-address','email123@gmail.com')}}>
                         <label class="govuk-label govuk-radios__label" for="email-addre-1">
                           Use email123@gmail.com
                         </label>
@@ -36,7 +36,7 @@
                         </div>
                       </div>
                       <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="email-address-2" name="email-address" type="radio" value="" data-aria-controls="conditional-different-email">
+                        <input class="govuk-radios__input" id="email-address-2" name="email-address" type="radio" value="custom" data-aria-controls="conditional-different-email" {{checked('email-address','custom')}}>
                         <label class="govuk-label govuk-radios__label" for="email-address-2">
                          Use a different email address
                         </label>
@@ -46,7 +46,7 @@
                         <label class="govuk-label" for="different-email">
                           Enter email address
                         </label>
-                        <input class="govuk-input govuk-!-width-one-half" id="different-email" name="different-email" type="name" spellcheck="false" aria-describedby="different-email" value="{{ data['different-email'] }}" >
+                        <input class="govuk-input govuk-!-width-one-half" id="different-email" name="different-email" type="name" spellcheck="false" aria-describedby="different-email" value="{{ data['different-email']}}" >
                       </div>
                       <div class="govuk-form-group">
                         <label class="govuk-label" for="different-email-2">
@@ -58,7 +58,6 @@
                     </div>
                   </fieldset>
                 </div>
-
             {{ govukButton({
               text: "Continue"
             }) }}
