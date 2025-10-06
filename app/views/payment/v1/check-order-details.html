@@ -42,7 +42,13 @@
               Certificate quantity
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data["quantity"] or data ["quantity-custom"]}}
+
+             {%if data['quantity'] == 'custom'%}
+             {{ data ["quantity-custom"] }}
+             {%else%}
+              {{ data["quantity"]}}
+              {%endif%}
+
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="number-of-certiifcates.html">Change<span class="govuk-visually-hidden">Certificate quantity</span></a>
@@ -66,7 +72,13 @@
               Contact email
             </dt>
             <dd class="govuk-summary-list__value">
-            {{ data['email-address'] or data['different-email'] }} 
+
+            {% if data['email-address'] == 'email123@gmail.com'%}
+            {{ data['email-address'] }}
+            {% else %} 
+            {{ data['different-email'] }} 
+            {% endif %}
+
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="email-options.html">Change<span class="govuk-visually-hidden">Contact email</span></a>

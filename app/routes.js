@@ -326,6 +326,6 @@ router.post('*/certificate-choice', function (req, res) {
   if (skipPaymentPages === 'yes') {
     res.redirect('delivery-options')
   } else {
-    res.redirect('confirmation-page-no-payment')
+    res.redirect('declaration')
   }
 })

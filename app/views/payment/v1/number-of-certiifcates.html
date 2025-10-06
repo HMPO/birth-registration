@@ -18,7 +18,7 @@
        <h1 class="govuk-heading-xl">Number of certificates</h1>
 
        <p class="govuk-body">
-          You may need more than one certificate to apply for different services. 
+          You may need more than one certificate to apply for different services. Each certificate costs £12.50.
         </p>
 
         <p class="govuk-body">
@@ -46,14 +46,14 @@
                       </label>
                     </div>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="quantity-2" name="quantity" type="radio" value="3" {{checked('quantity','3')}}>
-                      <label class="govuk-label govuk-radios__label" for="quantity-2">
+                      <input class="govuk-radios__input" id="quantity-3" name="quantity" type="radio" value="3" {{checked('quantity','3')}}>
+                      <label class="govuk-label govuk-radios__label" for="quantity-3">
                         3
                       </label>
                     </div>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="quantity-2" name="quantity" type="radio" value="" data-aria-controls="conditional-more">
-                      <label class="govuk-label govuk-radios__label" for="quantity-2">
+                      <input class="govuk-radios__input" id="quantity-4" name="quantity" type="radio" value="custom" data-aria-controls="conditional-more" {{checked('quantity','custom')}}>
+                      <label class="govuk-label govuk-radios__label" for="quantity-4">
                         More
                       </label>
                     </div>
@@ -62,7 +62,7 @@
                       <label class="govuk-label" for="quantity-custom">
                         Enter number of certificates
                       </label>
-                      <input class="govuk-input govuk-!-width-one-third" id="quantity-custom" name="quantity-custom">
+                      <input class="govuk-input govuk-!-width-one-third" id="quantity-custom" name="quantity-custom" value="{{data['quantity-custom']}}">
                     </div>
                     </div>
                     

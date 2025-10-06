@@ -56,10 +56,22 @@
         </fieldset>
       </div>
 
+      {% if data['certificate-order'] == 'yes' %}
+
       {{ govukButton({
         text: "Continue to payment",
         href: "payment"
       }) }}
+
+      {% else %}
+
+      {{ govukButton({
+        text: "Submitt application",
+        href: "confirmation-page-no-payment"
+      }) }}
+
+      {% endif %}
+
     </div>
   </div>
 </form>

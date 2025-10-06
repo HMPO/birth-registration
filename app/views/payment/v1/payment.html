@@ -22,7 +22,7 @@
         <h2 class="govuk-heading-m">Payment summary</h2>
         <p class="govuk-body govuk-!-margin-bottom-0">
           Total amount:
-          <span id="amount" class="amount govuk-!-font-size-36 govuk-!-font-weight-bold">£{{ data['certificate-price'] * data['quantity']}}</span>
+          <span id="amount" class="amount govuk-!-font-size-36 govuk-!-font-weight-bold">£{{ data['certificate-price'] * data['quantity'] or data['certificate-price'] * data['quantity-custom']}}</span>
         </p>
         </div>
 
@@ -73,13 +73,13 @@
         </div>
 
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--s" for="cardName">
+        <label class="govuk-label govuk-label--s" for="security-code">
           Card security code
         </label>
-        <div id="cardName-hint" class="govuk-hint">
+        <div id="security-code-hint" class="govuk-hint">
           The last 3 digits on the back of the card
         </div>
-        <input class="govuk-input govuk-input govuk-input--width-3" id="cardName" name="cardName" type="text" aria-describedby="cardName-hint">
+        <input class="govuk-input govuk-input govuk-input--width-3" id="security-code" name="security-code" type="text" aria-describedby="security-code-hint">
       </div>
 
       <div class="govuk-button-group">
