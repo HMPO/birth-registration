@@ -329,3 +329,13 @@ router.post('*/certificate-choice', function (req, res) {
     res.redirect('declaration')
   }
 })
+
+//no delivery address - collection
+router.post('*/delivery-choice', function (req, res) {
+  var skipDeliveryPages = req.session.data['certificate-price']
+  if (skipDeliveryPages === 'collection') {
+    res.redirect('check-order-details')
+  } else {
+    res.redirect('address')
+  }
+})
