@@ -55,6 +55,34 @@
             </dd>
           </div>
 
+          {% if data['certificate-price'] == 'collection' %}
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Delivery method
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Collection
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="delivery-options.html">Change<span class="govuk-visually-hidden">Delivery address</span></a>
+            </dd>
+          </div>
+
+          {%else%}
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Delivery method
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Home delivery
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="delivery-options.html">Change<span class="govuk-visually-hidden">Delivery address</span></a>
+            </dd>
+          </div>
+
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Delivery address
@@ -66,6 +94,10 @@
               <a class="govuk-link" href="address.html">Change<span class="govuk-visually-hidden">Delivery address</span></a>
             </dd>
           </div>
+          
+          {% endif %}
+
+          
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
