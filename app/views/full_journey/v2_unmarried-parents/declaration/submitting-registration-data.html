@@ -1,0 +1,50 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Register a birth – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+            Submitting registration information
+        </h1>
+
+       <p class="govuk-body">On the next page you can review the details you’ve provided.</p>
+
+         <p class="govuk-body">
+          Check the information, and make any changes. 
+         </p>
+
+        <p class="govuk-body">
+          You cannot make any changes after it has been registered. 
+        </p>
+
+        <p class="govuk-body">
+          Once you’ve submitted you can pay for certificates. 
+        </p>
+
+      {{ govukButton({
+        text: "Continue",
+        href: "declaration.html"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

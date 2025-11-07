@@ -1,0 +1,86 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Mother's name – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+{% if data ['declaration-change'] == 'true'%}
+  <form class="form" action="../declaration/declaration" method="post">
+{% elif data['change-link-mother'] == 'true' %}
+  <form class="form" action="check-details" method="post">
+{% else %}
+<form class="form" action="is-the-name-maiden-name" method="post">
+{% endif %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Part 2 of 4: Mother’s details</span>
+      <h1 class="govuk-heading-xl">
+        Full name at time of child’s birth
+      </h1>
+        
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+         
+           <div class="govuk-form-group">
+            <label class="govuk-label" for="mother-first-name">
+              First name
+            </label>
+            
+            <input class="govuk-input" id="mother-first-name" name="mother-first-name" type="text" value="{{ data['mother-first-name'] }}">
+          </div>
+           <div class="govuk-form-group">
+            <label class="govuk-label" for="mother-middle-name">
+              Middle names (optional)
+            </label>
+            <input class="govuk-input" id="mother-middle-name" name="mother-middle-name" type="text" value="{{ data['mother-middle-name'] }}">
+          </div>
+           <div class="govuk-form-group">
+            <label class="govuk-label" for="mother-last-name">
+              Last name
+            </label>
+            <input class="govuk-input" id="mother-last-name" name="mother-last-name" type="text" value="{{ data['mother-last-name'] }}">
+          </div>
+           <div class="govuk-form-group">
+            <label class="govuk-label" for="mother-prefix">
+              Hereditary or bestowed titles (optional)
+            </label>
+            <div id="child-first-name-hint" class="govuk-hint">
+              Do not include titles such as ‘Mr’ or Miss’. Only add legally inherited or awarded titles, such as ‘Lady’ or ‘OBE’
+            </div>
+            <input class="govuk-input" id="mother-prefix" name="mother-prefix" type="text" value="{{ data['mother-prefix'] }}">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="mother-suffix">
+              Suffix (optional)
+            </label>
+           
+            <input class="govuk-input" id="mother-suffix" name="mother-suffix" type="text" value="{{ data['mother-suffix'] }}">
+          </div>
+        </fieldset>
+      </div>
+     
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

@@ -339,3 +339,13 @@ router.post('*/delivery-choice', function (req, res) {
     res.redirect('address')
   }
 })
+
+//test
+router.post('*/test', function (req, res) {
+  var testVariable = req.session.data['options']
+  if (testVariable === 'option1') {
+    res.redirect('../find-nhs-record/find-nhs-record')
+  } else {
+    res.redirect('address')
+  }
+})

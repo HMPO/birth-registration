@@ -1,0 +1,84 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+   Date of birth – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+{% if data ['declaration-change'] == 'true'%}
+  <form class="form" action="../declaration/declaration" method="post">
+{% elif data['change-link'] == 'true' %}
+  <form class="form" action="check-details" method="post">
+{% else %}
+  <form class="form" action="sex" method="post">
+{% endif %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <span class="govuk-caption-xl">Part 1 of 4: Child’s details</span>    
+              <h1 class="govuk-fieldset__heading">
+                Date of birth
+              </h1>
+            </legend>
+                      
+                      <div id="child-DOB-hint" class="govuk-hint">
+                        For example, 23 11 2024
+                      </div>
+                      <div class="govuk-date-input" id="child-DOB">
+                        <div class="govuk-date-input__item">
+                          <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="child-birth-day">
+                              Day
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="child-birth-day" name="child-birth-day" type="text" inputmode="numeric" value="{{ data['child-birth-day'] }}">
+                          </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                          <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="child-birth-month">
+                              Month
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="child-birth-month" name="child-birth-month" type="text" inputmode="numeric" value="{{ data['child-birth-month'] }}">
+                          </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                          <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="child-birth-year">
+                              Year
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="child-birth-year" name="child-birth-year" type="text" inputmode="numeric" value="{{ data['child-birth-year'] }}">
+                          </div>
+                        </div>
+                      </div>
+           
+        </fieldset>
+      </div>
+     
+   
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}
