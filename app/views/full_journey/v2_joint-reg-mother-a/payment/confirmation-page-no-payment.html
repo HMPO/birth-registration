@@ -1,0 +1,70 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          Registration has been submitted
+        </h1>
+        <div class="govuk-panel__body">
+          Your reference number<br><strong>111 222 333</strong>
+        </div>
+      </div>
+
+      <p>
+        You’ll get a confirmation email or text. 
+      </p>
+
+      <h2 class="govuk-heading-m">
+        What happens next
+      </h2>
+
+      <p>
+       We will send your application to Birmingham Register Office.
+      </p>
+
+      <p class="govuk-body">The Register Office will:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>check the information</li>
+        <li>contact you with any questions</li>
+        <li>officially add the birth to the register</li>
+      </ul>
+
+      <h2 class="govuk-heading-m">
+        Getting in touch
+      </h2>
+
+      <p>
+       You’ll get tracking updates when your application is approved or sent. 
+      </p>
+
+      <p>
+       Contact following Register Office if your situation changes:
+      </p>
+
+      <p>
+        Birmingham Register Office<br>
+        Holliday Street<br>
+        Birmingham<br>
+        B1 1TJ<br>
+      </p>
+
+      <h2 class="govuk-heading-m">
+        Getting birth certificate
+      </h2>
+
+      <p>
+       If you need birth certificate later you can <a href="https://www.gov.uk/order-copy-birth-death-marriage-certificate" class="govuk-link">order a birth certificate online</a> after registration is complete. 
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}
