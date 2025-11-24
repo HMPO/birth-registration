@@ -1,0 +1,86 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Registration options – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Register a birth: parents who are not married (or in civil partnership)
+      </h1>
+
+      <h2 class="govuk-heading-l">
+        Registering online
+      </h2>
+
+      <p class="govuk-body">Both parents will sign in to the online service to provide the information to the birth registration.</p>
+
+      <p class="govuk-body">The mother must start the online application. They will invite the child’s father or same-sex female parent to the application.</p>
+
+      <p class="govuk-body">Both parents must jointly agree on all information about themselves and their child entered into the record of birth.</p>
+
+      <p class="govuk-body">Your identities will be checked by GOV.UK One Login. This works in a similar way to Government Gateway.</p>
+
+      <p class="govuk-body">After you submit the form, a registrar at the council will complete the official registration.</p>
+
+      <p class="govuk-body">Birth certificates will be sent by post. They cost £12.50 each (standard delivery).</p>
+
+      <h2 class="govuk-heading-l">
+        In person registration
+      </h2>
+
+      <p class="govuk-body">Unmarried parents must either:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>attend the appointment together</li>
+        <li>one parent attends with a document showing both parents agree to registration</li>
+      </ul>
+
+      <p class="govuk-body">You’ll make an appointment at the register office for the area your child was born.</p>
+      <p class="govuk-body">You do not need to attend with your child.</p>
+      <p class="govuk-body">You’ll get birth certificates at the appointment. Each birth certificate costs £12.50.</p>
+
+      <h3 class="govuk-heading-m">
+        If you cannot attend together
+      </h3>
+
+      <p class="govuk-body">One parent can register if they have a <a href="#">legal document that shows you agree to be named as the child’s parents</a>.</p>
+      <p class="govuk-body">It might be possible to add the father’s details at a later date by completing an <a href="#">application for the re-registration of a child’s birth</a>.</p>
+
+
+      <form class="form" action="/skip-triage" method="post">
+        {{ govukRadios({
+          idPrefix: "register-method",
+          name: "registerMethod",
+          fieldset: {
+            legend: {
+              text: "Select how you’ll register the birth",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            { value: "online", text: "Online" },
+            { value: "inPerson", text: "In person" }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

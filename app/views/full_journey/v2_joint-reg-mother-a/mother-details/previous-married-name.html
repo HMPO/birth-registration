@@ -19,7 +19,7 @@
 {% elif data['change-link-mother'] == 'true' %}
   <form class="form" action="check-details" method="post">
 {% else %}
-<form class="form" action="add-previous-names" method="post">
+<form class="form" action="other-names" method="post">
 {% endif %}
 
 
@@ -31,17 +31,29 @@
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
               <span class="govuk-caption-xl">Part 2 of 4: Mother’s details</span>    
               <h1 class="govuk-fieldset__heading">
-                Add mother’s name at the time they got married to their current partner
+                Did the mother use their maiden name at the time of their current marriage?
               </h1>
             </legend>
+
+             <p class="govuk-body">
+              We record the mother’s last name at the time of the current marriage. Number of marriages is not recorded on the birth certificate
+            </p>
             
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="previous-married-name-1" name="previous-married-name" type="radio" value="Yes" {{checked("previous-married-name", "Yes")}} data-aria-controls="conditional-previous-married-name">
+                <input class="govuk-radios__input" id="previous-married-name-1" name="previous-married-name" type="radio" value="Yes" {{checked("previous-married-name", "Yes")}}>
                 <label class="govuk-label govuk-radios__label" for="previous-married-name-1">
                  Yes
                 </label>
               </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="previous-married-name-2" name="previous-married-name" type="radio" value= "No" {{checked("previous-married-name", "No")}} data-aria-controls="conditional-previous-married-name">
+                <label class="govuk-label govuk-radios__label" for="previous-married-name-2">
+                  No
+                </label>
+              </div>
+
               <div class="govuk-radios__conditional" id="conditional-previous-married-name">
                 <div class="govuk-form-group">
                   <label class="govuk-label" for="previous-married-name-value">
@@ -50,13 +62,7 @@
                   <input class="govuk-input govuk-!-width-one-half" id="previous-married-name-value" name="previous-married-name-value" type="name" spellcheck="false" aria-describedby="previous-married-name-value" value="{{ data['previous-married-name-value'] }}" >
                 </div>
               </div>
-              
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="previous-married-name-2" name="previous-married-name" type="radio" value= "No" {{checked("previous-married-name", "No")}} >
-                <label class="govuk-label govuk-radios__label" for="previous-married-name-2">
-                  No
-                </label>
-              </div>
+
               
             </div>
         </fieldset>

@@ -1,0 +1,66 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          Ready to invite {father/parent} to join registration
+        </h1>
+      </div>
+
+      <h2 class="govuk-heading-l">
+        What you need to do
+      </h2>
+
+      <p>
+       Share the invite link, which has been sent to your email address. It should arrive within 15 minutes.
+      </p>
+
+      <p class="govuk-body">You are notified by emails when:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>{father/parent} has joined</li>
+        <li>{father/parent} has added their details</li>
+        <li>the birth registration can be sent to the register office</li>
+      </ul>
+
+      <h2 class="govuk-heading-l">
+       Changing information entered
+      </h2>
+
+      <p class="govuk-body"><a href="#">Sign in</a> to the service to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>fix typos or mistakes</li>
+        <li>update information you’ve provided</li>
+        <li>continue the registration without entering the {father/parent}’s details.</li>
+      </ul>
+
+      <h2 class="govuk-heading-l">
+        Guidance and support
+      </h2>
+
+      <p>
+       Read our guidance about registering a birth, such as getting certificates and how long it takes. 
+      </p>
+
+      <p>
+       Contact the Register Office if you need a registration more urgently or your situation changes.
+      </p>
+
+      <p>
+       Birmingham Register Office<br>
+        Holliday Street<br>
+        Birmingham<br>
+        B1 1TJ<br>
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

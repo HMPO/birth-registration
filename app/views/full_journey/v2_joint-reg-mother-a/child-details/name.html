@@ -18,7 +18,7 @@
 {% elif data ['change-link'] == 'true' %}
   <form class="form" action="check-details" method="post">
 {% else %}
-  <form class="form" action="sex" method="post">
+  <form class="form" action="../mother-details/name" method="post">
 {% endif %}
 
 
@@ -60,7 +60,7 @@
         <fieldset class="govuk-fieldset">
            <div class="govuk-form-group">
             <label class="govuk-label" for="child-first-name">
-              First name
+              First name (optional)
             </label>
             <div id="child-first-name-hint" class="govuk-hint">
               For example, Aimee-Lou not Aimee Lou
@@ -84,7 +84,7 @@
               Hereditary title (optional)
             </label>
             <div id="prefix-hint" class="govuk-hint">
-              Do not include titles such as ‘Mr’ or Miss’. Only add legally inherited titles, such as ‘Lady’ or ‘Lord’
+              Do not include titles such as ‘Mr’ or ‘Miss’. Only add legally inherited titles, such as ‘Lady’ or ‘Lord’
             </div>
             <input class="govuk-input" id="prefix" name="prefix" type="text" value="{{ data['prefix'] }}">
           </div>

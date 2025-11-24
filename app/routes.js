@@ -340,12 +340,44 @@ router.post('*/delivery-choice', function (req, res) {
   }
 })
 
-//test
-router.post('*/test', function (req, res) {
-  var testVariable = req.session.data['options']
-  if (testVariable === 'option1') {
-    res.redirect('../find-nhs-record/find-nhs-record')
+
+// ---- Joint registration A  -----
+
+// Skip triage to take user to Child's name or find your local council page
+router.post( '/skip-triage', function (req, res) {
+  var registrationChannel = req.session.data['registerMethod']
+  if (registrationChannel === 'inPerson') {
+    res.redirect('https://www.gov.uk/register-offices')
   } else {
-    res.redirect('address')
+    res.redirect('/full_journey/v2_joint-reg-mother-a/child-details/name' )
   }
+})
+
+// Show name input page based on value of name-now (Mother)
+router.post('*/now-known-as-married', function (req, res) {
+  var nowKnownAs = req.session.data['name-now']
+  if (nowKnownAs === 'No') {
+    res.redirect('name-now')
+  } else {
+    res.redirect('is-the-name-maiden-name')
+  }
+})
+// Mother's previous married name routing
+router.post('/previous-married-name', function (req, res) {
+  var otherNames = req.session.data['previous-married-name']
+if (otherNames === 'Yes') {
+    res.redirect('/other-names')
+} else {
+    res.redirect('/other-names')
+ }
+})
+
+// Mother's other names routing
+router.post('/other-names', function (req, res) {
+  var otherNames = req.session.data['other-names']
+if (otherNames === 'Yes') {
+    res.redirect('/add-previous-names')
+} else {
+    res.redirect('/country-of-birth')
+ }
 })
