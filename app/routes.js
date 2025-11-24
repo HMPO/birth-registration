@@ -376,8 +376,18 @@ if (otherNames === 'Yes') {
 router.post('/other-names', function (req, res) {
   var otherNames = req.session.data['other-names']
 if (otherNames === 'Yes') {
-    res.redirect('/add-previous-names')
+    res.redirect('/full_journey/v2_joint-reg-mother-a/mother-details/add-previous-names')
 } else {
-    res.redirect('/country-of-birth')
+    res.redirect('/full_journey/v2_joint-reg-mother-a/mother-details/country-of-birth')
+ }
+})
+
+// Add any other previously used names
+router.post('/add-previous-names', function (req, res) {
+  var addPrevious = req.session.data['former-name']
+if (addPrevious === 'Yes') {
+    res.redirect('/full_journey/v2_joint-reg-mother-a/mother-details/name-formerly')
+} else {
+    res.redirect('/full_journey/v2_joint-reg-mother-a/mother-details/add-other-current-names')
  }
 })
