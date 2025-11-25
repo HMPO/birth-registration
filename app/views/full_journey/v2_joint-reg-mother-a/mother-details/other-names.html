@@ -25,22 +25,19 @@
 
  <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        
-      <div class="govuk-form-group">
+          <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-            <span class="govuk-caption-xl">Part 2 of 4: Mother’s details</span>
-        <h1 class="govuk-fieldset__heading govuk-heading-xl">
+              <span class="govuk-caption-xl">Part 2 of 4: Mother’s details</legend>span>    
+      <h1 class="govuk-fieldset__heading">
           Do you want to include other names the mother uses or has used?
         </h1>
-      </legend>
-
 
       <p class="govuk-body">
         It’s optional to include:
       </p>
 
-      <ul class="govuk-list govuk-list--number">
+      <ul class="govuk-list govuk-list--bullet">
         <li>other names that the mother uses in daily life</li>
         <li>names the mother used in past - such as a different first name or last name shared with other children</li>
       </ul>
@@ -65,6 +62,10 @@
                  {{ checked("other-names", "No") }}>
           <label class="govuk-label govuk-radios__label" for="other-names-2">No</label>
         </div>
+
+        /div>
+        </fieldset>
+      </div>
 
       {{ govukButton({
         text: "Save and continue"
