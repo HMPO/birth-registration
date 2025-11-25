@@ -26,41 +26,53 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         
-      <span class="govuk-caption-xl">Part 2 of 4: Mother’s details</span>
+     <span class="govuk-caption-xl">Part 2 of 4: Mother’s details</span>
+  <h1 class="govuk-heading-xl">Does mother have a maiden name?</h1>
 
-       <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-            <h1 class="govuk-fieldset__heading">
-             Does mother have a maiden name?
-            </h1>
-      
-      <p class="govuk-body">
-        A maiden name is the last name the mother used when they married their first (or only) spouse or civil partner.  </p>
-            
-            <div class="govuk-radios" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="is-name-maiden-name-1" name="is-name-maiden-name" type="radio" value="Yes" {{checked("is-name-maiden-name", "Yes")}} data-aria-controls="conditional-maiden-name">
-                <label class="govuk-label govuk-radios__label" for="is-name-maiden-name-1">
-                 Yes
-                </label>
-              </div>
-              <div class="govuk-radios__conditional" id="conditional-maiden-name">
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="maiden-name">
-                    Last name at time of marriage (maiden name)
-                  </label>
-                  <input class="govuk-input govuk-!-width-one-half" id="maiden-name" name="maiden-name" type="name" spellcheck="false" aria-describedby="maiden-name" value="{{ data['maiden-name'] }}" >
-                </div>
-              </div>
-              
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="is-name-maiden-name-2" name="is-name-maiden-name" type="radio" value= "No" {{checked("is-name-maiden-name", "No")}} >
-                <label class="govuk-label govuk-radios__label" for="is-name-maiden-name-2">
-                  No
-                </label>
-              </fieldset>
-              </div>
+  <p class="govuk-body">
+    A maiden name is the last name the mother used when they married their first (or only) spouse or civil partner.
+  </p>
+
+  <div class="govuk-radios" data-module="govuk-radios">
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input"
+             id="is-name-maiden-name-1"
+             name="is-name-maiden-name"
+             type="radio"
+             value="Yes"
+             {{ checked("is-name-maiden-name", "Yes") }}
+             data-aria-controls="conditional-maiden-name">
+      <label class="govuk-label govuk-radios__label" for="is-name-maiden-name-1">
+        Yes
+      </label>
+
+      <div class="govuk-radios__conditional" id="conditional-maiden-name">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="maiden-name">
+            Last name at time of first marriage (maiden name)
+          </label>
+          <input class="govuk-input govuk-!-width-one-half"
+                 id="maiden-name"
+                 name="maiden-name"
+                 type="text"
+                 spellcheck="false"
+                 aria-describedby="maiden-name"
+                 value="{{ data['maiden-name'] }}">
+        </div>
+      </div>
+    </div>
+
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input"
+             id="is-name-maiden-name-2"
+             name="is-name-maiden-name"
+             type="radio"
+             value="No"
+             {{ checked("is-name-maiden-name", "No") }}>
+      <label class="govuk-label govuk-radios__label" for="is-name-maiden-name-2">
+        No
+      </label>
+    </div>
 
             {{ govukButton({
         text: "Save and continue"
@@ -68,7 +80,6 @@
 
       
     </div>
-
 
   </div>
 
