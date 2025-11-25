@@ -27,22 +27,16 @@
     <div class="govuk-grid-column-two-thirds">
         
       <span class="govuk-caption-xl">Part 2 of 4: Mother’s details</span>
-      <h1 class="govuk-heading-xl">
-       Mother’s maiden name
-      </h1>
 
-       <p class="govuk-body">
-        This is the mother’s surname at the time she first got married. 
-      </p>
-     
-
-        <div class="govuk-form-group">
+       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              Did the mother have a maiden name?
-            </legend>
-           
-            
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+             Does mother have a maiden name?
+            </h1>
+      
+      <p class="govuk-body">
+        A maiden name is the last name the mother used when they married their first (or only) spouse or civil partner.  </p>
             
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
@@ -65,15 +59,12 @@
                 <label class="govuk-label govuk-radios__label" for="is-name-maiden-name-2">
                   No
                 </label>
+              </fieldset>
               </div>
-              
-            </div>
-        </fieldset>
-      </div>
 
-      {{ govukButton({
+            {{ govukButton({
         text: "Save and continue"
-      }) }}
+            }) }}
 
       
     </div>
