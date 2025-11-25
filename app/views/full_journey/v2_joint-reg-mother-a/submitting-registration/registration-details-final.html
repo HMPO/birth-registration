@@ -21,15 +21,15 @@
       
      <span class="govuk-caption-xl">Birth registration details</span>
       <h1 class="govuk-heading-xl">
-        Confirm you are ready to invite father or parent
+        Final check: birth registration details
       </h1>
 
       <p class="govuk-body">
-        Check the information you’ve provided about yourself and your child.
+        Check this information carefully before confirming it’s ready for review at the register office.
       </p>
 
       <p class="govuk-body">
-        Father or parent will also confirm that this information is what you have both agreed will be in the birth registration.
+        It will be printed on birth certificates exactly as you’ve entered it.
       </p>
       
 
@@ -283,7 +283,6 @@
      {% if data['registrationOptions'] == 'mother-only' %}
      {% else %}
 
-    <!--  
     <h2 class="govuk-heading-m">
        Father
     </h2>
@@ -300,8 +299,6 @@
             <a class="govuk-link" href="">Change<span class="govuk-visually-hidden">name</span></a>
           </dd>
         </div>
-
-        -->
 
         <!--
 
@@ -352,14 +349,12 @@
 
         -->
 
-        <!--
-
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Country of birth
           </dt>
           <dd class="govuk-summary-list__value">
-            {{data['other-country-parent'] or "Australia"}}
+            {{data['other-country-parent'] or "Scotland"}}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="">Change<span class="govuk-visually-hidden">place of birth</span></a>
@@ -371,7 +366,7 @@
             City of town of birth
           </dt>
           <dd class="govuk-summary-list__value">
-          {{data['parent-city-of-birth'] or "Melbourne"}} 
+          {{data['parent-city-of-birth'] or "Fife"}} 
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="">Change<span class="govuk-visually-hidden">place of birth</span></a>
@@ -430,8 +425,7 @@
 
     </dl>
     {% endif %}
-    
-    -->
+
 
     <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
@@ -453,7 +447,7 @@
 
       {{ govukButton({
         text: "Continue",
-        href: "invite-parent-to-register"
+        href: "/full_journey/v2_joint-reg-mother-a/payment/confirmation-page-no-payment"
       }) }}
 
       
