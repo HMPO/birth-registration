@@ -1,0 +1,83 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+   Is the current name maiden name – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+{% if data ['declaration-change'] == 'true'%}
+  <form class="form" action="../declaration/declaration" method="post">
+{% elif data['change-link-mother'] == 'true' %}
+  <form class="form" action="check-details" method="post">
+{% else %}
+<form class="form" action="previous-married-name" method="post">
+{% endif %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <span class="govuk-caption-xl">Part 2 of 4: Mother’s details</span>    
+              <h1 class="govuk-fieldset__heading">
+                Did the mother use their maiden name at the time of their current marriage?
+              </h1>
+            </legend>
+
+             <p class="govuk-body">
+              We record the mother’s last name at the time of the current marriage. Number of marriages is not recorded on the birth certificate
+            </p>
+            
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="previous-married-name-1" name="previous-married-name" type="radio" value="Yes" {{checked("previous-married-name", "Yes")}}>
+                <label class="govuk-label govuk-radios__label" for="previous-married-name-1">
+                 Yes
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="previous-married-name-2" name="previous-married-name" type="radio" value= "No" {{checked("previous-married-name", "No")}} data-aria-controls="conditional-previous-married-name">
+                <label class="govuk-label govuk-radios__label" for="previous-married-name-2">
+                  No
+                </label>
+              </div>
+
+              <div class="govuk-radios__conditional" id="conditional-previous-married-name">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="previous-married-name-value">
+                   Last name at time of current marriage
+                  </label>
+                  <input class="govuk-input govuk-!-width-one-half" id="previous-married-name-value" name="previous-married-name-value" type="name" spellcheck="false" aria-describedby="previous-married-name-value" value="{{ data['previous-married-name-value'] }}" >
+                </div>
+              </div>
+
+              
+            </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

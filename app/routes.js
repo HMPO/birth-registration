@@ -362,23 +362,24 @@ router.post('*/now-known-as-married', function (req, res) {
     res.redirect('is-the-name-maiden-name')
   }
 })
+
 // Mother's previous married name routing
-router.post('/previous-married-name', function (req, res) {
+router.post('*/previous-married-name', function (req, res) {
   var otherNames = req.session.data['previous-married-name']
 if (otherNames === 'Yes') {
-    res.redirect('/other-names')
+    res.redirect('./other-names')
 } else {
-    res.redirect('/other-names')
+    res.redirect('./other-names')
  }
 })
 
 // Mother's other names routing
-router.post('/other-names', function (req, res) {
+router.post('*/other-names', function (req, res) {
   var otherNames = req.session.data['other-names']
-if (otherNames === 'Yes') {
-    res.redirect('/full_journey/v2_joint-reg-mother-a/mother-details/add-previous-names')
+if (otherNames === 'yes') {
+    res.redirect('add-previous-names')
 } else {
-    res.redirect('/full_journey/v2_joint-reg-mother-a/mother-details/country-of-birth')
+    res.redirect('country-of-birth')
  }
 })
 
@@ -389,5 +390,47 @@ if (addPrevious === 'Yes') {
     res.redirect('/full_journey/v2_joint-reg-mother-a/mother-details/name-formerly')
 } else {
     res.redirect('/full_journey/v2_joint-reg-mother-a/mother-details/add-other-current-names')
+ }
+})
+
+// ---- Joint Registration / Single Mom  -----
+
+// Before you start routing
+router.post( '*/before-you-start', function (req, res) {
+  var registrationChannel = req.session.data['registerMethod']
+  if (registrationChannel === 'inPerson') {
+    res.redirect('https://www.gov.uk/register-offices')
+  } else {
+    res.redirect('/full_journey/v3_full_sing-mom_joint-reg/triage/before-you-start' )
+  }
+})
+
+// Show name input page based on value of name-now (Mother)
+router.post('*/still-known-as-unmarried', function (req, res) {
+  var nowKnownAs = req.session.data['name-now']
+  if (nowKnownAs === 'No') {
+    res.redirect('name-now')
+  } else {
+    res.redirect('is-the-name-maiden-name')
+  }
+})
+
+// Show name input page based on value of maiden-name (Mother)
+router.post('*/maiden-name', function (req, res) {
+  var nowKnownAs = req.session.data['maiden-name']
+  if (nowKnownAs === 'No') {
+    res.redirect('other-names')
+  } else {
+    res.redirect('other-names')
+  }
+})
+
+// Mother's other names routing
+router.post('*/other-names-mother', function (req, res) {
+  var otherNames = req.session.data['other-names-mother']
+if (otherNames === 'Yes') {
+    res.redirect('add-previous-names')
+} else {
+    res.redirect('country-of-birth')
  }
 })
