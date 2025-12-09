@@ -19,6 +19,7 @@
       <h1 class="govuk-heading-xl">
         Register a birth: parents who are not married (or in civil partnership)
       </h1>
+<p class="govuk-body">Births in England and Wales must be registered within 42 days (6 weeks). After 6 weeks the local council may contact you.</p>
 
       <h2 class="govuk-heading-l">
         Registering online
@@ -26,54 +27,83 @@
 
       <p class="govuk-body">Both parents will sign in to the online service to provide the information to the birth registration.</p>
 
-      <p class="govuk-body">The mother must start the online application. They will invite the child’s father or same-sex female parent to the application.</p>
+       <p class="govuk-body">The mother must start and submit the online application to:</p>
 
-      <p class="govuk-body">Both parents must jointly agree on all information about themselves and their child entered into the record of birth.</p>
+            <ul class="govuk-list govuk-list--bullet">
+        <li>provide their and their child’s details</li>
+        <li>invite the father or parent to join the registration</li>
+        <li>confirm final details are ready for review at the register office</li>
+        <li>order any <a href="https://www.gov.uk/register-birth/birth-certificates">birth certificates</a> (£12.50 each, including delivery by post)</li>
 
-      <p class="govuk-body">Your identities will be checked by GOV.UK One Login. This works in a similar way to Government Gateway.</p>
+        <p class="govuk-body">During the process the {father/parent} will:</p>
 
-      <p class="govuk-body">After you submit the form, a registrar at the council will complete the official registration.</p>
+        <ul class="govuklist govuk-list--bullet">
+          <li>be invited to join the online service</li>
+          <li>provide their own details </li>
+          <li>check they agree with the information provided by the mother</li>
+        </ul>
 
-      <p class="govuk-body">Birth certificates will be sent by post. They cost £12.50 each (standard delivery).</p>
+         <h3 class="govuk-heading-m">
+        How long it takes
+      </h3>
+
+      <p class="govuk-body">It takes up to 3 weeks for register offices to:</p>
+
+      <ul class="govuk-list--bullet">
+        <li>check the application</li>
+        <li>officially register the birth</li>
+        <li>print and send birth certificates (delivery time depends on the register office)</li>
+      </ul>
 
       <h2 class="govuk-heading-l">
         In person registration
       </h2>
 
-      <p class="govuk-body">Unmarried parents must either:</p>
+      <p class="govuk-body">You'll make an appointment at the register office for the area your child was born in.</p>
+      <p class="govuk-body">Unmarried parents must usually attend the appointment together.</p>
+
+    <p class="govuk-body">One parent can register alone if they have <a href="https://www.gov.uk/government/publications/statutory-declaration-of-acknowledgement-of-parentage-form">legal document that shows both parents agree to the registration</a>.</p>
+
+  
       <ul class="govuk-list govuk-list--bullet">
         <li>attend the appointment together</li>
         <li>one parent attends with a document showing both parents agree to registration</li>
       </ul>
 
-      <p class="govuk-body">You’ll make an appointment at the register office for the area your child was born.</p>
       <p class="govuk-body">You do not need to attend with your child.</p>
+      <p class="govuk-body">You’ll get birth certificates at the appointment. Each birth certificate costs £12.50.</p>
       <p class="govuk-body">You’ll get birth certificates at the appointment. Each birth certificate costs £12.50.</p>
 
       <h3 class="govuk-heading-m">
-        If you cannot attend together
+        Adding the father's or parent's details after registration
       </h3>
 
-      <p class="govuk-body">One parent can register if they have a <a href="#">legal document that shows you agree to be named as the child’s parents</a>.</p>
-      <p class="govuk-body">It might be possible to add the father’s details at a later date by completing an <a href="#">application for the re-registration of a child’s birth</a>.</p>
+      <p class="govuk-body">You may be able to add the father’s details at a later date by completing an<a href="https://www.gov.uk/government/publications/application-to-re-register-a-childs-birth-and-add-the-natural-fathers-details">legal document that shows you agree to be named as the child’s parents</a>.</p>
+
 
 
       <form class="form" action="/skip-triage" method="post">
         {{ govukRadios({
-          idPrefix: "register-method",
-          name: "registerMethod",
-          fieldset: {
-            legend: {
-              text: "Select how you’ll register the birth",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
-            }
-          },
-          items: [
-            { value: "online", text: "Online" },
-            { value: "inPerson", text: "In person" }
-          ]
-        }) }}
+  idPrefix: "register-method",
+  name: "registerMethod",
+  fieldset: {
+    legend: {
+      text: "Select how you'll register the birth",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    { value: "online", text: "Online" },
+    { 
+      value: "inPerson", 
+      text: "In person",
+      hint: {
+        text: "You’ll need to sign in or create a GOV.UK One Login account to show your identity documents"
+      }
+    }
+  ]
+}) }}
 
         {{ govukButton({
           text: "Continue"
