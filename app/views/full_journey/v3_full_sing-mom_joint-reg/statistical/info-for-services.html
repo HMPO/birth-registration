@@ -1,0 +1,51 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Information for government services – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+           Survey for government statistics and reporting
+        </h1>
+      
+          <p class="govuk-body">Statistical information is collected to meet the Population (Statistics) Act 1938.</p>
+
+          <p class="govuk-body">Any details you provide are:</p>
+
+         <ul class="govuk-list govuk-list--bullet">
+            <li>anonymous</li>
+            <li>separate from the birth certificate</li>
+            <li>used for government statistics or reporting</li>
+          </ul>
+
+          <p class="govuk-body">Some information is required by law - we’ll tell you when.</p>
+
+          <p class="govuk-body">Your answers do not affect the registration.  </p>
+
+
+      {{ govukButton({
+        text: "Continue",
+        href: "date-of-birth-mother"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

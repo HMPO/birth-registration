@@ -1,0 +1,111 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+   Date of marriage – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="was-mother-married-before" method="post">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Part 4 of 4: Survey for government statistics and reporting</span>    
+      <h1 class="govuk-heading-xl">
+        Date of parents’ marriage or civil partnership
+      </h1>
+
+      <p class="govuk-body">
+       This information is required by law. Statistics are used by the UK Statistics Authority to measure when married or civil partnered parents have children.
+      </p>
+        
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+               Do you know the date of the marriage or civil partnership?
+            </legend>
+            
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="date-of-birth-mother" name="date-of-birth-mother" type="radio" value="yes" {{checked("date-of-birth-mother", "Yes")}} data-aria-controls="conditional-DOB">
+                <label class="govuk-label govuk-radios__label" for="date-of-birth-mother">
+                 Yes
+                </label>
+              </div>
+              <div class="govuk-radios__conditional" id="conditional-DOB">
+                <div class="govuk-form-group">
+
+                    <fieldset class="govuk-fieldset" role="group" aria-describedby="mother-DOB-hint">
+                      <legend class="govuk-fieldset__legend">
+                        Date of marriage or civil partnership
+                      </legend>
+                      <div id="mother-DOB-hint" class="govuk-hint">
+                        For example, 23 11 2024
+                      </div>
+                      <div class="govuk-date-input" id="mother-DOB">
+                        <div class="govuk-date-input__item">
+                          <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="marriage-day">
+                              Day
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="marriage-day" name="marriage-day" type="text" inputmode="numeric" value="{{ data['marriage-day'] }}">
+                          </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                          <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="marriage-month">
+                              Month
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="marriage-month" name="marriage-month" type="text" inputmode="numeric" value="{{ data['marriage-month'] }}">
+                          </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                          <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="marriage-year">
+                              Year
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="marriage-year" name="marriage-year" type="text" inputmode="numeric" value="{{ data['marriage-year'] }}">
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="date-of-birth-mother" name="date-of-birth-mother" type="radio" value="no" {{checked("date-of-birth-mother", "No, I do not know the date of birth")}} >
+                <label class="govuk-label govuk-radios__label" for="date-of-birth-mother">
+                  No, I do not know the date of marriage or civil partnership
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="date-of-birth-mother" name="date-of-birth-mother" type="radio" value="dont-want-to-asnwer" {{checked("date-of-birth-mother", "I do not want to answer")}} >
+                <label class="govuk-label govuk-radios__label" for="date-of-birth-mother">
+                  I do not want to answer
+                </label>
+              </div>
+            </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

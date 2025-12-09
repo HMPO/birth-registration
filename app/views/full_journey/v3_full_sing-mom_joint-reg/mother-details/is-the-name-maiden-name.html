@@ -1,0 +1,86 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+   Is the current name maiden name – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+{% if data ['declaration-change'] == 'true'%}
+  <form class="form" action="../declaration/declaration" method="post">
+{% elif data['change-link-mother'] == 'true' %}
+  <form class="form" action="check-details" method="post">
+{% else %}
+<form class="form" action="maiden-name" method="post">
+{% endif %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        
+      <span class="govuk-caption-xl">Part 2 of 4: Mother’s details</span>
+      <h1 class="govuk-heading-xl">
+       Mother’s maiden name
+      </h1>
+
+       <p class="govuk-body">
+        This is the mother’s surname at the time she first got married. 
+      </p>
+     
+
+        <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              Did the mother have a maiden name?
+            </legend>
+           
+            
+            
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="is-name-maiden-name-1" name="is-name-maiden-name" type="radio" value="Yes" {{checked("is-name-maiden-name", "Yes")}} data-aria-controls="conditional-maiden-name">
+                <label class="govuk-label govuk-radios__label" for="is-name-maiden-name-1">
+                 Yes
+                </label>
+              </div>
+              <div class="govuk-radios__conditional" id="conditional-maiden-name">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="maiden-name">
+                    Last name at time of marriage (maiden name)
+                  </label>
+                  <input class="govuk-input govuk-!-width-one-half" id="maiden-name-1" name="maiden-name" type="name" spellcheck="false" aria-describedby="maiden-name" value="{{ data['maiden-name'] }}" >
+                </div>
+              </div>
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="maiden-name-2" name="maiden-name" type="radio" value= "No" {{checked("is-name-maiden-name", "No")}} >
+                <label class="govuk-label govuk-radios__label" for="imaiden-name-2">
+                  No
+                </label>
+              </div>
+              
+            </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

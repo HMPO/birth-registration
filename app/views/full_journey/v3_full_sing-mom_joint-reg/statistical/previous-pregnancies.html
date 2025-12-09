@@ -1,0 +1,79 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+   Mother’s previous marriages or Civil Partnerships – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="skip-stats-pages" method="post">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['who-registers'] == 'single-mother' %}
+        <span class="govuk-caption-xl">Part 3 of 3: Survey for government statistics and reporting</span>  
+      {%else %}
+        <span class="govuk-caption-xl">Part 4 of 4: Survey for government statistics and reporting</span>  
+      {% endif %}  
+      <h1 class="govuk-heading-xl">
+       Previous pregnancies
+      </h1>
+
+      <p class="govuk-body">
+       The next two questions are about previous pregnancies. 
+      </p>
+
+       <p class="govuk-body">
+       The government uses this to measure the safety of maternity services in the UK.
+      </p>
+
+       <p class="govuk-body">
+       You can decline to answer these questions  if this is a difficult topic for you.
+      </p>
+        
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              Will you answer questions about previous pregnancies?
+            </legend>
+            
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="skip-stats" name="skip-stats" type="radio" value="yes" {{checked("skip-stats", "Yes")}}>
+                <label class="govuk-label govuk-radios__label" for="skip-stats">
+                 Yes, I’ll answer
+                </label>
+              </div>
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="skip-stats" name="skip-stats" type="radio" value="no" {{checked("skip-stats", "No, I do not know the date of birth")}} >
+                <label class="govuk-label govuk-radios__label" for="skip-stats">
+                  No, I do not want to answer 
+                </label>
+              </div>
+             
+             
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}
