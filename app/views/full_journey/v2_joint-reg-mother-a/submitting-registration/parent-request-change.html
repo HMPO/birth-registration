@@ -42,43 +42,44 @@
           The {father/parent} cannot directly change information you’ve provided, such as the child’s name.
         </p>
 
-       <p class="govuk-body"> </p>You can edit information requested by the father or parent (if you agree). The fatther will need to review again before you submit the final information to the register office. </p>
+       <p class="govuk-body"> You can edit information requested by the father or parent (if you agree). The fatther will need to review again before you submit the final information to the register office. </p>
 
-{{ govukRadios({ 
-  idPrefix: "xx", 
-  name: "xx", 
-  fieldset: { 
-    legend: { 
-      text: "How do you want to cotinue the registration?", 
-      isPageHeading: false, 
-      classes: "govuk-fieldset__legend--l" 
-    } 
-  }, 
-  items: [ 
-    { 
-      value: "ready", 
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  name: "howcontinue",
+  fieldset: {
+    legend: {
+      text: "How do you want to continue the birth registration?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+
+  items: [
+    {
+      value: "government-gateway",
       text: "Make changes to details",
       hint: {
-        text: Update information about you or your child
+        text: "Update information about you or your child"
       }
-    }, 
-    { 
-      value: "singlemum", 
-      text: "Register the birth with only your details",
-      hint: { 
-        text: You can register without the father's or parent's details if you cannot  agree to their request
-      } 
     },
-    { 
-      value: "delete", 
-      text: "Delete application", 
-      hint: { 
-        text: For example, if you need support or help from the register office 
-      } 
+    {
+      value: "govuk-one-login",
+      text: "Register the birth with only your details",
+      hint: {
+        text: "You can register without the father's or parent's details if you cannot  agree to their request"
+      }
+    },
+     {
+      value: "govuk-one-login",
+      text: "Delete application",
+      hint: {
+        text: "For example, if you need support or help from the register office"
+      }
     }
-  ] 
+  ]
 }) }}
-
       {{ govukButton({
         text: "Continue",
         href: "registration-details.html"
