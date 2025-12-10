@@ -1,0 +1,53 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+   Enter phone number – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="contact-preference" method="post">
+
+
+      <div class="govuk-form-group">
+        
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="phone-number">
+            Enter a UK mobile number
+          </label>
+        </h1>
+        </legend>
+
+        <p class="govuk-body">We’ll send SMS confirmations, receipts and updates to this address.</p>
+
+        <input class="govuk-input" id="phone-number" name="phone-number" value="{{data['phone-number']}}" type="text" aria-describedby="phone-number-hint">
+      </div>    
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+     
+    </form>  
+      
+    </div>
+
+
+  </div>
+
+
+
+{% endblock %}

@@ -230,7 +230,7 @@ router.post('*/formerly-known-as', function (req, res) {
   if (formerlyKnownAs === 'Yes') {
     res.redirect('name-formerly')
   } else {
-    res.redirect('is-the-name-now')
+    res.redirect('add-other-current-names')
   }
 })
 

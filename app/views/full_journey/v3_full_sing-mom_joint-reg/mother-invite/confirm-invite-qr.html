@@ -1,0 +1,106 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          Ready to invite {father/parent} to join registration
+        </h1>
+      </div>
+
+      <h2 class="govuk-heading-l">
+        Inviting the father or parent
+      </h2>
+
+      <p class="govuk-body">
+       Use the invite link or the QR code to invite the father or parent to enter their details for the birth registration.
+      </p>
+
+      <p class="govuk-body">You’ll be notified when they:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>join the application</li>
+        <li>have completed their details</li>
+      </ul>
+
+      <h3 class="govuk-heading-m">
+        QR code
+      </h3>
+
+      <p class="govuk-body">
+        Show this to the father or parent if you’re with them in person.
+      </p>
+
+      <p class="govuk-body">
+        <img src="images/qr-code-placeholder.png" alt="QR code to scan" />
+      </p>
+
+      <h3 class="govuk-heading-m">
+        Invite link
+      </h3>
+
+      <p class="govuk-body">
+        It will arrive by email within 15 minutes from  will arrive by email within  15 minutes from birthhelp@gro.gov.uk.
+      </p>
+
+      <h2 class="govuk-heading-l">
+        What the father or parent needs to do
+      </h2>
+
+      <p class="govuk-body">{Father/Parent} must:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>agree to join the registration</li>
+        <li>agree to register the birth with the details you provided, such as child’s name</li>
+        <li>add their own details (such as name and job title)</li>
+      </ul>
+
+      <h2 class="govuk-heading-l">
+        What you need to do
+      </h2>
+
+      <p class="govuk-body">
+       You submit the completed information to register the birth, after its been provided by the father. or parent.
+      </p>
+
+      <h2 class="govuk-heading-l">
+       If your situation changes
+      </h2>
+
+      <p class="govuk-body">
+        <a href="#">Sign in</a> to the service if you need to register without the {father/parent} or delete this application.
+      </p>
+
+      <h2 class="govuk-heading-l">
+        Guidance and support
+      </h2>
+
+      <p class="govuk-body">
+       Read <a href="#">our guidance about registering a birth</a>, such as getting certificates and how long it takes. 
+      </p>
+
+      <p class="govuk-body">
+       Contact the Register Office if you need a registration more urgently or your situation changes.
+      </p>
+
+      <p class="govuk-body">
+       Birmingham Register Office<br>
+        Holliday Street<br>
+        Birmingham<br>
+        B1 1TJ<br>
+      </p>
+
+    </div>
+  </div>
+
+  {{ govukButton({
+        text: "Continue",
+        href: "email-invite-link"
+      }) }}
+
+{% endblock %}

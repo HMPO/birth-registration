@@ -14,14 +14,14 @@
 {% block content %}
 
 
-<form class="form" action="../parent-details/name" method="post">
+<form class="form" action="../contact-details/email-options" method="post">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       
      <span class="govuk-caption-xl">Part 2 of 4: Mother’s details</span>
       <h1 class="govuk-heading-xl">
-        Mother's details
+        Check mother’s details
       </h1>
 
       <div class="govuk-inset-text">
@@ -215,7 +215,7 @@
     </dl>
 
    
-    {% if data['second-parent'] == 'Father' or data['who-registers'] == 'Father'  %}
+    <!-- {% if data['second-parent'] == 'Father' or data['who-registers'] == 'Father'  %}
        {{ govukButton({
         text: "Continue to father details"
         }) }}
@@ -223,8 +223,12 @@
     {{ govukButton({
         text: "Continue to parent details"
         }) }}
-    {% endif %}
-      
+    {% endif %} -->
+    
+    {{ govukButton({
+        text: "Continue to contact details"
+    }) }}
+
     </div>
 
 

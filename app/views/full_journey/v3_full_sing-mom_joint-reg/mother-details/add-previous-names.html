@@ -14,8 +14,13 @@
 
 {% block content %}
 
-
+{% if data ['declaration-change'] == 'true'%}
+  <form class="form" action="../declaration/declaration" method="post">
+{% elif data['change-link-mother'] == 'true' %}
+  <form class="form" action="check-details" method="post">
+{% else %}
 <form class="form" action="formerly-known-as" method="post">
+{% endif %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
