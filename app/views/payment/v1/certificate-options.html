@@ -16,30 +16,19 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">  
 
-              <h1 class="govuk-heading-l">
-                Getting the birth certificate
-              </h1>
               <p class="govuk-body">
-                You’ll need to order copies of the birth certificate, if you need one. You can also order them after the registration is approved.
+                Certificates are sent by post when the registration is complete.
               </p>
               <p class="govuk-body">
-                Sometimes called ‘certified copy’.
-              </p>
-              <p class="govuk-body">
-                We send them by post when the registration is approved. 
-              </p>
-              <p class="govuk-body">
-                You do not pay a fee for the registration. 
+               Birth certificates are £12.50 each (including delivery)</p>
+               <p class="govuk-body"> do not pay a fee for the registration. 
               </p>
               <form action="certificate-choice" method="post">
                 <div class="govuk-form-group">
                   <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                      Do you want to order certificates?
+                      Do you want to order certificates now?
                     </legend>
-                    <div id="dob-hint" class="govuk-hint">
-                      Copies of the certificate are used to apply for the child’s first passport and other government services
-                    </div>
                     <div class="govuk-radios" data-module="govuk-radios">
                       <div class="govuk-radios__item">
                         <input class="govuk-radios__input" id="certificate-order" name="certificate-order" type="radio" value="yes" {{checked('certificate-order', 'yes') }}>
@@ -56,7 +45,7 @@
                           No, I do not want to order certificates
                         </label>
                         <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
-                          You’ll get a receipt to confirm that the birth has been registered
+                          You can order certificates online or from the register office any time after the register office confirms the registration is complete.
                         </div>
                       </div>
                     </div>

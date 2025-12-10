@@ -16,17 +16,16 @@
 <form class="form" action="#ß" method="post">
 
 
-  <div class="govuk-grid-row">
+ <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       
-     <span class="govuk-caption-xl">Birth registration details</span>
+     <span class="govuk-caption-xl">Birth certificate details</span>
       <h1 class="govuk-heading-xl">
-        Birth certificate details
+        Final check: birth registration details
       </h1>
 
-      <div class="govuk-inset-text">
-        Check carefully. This Information will be shown on the birth certificate exactly as provided in this service.
-      </div>
+     <p class="govuk-body">Check this information carefully before confirming it’s ready for review at the register office.</p>
+     <p class="govuk-body">It will be printed on birth certificates exactly as you’ve entered it. </p>
 
       <h2 class="govuk-heading-m">
             Child
@@ -428,20 +427,43 @@
       
     </legend>
     
-    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
-        <label class="govuk-label govuk-checkboxes__label" for="waste">
-          I confirm that the particulars given by me are true to the best of my knowledge and belief.
-        </label>
-      </div>
-      
-    </div>
   </fieldset>
 </div>
 
+{{ govukRadios({ 
+  idPrefix: "xx", 
+  name: "xx", 
+  fieldset: { 
+    legend: { 
+      text: "Is the information ready for review by registrar?", 
+      isPageHeading: true, 
+      classes: "govuk-fieldset__legend--l" 
+    } 
+  }, 
+  items: [ 
+    { 
+      value: "ready", 
+      text: "Yes, this information is ready to be submitted to the register officer?" 
+    }, 
+    { 
+      value: "request", 
+      text: "No, I need to request changes from the {father/parent}", 
+      hint: { 
+        text: "The father or parent must agree to make changes before you request changes in the online service" 
+      } 
+    },
+    { 
+      value: "singlemum", 
+      text: "No, I want to register the birth without the father or parent details", 
+      hint: { 
+        text: "You can register without the {father/parent}'s details if you cannot agree to their request" 
+      } 
+    }
+  ] 
+}) }}
+
       {{ govukButton({
-        text: "Continue to payment"
+        text: "Confirm ready to submit"
       }) }}
 
       
