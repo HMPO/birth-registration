@@ -1,0 +1,80 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Contact preference – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">  
+       <h1 class="govuk-heading-xl">Number of certificates</h1>
+
+       <p class="govuk-body">
+          You may need more than one certificate if you need to apply for different services at the same time.
+        </p>
+
+              <form action="delivery-choice" method="post" novalidate>
+               <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      Select number of certificates
+                  </legend>
+                  
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="quantity" name="quantity" type="radio" value="1" {{checked('quantity','1')}}>
+                      <label class="govuk-label govuk-radios__label" for="quantity">
+                        1
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="quantity-2" name="quantity" type="radio" value="2" {{checked('quantity','2')}}>
+                      <label class="govuk-label govuk-radios__label" for="quantity-2">
+                        2
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="quantity-3" name="quantity" type="radio" value="3" {{checked('quantity','3')}}>
+                      <label class="govuk-label govuk-radios__label" for="quantity-3">
+                        3
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="quantity-4" name="quantity" type="radio" value="custom" data-aria-controls="conditional-more" {{checked('quantity','custom')}}>
+                      <label class="govuk-label govuk-radios__label" for="quantity-4">
+                        More
+                      </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-more">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="quantity-custom">
+                        Enter number of certificates
+                      </label>
+                      <input class="govuk-input govuk-!-width-one-third" id="quantity-custom" name="quantity-custom" value="{{data['quantity-custom']}}">
+                    </div>
+                    </div>
+                    
+                  
+                </fieldset>
+              </div>
+
+
+            {{ govukButton({
+              text: "Continue"
+            }) }}
+      </form>  
+    </div>
+
+  </div>
+
+</form>  
+
+{% endblock %}

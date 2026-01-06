@@ -1,0 +1,147 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Birth registration details – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="declaration" method="post">
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+      <h1 class="govuk-heading-xl">
+        Your certificate order
+      </h1>
+
+  
+      <dl class="govuk-summary-list">
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Certificate quantity
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+             {%if data['quantity'] == 'custom'%}
+             {{ data ["quantity-custom"] }}
+             {%else%}
+              {{ data["quantity"]}}
+              {%endif%}
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="number-of-certiifcates.html">Change<span class="govuk-visually-hidden">Certificate quantity</span></a>
+            </dd>
+          </div>
+
+          {% if data['certificate-price'] == 'collection' %}
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Delivery method
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Collection
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="delivery-options.html">Change<span class="govuk-visually-hidden">Delivery address</span></a>
+            </dd>
+          </div>
+
+          {%else%}
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Delivery method
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Home delivery
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="delivery-options.html">Change<span class="govuk-visually-hidden">Delivery address</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Delivery address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["delivery-address"] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="address.html">Change<span class="govuk-visually-hidden">Delivery address</span></a>
+            </dd>
+          </div>
+          
+          {% endif %}
+
+          
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Contact email
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+            {% if data['email-address'] == 'email123@gmail.com'%}
+            {{ data['email-address'] }}
+            {% else %} 
+            {{ data['different-email'] }} 
+            {% endif %}
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="email-options.html">Change<span class="govuk-visually-hidden">Contact email</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Contact phone number
+            </dt>
+            <dd class="govuk-summary-list__value">
+            {{ data['phone-number']}} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="enter-phone-number.html">Change<span class="govuk-visually-hidden">Contact phone number</span></a>
+            </dd>
+          </div>
+
+           <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Contact preference
+            </dt>
+            <dd class="govuk-summary-list__value">
+            {{ data['contact-preference']}} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="contact-preference.html">Change<span class="govuk-visually-hidden">Contact preference</span></a>
+            </dd>
+          </div>
+    </dl>
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      <p class="govuk-body"><a href="#" class="govuk-link">Save and complete later</a></p>
+
+      
+    </div>
+
+
+  </div>
+</form>
+
+{% endblock %}
