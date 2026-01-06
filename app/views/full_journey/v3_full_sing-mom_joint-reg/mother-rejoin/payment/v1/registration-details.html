@@ -13,7 +13,7 @@
 
 {% block content %}
 
-<form class="form" action="declaration" method="post">
+<form class="form" action="#ß" method="post">
 
 
   <div class="govuk-grid-row">
@@ -21,17 +21,12 @@
       
      <span class="govuk-caption-xl">Birth registration details</span>
       <h1 class="govuk-heading-xl">
-        Final check: birth certificate details
+        Birth certificate details
       </h1>
 
-      <p class="govuk-body">
-        Check this information carefully before confirming it’s ready for review at the register office.
-      </p>
-
-      <p class="govuk-body">
-        It will be printed on birth certificates exactly as you’ve entered it.
-      </p>
-      
+      <div class="govuk-inset-text">
+        Check carefully. This Information will be shown on the birth certificate exactly as provided in this service.
+      </div>
 
       <h2 class="govuk-heading-m">
             Child
@@ -290,10 +285,13 @@
     <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Current name 
+            Name 
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['parent-prefix'] }} {{ data['parent-first-name'] or "Daniel" }} {{ data['parent-middle-name'] or "Sanjay"}} {{ data['parent-last-name'] or "Jones"}} {{ data['parent-suffix'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="">Change<span class="govuk-visually-hidden">name</span></a>
           </dd>
         </div>
 
@@ -351,7 +349,10 @@
             Country of birth
           </dt>
           <dd class="govuk-summary-list__value">
-            {{data['other-country-parent'] or "Scotland"}}
+            {{data['other-country-parent'] or "Australia"}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="">Change<span class="govuk-visually-hidden">place of birth</span></a>
           </dd>
         </div>
 
@@ -360,7 +361,10 @@
             City of town of birth
           </dt>
           <dd class="govuk-summary-list__value">
-          {{data['parent-city-of-birth'] or "Fife"}} 
+          {{data['parent-city-of-birth'] or "Melbourne"}} 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="">Change<span class="govuk-visually-hidden">place of birth</span></a>
           </dd>
         </div>
 
@@ -404,10 +408,13 @@
 
          <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Job title or role
+            Occupation
           </dt>
           <dd class="govuk-summary-list__value">
-          {{data['father-job-role'] or "Special Education Teacher"}} 
+          {{data['father-job-role'] or "Special Edication Teacher"}} 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="">Change<span class="govuk-visually-hidden">place of birth</span></a>
           </dd>
         </div>
 
@@ -415,68 +422,27 @@
     {% endif %}
 
 
-    <!-- <div class="govuk-form-group">
-
-    <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-        
-      </legend>
+    <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       
-      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
-          <label class="govuk-label govuk-checkboxes__label" for="waste">
-            I confirm that the particulars given by me are true to the best of my knowledge and belief.
-          </label>
-        </div>
-        
+    </legend>
+    
+    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+          I confirm that the particulars given by me are true to the best of my knowledge and belief.
+        </label>
       </div>
-    </fieldset>
-    </div> -->
-
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h2 class="govuk-fieldset__heading">
-              Is the information ready for review by registrar?
-            </h2>
-          </legend> 
-          <div class="govuk-radios" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="certificate-details-final-1" name="certificate-details-final" type="radio" value="Yes">
-              <label class="govuk-label govuk-radios__label" for="certificate-details-final-1">
-                Yes, this information is ready to be submitted to the register officer?
-              </label>
-            </div>
-            
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="certificate-details-final-2" name="certificate-details-final" type="radio" value="No-change">
-              <label class="govuk-label govuk-radios__label" for="certificate-details-final-2">
-                No, I need to request changes from the {father/parent}
-                <div id="changedName-hint" class="govuk-hint">
-                  The {father/parent} must agree to make changes before you request changes in the online service
-                </div>
-              </label>
-            </div>
-
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="certificate-details-final-3" name="certificate-details-final" type="radio" value="No-single">
-              <label class="govuk-label govuk-radios__label" for="certificate-details-final-3">
-                No, I want to register the birth without the father or parent details
-                <div id="changedName-hint" class="govuk-hint">
-                  You can register without the {father/parent}’s details if you cannot  agree to their request
-                </div>
-              </label>
-            </div>
-          </div>
-        </fieldset>
-      </div>
-     
-
+      
+    </div>
+  </fieldset>
+</div>
 
       {{ govukButton({
-        text: "Confirm ready to submit",
-        href: "declaration"
+        text: "Continue",
+        href: "email-options"
       }) }}
 
       

@@ -434,3 +434,38 @@ if (otherNames === 'Yes') {
     res.redirect('country-of-birth')
  }
 })
+
+// Joint registration routing: Father completes registration
+router.post('*/mother-rejoin/landing-page-fatherparent-accepts', function (req, res) {
+  res.redirect('before-you-submit')
+})
+
+router.post('*/mother-rejoin/before-you-submit', function (req, res) {
+  res.redirect('cya-final-check')
+})
+
+router.post('*/mother-rejoin/cya-final-check', function (req, res) {
+  var finalCheck = req.session.data['cya-final-check']
+  
+  if (finalCheck === 'ready-to-submit') {
+    res.redirect('declaration')
+  } else if (finalCheck === 'request-changes') {
+    res.redirect('ready-after-changes')
+  } else if (finalCheck === 'single-mother') {
+    res.redirect('single-mother-confirmation')
+  }
+})
+
+router.post('*/mother-rejoin/declaration', function (req, res) {
+  res.redirect('confirmation-page-no-payment')
+  })
+
+router.post('*/mother-rejoin/single-mother-confirmation', function (req, res) {
+  var answer = req.session.data['single-mother-confirm']
+  
+  if (answer === 'yes') {
+    res.redirect('declaration')
+  } else if (answer === 'no') {
+    res.redirect('cya-change-details-after-request')
+  }
+})  // 

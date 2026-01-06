@@ -1,0 +1,60 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Register a birth – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+           Subject: Register a birth: father has requested changes
+        </h1>
+
+
+        <p class="govuk-body">Sam Cooper has requested changes to the birth registration.</p>
+        <p class="govuk-body">You cannot include the father's or parent's details without their permission. You must discuss any changes with the father or parent.</p>
+
+    <h2 class="govuk-heading-m">Continuing the registration</h2>
+    <p class="govuk-body"><a href="app/views/full_journey/v3_full_sing-mom_joint-reg/mother-rejoin/parent-request-change.html"></a> to:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+     change or update information you provided
+      </li>
+      <li>
+       confirm changes are ready to review by the father or parent
+      </li>
+  
+    </ul>
+<h2 class="govuk-heading-m">If you do not agree to changes</h2>
+    <p class="govuk-body">You do not have to make changes if you do not agree. For example, suggesting a different last name.</p>
+
+    <p class="govuk-body">You can <a href="app/views/full_journey/v3_full_sing-mom_joint-reg/mother-rejoin/parent-request-change.html"continue to register the birth></a>:</p>
+    <ul class="<ul class="govuk-list govuk-list--bullet">
+      <li>
+     only registering yourself as the child’s parent 
+      </li>
+      <li>
+       continuing registration with agreement from the father or parent
+      </li>
+    </ul>
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}
