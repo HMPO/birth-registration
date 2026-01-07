@@ -469,3 +469,36 @@ router.post('*/mother-rejoin/single-mother-confirmation', function (req, res) {
     res.redirect('cya-change-details-after-request')
   }
 })  // 
+
+////////////////////////////////////////
+////Unmarried parent or father: confirm date of birth///
+///////////////////////////////////////
+
+router.post('/full_journey/unmarried-father-parent-v1/confirm_childs_birth_date', function (req, res) {
+
+  const day = req.session.data['confirm-birth-date-day'] 
+  const month = req.session.data['confirm-birth-date-month']
+  const year = req.session.data['confirm-birth-date-year']
+  
+  const inputDate = new Date(year, month - 1, day) // creates benchmark/input to match the birthDate with
+  const birthDate = new Date(2025, 0, 18) // Year, month, day
+  if (inputDate.getTime() === birthDate.getTime()) {
+    res.redirect('/full_journey/unmarried-father-parent-v1/agree-join-registration') 
+  } else {
+    res.redirect('/full_journey/unmarried-father-parent-v1/cannot-confirm-father-parent')
+  }
+})
+
+////////////////////////////////////////
+////Unmarried parent or father: confirm date of birth///
+///////////////////////////////////////
+
+router.post('/full_journey/unmarried-father-parent-v1/agree-join-registration', function (req, res) {
+  const answer = req.session.data['ConfirmAgreeRegistration']
+  
+  if (answer === 'agree-join') {
+    res.redirect('/full_journey/unmarried-father-parent-v1/before-you-start-father-parent')
+  } else if (answer === 'reject-join') {
+    res.redirect('/full_journey/unmarried-father-parent-v1/father-parent-invite-landing')
+  }
+}) 

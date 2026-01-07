@@ -1,0 +1,12 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Confirm child's date of birth – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
