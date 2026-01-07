@@ -1,0 +1,47 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Confirm child's date of birth – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="confirm_childs_birth_date" method="post">
+
+{{ govukDateInput({
+  id: "confirm-birth-date",
+  namePrefix: "confirm-birth-date",
+  fieldset: {
+    legend: {
+      text: "Confirm the child's date of birth",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "For example, 18 1 2025"
+  }
+}) }}
+
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+</form>
+
+</div>
+
+  </div>
+  
+  {% endblock %}
