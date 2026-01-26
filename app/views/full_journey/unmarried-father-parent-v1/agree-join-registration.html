@@ -1,0 +1,76 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Confirm child's date of birth – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="agree-join-registration" method="post">
+
+<h1 class="govuk-heading-xl">Registration details</h1>
+
+<p class="govuk-body">These are the details provided by Joyce Byers</p>
+
+<table class="govuk-table">
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Mother's name (at the time they gave birth)</th>
+      <td class="govuk-table__cell">Joyce Byers</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Child's name</th>
+      <td class="govuk-table__cell">Will Byers</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Child's date of birth</th>
+      <td class="govuk-table__cell">18 01 2025</td>
+    </tr>
+  </tbody>
+</table>
+
+{{ govukRadios({
+  name: "ConfirmAgreeRegistration",
+  fieldset: {
+    legend: {
+      text: "Will you join this registration?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "agree-join",
+      text: "Yes, I will join this registration",
+  hint: {
+    text: "You’ll review the mother’s and child’s details, then enter your details as the child’s father or parent"
+  }
+    },
+    {
+      value: "reject-join",
+      text: "No, I will not join this registration",
+      hint: { 
+        text: "You will not be able to access this service again, unless the mother sends another invite"
+      }
+    }
+  ]
+  }) }}
+
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+</div>
+</div>
+{% endblock %}

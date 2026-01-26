@@ -1,0 +1,87 @@
+{% extends "layouts/main.html" %}
+{% extends "layouts/one-login-dashboard-layout.html" %}
+
+
+{% block pageTitle %}
+   Your services - GOV.UK One Login – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback (opens in new tab)</a>.'
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <nav class="language-select" aria-label="Choose Language" role="navigation">
+      <ul class="govuk-list language-select__list govuk-body-s govuk-!-margin-0" role="list">
+          <li class="language-select__list-item" role="listitem">
+              <span aria-current="language">English</span>
+          </li>|
+          <li class="language-select__list-item" role="listitem">
+              <a class="govuk-link govuk-link--no-visited-state" href="/ipv/page/page-ipv-identity-document-start?lng=cy" data-journey-click="link - click:lang-select:cy" rel="alternate" hreflang="cy" role="link" onclick="alert('This prototype cannot currently show the Welsh translation'); return false;">Cymraeg
+                  <div class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</div>
+              </a>
+          </li>
+      </ul>
+  </nav>
+
+   <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        
+          <h1 class="govuk-heading-xl">
+              Your services
+          </h1>
+    
+        <p class="govuk-body">You're signed in as user1234@email.com</p>
+        <h2 class="govuk-heading-m">Your accounts</h2>
+
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h3 class="govuk-summary-card__title">
+              Register a birth
+            </h3>
+          </div>
+          <div class="govuk-summary-card__content">
+            <p class="govuk-body">Register a birth of a child</p>
+            <p class="govuk-body govuk-caption-s">
+              <a href="/full_journey/unmarried-father-parent-v1/confirm_childs_birth_date.html">Go to the register a birth service</a></p>
+            <span class="govuk-caption-m govuk-!-padding-bottom-3">Last used: 6 June 2025</span>
+          </div>
+        </div>
+
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h3 class="govuk-summary-card__title">
+              GOV.UK email subscriptions
+            </h3>
+          </div>
+          <div class="govuk-summary-card__content">
+            <p class="govuk-body">See and manage the updates you get about GOV.UK pages you’re interested in.</p>
+            <p class="govuk-body govuk-caption-s">
+              <a href="#">Go to your GOV.UK email subscriptions</a></p>
+            <span class="govuk-caption-m govuk-!-padding-bottom-3">Last used: 9 November 2023</span>
+          </div>
+        </div>
+
+        <div class="information-box">
+            <h2 class="govuk-heading-m">Services you can use with GOV.UK One Login</h2>
+            <p class="govuk-body">GOV.UK One Login is new. At the moment you can only use it to access some government services.</p>
+            <p class="govuk-body">In the future, you'll be able to use GOV.UK One Login to access all services on GOV.UK.</p>
+            <p class="govuk-body govuk-caption-s">See the <a href="https://www.gov.uk/using-your-gov-uk-one-login/services">services you can use with GOV.UK One Login</a>.</p>
+        </div>
+        
+    
+      
+      </div>
+
+
+    </div>
+  </main>
+
+{% endblock %}

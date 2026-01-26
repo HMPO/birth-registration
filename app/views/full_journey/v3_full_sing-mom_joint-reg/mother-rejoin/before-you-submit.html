@@ -12,7 +12,7 @@
 {% endblock %}
 
 {% block content %}
-
+<form method="post">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
@@ -43,10 +43,9 @@
 
         <p>There is no fee for registration.</p>
 
-      {{ govukButton({
-        text: "Continue",
-        href: "certificate-details-final"
-      }) }}
+  {{ govukButton({
+  text: "Confirm ready to submit"
+}) }}
 
       
     </div>

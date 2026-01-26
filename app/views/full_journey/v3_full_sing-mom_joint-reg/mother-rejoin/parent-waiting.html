@@ -1,0 +1,64 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Register a birth – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+            Birth registration: Rose Allen
+        </h1>
+
+        <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+          <div class="govuk-notification-banner__header">
+            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+              Update
+            </h2>
+          </div>
+          <div class="govuk-notification-banner__content">
+            <p class="govuk-notification-banner__heading">
+              Waiting for {father/parent} to join registration
+            </p>
+            <p class="govuk-body">
+              Share the invite link with the {father/parent} - it was sent to you by email.
+            </p>
+          </div>
+        </div>
+
+        <h2 class="govuk-heading-m">
+            Updates or changes
+        </h2>
+
+        <p class="govuk-body">
+          You cannot make changes to information without asking the {father/parent} to review.
+        </p>
+
+         <p class="govuk-body">
+          You can also <a href="#">withdraw this registration or remove the father’s details</a>. 
+         </p>
+
+      {{ govukButton({
+        text: "Continue birth registration",
+        href: "registration-details.html"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

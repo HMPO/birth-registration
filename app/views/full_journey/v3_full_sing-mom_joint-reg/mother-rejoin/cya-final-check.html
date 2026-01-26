@@ -13,27 +13,24 @@
 
 {% block content %}
 
-<form class="form" action="confirm-invite" method="post">
+<form class="form" method="post">
 
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       
-     <!-- <span class="govuk-caption-xl">Birth registration details</span> -->
+     <span class="govuk-caption-xl">Birth registration details</span>
       <h1 class="govuk-heading-xl">
-        Confirm you are ready to invite {father/parent}
+        Final check: birth certificate details
       </h1>
 
       <p class="govuk-body">
-        Check the information you’ve provided about yourself and your child.
+        Check this information carefully before confirming it’s ready for review at the register office.
       </p>
 
-      <p class="govuk-body">The father or parent will:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>agree to part the registration</li>
-        <li>check the details you provided (and request any updates)</li>
-        <li>add their own details (such as name and place of birth)</li>
-      </ul>
+      <p class="govuk-body">
+        It will be printed on birth certificates exactly as you’ve entered it.
+      </p>
       
 
       <h2 class="govuk-heading-m">
@@ -286,7 +283,6 @@
      {% if data['registrationOptions'] == 'mother-only' %}
      {% else %}
 
-    <!--  
     <h2 class="govuk-heading-m">
        Father
     </h2>
@@ -294,17 +290,12 @@
     <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Name 
+            Current name 
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['parent-prefix'] }} {{ data['parent-first-name'] or "Daniel" }} {{ data['parent-middle-name'] or "Sanjay"}} {{ data['parent-last-name'] or "Jones"}} {{ data['parent-suffix'] }}
           </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="">Change<span class="govuk-visually-hidden">name</span></a>
-          </dd>
         </div>
-
-        -->
 
         <!--
 
@@ -355,17 +346,12 @@
 
         -->
 
-        <!--
-
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Country of birth
           </dt>
           <dd class="govuk-summary-list__value">
-            {{data['other-country-parent'] or "Australia"}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="">Change<span class="govuk-visually-hidden">place of birth</span></a>
+            {{data['other-country-parent'] or "Scotland"}}
           </dd>
         </div>
 
@@ -374,10 +360,7 @@
             City of town of birth
           </dt>
           <dd class="govuk-summary-list__value">
-          {{data['parent-city-of-birth'] or "Melbourne"}} 
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="">Change<span class="govuk-visually-hidden">place of birth</span></a>
+          {{data['parent-city-of-birth'] or "Fife"}} 
           </dd>
         </div>
 
@@ -421,53 +404,73 @@
 
          <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Occupation
+            Job title or role
           </dt>
           <dd class="govuk-summary-list__value">
-          {{data['father-job-role'] or "Special Edication Teacher"}} 
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="">Change<span class="govuk-visually-hidden">place of birth</span></a>
+          {{data['father-job-role'] or "Special Education Teacher"}} 
           </dd>
         </div>
 
     </dl>
     {% endif %}
-    
-  
 
-  <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+    <!-- <div class="govuk-form-group">
+
+    <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        
+      </legend>
       
-    </legend>
-    
-    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-      
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
-        <label class="govuk-label govuk-checkboxes__label" for="waste">
-          I confirm that the particulars given by me are true to the best of my knowledge and belief.
-        </label>
+      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+          <label class="govuk-label govuk-checkboxes__label" for="waste">
+            I confirm that the particulars given by me are true to the best of my knowledge and belief.
+          </label>
+        </div>
+        
       </div>
-      
-    </div>
-  </fieldset> 
-  </div> -->
+    </fieldset>
+    </div> -->
 
-      {{ govukButton({
-        text: "Ready for {father/parent}",
-        href: "confirm-invite"
-      }) }}
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="ready-to-submit" name="cya-final-check" type="radio" value="ready-to-submit">
+          <label class="govuk-label govuk-radios__label" for="ready-to-submit">
+            Yes, this information is ready to be submitted to the register officer
+          </label>
+        </div>
+        
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="request-changes" name="cya-final-check" type="radio" value="request-changes">
+          <label class="govuk-label govuk-radios__label" for="request-changes">
+            No, I need to request changes from the {father/parent}
+            <div id="request-changes-hint" class="govuk-hint">
+              The {father/parent} must agree to make changes before you request changes in the online service
+            </div>
+          </label>
+        </div>
 
-      <p class="govuk-body">
-        <a href="#">Save and complete later</a>
-      </p>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="single-mother" name="cya-final-check" type="radio" value="single-mother">
+          <label class="govuk-label govuk-radios__label" for="single-mother">
+            No, I want to register the birth without the father or parent details
+            <div id="single-mother-hint" class="govuk-hint">
+              You can register without the {father/parent}'s details if you cannot agree to their request
+            </div>
+          </label>
+        </div>
+      </div>
+    </fieldset>
 
-    </div>
-
-
+     {{ govukButton({
+    text: "Confirm ready to submit"
+  }) }}
   </div>
 </form>
+
+ 
+
 
 {% endblock %}

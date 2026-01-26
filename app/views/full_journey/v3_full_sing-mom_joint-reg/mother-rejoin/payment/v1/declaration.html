@@ -13,7 +13,7 @@
 
 {% block content %}
 
-<form class="form" method="post">
+<form class="form" action="#" method="post">
 
 
   <div class="govuk-grid-row">
@@ -26,7 +26,8 @@
       <p class="govuk-body">By continuing, you are confirming that:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>the information you’ve given is correct</li>
-        <li>you agree your information will be sent and stored according to the <a class="govuk-link" href="#">privacy policy</a></li>
+        <li>you agree to <a class="govuk-link" href="#">terms and conditions</a></li>
+        <li>GRO will record, store, use and share your data in accordance with our <a class="govuk-link" href="#">privacy policy</a></li>
       </ul>
 
       <div class="govuk-warning-text">
@@ -45,9 +46,9 @@
     
     <div class="govuk-checkboxes" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="agree" name="delcartation-agree" type="checkbox" value="yes">
-        <label class="govuk-label govuk-checkboxes__label" for="confirmation-page-no-payment">
-          I agree 
+        <input class="govuk-checkboxes__input" id="agree" name="agree" type="checkbox" value="yes">
+        <label class="govuk-label govuk-checkboxes__label" for="agree">
+          I agree
         </label>
       </div>
       
@@ -64,9 +65,10 @@
 
       {% else %}
 
-      {{ govukButton(
-        text: "Confirm",
-      ) }}
+      {{ govukButton({
+        text: "Submitt application",
+        href: "confirmation-page-no-payment"
+      }) }}
 
       {% endif %}
 

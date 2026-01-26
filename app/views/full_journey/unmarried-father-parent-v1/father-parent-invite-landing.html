@@ -1,0 +1,46 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Invite to join a birth registration – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form class="form" action="one-login-dashboard-unmarried-parent" method="post">
+
+            <h1 class="govuk-heading-xl">Invitation to join a birth registration</h1>
+        <p class="govuk-body">Continue with the service if you:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>are registering as the father or parent in a birth registration</li>
+            <li>got the link from the person who gave birth to the child</li>
+          </ul>
+         <p class="govuk-body">We cannot show any details about the mother or the child until you verify your identity.</p> 
+
+         <h2 class="govuk-heading-l">What you need to do</h2>
+        <ol class="govuk-list govuk-list--number">
+            <li>Sign in (or create an account) to show your identity documents.</li>
+            <li>Check information provided for the mother and child. </li>
+            <li>Add your details to registration. </li>
+            <li>Confirm details are ready for final check by the mother.</li>
+         </ol>
+
+         {{ govukButton({
+        text: "Continue",
+        href: "one-login-dashboard-unmarried-parent"
+      }) }}
+
+        </form>
+
+        </div>
+        </div>
+        {% endblock %}
