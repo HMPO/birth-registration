@@ -17,44 +17,39 @@
     <div class="govuk-grid-column-two-thirds">
 
         <h1 class="govuk-heading-xl">
-            Contact {{ data['prefix']}} {{ data['mother-first-name'] or "Mary"}} {{ data['mother-middle-name'] or "Joanna"}} {{ data['mother-last-name'] or "Jones"}} {{ data['suffix'] }} about changes or updates
+            Request a change from the mother
         </h1>
 
-        <p class="govuk-body">Contact the mother to discuss:</p>
+        <p class="govuk-body">You must contact the mother to discuss:</p>
 
           <ul class="govuk-list govuk-list--bullet">
-            <li>disagreements about information included</li>
-            <li>mistakes or errors</li>
+            <li>information they provided</li>
+            <li>any mistakes or errors</li>
           </ul>
 
-        <p class="govuk-body">You must both agree on all details to both be recorded in the birth registration</p>
+        <p class="govuk-body">You cannot discuss changes through the online service.</p>
 
-        <h3 class="govuk-heading-m">
-            If the mother makes changes
+        <p class="govuk-body">The mother will be able to update the information provided for the Mother’s and Child’s details.</p>
+
+        <h3 class="govuk-heading-l">
+            What happens next
         </h3>
 
         <p class="govuk-body">
-          The mother will sign in to the service to make any changes. You’ll get a notification when the mother has updated the details.
+          The mother must ask you to review the information again - whether or not the information has changed.
         </p>
 
         <p class="govuk-body">
-          The birth registration cannot continue if you do not agree on details in the birth registration.
+          You’ll get a notification once the mother sends it for review again.
         </p>
 
-        <h3 class="govuk-heading-m">
-          If changes are not necessary
-        </h3>
-
-        <p class="govuk-body">Sign in again to:</p>
-
-          <ul class="govuk-list govuk-list--bullet">
-            <li>confirm mother’s and child’s details</li>
-            <li>continue the birth registration</li>
-          </ul>
+        <p class="govuk-body">
+          You cannot be recorded as the father or parent if both you and the mother agree on all the information in the registration.
+        </p>
 
       {{ govukButton({
         text: "Request a change",
-        href: "../father-confirm-invite/confirm-invite-details.html"
+        href: "../contact-details/email-options.html"
       }) }}
 
       
