@@ -1,0 +1,65 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Register a birth – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+            Birth registration: Rose Allen
+        </h1>
+
+        <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+          <div class="govuk-notification-banner__header">
+            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+              Update
+            </h2>
+          </div>
+          <div class="govuk-notification-banner__content">
+            <p class="govuk-notification-banner__heading">
+              Sam Cooper has submitted their details
+            </p>
+            <p class="govuk-body">
+              Ready for final checks before you submit to register office.
+            </p>
+          </div>
+        </div>
+
+        <p>{Father/Parents} has:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>confirmed they agree to register the birth with the details you provided </li>
+          <li>added their own details to be recorded as your child’s {father/parent}</li>
+        </ul>
+
+        <p>You need to:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>review details entered by the {father/parent}</li>
+          <li>confirm all information is ready to submit to the register office</li>
+          <li>order and pay for any birth certificates</li>
+        </ul>
+
+      {{ govukButton({
+        text: "Continue birth registration",
+        href: "before-you-submit"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

@@ -260,7 +260,7 @@ router.post('*/parent-formerly-known-as', function (req, res) {
   if (formerlyKnownAsFather === 'Yes') {
     res.redirect('name-formerly')
   } else {
-    res.redirect('is-the-name-now')
+    res.redirect('add-other-current-names')
   }
 })
 
@@ -270,7 +270,7 @@ router.post('*/parent-now-known-as', function (req, res) {
   if (nowKnownAsFather === 'No') {
     res.redirect('name-now')
   } else {
-    res.redirect('add-other-current-names')
+    res.redirect('other-names')
   }
 })
 
@@ -374,8 +374,8 @@ if (otherNames === 'Yes') {
 })
 
 // Mother's other names routing
-router.post('*/other-names', function (req, res) {
-  var otherNames = req.session.data['other-names']
+router.post('*/other-names-mother', function (req, res) {
+  var otherNames = req.session.data['other-names-mother']
 if (otherNames === 'yes') {
     res.redirect('add-previous-names')
 } else {
@@ -425,12 +425,32 @@ router.post('*/maiden-name', function (req, res) {
   }
 })
 
-// Mother's other names routing
-router.post('*/other-names-mother', function (req, res) {
-  var otherNames = req.session.data['other-names-mother']
+// Fathers's other names routing
+router.post('*/other-names-father', function (req, res) {
+  var otherNames = req.session.data['other-names-father']
 if (otherNames === 'Yes') {
     res.redirect('add-previous-names')
 } else {
     res.redirect('country-of-birth')
  }
+})
+
+// Show registration task list page based on value of registration-details (Mother)
+router.post('*/join-registration-father', function (req, res) {
+  var nowKnownAs = req.session.data['join-registration']
+  if (nowKnownAs === 'No') {
+    res.redirect('decline-to-join-registration')
+  } else {
+    res.redirect('birth-registration-for')
+  }
+})
+
+// Show father's name page based on value of confirm-invite-details
+router.post('*/confirm-invite-details', function (req, res) {
+  var nowKnownAs = req.session.data['confirm-details']
+  if (nowKnownAs === 'No') {
+    res.redirect('changes-contact-mother')
+  } else {
+    res.redirect('../father-details/name')
+  }
 })

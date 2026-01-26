@@ -1,0 +1,59 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          Sent to mother for final check
+        </h1>
+      </div>
+
+      <p>
+        You’ll get a confirmation email or text. 
+      </p>
+
+      <h2 class="govuk-heading-l">
+        What happens next
+      </h2>
+
+      <p class="govuk-body">The mother will:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>check all the information in the registration</li>
+        <li>agree to register the birth with the details you provided</li>
+        <li>send the completed details to the register office</li>
+        <li>order any birth certificates</li>
+      </ul>
+
+      <p class="govuk-body">You get an email notification when the application is submitted.</p>
+
+      <h2 class="govuk-heading-l">
+        If the mother requests a change
+      </h2>
+
+      <p>
+       You and the mother must jointly agree on all information entered in the birth registration. 
+      </p>
+
+      <p>
+       Discuss any changes with the mother before you continue the registration.
+      </p>
+
+      <h2 class="govuk-heading-l">
+        Getting birth certificate
+      </h2>
+
+      <p>
+       If you need birth certificate later you can <a href="https://www.gov.uk/order-copy-birth-death-marriage-certificate" class="govuk-link">order a birth certificate online</a> after registration is complete. 
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+   Find NHS record – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+        <h1 class="govuk-heading-xl">
+             You declined to join the registration
+        </h1>
+  
+      <p class="govuk-body">You will not be able to access the service again, unless the mother sends another invite.</p>
+
+
+      {{ govukButton({
+        text: "Exit the service",
+        href: "enter-nhs-number"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Information for government services – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+           Questions for government services
+        </h1>
+      
+          <p class="govuk-body">Part of registration is providing information for government statistics and reporting.</p>
+
+          <p class="govuk-body">Each of the following questions will explain:</p>
+
+         <ul class="govuk-list govuk-list--bullet">
+            <li>what information is being collected and why</li>
+            <li>what service will use the information</li>
+            <li>if you are required to answer by law</li>
+          </ul>
+
+          <p class="govuk-body">Your answers do not affect the registration.</p>
+
+          <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-visually-hidden">Warning</span>
+              By law you must provide this information if you  know it. You can be fined up to £200 if you do not.
+            </strong>
+          </div>
+
+          <h2 class="govuk-heading-m">
+            Your privacy
+          </h2>
+
+          <p class="govuk-body">Your answers are separate from personal information you gave for the registration.</p>
+
+          <p class="govuk-body">Statistics are published without any personal information.</p>
+
+          <p class="govuk-body"><a class="govuk-link" href="https://www.ons.gov.uk/aboutus/transparencyandgovernance/datastrategy/datapolicies">Office of National Statistics data policies</a>.</p>
+
+
+      {{ govukButton({
+        text: "Continue",
+        href: "date-of-birth-parent"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

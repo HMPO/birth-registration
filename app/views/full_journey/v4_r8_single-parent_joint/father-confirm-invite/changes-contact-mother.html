@@ -1,0 +1,68 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Register a birth – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+            Contact {{ data['prefix']}} {{ data['mother-first-name'] or "Mary"}} {{ data['mother-middle-name'] or "Joanna"}} {{ data['mother-last-name'] or "Jones"}} {{ data['suffix'] }} about changes or updates
+        </h1>
+
+        <p class="govuk-body">Contact the mother to discuss:</p>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>disagreements about information included</li>
+            <li>mistakes or errors</li>
+          </ul>
+
+        <p class="govuk-body">You must both agree on all details to both be recorded in the birth registration</p>
+
+        <h3 class="govuk-heading-m">
+            If the mother makes changes
+        </h3>
+
+        <p class="govuk-body">
+          The mother will sign in to the service to make any changes. You’ll get a notification when the mother has updated the details.
+        </p>
+
+        <p class="govuk-body">
+          The birth registration cannot continue if you do not agree on details in the birth registration.
+        </p>
+
+        <h3 class="govuk-heading-m">
+          If changes are not necessary
+        </h3>
+
+        <p class="govuk-body">Sign in again to:</p>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>confirm mother’s and child’s details</li>
+            <li>continue the birth registration</li>
+          </ul>
+
+      {{ govukButton({
+        text: "Request a change",
+        href: "../father-confirm-invite/confirm-invite-details.html"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

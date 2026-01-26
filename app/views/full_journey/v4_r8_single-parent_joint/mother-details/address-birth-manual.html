@@ -1,0 +1,90 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+   Mother's place of birth – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+{% if data['who-registers'] == 'Mother' %}
+<form class="form" action="changed-address" method="post">
+{% else %}
+<form class="form" action="job-role" method="post">
+{% endif %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Part 2 of 4: Mother’s details</span>
+      <h1 class="govuk-heading-xl">
+       Enter mother’s home address (at the time they gave birth)
+      </h1>
+        
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+  
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="mother-place-of-birthline-1">
+             Street address line 1
+            </label>
+            <input class="govuk-input" id="mother-place-of-birth-line-1" name="mother-place-of-birth-line-1" type="text" value="{{ data['mother-place-of-birth-line-1'] }}">
+          </div>
+         
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="mother-place-of-birth-line-2">
+             Street address line 2 (optional)
+            </label>
+            <input class="govuk-input" id="mother-place-of-birth-line-2" name="mother-place-of-birth-line-2" type="text" value="{{ data['mother-place-of-birth-line-2'] }}">
+          </div>
+          
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="mother-place-of-birth-town">
+             Town or city
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="mother-place-of-birth-town" name="mother-place-of-birth-town" type="text" value="{{ data['mother-place-of-birth-town'] }}">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="mother-place-of-birth-county">
+             County (optional)
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="mother-place-of-birth-county" name="mother-place-of-birth-county" type="text" value="{{ data['mother-place-of-birth-county'] }}">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="mother-place-of-birth-postcode">
+             Postcode
+            </label>
+            <input class="govuk-input govuk-input--width-10" id="mother-place-of-birth-postcode" name="mother-place-of-birth-postcode" type="text" value="{{ data['mother-place-of-birth-postcode'] }}">
+          </div>
+
+        </fieldset>
+      </div>
+
+      <p class="govuk-body">
+        <a class="govuk-link" href="address-birth-search.html">
+          Search by postcode
+        </a>
+      </p>
+      
+     
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

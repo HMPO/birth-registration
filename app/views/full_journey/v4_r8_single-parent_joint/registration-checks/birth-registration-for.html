@@ -1,0 +1,84 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Register a birth – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+            Birth registration for {{ data['prefix']}} {{ data['child-first-name'] or "Olivia"}} {{ data['child-middle-name'] or "Hana"}} {{ data['child-last-name'] or "Jones"}} {{ data['suffix'] }}
+        </h1>
+
+        <h2 class="govuk-heading-l">
+            What you need to do
+        </h2>
+
+        <h3 class="govuk-heading-m">
+            Part 1: Check Mother and Child’s details
+        </h3>
+
+        <p class="govuk-body">
+          View the details that will be recorded about the mother and child in the birth registration.
+        </p>
+
+        <p class="govuk-body">
+          You must agree to the details to continue registering the birth.
+        </p>
+
+        <h3 class="govuk-heading-m">
+          Part 2: Father‘s or parent’s details
+        </h3>
+
+        <p class="govuk-body">
+          Details that will be recorded about the father or parent, including name, place of birth, and job role.
+        </p>
+
+        <h3 class="govuk-heading-m">
+          Part 3: Questions for government services
+        </h3>
+
+        <p class="govuk-body">
+          For example, your date of birth and employment status.
+        </p>
+
+        <h2 class="govuk-heading-l">
+          Saving your answers
+        </h2>
+
+        <p class="govuk-body">
+          You can save answers after each section if you need to stop and continue later.
+        </p>
+
+        <h2 class="govuk-heading-l">
+          Birth certificates
+        </h2>
+
+        <p class="govuk-body">
+          The mother can order any certificates before submitting the completed information to the register office.
+        </p>
+
+      {{ govukButton({
+        text: "Continue to check details",
+        href: "../father-confirm-invite/confirm-invite-details.html"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

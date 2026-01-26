@@ -1,0 +1,105 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Contact preference – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+{% if data ['declaration-change'] == 'true'%}
+  <form class="form" action="../declaration/declaration" method="post">
+{% elif data['change-link-mother'] == 'true' %}
+  <form class="form" action="check-details" method="post">
+{% else %}
+<form class="form" action="join-registration-father" method="post">
+{% endif %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">  
+             
+              <form action="registration-details" method="post">
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                    <h1 class="govuk-heading-xl">
+                      Registration details
+                    </h1>
+                    </legend>
+
+                    <dl class="govuk-summary-list">
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Mother's name
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          {{ data['mother-prefix'] }} {{ data['mother-first-name'] or "Mary" }} {{ data['mother-middle-name'] or "Joanna"}} {{ data['mother-last-name'] or "Jones"}} {{ data['mother-suffix'] }}
+                        </dd>
+                      </div>
+                      
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Child's name
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          {{ data['prefix']}} {{ data['child-first-name'] or "Olivia"}} {{ data['child-middle-name'] or "Hana"}} {{ data['child-last-name'] or "Jones"}} {{ data['suffix'] }}
+                        </dd>
+                      </div>
+
+                      <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                            Child's date of birth
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                            {{ data['child-birth-day'] or "1"}} {{ data['child-birth-month'] or "January"}} {{ data['child-birth-year'] or "2026" }}
+                          </dd>
+                      </div>
+
+                    </dl>
+
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      <h2 class="govuk-fieldset__heading">
+                      Will you join this registration?
+                      </h2>
+                    </legend>
+                    
+                    <div class="govuk-radios" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="join-registration-1" name="join-registration" type="radio" value="Yes" {{checked("join-registration", "Yes")}} >
+                        <label class="govuk-label govuk-radios__label" for="join-registration-1">
+                          Yes, I will join this registration
+                        </label>
+                        <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                          You’ll review the mother’s and child’s details, then enter your details as the child’s father or parent
+                        </div>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="join-registration-2" name="join-registration" type="radio" value="No" {{checked("join-registration", "No")}} >
+                        <label class="govuk-label govuk-radios__label" for="join-registration-2">
+                         No, I will not join this registration
+                        </label>
+                        <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                          You will not be able to access this service again, unless the mother sends another invite
+                        </div>
+                      </div>
+
+                    </div>
+                  </fieldset>
+                </div>
+            {{ govukButton({
+              text: "Continue"
+            }) }}
+      </form>  
+    </div>
+
+  </div>
+
+</form>  
+
+{% endblock %}
