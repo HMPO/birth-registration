@@ -17,7 +17,7 @@
 {% if data['who-registers'] == 'single-mother' %}
 <form class="form" action="../declaration/submitting-registration-data" method="post">
 {% else %} 
-<form class="form" action="employment-parent" method="post">
+<form class="form" action="was-mother-married-before" method="post">
 {% endif %}
 
 
@@ -30,9 +30,9 @@
           
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
               {% if data['who-registers'] == 'single-mother' %}
-                <span class="govuk-caption-xl">Part 3 of 3: Survey for government statistics and reporting</span>  
+                <span class="govuk-caption-xl">Part 3 of 3: Questions for government services</span>  
               {%else %}
-                <span class="govuk-caption-xl">Part 4 of 4: Survey for government statistics and reporting</span>  
+                <span class="govuk-caption-xl">Part 4 of 4: Questions for government services</span>  
               {% endif %}
                 <h1 class="govuk-heading-xl">
                 Mother’s employment status (optional)
@@ -40,7 +40,7 @@
               </legend>
 
               <p class="govuk-body">
-                Your rob role/occupation is displayed on the birth certificate. Employment status is used for national statistics only. 
+                Job role/occupation is displayed on the birth certificate. Employment status is used for national statistics only. 
               </p>
 
                <p class="govuk-body">
@@ -89,20 +89,6 @@
                     Name of industry
                   </label>
                   <input class="govuk-input" id="industry-self-employed" name="industry-self-employed" type="text" value="{{ data['industry-self-employed'] }}">
-                </div>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="employment-mother-4" name="employment-mother" type="radio" value="self-employed-supervisor" {{checked("employment-mother", "Self-employed and a supervisor or a manager")}} data-aria-controls="conditional-DOB-4">
-                <label class="govuk-label govuk-radios__label" for="employment-mother-4">
-                  Self-employed and a supervisor or a manager
-                </label>
-              </div>
-              <div class="govuk-radios__conditional" id="conditional-DOB-4">
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="industry-self-employed-supervisor">
-                    Name of industry
-                  </label>
-                  <input class="govuk-input" id="industry-self-employed-supervisor" name="industry-self-employed-supervisor" type="text" value="{{ data['industry-self-employed-supervisor'] }}">
                 </div>
               </div>
               <div class="govuk-radios__item">

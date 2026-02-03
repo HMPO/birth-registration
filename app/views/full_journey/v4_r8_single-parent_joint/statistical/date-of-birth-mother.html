@@ -19,9 +19,9 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       {% if data['who-registers'] == 'single-mother' %}
-        <span class="govuk-caption-xl">Part 3 of 3: Survey for government statistics and reporting</span>  
+        <span class="govuk-caption-xl">Part 3 of 3: Questions for government services</span>  
       {%else %}
-        <span class="govuk-caption-xl">Part 4 of 4: Survey for government statistics and reporting</span>  
+        <span class="govuk-caption-xl">Part 4 of 4: Questions for government services</span>  
       {% endif %}
       <h1 class="govuk-heading-xl">
         Mother’s date of birth
@@ -52,7 +52,7 @@
                         Mother’s date of birth
                       </legend>
                       <div id="mother-DOB-hint" class="govuk-hint">
-                        For example, 23 11 2024
+                        For example, 18 01 1995
                       </div>
                       <div class="govuk-date-input" id="mother-DOB">
                         <div class="govuk-date-input__item">
@@ -87,12 +87,6 @@
                 <input class="govuk-radios__input" id="date-of-birth-mother" name="date-of-birth-mother" type="radio" value="no" {{checked("date-of-birth-mother", "No, I do not know the date of birth")}} >
                 <label class="govuk-label govuk-radios__label" for="date-of-birth-mother">
                   No, I do not know the date of birth
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="date-of-birth-mother" name="date-of-birth-mother" type="radio" value="dont-want-to-asnwer" {{checked("date-of-birth-mother", "I do not want to answer")}} >
-                <label class="govuk-label govuk-radios__label" for="date-of-birth-mother">
-                  I do not want to answer
                 </label>
               </div>
             </div>
