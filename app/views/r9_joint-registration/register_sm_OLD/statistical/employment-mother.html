@@ -1,0 +1,142 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+   Mother’s previous marriages or Civil Partnerships – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+{% if data['who-registers'] == 'single-mother' %}
+<form class="form" action="../declaration/submitting-registration-data" method="post">
+{% else %} 
+<form class="form" action="employment-parent" method="post">
+{% endif %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+     
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              {% if data['who-registers'] == 'single-mother' %}
+                <span class="govuk-caption-xl">Part 3 of 3: Survey for government statistics and reporting</span>  
+              {%else %}
+                <span class="govuk-caption-xl">Part 4 of 4: Survey for government statistics and reporting</span>  
+              {% endif %}
+                <h1 class="govuk-heading-xl">
+                Mother’s employment status (optional)
+                </h1>
+              </legend>
+
+              <p class="govuk-body">
+                Your rob role/occupation is displayed on the birth certificate. Employment status is used for national statistics only. 
+              </p>
+
+               <p class="govuk-body">
+                This question is not required by law.
+              </p>
+            
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="employment-mother-1" name="employment-mother" type="radio" value="Employed" {{checked("employment-mother", "Employed")}} data-aria-controls="conditional-DOB-1">
+                <label class="govuk-label govuk-radios__label" for="employment-mother-1">
+                Employed
+                </label>
+              </div>
+              <div class="govuk-radios__conditional" id="conditional-DOB-1">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="industry-employed">
+                    Name of industry
+                  </label>
+                  <input class="govuk-input govuk-!-width-full" id="industry-employed" name="industry-employed" type="text" value="{{ data['industry-employed'] }}">
+                </div>
+              </div>
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="employment-mother-2" name="employment-mother" type="radio" value="no" {{checked("employment-mother", "No, I do not know the date of birth")}} data-aria-controls="conditional-DOB-2" >
+                <label class="govuk-label govuk-radios__label" for="employment-mother-2">
+                 Employed and a supervisor or a manager
+                </label>
+              </div>
+              <div class="govuk-radios__conditional" id="conditional-DOB-2">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="industry-employed-supervisor">
+                    Name of industry
+                  </label>
+                  <input class="govuk-input" id="industry-employed-supervisor" name="industry-employed-supervisor" type="text" value="{{ data['industry-employed-supervisor'] }}">
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="employment-mother-3" name="employment-mother" type="radio" value="self-employed" {{checked("employment-mother", "Self-employed")}} data-aria-controls="conditional-DOB-3">
+                <label class="govuk-label govuk-radios__label" for="employment-mother-3">
+                  Self-employed
+                </label>
+              </div>
+              <div class="govuk-radios__conditional" id="conditional-DOB-3">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="industry-self-employed">
+                    Name of industry
+                  </label>
+                  <input class="govuk-input" id="industry-self-employed" name="industry-self-employed" type="text" value="{{ data['industry-self-employed'] }}">
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="employment-mother-4" name="employment-mother" type="radio" value="self-employed-supervisor" {{checked("employment-mother", "Self-employed and a supervisor or a manager")}} data-aria-controls="conditional-DOB-4">
+                <label class="govuk-label govuk-radios__label" for="employment-mother-4">
+                  Self-employed and a supervisor or a manager
+                </label>
+              </div>
+              <div class="govuk-radios__conditional" id="conditional-DOB-4">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="industry-self-employed-supervisor">
+                    Name of industry
+                  </label>
+                  <input class="govuk-input" id="industry-self-employed-supervisor" name="industry-self-employed-supervisor" type="text" value="{{ data['industry-self-employed-supervisor'] }}">
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="employment-mother-5" name="employment-mother" type="radio" value="No gainful employment" {{checked("employment-mother", "No gainful employment")}}>
+                <label class="govuk-label govuk-radios__label" for="employment-mother-5">
+                  No gainful employment
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="employment-mother-6" name="employment-mother" type="radio" value="I do not know" {{checked("employment-mother", "I do not know")}}>
+                <label class="govuk-label govuk-radios__label" for="employment-mother-6">
+                  I do not know
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="employment-mother-7" name="employment-mother" type="radio" value="I do not want to answer" {{checked("employment-mother", "I do not want to answer")}}>
+                <label class="govuk-label govuk-radios__label" for="employment-mother-7">
+                  I do not want to answer
+                </label>
+              </div>
+            </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

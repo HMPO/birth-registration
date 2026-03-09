@@ -16,8 +16,10 @@
 
 {% if data['declaration-change'] == 'true' %}
   <form class="form" action="../declaration/declaration" method="post">
-{% else data['change-link'] == 'true' %}
-<form class="form" action="child-details" method="post">
+{% elif data['change-link'] == 'true' %}
+  <form class="form" action="child-details" method="post">
+{% else %}
+  <form class="form" action="default-next" method="post">
 {% endif %}
 
   <div class="govuk-grid-row">

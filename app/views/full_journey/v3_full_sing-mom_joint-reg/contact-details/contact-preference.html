@@ -16,7 +16,9 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="../mother-invite/confirm-invite-details" method="post">
+      <form class="form" action="../mother-invite/confirm-invite-details-mother" method="post">
+
+        <span class="govuk-caption-xl">Mother's contact details</span>
 
        <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="contact-preference-hint">
@@ -27,8 +29,12 @@
             </h1>
           </legend>
 
+          <div id="changedName-hint" class="govuk-hint">
+            We will still send status updates by email, such as submission confirmation
+          </div>
+
           <p class="govuk-body">
-           Sometimes it might not be possible to contact you in the way you prefer.
+            Choose how you prefer to be contacted about your application.
           </p>
 
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">

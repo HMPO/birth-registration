@@ -14,7 +14,7 @@
 
 {% block content %}
 
-<form class="form" action="date-of-marriage" method="post">
+<form class="form" action="employment-parent" method="post">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -22,19 +22,14 @@
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-              <span class="govuk-caption-xl">Part 4 of 4: Survey for government statistics and reporting</span>    
+              <span class="govuk-caption-xl">Part 3 of 3: Questions for government services</span>    
               <h1 class="govuk-fieldset__heading">
-                 {%if data['second-parent'] == 'Father' or data['who-registers'] == 'Father'%}
                     Is the father a Spanish national?
-                {%else%}
-                    Is the parent a Spanish national?
-                {%endif%}  
-               
               </h1>
             </legend>
 
-            <div id="spanishNational-hint" class="govuk-hint">
-              This information is sent to Spanish consular (embassy) to measure Spanish nationals living in England and Wales.
+            <div id="spanishNational-hint" class="govuk-body">
+              The General Register Office will notify the Spanish consulate when a Spanish national registers a birth or death in the UK.
             </div>
             
             <div class="govuk-radios" data-module="govuk-radios">

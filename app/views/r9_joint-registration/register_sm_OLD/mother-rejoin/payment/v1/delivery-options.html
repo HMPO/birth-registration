@@ -1,0 +1,65 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Contact preference – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">  
+
+             
+              <form action="number-of-certiifcates" method="post" novalidate>
+               <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading">
+                      Select a delivery option
+                    </h1>
+                  </legend>
+                  <div id="signIn-hint" class="govuk-hint">
+                    Registrations must be approved by a registrar before the certificates are printed and sent.
+                  </div>
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="certificate-price" name="certificate-price" type="radio" value="12.50" {{checked('certificate-price','12.50')}}>
+                      <label class="govuk-label govuk-radios__label" for="certificate-price">
+                        Home delivery 
+                      </label>
+                      <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                        After registration is completed certificates will be sent to address of your choice
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="certificate-price" name="certificate-price" type="radio" value="collection" {{checked('certificate-price','collection')}}>
+                      <label class="govuk-label govuk-radios__label" for="certificate-price">
+                        Collection
+                      </label>
+                       <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                        You will need to collect it from the local register office
+                      </div>
+                    </div>
+                    
+                  </div>
+                </fieldset>
+              </div>
+
+
+            {{ govukButton({
+              text: "Continue"
+            }) }}
+      </form>  
+    </div>
+
+  </div>
+
+</form>  
+
+{% endblock %}

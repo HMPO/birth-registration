@@ -14,28 +14,42 @@
 
 {% block content %}
 
-<form class="form" action="employment-mother" method="post">
+<form class="form" action="previous-births" method="post">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
       {% if data['who-registers'] == 'single-mother' %}
-        <span class="govuk-caption-xl">Part 3 of 3: Survey for government statistics and reporting</span>  
+        <span class="govuk-caption-xl">Part 3 of 3: Questions for government services</span>  
       {%else %}
-        <span class="govuk-caption-xl">Part 4 of 4: Survey for government statistics and reporting</span>  
+        <span class="govuk-caption-xl">Part 4 of 4: Questions for government services</span>
       {% endif %}    
       <h1 class="govuk-heading-xl">
        Experiences of stillbirth
       </h1>
 
       <p class="govuk-body">
-        The government uses this information to measure the safety of maternity and neonatal services in England and Wales.
+        This information is required by law. These statistics are collected to use in healthcare research about health and pregnancy in the UK.
       </p>
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Guidance about stillbirths
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          A stillbirth is when the baby is not born alive after 24 weeks of a pregnancy.
+        </div>
+        <div class="govuk-details__text">
+          Experiences of pregnancy loss (miscarriages) younger than 24 weeks will not be collected during registration for statistical information. 
+        </div>
+      </details>
         
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-              Has the mother experienced a stillbirth? 
+              Has the mother ever given birth to a stillborn child? 
             </legend>
             
             <div class="govuk-radios" data-module="govuk-radios">
@@ -51,7 +65,7 @@
                         <div class="govuk-date-input__item">
                           <div class="govuk-form-group">
                             <label class="govuk-label govuk-date-input__label" for="stillbirths">
-                              Number of children stillborn or died during labour
+                              Number of children stillborn
                             </label>
                             <input class="govuk-input govuk-date-input__input govuk-input--width-10" id="stillbirths" name="stillbirths" type="text" inputmode="numeric" value="{{ data['stillbirths'] }}" >
                           </div>
@@ -71,12 +85,6 @@
                 <input class="govuk-radios__input" id="date-of-birth-mother" name="date-of-birth-mother" type="radio" value="dont-want-to-asnwer" {{checked("date-of-birth-mother", "I do not want to answer")}} >
                 <label class="govuk-label govuk-radios__label" for="date-of-birth-mother">
                   I do not know
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="date-of-birth-mother" name="date-of-birth-mother" type="radio" value="dont-want-to-asnwer" {{checked("date-of-birth-mother", "I do not want to answer")}} >
-                <label class="govuk-label govuk-radios__label" for="date-of-birth-mother">
-                  I do not want to answer
                 </label>
               </div>
             </div>

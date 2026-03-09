@@ -55,39 +55,35 @@
       classes: "govuk-fieldset__legend--l"
     }
   },
+
   items: [
     {
-      value: "make-changes",
+      value: "government-gateway",
       text: "Make changes to details",
       hint: {
         text: "Update information about you or your child"
-      },
-      conditional: {
-        html: '<a href="app/views/full_journey/v3_full_sing-mom_joint-reg/mother-rejoin/change-after-request.html" class="govuk-button" data-module="govuk-button">Continue</a>'
       }
     },
     {
-      value: "singlemum",
+      value: "govuk-one-login",
       text: "Register the birth with only your details",
       hint: {
-        text: "You can register without the father's or parent's details if you cannot agree to their request"
-      },
-      conditional: {
-        html: '<a href="app/views/full_journey/v3_full_sing-mom_joint-reg/mother-rejoin/single-mother-confirmation.html" class="govuk-button" data-module="govuk-button">Continue</a>'
+        text: "You can register without the father's or parent's details if you cannot  agree to their request"
       }
     },
-    {
-      value: "delete",
+     {
+      value: "govuk-one-login",
       text: "Delete application",
       hint: {
         text: "For example, if you need support or help from the register office"
-      },
-      conditional: {
-        html: '<a href="delete-confirmation.html" class="govuk-button govuk-button--warning" data-module="govuk-button">Continue</a>'
       }
     }
   ]
 }) }}
+      {{ govukButton({
+        text: "Continue",
+        href: "registration-details.html"
+      }) }}
 
       
     </div>

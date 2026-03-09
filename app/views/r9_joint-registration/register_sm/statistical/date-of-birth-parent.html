@@ -20,28 +20,19 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">Part 4 of 4: Survey for government statistics and reporting</span>    
+      <span class="govuk-caption-xl">Part 3 of 3: Questions for government services</span>    
       <h1 class="govuk-heading-xl">
-        {%if data['second-parent'] == 'Father' or data['who-registers'] == 'Father'%}
             Father’s date of birth
-        {%else%}
-            Parent’s date of birth
-        {%endif%}   
       </h1>
 
       <p class="govuk-body">
-        This information is required by law. Statistics are used by the UK Statistics Authority to measure the age of the population when they have children.
+        This information is required by law. The Office for National Statistics use it to measure the age of the population when they have children.
       </p>
         
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                {%if data['second-parent'] == 'Father' or data['who-registers'] == 'Father'%}
                      Do you know the father’s date of birth?
-                {%else%}
-                    Do you know the parent’s date of birth?
-                {%endif%}   
-               
             </legend>
             
             <div class="govuk-radios" data-module="govuk-radios">
@@ -59,7 +50,7 @@
                         Date of birth
                       </legend>
                       <div id="parent-DOB-hint" class="govuk-hint">
-                        For example, 23 11 2024
+                        For example, 03 06 1993
                       </div>
                       <div class="govuk-date-input" id="parent-DOB">
                         <div class="govuk-date-input__item">
@@ -96,12 +87,7 @@
                   No, I do not know the date of birth
                 </label>
               </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="date-of-birth-parent" name="date-of-birth-parent" type="radio" value="dont-want-to-asnwer" {{checked("date-of-birth-parent", "I do not want to answer")}} >
-                <label class="govuk-label govuk-radios__label" for="date-of-birth-parent">
-                  I do not want to answer
-                </label>
-              </div>
+
             </div>
         </fieldset>
       </div>

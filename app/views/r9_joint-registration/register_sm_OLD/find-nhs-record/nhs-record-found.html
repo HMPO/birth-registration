@@ -1,0 +1,103 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+   NHS record found – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    {% if data['child-nhs-number'] === '1234567890' %}
+      
+      <h1 class="govuk-heading-xl">
+          We’ve matched your details with NHS data
+      </h1>
+  
+      <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Child's NHS number
+        </dt>
+        <dd class="govuk-summary-list__value">
+            {{ data['child-nhs-number'] or '123 456 7890' }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Child's date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['child-birth-day'] or '17' }} {{ data['child-birth-month'] or 'May' }} {{ data['child-birth-year'] or '2025' }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Mother’s last name
+        </dt>
+        <dd class="govuk-summary-list__value">
+         {{data['mother-last-name'] or 'Williams'}} 
+        </dd>
+      </div>
+    </dl>
+
+
+      {{ govukButton({
+        text: "Continue to registration",
+        href: "../child-details/register-a-birth"
+      }) }}
+
+      
+     {% else %}
+       <h1 class="govuk-heading-xl">
+         We couldn’t match those details with NHS data
+      </h1>
+
+      <p class="govuk-body">This might be because:</p>
+       <ul class="govuk-list govuk-list--bullet">
+          <li>spelling or other error in details you gave</li>
+          <li>records have not been updated yet</li>
+          <li>error in details recorded by NHS</li>
+        </ul>
+
+      <p class="govuk-body">If you cannot match the details, you need to register in person at a local register office.</p>
+
+
+          <form class="form" action="search-again" method="post">
+            {{ govukRadios({
+              idPrefix: "search-again",
+              name: "searchAgain",
+              fieldset: {
+                legend: {
+                  text: "Do you want to search again? ",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              items: [
+                { value: "yes", text: "Yes, do another search" },
+                { value: "no", text: "No, I’ll contact the local register office" }
+              ]
+            }) }}
+
+            {{ govukButton({
+            text: "Continue"
+          }) }}
+
+          </form>
+
+     {% endif %} 
+    
+    </div>
+  </div>
+
+{% endblock %}

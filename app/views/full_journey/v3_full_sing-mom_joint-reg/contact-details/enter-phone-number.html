@@ -20,18 +20,26 @@
 
       <form class="form" action="contact-preference" method="post">
 
+      <span class="govuk-caption-xl">Mother's contact details</span>
+
 
       <div class="govuk-form-group">
         
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
         <h1 class="govuk-label-wrapper">
           <label class="govuk-label govuk-label--l" for="phone-number">
-            Enter a UK mobile number
+            Enter a mobile number
           </label>
         </h1>
         </legend>
 
-        <p class="govuk-body">We’ll send SMS confirmations, receipts and updates to this address.</p>
+        <div id="changedName-hint" class="govuk-hint">
+            For international numbers, include the country code
+        </div>
+
+        <p class="govuk-body">
+          Register offices might contact you by phone or text message.
+        </p>
 
         <input class="govuk-input" id="phone-number" name="phone-number" value="{{data['phone-number']}}" type="text" aria-describedby="phone-number-hint">
       </div>    

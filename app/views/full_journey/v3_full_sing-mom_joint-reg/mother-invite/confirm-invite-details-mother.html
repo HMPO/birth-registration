@@ -58,7 +58,7 @@
               Date of birth
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['child-birth-day'] or "1"}} {{ data['child-birth-month'] or "October"}} {{ data['child-birth-year'] or "2025" }}
+              {{ data['child-birth-day'] or "10"}} {{ data['child-birth-month'] or "February"}} {{ data['child-birth-year'] or "2026" }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="">Change<span class="govuk-visually-hidden">date of birth</span></a>
@@ -457,7 +457,7 @@
 
       {{ govukButton({
         text: "Ready for {father/parent}",
-        href: "confirm-invite"
+        href: "confirm-invite-qr"
       }) }}
 
       <p class="govuk-body">

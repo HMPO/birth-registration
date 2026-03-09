@@ -28,31 +28,30 @@
           </div>
           <div class="govuk-notification-banner__content">
             <p class="govuk-notification-banner__heading">
-              Sam Cooper has submitted their details
+              {Father/Parent} declined to join registration
             </p>
             <p class="govuk-body">
-              Ready for final checks before you submit to register office.
+              You can register a birth with your details only, or delete this application for now.
             </p>
           </div>
         </div>
 
-        <p>{Father/Parents} has:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>confirmed they agree to register the birth with the details you provided </li>
-          <li>added their own details to be recorded as your child’s {father/parent}</li>
-        </ul>
+        <h2 class="govuk-heading-m">
+            Updates or changes
+        </h2>
 
-        <p>You need to:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>review details entered by the {father/parent}</li>
-          <li>confirm all information is ready to submit to the register office</li>
-          <li>order and pay for any birth certificates</li>
-        </ul>
+        <p class="govuk-body">
+          You cannot make changes to information without asking the {father/parent} to review.
+        </p>
 
-      {{ govukButton(
+         <p class="govuk-body">
+          You can also <a href="#">withdraw this registration or remove the father’s details</a>. 
+         </p>
+
+      {{ govukButton({
         text: "Continue birth registration",
-  
-      ) }}
+        href: "registration-details.html"
+      }) }}
 
       
     </div>

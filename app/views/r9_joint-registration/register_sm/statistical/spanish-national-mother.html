@@ -17,7 +17,7 @@
 {% if data['registeringOtherParent'] == 'no' %}
 <form class="form" action="was-mother-married-before" method="post">
 {% else %} 
-<form class="form" action="date-of-birth-parent" method="post">
+<form class="form" action="employment-mother" method="post">
 {% endif %}
 
 
@@ -28,9 +28,9 @@
         <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
               {% if data['who-registers'] == 'single-mother' %}
-                <span class="govuk-caption-xl">Part 3 of 3: Survey for government statistics and reporting</span>  
+                <span class="govuk-caption-xl">Part 3 of 3: Questions for government services</span>  
               {%else %}
-                <span class="govuk-caption-xl">Part 4 of 4: Survey for government statistics and reporting</span>  
+                <span class="govuk-caption-xl">Part 4 of 4: Questions for government services</span>  
               {% endif %}
               <h1 class="govuk-fieldset__heading">
                Is the mother a Spanish national?
@@ -38,7 +38,7 @@
             </legend>
 
             <div id="spanishNational-hint" class="govuk-hint">
-              This information is sent to Spanish consular (embassy) to measure Spanish nationals living in England and Wales.
+              The General Register Office will notify the Spanish consulate when a Spanish national registers a birth or death in the UK.
             </div>
             
             <div class="govuk-radios" data-module="govuk-radios">

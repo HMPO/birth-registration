@@ -14,17 +14,17 @@
 
 {% block content %}
 
-<form class="form" action="skip-stats-pages" method="post">
+<form class="form" action="experienced-stillbiths" method="post">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       {% if data['who-registers'] == 'single-mother' %}
-        <span class="govuk-caption-xl">Part 3 of 3: Survey for government statistics and reporting</span>  
+        <span class="govuk-caption-xl">Part 3 of 3: Questions for government services</span>  
       {%else %}
-        <span class="govuk-caption-xl">Part 4 of 4: Survey for government statistics and reporting</span>  
+        <span class="govuk-caption-xl">Part 4 of 4: Questions for government services</span>  
       {% endif %}  
       <h1 class="govuk-heading-xl">
-       Previous pregnancies
+       Questions about pregnancy and bereavement
       </h1>
 
       <p class="govuk-body">
@@ -32,13 +32,13 @@
       </p>
 
        <p class="govuk-body">
-       The government uses this to measure the safety of maternity services in the UK.
+       The government uses this to measure the safety of childbirth in the UK.
       </p>
 
        <p class="govuk-body">
-       You can decline to answer these questions  if this is a difficult topic for you.
+       If this is a difficult topic, you can save now and continue later.
       </p>
-        
+      <!--
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -63,6 +63,7 @@
              
         </fieldset>
       </div>
+      -->
 
       {{ govukButton({
         text: "Save and continue"

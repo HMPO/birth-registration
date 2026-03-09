@@ -14,18 +14,18 @@
 
 {% block content %}
 
-<form class="form" action="was-mother-married-before" method="post">
+<form class="form" action="previous-pregnancies" method="post">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">Part 4 of 4: Survey for government statistics and reporting</span>    
+      <span class="govuk-caption-xl">Part 4 of 4: Questions for government services</span>    
       <h1 class="govuk-heading-xl">
-        Date of parents’ marriage or civil partnership
+        Date child’s parents got married 
       </h1>
 
       <p class="govuk-body">
-       This information is required by law. Statistics are used by the UK Statistics Authority to measure when married or civil partnered parents have children.
+       This information is required by law. The Office for National Statistics use it to measure time between marriage and having children.
       </p>
         
       <div class="govuk-form-group">
@@ -84,12 +84,6 @@
                 <input class="govuk-radios__input" id="date-of-birth-mother" name="date-of-birth-mother" type="radio" value="no" {{checked("date-of-birth-mother", "No, I do not know the date of birth")}} >
                 <label class="govuk-label govuk-radios__label" for="date-of-birth-mother">
                   No, I do not know the date of marriage or civil partnership
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="date-of-birth-mother" name="date-of-birth-mother" type="radio" value="dont-want-to-asnwer" {{checked("date-of-birth-mother", "I do not want to answer")}} >
-                <label class="govuk-label govuk-radios__label" for="date-of-birth-mother">
-                  I do not want to answer
                 </label>
               </div>
             </div>

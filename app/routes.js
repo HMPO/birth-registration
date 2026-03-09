@@ -324,9 +324,9 @@ if (realtionshipType=== 'yes' && marriedRelationshipType === 'same-sex') {
 router.post('*/certificate-choice', function (req, res) {
   var skipPaymentPages = req.session.data['certificate-order']
   if (skipPaymentPages === 'yes') {
-    res.redirect('delivery-options')
+    res.redirect('number-of-certiifcates')
   } else {
-    res.redirect('declaration')
+    res.redirect('confirmation-page-no-payment')
   }
 })
 
@@ -365,23 +365,27 @@ router.post('*/now-known-as-married', function (req, res) {
 
 // Mother's previous married name routing
 router.post('*/previous-married-name', function (req, res) {
-  var otherNames = req.session.data['previous-married-name']
-if (otherNames === 'Yes') {
+  var previousName = req.session.data['previous-married-name']
+if (previousName === 'Yes') {
     res.redirect('./other-names')
 } else {
     res.redirect('./other-names')
  }
 })
 
+
 // Mother's other names routing
 router.post('*/other-names-mother', function (req, res) {
-  var otherNames = req.session.data['other-names-mother']
-if (otherNames === 'yes') {
-    res.redirect('add-previous-names')
-} else {
-    res.redirect('country-of-birth')
- }
-})
+  // Normalise to lowercase string; handle missing value safely
+  const otherNames = String(req.session.data['other-names-mother'] || '').toLowerCase();
+
+  if (otherNames === 'yes') {
+    return res.redirect('add-previous-names');   // relative redirect keeps the version prefix
+  } else {
+    return res.redirect('country-of-birth');     // fallback for 'no' or missing value
+  }
+});
+
 
 // Add any other previously used names
 router.post('/add-previous-names', function (req, res) {
@@ -405,6 +409,16 @@ router.post( '*/before-you-start', function (req, res) {
   }
 })
 
+// Before you start routing R9 Joint
+router.post( '*/before-you-start-joint', function (req, res) {
+  var registrationChannel = req.session.data['registerMethod']
+  if (registrationChannel === 'inPerson') {
+    res.redirect('https://www.gov.uk/register-offices')
+  } else {
+    res.redirect('/r9_joint-registration/register_sm/triage/before-you-start' )
+  }
+})
+
 // Show name input page based on value of name-now (Mother)
 router.post('*/still-known-as-unmarried', function (req, res) {
   var nowKnownAs = req.session.data['name-now']
@@ -418,6 +432,16 @@ router.post('*/still-known-as-unmarried', function (req, res) {
 // Show name input page based on value of maiden-name (Mother)
 router.post('*/maiden-name', function (req, res) {
   var nowKnownAs = req.session.data['maiden-name']
+  if (nowKnownAs === 'No') {
+    res.redirect('other-names')
+  } else {
+    res.redirect('maiden-name-when-married')
+  }
+})
+
+// Show name input page based on value of maiden-name-married (Mother)
+router.post('*/maiden-name-married', function (req, res) {
+  var nowKnownAs = req.session.data['maiden-name-married']
   if (nowKnownAs === 'No') {
     res.redirect('other-names')
   } else {

@@ -28,20 +28,23 @@
         
       <span class="govuk-caption-xl">Part 2 of 4: Mother’s details</span>
       
-        <div class="govuk-form-group">
+      <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              Mother’s maiden name
+            </legend>
+            
+            <p class="govuk-body">
+              This is the mother’s surname before she first got married. 
+            </p>
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               Did the mother have a maiden name?
             </legend>
-           
-            
-       <p class="govuk-body">
-        This is the mother’s surname at the time she first got married. 
-      </p>
             
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="is-name-maiden-name-1" name="is-name-maiden-name" type="radio" value="Yes" {{checked("is-name-maiden-name", "Yes")}} data-aria-controls="conditional-maiden-name">
+                <input class="govuk-radios__input" id="is-name-maiden-name-1" name="is-name-maiden-name" type="radio" value="Yes" {{checked("maiden-name", "Yes")}} data-aria-controls="conditional-maiden-name">
                 <label class="govuk-label govuk-radios__label" for="is-name-maiden-name-1">
                  Yes
                 </label>
@@ -56,7 +59,7 @@
               </div>
               
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="is-name-maiden-name-2" name="is-name-maiden-name" type="radio" value= "No" {{checked("is-name-maiden-name", "No")}} >
+                <input class="govuk-radios__input" id="is-name-maiden-name-2" name="is-name-maiden-name" type="radio" value= "No" {{checked("maiden-name", "No")}} >
                 <label class="govuk-label govuk-radios__label" for="is-name-maiden-name-2">
                   No
                 </label>
