@@ -1,0 +1,55 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Register a birth – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+            Final check of birth registration details
+        </h1>
+
+       <p class="govuk-body">You have completed all the information for birth registrations.</p>
+
+         <p class="govuk-body">
+          Next, you need to: 
+         </p>
+<ul class="govuk-body">
+  <li>check details provided by father/parent </li>
+  <li>submit details to register office</li>
+  <li>order any birth certificates</li>
+</ul>
+
+<h2 class="govuk-heading-m">Birth certificates</h2>
+        <p class="govuk-body">
+         Birth certificates are £12.50 each, including delivery by post. 
+        </p>
+        <p class="govuk-body">
+          You can order copies as part of the service. Or order copies any time after the registration. 
+        </p>
+<p class="govuk-body">There is no fee for registration. </p>
+      {{ govukButton({
+        text: "Continue",
+        href: "declaration.html"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

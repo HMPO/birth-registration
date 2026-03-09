@@ -1,0 +1,183 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Registering a birth (England and Wales)
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for this page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "http://gov.uk"
+      },
+      {
+        text: "Childcare and parenting",
+        href: "https://www.gov.uk/browse/childcare-parenting"
+      },
+      {
+        text: "Pregnancy and birth",
+        href: "https://www.gov.uk/browse/childcare-parenting/pregnancy-birth"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Registering a birth (England and Wales)
+      </h1>
+
+       <aside class="govuk-prototype-kit-common-templates-mainstream-guide-contents-list" role="complementary">
+        <nav class="govuk-prototype-kit-common-templates-contents-list" aria-label="Pages in this guide" role="navigation">
+          <h2 class="govuk-prototype-kit-common-templates-contents-list__title">
+            <a href="overview.html">
+            Contents
+            </a>
+          </h2>
+          <ol class="govuk-prototype-kit-common-templates-contents-list__list">
+            <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed govuk-prototype-kit-common-templates-contents-list__list-item--active">
+                Providing details online
+            </li>
+             <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+              <a href="getting-certificates.html">
+                Getting birth certificates
+              </a>
+            </li>
+          </ol>
+        </nav>
+      </aside>
+
+    </div>
+
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds govuk-prototype-kit-common-templates-mainstream-guide-body">
+      
+      <p>Births in England and Wales must be registered within 42 days (6 weeks). After 6 weeks the local council may contact you.</p>
+
+      <p>Registration is the official record of someone’s birth. Afterwards you can order birth certificates to apply for government services.</p>
+
+      <h2 class="govuk-heading-l">
+        Providing details online
+      </h2>
+
+      <h3 class="govuk-heading-m">
+        Married parents
+      </h3>
+      
+      <p>Either parent can complete the online service if they were married to each other at the time of the birth.</p>
+
+      <p>Or at the time you got pregnant, if you are same sex couple.</p>
+      
+      <h3 class="govuk-heading-m">
+        Unmarried parents
+      </h3>
+
+      <p>The child’s mother - the person who gave birth to the baby  - must start the process and invite the other parent.</p>
+
+      <p>In registration, the other parent is registered as either:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the father - the biological father or father to a child conceived with fertility treatment</li>
+        <li>the parent - the mother’s female partner who conceived together with fertility treatment</li>
+      </ul>
+
+      <h2 class="govuk-heading-l">
+        Information you provide
+      </h2>
+      
+      <p>You’ll verify your identity with GOV.UK One Login. You can sign in or create an account to use the service.</p>
+
+      <p>A birth registration includes information about:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the child - name, date, and place of birth</li>
+        <li>the mother - name, place of birth, and job role</li>
+        <li>the father or parent - name, place of birth, and job role</li>
+      </ul>
+
+      <a href="../triage/relationship-to-child.html" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-bottom-2" data-module="govuk-button">
+        Start now
+        <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+        </svg>
+      </a>
+
+      <p></p>
+
+      <h3 class="govuk-heading-m">
+        Births outside England and Wales
+      </h3>
+
+      <p>
+        There are different rules for 
+        <a href="https://www.nrscotland.gov.uk/registration/registering-a-birth/">registering a birth in Scotland</a>, 
+        <a href="https://www.nidirect.gov.uk/articles/registering-and-naming-your-baby">registering a birth in Northern Ireland</a> and 
+        <a href="https://www.gov.uk/register-birth-abroad">registering a birth abroad</a>.
+      </p>
+
+      <p>
+        <a href="#">
+          View a printable version of the whole guide
+        </a>
+      </p>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related content
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="https://www.gov.uk/order-copy-birth-death-marriage-certificate">
+                Order a birth, death, marriage or civil partnership certificate
+              </a>
+            </li>
+            <li>
+              <a href="https://www.gov.uk/parental-rights-responsibilities">
+                Parental rights and responsibilities
+              </a>
+            </li>
+             <li>
+              <a href="https://www.gov.uk/register-offices">
+                Find a register office
+              </a>
+            </li>
+             <li>
+              <a href="https://www.gov.uk/child-benefit">
+                Child Benefit
+              </a>
+            </li>
+            
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+
+  </main>
+</div>
+
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

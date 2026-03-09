@@ -1,0 +1,73 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          Updates ready to review by father or parent
+        </h1>
+      </div>
+
+      
+
+      <p class="govuk-body">
+       The {father/parent} can now sign in to review the updated details. 
+      </p>
+
+      <p class="govuk-body">They must:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>agree to register the birth with the updated details</li>
+        <li>hadd their own details (such as name and job title)</li>
+      </ul>
+
+      <p class="govuk-body">You'll need to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>wait for the notification the father or parent has completed the information </li>
+        <li>submit the final details to the register office</li>
+        <li>order any birth certificates</li>
+      </ul>
+
+      <h3 class="govuk-heading-m">
+        If your situation changes
+      </h3>
+
+      <p class="govuk-body">
+       Sign in to the service if you need to register without the {father/parent} or delete this application.
+      </p>
+
+
+      <h2 class="govuk-heading-l">
+        Guidance and support
+      </h2>
+
+      <p class="govuk-body">
+       Read <a href="#">our guidance about registering a birth</a>, such as getting certificates and how long it takes. 
+      </p>
+
+      <p class="govuk-body">
+       Contact the Register Office if you need a registration more urgently or your situation changes.
+      </p>
+
+      <p class="govuk-body">
+       Birmingham Register Office<br>
+        Holliday Street<br>
+        Birmingham<br>
+        B1 1TJ<br>
+      </p>
+
+    </div>
+  </div>
+
+  {{ govukButton({
+        text: "Continue",
+        href: "email-invite-link"
+      }) }}
+
+{% endblock %}

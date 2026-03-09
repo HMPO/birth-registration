@@ -1,0 +1,91 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Register a birth:  same-sex parents  (not married or in a civil partnership)
+      </h1>
+
+      <p class="govuk-body">In UK legislation, same-sex female parents be registered as:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the Mother (the person who gave birth to the child)</li>
+        <li>the Parent (the Mother’s female partner)</li>
+      </ul>
+
+      <p class="govuk-body">Parents must be married at the time of fertility treatment.</p>
+
+      <h2 class="govuk-heading-l">
+       Registering online
+       </h2>
+
+      <p>Birth mother needs to start the registration online, and will be given a unique link to share with father or second parent.</p>
+      <p>Both parents' identity will be checked by GOV.UK One Login. This works in a similar way to Government Gateway.</p>
+      <p>After you submit the form, a registrar at the council will complete the official registration.</p>
+      <p>Birth certificates will be sent by post. They cost £12.50 each (standard delivery).</p>
+      <p>The mother starts the online process to register a birth, and invites the father or parent to joint the registration.</p>
+      <p>Both parents will need to add their details separately.</p>
+      <p>Identity is checked by GOV.UK One Login, which works in a similar way to Government Gateway.</p>
+      <p>After you submit, a registrar at the council will complete the official registration. They’ll send certificates by post, usually within a week of registration.</p>
+
+      <h2 class="govuk-heading-l">
+       In person registration
+       </h2>
+
+      <p class="govuk-body">Unmarried parents must either:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>attend the appointment together</li>
+        <li>one parent attends with a document showing both parents agree to registration</li>
+      </ul>
+
+      <p class="govuk-body">You’ll make an appointment at the register office for the area your child was born.</p>
+      <p class="govuk-body">You do not need to attend with your child.</p>
+      <p class="govuk-body">You’ll get birth certificates at the appointment. Each birth certificate costs £12.50.</p>
+
+      <h3 class="govuk-heading-m">
+       If you cannot attend together
+       </h3>
+
+      <p class="govuk-body">One parent can register if they have a <a href="">legal document that shows you agree to be named as the child’s parents</a>, or a parenthood agreement from the fertility clinic.</p>
+
+      <p class="govuk-body">It might be possible to add the father’s details at a later date by completing an <a href="https://www.gov.uk/government/publications/application-to-re-register-a-childs-birth-and-add-the-fathers-details">application for the re-registration of a child’s birth</a>.</p>
+
+      <form class="form" action="/" method="post">
+        {{ govukRadios({
+          idPrefix: "register-method",
+          name: "registerMethod",
+          fieldset: {
+            legend: {
+              text: "Select how you’ll register the birth",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            { value: "online", text: "Online" },
+            { value: "inPerson", text: "In person" }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

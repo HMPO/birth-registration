@@ -1,0 +1,83 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   parent'otherwise-s name – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+<form class="form" action="country-of-birth" method="post">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Part 2 of 3: Father’s details</span>
+      <h1 class="govuk-heading-xl">
+       What other name does the father use?
+      </h1>
+        
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+         
+           <div class="govuk-form-group">
+            <label class="govuk-label" for="parent-otherwise-first-name">
+              First name
+            </label>
+            
+            <input class="govuk-input" id="parent-otherwise-first-name" name="parent-otherwise-first-name" type="text" value="{{ data['parent-otherwise-first-name'] }}">
+          </div>
+           <div class="govuk-form-group">
+            <label class="govuk-label" for="parent-otherwise-middle-name">
+              Middle names (optional)
+            </label>
+            <input class="govuk-input" id="parent-otherwise-middle-name" name="parent-otherwise-middle-name" type="text" value="{{ data['parent-otherwise-middle-name'] }}">
+          </div>
+           <div class="govuk-form-group">
+            <label class="govuk-label" for="parent-otherwise-last-name">
+              Last name
+            </label>
+            <input class="govuk-input" id="parent-otherwise-last-name" name="parent-otherwise-last-name" type="text" value="{{ data['parent-otherwise-last-name'] }}">
+          </div>
+           <div class="govuk-form-group">
+            <label class="govuk-label" for="parent-otherwise-prefix">
+              Hereditary or bestowed titles (optional)
+            </label>
+            <div id="child-first-name-hint" class="govuk-hint">
+              Do not include titles such as ‘Mr’ or ‘Miss’. Only add legally inherited or awarded titles, such as ‘Lady’ or ‘OBE’
+            </div>
+            <input class="govuk-input" id="parent-otherwise-prefix" name="parent-otherwise-prefix" type="text" value="{{ data['parent-otherwise-prefix'] }}">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="parent-otherwise-suffix">
+              Suffix (optional)
+            </label>
+           <div id="child-first-name-hint" class="govuk-hint">
+              Suffix is used for familial relationships (like Jr. or Sr.), qualifications (like PhD or Esq.), or awards (such as OBE)
+            </div>
+            <input class="govuk-input" id="parent-otherwise-suffix" name="parent-otherwise-suffix" type="text" value="{{ data['parent-otherwise-suffix'] }}">
+          </div>
+        </fieldset>
+      </div>
+     
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

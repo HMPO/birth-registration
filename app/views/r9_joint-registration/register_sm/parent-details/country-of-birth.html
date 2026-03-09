@@ -1,0 +1,108 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Father's country of birth – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+{% if data ['declaration-change'] == 'true'%}
+  <form class="form" action="../declaration/declaration" method="post">
+{% elif data['change-link-parent'] == 'true' %}
+  <form class="form" action="check-details" method="post">
+{% else %}
+<form class="form" action="city-of-birth" method="post">
+{% endif %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-xl">
+         {%if data['second-parent'] == 'Father' or data['who-registers'] == 'Father' %}
+        Part 3 of 4: Father’s details
+        {%else%}
+        Part 3 of 4: Parent’s details
+        {%endif%}   
+      </span>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              {%if data['second-parent'] == 'Father' or data['who-registers'] == 'Father' %}
+              Country father was born in
+              {%else%}
+              Country parent was born in
+              {%endif%} 
+            </h1>
+          </legend>
+           <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="country-of-birth-parent" name="country-of-birth-parent" type="radio" value="England" {{checked("country-of-birth-parent", "England")}}>
+              <label class="govuk-label govuk-radios__label" for="country-of-birth-parent">
+                England
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="country-of-birth-parent-2" name="country-of-birth-parent" type="radio" value="Northern Ireland" {{checked("country-of-birth-parent", "Northern Ireland")}}>
+              <label class="govuk-label govuk-radios__label" for="country-of-birth-parent-2">
+               Northern Ireland
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="country-of-birth-parent-3" name="country-of-birth-parent" type="radio" value="Scotland" {{checked("country-of-birth-parent", "Scotland")}}>
+              <label class="govuk-label govuk-radios__label" for="country-of-birth-parent-3">
+                Scotland
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="country-of-birth-parent-4" name="country-of-birth-parent" type="radio" value="Wales" {{checked("country-of-birth-parent", "Wales")}}>
+              <label class="govuk-label govuk-radios__label" for="country-of-birth-parent-4">
+                Wales
+              </label>
+            </div>
+             <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="country-of-birth-parent-5" name="country-of-birth-parent" type="radio" value="Outside of the UK" {{checked("country-of-birth-parent", "Outside of the UK")}} data-aria-controls="conditional-outside-uk">
+              <label class="govuk-label govuk-radios__label" for="country-of-birth-parent-5">
+                Outside of the UK
+              </label>
+            </div>
+            <div class="govuk-radios__conditional" id="conditional-outside-uk">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="other-country-parent">
+                    Country of birth
+                  </label>
+                  <input class="govuk-input" id="other-country-parent" name="other-country-parent" spellcheck="false" aria-describedby="other-country-parent" value="{{ data['other-country-parent'] }}" >
+                </div>
+              </div>
+             <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="country-of-birth-parent-6" name="country-of-birth-parent" type="radio" value="Unknown" {{checked("country-of-birth-parent", "Unknown")}}>
+              <label class="govuk-label govuk-radios__label" for="country-of-birth-parent-6">
+                I don't know
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+     
+
+
+      {{ govukButton({
+        text: "Save and continue"
+            }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

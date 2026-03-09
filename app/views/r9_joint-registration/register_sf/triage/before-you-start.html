@@ -1,0 +1,98 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Register a birth – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+            Before you start
+        </h1>
+
+        <h2 class="govuk-heading-l">
+            What you need to provide
+        </h2>
+
+        <h3 class="govuk-heading-m">
+            Part 1: Child's details
+        </h3>
+
+        <p class="govuk-body">
+          Including name, place and date of birth, and gender.
+        </p>
+
+        <h3 class="govuk-heading-m">
+          Part 2: Mother’s details
+        </h3>
+
+        <p class="govuk-body">
+          Including name, place of birth, job role, and previous names.
+        </p>
+
+        <h3 class="govuk-heading-m">
+          Part 3: Questions for government services
+        </h3>
+
+        <p class="govuk-body">
+          For example, your date of birth and employment status.
+        </p>
+
+        <h2 class="govuk-heading-l">
+          Saving your answers
+        </h2>
+
+        <p class="govuk-body">
+          You can save answers after each section if you need to stop and continue later.
+        </p>
+
+        <h2 class="govuk-heading-l">
+          Entering the {father/parent}’s details
+        </h2>
+
+        <p class="govuk-body">
+          You’ll get a unique invite link to send to the {father/parent}. 
+        </p>
+
+        <p class="govuk-body">They’ll use the link to:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>agree to be part of the registration</li>
+            <li>add their own details, such as name, place of birth</li>
+          </ul>
+
+        <p class="govuk-body">
+          Both parents must agree on all information provided for the register. 
+        </p>
+
+        <h2 class="govuk-heading-l">
+          Birth certificates
+        </h2>
+
+        <p class="govuk-body">
+          You can order birth certificates after the {father/parent} provides their details. 
+        </p>
+
+      {{ govukButton({
+        text: "Continue to Child's details",
+        href: "../child-details/name.html"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

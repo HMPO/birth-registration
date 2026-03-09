@@ -23,11 +23,7 @@
         Declaration
       </h1>
 
-      <p class="govuk-body">By continuing, you are confirming that:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>the information you’ve given is correct</li>
-        <li>you agree your information will be sent and stored according to the <a class="govuk-link" href="#">privacy policy</a></li>
-      </ul>
+      <p class="govuk-body">Confirm the information you provided is correct and ready for review by the register office.</p>
 
       <div class="govuk-warning-text">
         <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
@@ -47,7 +43,7 @@
       <div class="govuk-checkboxes__item">
         <input class="govuk-checkboxes__input" id="agree" name="delcartation-agree" type="checkbox" value="yes">
         <label class="govuk-label govuk-checkboxes__label" for="confirmation-page-no-payment">
-          I agree 
+          I confirm that the particulars given by me are true to the best of my knowledge and belief 
         </label>
       </div>
       
@@ -64,9 +60,12 @@
 
       {% else %}
 
-      {{ govukButton(
+      
+      {{ govukButton({
         text: "Confirm",
-      ) }}
+        type: "submit"
+      }) }}
+
 
       {% endif %}
 

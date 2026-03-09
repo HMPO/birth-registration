@@ -1,0 +1,49 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Registering other parent – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="continue-to-registration" method="post">
+
+        {{ govukRadios({
+          idPrefix: "registering-other-parent",
+          name: "registeringOtherParent",
+          fieldset: {
+            legend: {
+              text: "Do you want to include the father or parent on the birth certificate?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          hint: {
+                text: "They’ll need to agree to be registered as the father or second parent. If they cannot agree now, you may be able to update the birth certificate later."
+              },
+          items: [
+            { value: "yes", text: "Yes" },
+            { value: "no", text: "No" }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Contact preference – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="certificate-options" method="post">
+
+       <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-preference-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              How would you prefer to be contacted?
+            </h1>
+          </legend>
+          <div id="contact-preference-hint" class="govuk-hint">
+           In some cases we might need to contact you about registration details
+          </div>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="contact-preference" name="contact-preference" type="checkbox" value="Phone" {{ checked('contact-preference', 'Phone') }}>
+              <label class="govuk-label govuk-checkboxes__label" for="contact-preference-1">
+                Phone
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="contact-preference" name="contact-preference" type="checkbox" value="Email" {{ checked('contact-preference', 'Email') }}>
+              <label class="govuk-label govuk-checkboxes__label" for="contact-preference-2">
+               Email
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="contact-preference" name="contact-preference" type="checkbox" value="Text message" {{ checked('contact-preference', 'Text message') }}>
+              <label class="govuk-label govuk-checkboxes__label" for="contact-preference-3">
+                Text message
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+              
+       
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      </form>  
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

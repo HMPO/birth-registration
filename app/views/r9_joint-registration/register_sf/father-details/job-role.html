@@ -1,0 +1,65 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Father's name – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+{% if data['declaration-change'] == 'true' %}
+  <form class="form" action="../declaration/declaration" method="post">
+{%else%}
+  <form class="form" action="check-details" method="post">
+{% endif %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+        
+           <div class="govuk-form-group">
+            <span class="govuk-caption-xl">Part 2 of 3: Father’s details</span>
+            
+             <h1 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--xl" for="father-job-role">
+                Father's job title or role
+              </label>
+            </h1>
+            <div id="job-role-hint" class="govuk-hint">
+              Enter the official job title, or description of the profession.
+            </div>
+                <div id="job-role-hint" class="govuk-hint">
+                  Put the usual job title if the father is not working or unable to work.
+                </div>
+
+             <label class="govuk-label" for="father-job-role">
+              Job title or role
+            </label>
+            <input class="govuk-input" id="father-job-role" name="father-job-role" type="text" value="{{ data['father-job-role'] }}">
+          </div>
+          
+        </fieldset>
+      </div>
+     
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

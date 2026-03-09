@@ -1,0 +1,66 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+Is the name now – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="parent-now-known-as" method="post">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <span class="govuk-caption-xl">Part 2 of 3: Father’s details</span>
+            <h1 class="govuk-fieldset__heading">
+              Is the father's name still {{ data['prefix']}} {{ data['father-first-name'] or "John"}} {{ data['father-middle-name'] or "Joe"}} {{ data['father-last-name'] or "Jones"}} {{ data['suffix'] }}?
+            </h1>
+          </legend>
+          <div id="changedName-hint" class="govuk-hint">
+            Name at time of birth and current name will be recorded in the birth registration, and on the birth certificate
+          </div>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="parent-name-now-1" name="parent-name-now" type="radio" value="Yes"
+                {{checked("parent-name-now", "Yes" )}}>
+              <label class="govuk-label govuk-radios__label" for="parent-name-now-1">
+                Yes
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="parent-name-now-2" name="parent-name-now" type="radio" value="No"
+                {{checked("parent-name-now", "No" )}}>
+              <label class="govuk-label govuk-radios__label" for="parent-name-now-2">
+                No
+              </label>
+            </div>
+
+          </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+      text: "Save and continue"
+      }) }}
+
+
+    </div>
+
+
+  </div>
+
+</form>
+
+{% endblock %}

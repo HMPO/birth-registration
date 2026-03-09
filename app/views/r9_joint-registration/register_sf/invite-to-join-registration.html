@@ -1,0 +1,83 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Register a birth – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+            Invitation to join a birth registration
+        </h1>
+
+        <h2 class="govuk-heading-l">
+            About this invitation
+        </h2>
+
+        <p class="govuk-body">The child’s mother starts the online process for a birth registration.</p>
+
+        <p class="govuk-body">This invitation is for the child’s {father/parent} to join the registration.</p>
+
+        <p class="govuk-body">We cannot show any details about the mother or the child until you verify your identity.</p>
+
+        <h2 class="govuk-heading-l">
+            About registering a birth
+        </h2>
+
+        <p class="govuk-body">Registration is the official record of someone’s birth including:</p>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>child’s name, date and place of birth</li>
+            <li>mother’s name, place of birth, and job role</li>
+            <li>{father/parent}’s name, place of birth and job role</li>
+          </ul>
+
+        <p class="govuk-body">You and the mother provide this information in the online service.</p>
+
+        <h2 class="govuk-heading-l">
+            Providing information
+        </h2>
+
+        <p class="govuk-body">Both parents must agree on information provided the registration.</p>
+
+        <p class="govuk-body">You’ll need to:</p>
+       
+          <ul class="govuk-list govuk-list--bullet">
+            <li>child’s name, date and place of birth</li>
+            <li>mother’s name, place of birth, and job role</li>
+            <li>{father/parent}’s name, place of birth and job role</li>
+          </ul>
+
+        <p class="govuk-body">You cannot submit the completed information unless both parents agree.</p>
+
+        <h2 class="govuk-heading-l">
+            Joining the registration
+        </h2>
+
+        <p class="govuk-body">Continue to verify your identity on GOV.UK - you can create an account or sign in.</p>
+
+
+      {{ govukButton({
+        text: "Join registration",
+        href: "one-login-sign-in.html"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "https://www.gov.uk/"
+      },
+      {
+        text: "Pregnancy and birth",
+        href: "https://www.gov.uk/browse/childcare-parenting/pregnancy-birth"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Register a birth in England or Wales
+      </h1>
+
+  
+      <p>You’ll need to register a birth within 42 days (6 weeks). </p>
+      <p>You can provide the information online or in person. </p>
+      <p>A register office will contact you if do not register a birth in this time. </p>
+
+
+      <h2 class="govuk-heading-l">
+       How to register 
+      </h2>
+
+      <p>How you register - including what documents to provide - are different depending on who is being registered as parents. </p>
+
+      <h2 class="govuk-heading-l">
+       Births outside England and Wales
+      </h2>
+
+      <p>The process is different for children born in 
+        <a href="https://www.nrscotland.gov.uk/registration/registering-a-birth/">Scotland</a>, 
+        <a href="https://www.nidirect.gov.uk/information-and-services/births-deaths-marriages-and-civil-partnerships/births-and-registration">Northern Ireland</a>, or 
+        <a href="https://www.gov.uk/register-birth-abroad">outside the UK</a>.</p>
+
+      {{ govukButton({
+          text: "Start now",
+          isStartButton: true,
+          href: "who-will-register"
+      }) }}
+
+    </div>
+
+  </div>
+
+{% endblock %}

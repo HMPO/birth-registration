@@ -1,0 +1,68 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="who-registers-outcomes" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-fieldset__heading">
+                Which parents are being recorded on the birth certificate?
+              </h1>
+            </legend>
+            <p>According to the law in England and Wales the process is different depending on legal relationship between parents.</p>
+
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="who-registers-2" name="who-registers" type="radio" value="marrried">
+                <label class="govuk-label govuk-radios__label" for="who-registers-2">
+                  Both parents, who are married (or a legal Civil Partnership) to each other
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="who-registers" name="who-registers" type="radio" value="unmarrried">
+                <label class="govuk-label govuk-radios__label" for="who-registers">
+                  Both parents, not married to each other (or not in a Civil Partnership)
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="who-registers-3" name="who-registers" type="radio" value="single-mother">
+                <label class="govuk-label govuk-radios__label" for="who-registers-3">
+                  Mother only (the person who gave birth to the child)
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+
+    </div>
+
+
+  </div>
+
+{% endblock %}

@@ -1,0 +1,84 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+   Has the mother changes the address – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+{% if data ['declaration-change'] == 'true'%}
+  <form class="form" action="../declaration/declaration" method="post">
+{% elif data['change-link-parent'] == 'true' %}
+  <form class="form" action="check-details" method="post">
+{% else %}
+<form class="form" action="is-mother-and-father-address-same" method="post">
+{% endif %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <span class="govuk-caption-xl">Part 2 of 3: Father’s details</span> 
+              <h1 class="govuk-fieldset__heading">
+                  Is father living at the same address as the mother?
+              </h1>
+            </legend>
+
+            {%if data['address-changed'] === 'Yes'%}
+            <p class="govuk-body">Mother’s current address:
+          {{ data['mother-current-line-1'] or "58 Sheffield Terrace" }} 
+          {{ data['mother-current-line-2'] }} 
+          {{ data['mother-current-town'] or "London" }} 
+          {{ data['mother-current-county'] }} 
+          {{ data['mother-current-postcode'] or "W8 7NA" }}
+          </p>
+          {% else %}
+           <p class="govuk-body">Mother’s current address:
+          {{ data['mother-current-line-1'] or "58 Sheffield Terrace" }} 
+          {{ data['mother-current-line-2'] }} 
+          {{ data['mother-current-town'] or "London" }} 
+          {{ data['mother-current-county'] }} 
+          {{ data['mother-current-postcode'] or "W8 7NA" }}
+           </p>
+          {%endif%}
+            
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="father-address-same1" name="father-address-same" type="radio" value="Yes" {{checked("father-address-same", "Yes")}}>
+                <label class="govuk-label govuk-radios__label" for="father-address-same1">
+                 Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="father-address-same2" name="father-address-same" type="radio" value="No" {{checked("father-address-same", "No")}}>
+                <label class="govuk-label govuk-radios__label" for="father-address-same2">
+                  No
+                </label>
+              </div>
+            </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

@@ -1,0 +1,90 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+   Is the current name maiden name – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+<form class="form" action="otherwise-father" method="post">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+       <span class="govuk-caption-xl">
+        {%if data['second-parent'] == 'Father' or data['who-registers'] == 'Father'%}
+                Part 3 of 4: Father’s details
+                {%else%}
+                Part 3 of 4: Parent’s details
+                {%endif%}   
+       </span>    
+        <h1 class="govuk-heading-xl">
+          Other currently used names
+        </h1>
+
+      <p class="govuk-body">
+      Names that the 
+                {%if data['second-parent'] == 'Father' or data['who-registers'] == 'Father'%}
+                father
+                {%else%}
+                parent
+                {%endif%}is known by in addition to their legal name. This includes a nickname, professional name, or anglicised version of a name.
+      </p>
+
+      <p class="govuk-body">
+        It’s a personal choice to include other names.
+      </p>
+        
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h2 class="govuk-fieldset__heading">
+               Add another name?
+              </h2>
+            </legend>
+           
+            <div id="changedName-hint" class="govuk-hint">
+              Other currently used names are printed on the birth certificate alongside name at time of birth
+            </div>
+            
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="other-names-father-1" name="other-names-father" type="radio" value="Yes" {{checked("other-names-father", "Yes")}} >
+                <label class="govuk-label govuk-radios__label" for="other-names-father-1">
+                 Yes
+                </label>
+              </div>
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="other-names-father-2" name="other-names-father" type="radio" value= "No" {{checked("other-names-father", "No")}} >
+                <label class="govuk-label govuk-radios__label" for="other-names-father-2">
+                  No
+                </label>
+              </div>
+              
+            </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

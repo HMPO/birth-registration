@@ -1,0 +1,57 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Register a birth – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+            Ready to submit
+        </h1>
+
+        <p class="govuk-body">You have completed all the information for birth registration.</p>
+
+        <p class="govuk-body">
+          Next, you must: 
+        </p>
+        <ul class="govuk-body">
+          <li>agree to the legal declaration that information is true</li>
+          <li>submit the information for a final check by the mother</li>
+        </ul>
+
+        <p class="govuk-body">
+          After you submit, the mother will: 
+        </p>
+        <ul class="govuk-body">
+          <li>check all the information in the registration</li>
+          <li>agree to register the birth with the details you provided</li>
+          <li>send the completed details to the register office</li>
+          <li>order any birth certificates</li>
+        </ul>
+
+
+      {{ govukButton({
+        text: "Continue",
+        href: "final-check"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

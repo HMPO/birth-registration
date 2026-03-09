@@ -1,0 +1,70 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+   Other names – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+{% if data ['declaration-change'] == 'true'%}
+  <form class="form" action="../declaration/declaration" method="post">
+{% elif data['change-link-mother'] == 'true' %}
+  <form class="form" action="check-details" method="post">
+{% else %}
+<form class="form" action="other-names-father" method="post">
+{% endif %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <span class="govuk-caption-xl">Part 2 of 3: Father’s details</span>  
+              <h1 class="govuk-fieldset__heading">
+               Do you want to include any other names?
+              </h1>
+            </legend>
+            <div id="changedName-hint" class="govuk-hint">
+              It’s optional to add other names - either that the father or parent is known by in their daily life, or names they used in the past.
+            </div>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="other-names-father-1" name="other-names-father" type="radio" value="Yes" {{checked("other-names-father", "Yes")}} >
+                <label class="govuk-label govuk-radios__label" for="other-names-father-1">
+                 Yes
+                </label>
+              </div>
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="other-names-father-2" name="other-names-father" type="radio" value= "No" {{checked("other-names-father", "No")}} >
+                <label class="govuk-label govuk-radios__label" for="other-names-father-2">
+                  No
+                </label>
+              </div>
+
+            </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Register a birth – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+            Request a change from the mother
+        </h1>
+
+        <p class="govuk-body">You must contact the mother to discuss:</p>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>information they provided</li>
+            <li>any mistakes or errors</li>
+          </ul>
+
+        <p class="govuk-body">You cannot discuss changes through the online service.</p>
+
+        <p class="govuk-body">The mother will be able to update the information provided for the Mother’s and Child’s details.</p>
+
+        <h3 class="govuk-heading-l">
+            What happens next
+        </h3>
+
+        <p class="govuk-body">
+          The mother must ask you to review the information again - whether or not the information has changed.
+        </p>
+
+        <p class="govuk-body">
+          You’ll get a notification once the mother sends it for review again.
+        </p>
+
+        <p class="govuk-body">
+          You cannot be recorded as the father unless both you and the mother agree on all the information in the registration.
+        </p>
+
+      {{ govukButton({
+        text: "Request a change",
+        href: "../contact-details/email-options.html"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

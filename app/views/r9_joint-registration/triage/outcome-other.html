@@ -1,0 +1,38 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Register the birth in person
+      </h1>
+
+      <p class="govuk-body">You’ll need to register the birth in person if you are not either the:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>birth mother</li>
+        <li>father</li>
+        <li>parent</li>
+        
+      </ul>
+
+      <p>
+        <a href="https://www.gov.uk/register-offices">Search for the register office</a> in the area the child was born to book an appointment.
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

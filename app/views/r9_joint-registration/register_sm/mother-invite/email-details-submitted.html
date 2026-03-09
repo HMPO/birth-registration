@@ -1,0 +1,89 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Confirmation: details submitted for a birth registration</title>
+  <meta name="viewport" content="width=device-width">
+  <style>
+    body { margin:0; padding:0; background:#ffffff; color:#0b0c0c; font-family: Arial, Helvetica, sans-serif; }
+    .container { max-width: 600px; margin: 0 auto; }
+    .banner { background:#0b0c0c; color:#ffffff; padding: 16px 24px; font-size: 20px; font-weight: bold; }
+    .content { padding: 24px; font-size: 16px; line-height: 1.5; }
+    .divider { border-top:1px solid #b1b4b6; margin:24px 0; }
+    .muted { color:#626a6e; font-size:14px; }
+    .invite-box { background:#eaf3f9; padding:16px; border-radius:4px; margin-top:16px; }
+    .invite-box h2 { margin-top:0; font-size:20px; }
+    .invite-link { display:block; word-break:break-all; font-size:16px; color:#1d70b8; text-decoration:none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="banner">GOV.UK</div>
+
+    <div class="content">
+      <p><strong>From:</strong> General Register Office &lt;no-reply@notifications.service.gov.uk&gt;<br>
+         <strong>To:</strong> Jane Smith &lt;jane.smith@example.com&gt;</p>
+
+      <h1 style="font-size:24px; margin-top:24px;">Confirmation: details submitted for a birth registration</h1>
+
+      <p>Hello Jane Smith,</p>
+      
+      <p>You’ve entered details to register the birth of your child.</p>
+      
+      <p>In a separate email, we’ve sent an invite link to share with the child’s {father/parent}.</p>
+      
+      <p class="govuk-body">You will submit the final registration details to the register office after the {father/parent} has:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>agreed to register the birth with the details you provided, such as child’s name</li>
+        <li>add added their own details (such as name and job title)</li>
+      </ul>
+      <p>The invite link expires after 7 days.</p>
+
+      <h2>Choosing to invite the {father/parent}</h2>
+      <p>You and your child’s {father/parent} must jointly agree on all the information in the birth registration.</p>
+      
+      <p>Parents recorded on a birth registration usually have the right to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>make decisions about the child’s upbringing</li>
+        <li>certain information about the child</li>
+      </ul>
+
+      <h2>If {father/parent} requests changes</h2>
+      <p> {Father/Parent} might request changes to the information, such as fixing a mistake or adding missing information.</p>
+      
+      <p>Both you and the father must agree on all the information before you can submit the registration to the register office.</p>
+
+      <p>Regards<br>The General Register Office</p>
+
+      <div class="divider"></div>
+
+      <p class="muted">
+        Do not reply to this email. If you need help, contact support@example.service.gov.uk.
+      </p>
+      <p class="muted">
+        Sent by GOV.UK Notify (simulated).
+      </p>
+
+      {{ govukButton({
+        text: "Continue",
+        href: "../mother-rejoin/email-father-accepts"
+      }) }}
+
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+{% endblock %}

@@ -1,0 +1,105 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Register a birth – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+            Before you start
+        </h1>
+
+        <h2 class="govuk-heading-l">
+            What you need to do
+        </h2>
+
+        <h3 class="govuk-heading-m">
+            Part 1: Review information provided by the mother
+        </h3>
+
+        <p class="govuk-body">Check the details the mother provided for the registration:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>mother’s details (such as name, place of birth)</li>
+          <li>child’s details (such as name, date of birth)</li>
+        </ul>
+
+        <p class="govuk-body">
+          You need to discuss any changes directly with the mother.
+        </p>
+
+        <p class="govuk-body">
+          While you review, the mother cannot change this information, or register the birth with your details.
+        </p>
+
+        <h3 class="govuk-heading-m">
+          Part 2: Provide {father/parent}’s details for registration
+        </h3>
+
+        <p class="govuk-body">
+          Including name, place of birth, and job role.
+        </p>
+
+        <p class="govuk-body">
+          The mother must confirm they agree to register the birth with the details you provided.
+        </p>
+
+        <h3 class="govuk-heading-m">
+          Part 3: Answer questions for government services
+        </h3>
+
+        <p class="govuk-body">
+          For example, your date of birth and employment status.
+        </p>
+
+        <h3 class="govuk-heading-m">
+          Part 4: Final review of details
+        </h3>
+
+        <p class="govuk-body">You and the mother will both need to:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>review all the details</li>
+          <li>confirm they agree to register with these details</li>
+          <li>discuss any changes outside the service</li>
+        </ul>
+
+        <p class="govuk-body">
+          After you both confirm you agree, the mother can submit the information and order birth certificates.
+        </p>
+
+        <p class="govuk-body">
+          The mother cannot change any details - or provide your information for the registration - without your agreement.
+        </p>
+
+        <h2 class="govuk-heading-l">
+          Saving your answers
+        </h2>
+
+        <p class="govuk-body">
+          You can save answers after each section if you need to stop and continue later.
+        </p>
+
+      {{ govukButton({
+        text: "Continue to check details",
+        href: "../father-confirm-invite/confirm-invite-details.html"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+   NHS record not found – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+       <h1 class="govuk-heading-xl">
+         We couldn’t confirm the date of birth
+      </h1>
+
+      <p class="govuk-body">This might be because:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>error in the date of birth you gave</li>
+          <li>error in details recorded by NHS</li>
+        </ul>
+
+          <form class="form" action="search-again" method="post">
+            {{ govukRadios({
+              idPrefix: "search-again",
+              name: "searchAgain",
+              fieldset: {
+                legend: {
+                  text: "Do you want to try again?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              items: [
+                { value: "yes", text: "Yes, enter date of birth again" },
+                { value: "no", text: "No, exit the service" }
+              ]
+            }) }}
+
+            {{ govukButton({
+            text: "Continue"
+          }) }}
+
+          </form>
+    
+    </div>
+  </div>
+
+{% endblock %}

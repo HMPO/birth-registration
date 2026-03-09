@@ -1,0 +1,96 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Register a birth – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+            Birth registration: Rose Allen
+        </h1>
+
+        <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+          <div class="govuk-notification-banner__header">
+            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+              Update
+            </h2>
+          </div>
+          <div class="govuk-notification-banner__content">
+            <p class="govuk-notification-banner__heading">
+              Father or parent requested a change
+            </p>
+            <p class="govuk-body">
+              Discuss the change with the father, and make changes if you can jointly agree on new details.
+            </p>
+          </div>
+        </div>
+
+       
+
+        <p class="govuk-body">
+          The {father/parent} cannot directly change information you’ve provided, such as the child’s name.
+        </p>
+
+       <p class="govuk-body"> You can edit information requested by the father or parent (if you agree). The fatther will need to review again before you submit the final information to the register office. </p>
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  name: "howcontinue",
+  fieldset: {
+    legend: {
+      text: "How do you want to continue the birth registration?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+
+  items: [
+    {
+      value: "government-gateway",
+      text: "Make changes to details",
+      hint: {
+        text: "Update information about you or your child"
+      }
+    },
+    {
+      value: "govuk-one-login",
+      text: "Register the birth with only your details",
+      hint: {
+        text: "You can register without the father's or parent's details if you cannot  agree to their request"
+      }
+    },
+     {
+      value: "govuk-one-login",
+      text: "Delete application",
+      hint: {
+        text: "For example, if you need support or help from the register office"
+      }
+    }
+  ]
+}) }}
+      {{ govukButton({
+        text: "Continue",
+        href: "registration-details.html"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

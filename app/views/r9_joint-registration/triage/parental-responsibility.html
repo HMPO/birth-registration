@@ -1,0 +1,49 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Parental responsibility – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="outcome-married" method="post">
+
+        {{ govukRadios({
+          idPrefix: "parental-responsibility",
+          name: "parentalResponsibility",
+          fieldset: {
+            legend: {
+              text: "Do you have a document showing parental responsibility?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "For example a court order or declaration of parental responsibility"
+          },
+          items: [
+            { value: "yes", text: "Yes" },
+            { value: "no", text: "No" }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

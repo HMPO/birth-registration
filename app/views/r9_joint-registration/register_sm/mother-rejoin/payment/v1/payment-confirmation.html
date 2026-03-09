@@ -1,0 +1,82 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Contact preference – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<main class="govuk-main-wrapper" id="main-content">
+          
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Confirm your payment</h1>
+                    
+        <div class="payment-summary">
+        <h2 class="govuk-heading-m">Payment summary</h2>
+        
+        <p class="govuk-body govuk-!-margin-bottom-0">
+          Total amount:
+          <span id="amount" class="amount govuk-!-font-size-36 govuk-!-font-weight-bold">£{{ '12.50' * data['quantity'] }}</span>
+        </p>
+        </div>
+
+        <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Card number
+          </dt>
+          <dd class="govuk-summary-list__value">
+           ************7890
+          </dd>
+          
+        </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Expiry date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['cardExpiryMonth']}}/{{data['cardExpiryYear']}}
+            </dd>
+           
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name on card
+            </dt>
+            <dd class="govuk-summary-list__value">
+            {{data['cardName']}}
+            </dd>
+           
+          </div>
+    </dl>
+   
+
+      
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Confirm payment",
+          href: "confirmation-page.html"
+        }) }}
+
+        {{ govukButton({
+          text: "Cancel payment",
+              classes: "govuk-button--secondary"
+        }) }}
+      </div>
+      
+    
+    </form>
+  </div>
+  </div>
+</main>
+
+{% endblock %}
