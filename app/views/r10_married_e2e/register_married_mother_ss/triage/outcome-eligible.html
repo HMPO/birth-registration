@@ -1,0 +1,39 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Registration options – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        You are eligible to register the birth
+      </h1>
+
+      <p class="govuk-body">Based on your answers, you can register the birth of your child online.</p>
+
+      <p class="govuk-body">You’ll need to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>sign in to GOV.UK One Login to prove your identity (or make an account)</li>
+        <li>provide the child’s NHS number</li>
+      </ul>
+
+      {{ govukButton({
+        text: "Continue",
+        href: "../one-login/sign-in"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

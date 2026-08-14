@@ -1,0 +1,80 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          Ready to invite {father/parent} to join registration
+        </h1>
+      </div>
+
+      <h2 class="govuk-heading-l">
+        Invite {father/parent}
+      </h2>
+
+      <p class="govuk-body">
+       Share the invite link - it will arrive by email within  15 minutes from birthhelp@gro.gov.uk.
+      </p>
+
+      <h2 class="govuk-heading-l">
+        After you invite the {father/parent}
+      </h2>
+
+      <p class="govuk-body">
+        You’ll get an email notification when the {father/parent} joins and completes the application
+      </p>
+
+      <p class="govuk-body">{Father/Parent} must:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>agree to join the registration</li>
+        <li>agree to register the birth with the details you provided, such as child’s name</li>
+        <li>add their own details (such as name and job title)</li>
+      </ul>
+
+      <p class="govuk-body">
+        The {father/parent} can request changes to details you have provided. But only you - the mother - can update the details in the service (if you agree with them).
+      </p>
+
+      <h2 class="govuk-heading-l">
+       If your situation changes
+      </h2>
+
+      <p class="govuk-body">
+        <a href="#">Sign in</a> to the service if you need to register without the {father/parent} or delete this application.
+      </p>
+
+      <h2 class="govuk-heading-l">
+        Guidance and support
+      </h2>
+
+      <p class="govuk-body">
+       Read <a href="#">our guidance about registering a birth</a>, such as getting certificates and how long it takes. 
+      </p>
+
+      <p class="govuk-body">
+       Contact the Register Office if you need a registration more urgently or your situation changes.
+      </p>
+
+      <p class="govuk-body">
+       Birmingham Register Office<br>
+        Holliday Street<br>
+        Birmingham<br>
+        B1 1TJ<br>
+      </p>
+
+    </div>
+  </div>
+
+  {{ govukButton({
+        text: "Continue",
+        href: "email-invite-link"
+      }) }}
+
+{% endblock %}

@@ -478,3 +478,99 @@ router.post('*/confirm-invite-details', function (req, res) {
     res.redirect('../father-details/name')
   }
 })
+
+
+// ---- full journey v.3 -----
+
+// Triage routing for v.3 (relationship-to-child)
+router.post('*/register-other-parent', function (req, res) {
+  var whoRegisters = req.session.data['who-registers']
+  if (whoRegisters === 'Father') {
+    res.redirect('fertility-treatment')
+  } else {
+    res.redirect('registering-other-parent')
+  }
+})
+
+// Triage routing for v.3 - Show different pages based on value of registrationOptions
+router.post('*/register-second-parent', function (req, res) {
+  var registeringOtherParent2 = req.session.data['registeringOtherParent']
+  if (registeringOtherParent2 === 'no') {
+    res.redirect('outcome-eligible')
+  } else {
+    res.redirect('second-parent')
+  }
+})
+
+// Triage routing for v.3 - Show different pages based on value of second-parent
+router.post('*/who-is-second-parent', function (req, res) {
+  var secondParent = req.session.data['second-parent']
+  if (secondParent === 'Father') {
+    res.redirect('fertility-treatment')
+  } else if (secondParent === 'Parent') {
+    res.redirect('are-you-married-parent')
+  } else {
+    res.redirect('second-parent')
+  }
+})
+
+// Triage routing for v.3 - fertility-treatment page (redirects to are-you-married)
+// The second-parent value (from fertility-treatment page) is saved in session for combined logic
+router.post('*/fertility-treatment', function (req, res) {
+  // The fertility treatment answer is now in req.session.data['second-parent']
+  // Can be combined with are-you-married answer for routing logic
+  res.redirect('are-you-married')
+})
+
+// Triage routing for v.3 - Show different pages based on areYouMarried and fertilityTreatment
+// areYouMarried values: 'yes' or 'no'
+// second-parent values from fertility-treatment: 'Father' (No to fertility) or 'Parent' (Yes to fertility)
+router.post('*/married-parents-v3', function (req, res) {
+  var areYouMarried = req.session.data['areYouMarried']
+  var fertilityTreatment = req.session.data['second-parent']
+  
+  if (areYouMarried === 'yes') {
+    // Married - go to outcome-eligible regardless of fertility treatment
+    res.redirect('outcome-eligible')
+  } else if (areYouMarried === 'no' && fertilityTreatment === 'Parent') {
+    // Not married AND yes to fertility treatment - go to donor-sperm
+    res.redirect('donor-sperm')
+  } else if (areYouMarried === 'no' && fertilityTreatment === 'Father') {
+    // Not married AND no to fertility treatment - go to outcome-joint-mother
+    res.redirect('outcome-joint-mother')
+  } else {
+    res.redirect('second-parent')
+  }
+})
+
+// Triage routing for v.3 - donor-sperm page
+// Checks if donor sperm was used and routes accordingly
+router.post('*/fertility-treatment-donor', function (req, res) {
+  var donorSperm = req.session.data['second-parent']
+  if (donorSperm === 'Father') {
+    // No to donor sperm - go to outcome-joint-mother
+    res.redirect('outcome-joint-mother')
+  } else if (donorSperm === 'Parent') {
+    // Yes to donor sperm - go to parenthood-agreement
+    res.redirect('parenthood-agreement')
+  } else {
+    res.redirect('donor-sperm')
+  }
+})
+
+// Triage routing for v.3 - parenthood-agreement page
+// Checks whether a parenthood agreement was signed and routes accordingly
+router.post('*/sign-parenthood-agreement', function (req, res) {
+  var parenthoodAgreement = req.session.data['parenthoodAgreement']
+
+  if (parenthoodAgreement === 'no') {
+    // No to parenthood agreement - go to single registration outcome
+    res.redirect('outcome-register-as-single')
+  } else if (parenthoodAgreement === 'yes') {
+    // Yes to parenthood agreement - go to joint mother outcome
+    res.redirect('outcome-joint-mother')
+  } else {
+    res.redirect('parenthood-agreement')
+  }
+})
+

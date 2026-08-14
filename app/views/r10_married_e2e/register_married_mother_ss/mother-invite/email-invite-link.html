@@ -1,0 +1,88 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Register a birth: invite link to add details</title>
+  <meta name="viewport" content="width=device-width">
+  <style>
+    body { margin:0; padding:0; background:#ffffff; color:#0b0c0c; font-family: Arial, Helvetica, sans-serif; }
+    .container { max-width: 600px; margin: 0 auto; }
+    .banner { background:#0b0c0c; color:#ffffff; padding: 16px 24px; font-size: 20px; font-weight: bold; }
+    .content { padding: 24px; font-size: 16px; line-height: 1.5; }
+    .divider { border-top:1px solid #b1b4b6; margin:24px 0; }
+    .muted { color:#626a6e; font-size:14px; }
+    .invite-box { background:#eaf3f9; padding:16px; border-radius:4px; margin-top:16px; }
+    .invite-box h2 { margin-top:0; font-size:20px; }
+    .invite-link { display:block; word-break:break-all; font-size:16px; color:#1d70b8; text-decoration:none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="banner">GOV.UK</div>
+
+    <div class="content">
+      <p><strong>From:</strong> General Register Office &lt;no-reply@notifications.service.gov.uk&gt;<br>
+         <strong>To:</strong> Jane Smith &lt;jane.smith@example.com&gt;</p>
+
+      <h1 style="font-size:24px; margin-top:24px;">Register a birth: invite link to add details</h1>
+
+      <p>Hello Jane Smith,</p>
+      <p>This is the invite link for to the {father/parent} to enter their details for the birth registration.</p>
+      
+      <h2>Sharing invite link</h2>
+      <p class="govuk-body">Copy this invite link. You’ll be notified when the {father/parent}:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>joins the application</li>
+        <li>has completed their details</li>
+      </ul>
+      
+      
+      <div class="invite-box">
+        <a class="invite-link" href="#">
+          https://registerabirth.service.gov.uk/pub/=e29b-41d4-e89b-12d3-a456-426614174000
+        </a>
+      </div>
+
+      <h2>Instructions for {father/parent}</h2>
+      <ol>
+        <li>Access the service with the link</li>
+        <li>Prove your identity with GOV.UK One Login</li>
+        <li>Check information provided about the child and the child’s mother</li>
+        <li>Add your details to be recorded as the child’s {father/parent}</li>
+        <li>Submit the declaration</li>
+      </ol>
+
+      <p>Regards<br>The General Register Office</p>
+
+      <div class="divider"></div>
+
+      <p class="muted">
+        Do not reply to this email. If you need help, contact support@example.service.gov.uk.
+      </p>
+      <p class="muted">
+        Sent by GOV.UK Notify (simulated).
+      </p>
+
+      {{ govukButton({
+        text: "Continue",
+        href: "email-details-submitted"
+      }) }}
+
+    </div>
+
+  </div>
+</body>
+</html>
+
+
+{% endblock %}

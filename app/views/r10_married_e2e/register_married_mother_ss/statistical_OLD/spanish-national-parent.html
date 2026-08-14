@@ -1,0 +1,75 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+   Is the father a Spanish national – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="date-of-marriage" method="post">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <span class="govuk-caption-xl">Part 4 of 4: Survey for government statistics and reporting</span>    
+              <h1 class="govuk-fieldset__heading">
+                 {%if data['second-parent'] == 'Father' or data['who-registers'] == 'Father'%}
+                    Is the father a Spanish national?
+                {%else%}
+                    Is the parent a Spanish national?
+                {%endif%}  
+               
+              </h1>
+            </legend>
+
+            <div id="spanishNational-hint" class="govuk-hint">
+              This information is sent to Spanish consular (embassy) to measure Spanish nationals living in England and Wales.
+            </div>
+            
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="father-spanish-national" name="father-spanish-national" type="radio" value="yes" {{checked("father-spanish-national", "Yes")}}>
+                <label class="govuk-label govuk-radios__label" for="father-spanish-national">
+                 Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="father-spanish-national" name="father-spanish-national" type="radio" value="no" {{checked("father-spanish-national", "No")}}>
+                <label class="govuk-label govuk-radios__label" for="father-spanish-national">
+                  No
+                </label>
+              </div>
+               <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="father-spanish-national" name="father-spanish-national" type="radio" value="unknown" {{checked("father-spanish-national", "Unknown")}}>
+                <label class="govuk-label govuk-radios__label" for="father-spanish-national">
+                  I do not know
+                </label>
+              </div>
+            </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

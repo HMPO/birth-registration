@@ -1,0 +1,73 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageScripts %}
+  <script src="/public/javascripts/application.js"></script>
+{% endblock %}
+
+{% block pageTitle %}
+   Mother's place of birth – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="job-role" method="post">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">
+         {%if data['second-parent'] == 'Father' or data['who-registers'] == 'Father' %}
+        Part 3 of 4: Father’s details
+        {%else%}
+        Part 3 of 4: Parent’s details
+        {%endif%}   
+      </span>
+      
+      <h1 class="govuk-heading-xl">
+       Current address
+      </h1>
+      
+      <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+   
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-search-current">
+              Search by postcode
+            </label>
+            <input class="govuk-input govuk-input--width-10" id="address-search-current" name="addresssearch-current" type="text" autocomplete="postal-code">
+          </div>
+          </fieldset>
+        
+      </div>
+
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Find address
+      </button>
+
+      <p class="govuk-body">
+        <a class="govuk-link" href="address-current-manual.html">
+          I can’t find the address
+        </a>
+      </p>
+      
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

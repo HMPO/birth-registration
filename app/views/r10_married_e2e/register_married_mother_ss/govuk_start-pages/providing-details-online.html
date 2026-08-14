@@ -1,0 +1,174 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Registering a birth (England and Wales)
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for this page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "http://gov.uk"
+      },
+      {
+        text: "Childcare and parenting",
+        href: "https://www.gov.uk/browse/childcare-parenting"
+      },
+      {
+        text: "Pregnancy and birth",
+        href: "https://www.gov.uk/browse/childcare-parenting/pregnancy-birth"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Register a birth in England and Wales
+      </h1>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds govuk-prototype-kit-common-templates-mainstream-guide-body">
+      
+      <h2 class="govuk-heading-l">
+        What is registration
+      </h2>
+      
+      <p>Births in England and Wales must be registered within 42 days (6 weeks). After 6 weeks the local council may contact you.</p>
+
+      <p>Registration is the official record of someone’s birth. Afterwards you can order birth certificates to apply for government services.</p>
+
+      <div class="govuk-inset-text">
+        There are different rules for 
+        <a href="https://www.nrscotland.gov.uk/registration/registering-a-birth/">registering a birth in Scotland</a>, 
+        <a href="https://www.nidirect.gov.uk/articles/registering-and-naming-your-baby">registering a birth in Northern Ireland</a> and 
+        <a href="https://www.gov.uk/register-birth-abroad">registering a birth abroad</a>.
+      </div>
+
+      <h3 class="govuk-heading-m">
+        Information you provide
+      </h3>
+      
+      <p>To register you’ll provide:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the child’s name, date and place of birth</li>
+        <li>the mother’s name, place of birth and job role</li>
+        <li>the father or parent’s name, place of birth and job role</li>
+      </ul>
+
+      <h3 class="govuk-heading-m">
+        Married or civil-partner parents
+      </h3>
+
+      <p>Married parents can choose to:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>register online - one parent can complete the online service</li>
+        <li>register in-person at a register office - only one parents needs to attend</li>
+      </ul>
+
+      <h3 class="govuk-heading-m">
+        Unmarried parents
+      </h3>
+
+      <p>Unmarried parents can either:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>register online - the birth mother must start the process and invite the other parent</li>
+        <li>attend an appointment together - you’ll need to book an appointment</li>
+      </ul>
+
+      <h3 class="govuk-heading-s">
+        If you cannot attend together
+      </h3>
+      
+      <p>One parent can attend in person if they have a document showing both parents approve, such as a court order or parenting agreement.</p>
+
+      <p>
+        It might be possible to add the father’s details at a later date by completing an
+        <a href="#">
+          application for the re-registration of a child’s birth.
+        </a>
+      </p>
+      
+      <h3 class="govuk-heading-s">
+        Children conceived with assisted conception (fertility treatment)
+      </h3>
+      
+      <p>In UK legislation, the ‘mother’ is the person who gave birth to the child.</p>
+
+      <p>Unmarried parents must have received treatment:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>at a licensed UK clinic</li>
+        <li>both parents were treated as a couple</li>
+      </ul>
+
+      <a href="../triage/relationship-to-child.html" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-bottom-2" data-module="govuk-button">
+        Start now
+        <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+        </svg>
+      </a>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related content
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="https://www.gov.uk/order-copy-birth-death-marriage-certificate">
+                Order a birth, death, marriage or civil partnership certificate
+              </a>
+            </li>
+            <li>
+              <a href="https://www.gov.uk/parental-rights-responsibilities">
+                Parental rights and responsibilities
+              </a>
+            </li>
+             <li>
+              <a href="https://www.gov.uk/register-offices">
+                Find a register office
+              </a>
+            </li>
+             <li>
+              <a href="https://www.gov.uk/child-benefit">
+                Child Benefit
+              </a>
+            </li>
+            
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+
+  </main>
+</div>
+
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

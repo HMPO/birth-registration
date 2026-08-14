@@ -1,0 +1,61 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Relationship to child – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+   
+      <form class="form" action="fertility-treatment-donor" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-fieldset__heading">
+                Did you use donor sperm  as part of fertility treatment?
+              </h1>
+            </legend>
+            
+            <p>This is not included in the registration. We need to check the father can be recorded as the father if not the biological parent.</p>
+
+            <div class="govuk-radios" data-module="govuk-radios">
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="donor-sperm-yes" name="second-parent" type="radio" value="Parent"  {{checked("second-parent", "Parent")}}>
+                <label class="govuk-label govuk-radios__label" for="donor-sperm-yes">
+                  Yes
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="donor-sperm-no" name="second-parent" type="radio" value="Father"  {{checked("second-parent", "Father")}}>
+                <label class="govuk-label govuk-radios__label" for="donor-sperm-no">
+                  No
+                </label>
+              </div>
+              
+            </div>
+          </fieldset>
+        </div>
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

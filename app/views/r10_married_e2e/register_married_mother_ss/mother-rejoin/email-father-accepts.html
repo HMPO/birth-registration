@@ -1,0 +1,83 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Register a birth: ready to review</title>
+  <meta name="viewport" content="width=device-width">
+  <style>
+    body { margin:0; padding:0; background:#ffffff; color:#0b0c0c; font-family: Arial, Helvetica, sans-serif; }
+    .container { max-width: 600px; margin: 0 auto; }
+    .banner { background:#0b0c0c; color:#ffffff; padding: 16px 24px; font-size: 20px; font-weight: bold; }
+    .content { padding: 24px; font-size: 16px; line-height: 1.5; }
+    .divider { border-top:1px solid #b1b4b6; margin:24px 0; }
+    .muted { color:#626a6e; font-size:14px; }
+    .invite-box { background:#eaf3f9; padding:16px; border-radius:4px; margin-top:16px; }
+    .invite-box h2 { margin-top:0; font-size:20px; }
+    .invite-link { display:block; word-break:break-all; font-size:16px; color:#1d70b8; text-decoration:none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="banner">GOV.UK</div>
+
+    <div class="content">
+      <p><strong>From:</strong> General Register Office &lt;no-reply@notifications.service.gov.uk&gt;<br>
+         <strong>To:</strong> Jane Smith &lt;jane.smith@example.com&gt;</p>
+
+      <h1 style="font-size:24px; margin-top:24px;">Register a birth: ready to review</h1>
+
+      <p>Hello Jane Smith,</p>
+      
+      <p>{Sam Cooper} has:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>agreed to register the birth with the details you provided</li>
+        <li>completed their details to be registered as the child’s {father/parent}</li>
+      </ul>
+      
+      <p class="govuk-body">You must now check all the registration information before it’s sent to {name of register office}.</p>
+      
+      <div class="invite-box">
+        <h3>Sign in to review and submit details</h3>
+        <a class="invite-link" href="#">
+          https://registerabirth.service.gov.uk/pub/=e29p-41d4-g89b-14c3-a456-428904174080
+        </a>
+      </div>
+
+      <h2>Ordering copies of birth certificate</h2>
+
+      <p>You’ll choose to order birth certificates  when you submit the information to the register office.</p>
+
+      <p>Regards<br>The General Register Office</p>
+
+      <div class="divider"></div>
+
+      <p class="muted">
+        Do not reply to this email. If you need help, contact support@example.service.gov.uk.
+      </p>
+      <p class="muted">
+        Sent by GOV.UK Notify (simulated).
+      </p>
+
+      {{ govukButton({
+        text: "Continue",
+        href: "update-father-accepts"
+      }) }}
+
+    </div>
+
+  </div>
+</body>
+</html>
+
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Registration options – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        You may not be able to register with the father’s details
+      </h1>
+
+      <p class="govuk-body">Couples must have signed parenthood agreement from a UK licensed clinic to record a father.</p>
+
+      <p class="govuk-body">You can register the birth now with only the mother’s details.</p>
+
+      <p class="govuk-body">You can apply for a <a href="relationship-to-child">re-registration to add the father</a> later.</p>
+
+      <p class="govuk-body"><a href="https://www.gov.uk/register-offices">Contact your local register office</a> for more information.</p>
+
+      <!--
+      {{ govukButton({
+        text: "Continue",
+        href: "../find-nhs-record/find-nhs-record"
+      }) }}
+    -->
+
+    </div>
+  </div>
+
+{% endblock %}
