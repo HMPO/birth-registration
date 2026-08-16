@@ -40,14 +40,14 @@
             
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="is-name-maiden-name-1" name="is-name-maiden-name" type="radio" value="Yes" {{checked("is-name-maiden-name", "Yes")}} >
+                <input class="govuk-radios__input" id="is-name-maiden-name-1" name="is-name-maiden-name" type="radio" value="Yes">
                 <label class="govuk-label govuk-radios__label" for="is-name-maiden-name-1">
                  Yes
                 </label>
               </div>
               
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="is-name-maiden-name-2" name="is-name-maiden-name" type="radio" value= "No" {{checked("is-name-maiden-name", "No")}} data-aria-controls="conditional-maiden-name">
+                <input class="govuk-radios__input" id="is-name-maiden-name-2" name="is-name-maiden-name" type="radio" value= "No" data-aria-controls="conditional-maiden-name">
                 <label class="govuk-label govuk-radios__label" for="is-name-maiden-name-2">
                   No
                 </label>
@@ -57,7 +57,7 @@
                   <label class="govuk-label" for="maiden-name">
                     Last name at time of current marriage
                   </label>
-                  <input class="govuk-input govuk-!-width-one-half" id="maiden-name" name="maiden-name" type="name" spellcheck="false" aria-describedby="maiden-name" value="{{ data['maiden-name'] }}" >
+                  <input class="govuk-input govuk-!-width-one-half" id="maiden-name" name="maiden-name" type="name" spellcheck="false" aria-describedby="maiden-name" >
                 </div>
               </div>
               
