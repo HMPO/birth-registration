@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-   parent'now-s name – GOV.UK Prototype Kit
+   Father's current name – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -27,7 +27,7 @@
 
       <span class="govuk-caption-xl">Part 3 of 4: Father’s details</span>
       <h1 class="govuk-heading-xl">
-      What’s the current name used?
+      What’s the father's current name?
       </h1>
         
       <div class="govuk-form-group">
@@ -51,24 +51,6 @@
               Last name
             </label>
             <input class="govuk-input" id="parent-now-last-name" name="parent-now-last-name" type="text" value="{{ data['parent-now-last-name'] }}">
-          </div>
-           <div class="govuk-form-group">
-            <label class="govuk-label" for="parent-now-prefix">
-              Hereditary or bestowed titles (optional)
-            </label>
-            <div id="child-first-name-hint" class="govuk-hint">
-             Do not include titles such as ‘Mr’, ‘Ms’, or 'Dr'. Only add legally inherited or awarded titles, such as ‘Lady’ or 'Lord'
-            </div>
-            <input class="govuk-input" id="parent-now-prefix" name="parent-now-prefix" type="text" value="{{ data['parent-now-prefix'] }}">
-          </div>
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="parent-now-suffix">
-              Suffix (optional)
-            </label>
-           <div id="child-first-name-hint" class="govuk-hint">
-              Suffix is used for familial relationships (like Jr. or Sr.), or awards (such as OBE) 
-            </div>
-            <input class="govuk-input" id="parent-now-suffix" name="parent-snow-uffix" type="text" value="{{ data['parent-now-suffix'] }}">
           </div>
         </fieldset>
       </div>

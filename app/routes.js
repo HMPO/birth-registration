@@ -382,7 +382,7 @@ router.post('*/other-names-mother', function (req, res) {
   if (otherNames === 'yes') {
     return res.redirect('add-previous-names');   // relative redirect keeps the version prefix
   } else {
-    return res.redirect('country-of-birth');     // fallback for 'no' or missing value
+    return res.redirect('name-prefix');     // fallback for 'no' or missing value
   }
 });
 
@@ -419,13 +419,23 @@ router.post( '*/before-you-start-joint', function (req, res) {
   }
 })
 
-// Show name input page based on value of name-now (Mother)
+// Show name input page based on value of name-now (Mother) for unmarried journey
 router.post('*/still-known-as-unmarried', function (req, res) {
   var nowKnownAs = req.session.data['name-now']
   if (nowKnownAs === 'No') {
     res.redirect('name-now')
   } else {
     res.redirect('is-the-name-maiden-name')
+  }
+})
+
+// Show name input page based on value of name-now (Mother) for married journey
+router.post('*/still-known-as-married', function (req, res) {
+  var nowKnownAs = req.session.data['name-now']
+  if (nowKnownAs === 'No') {
+    res.redirect('name-now')
+  } else {
+    res.redirect('first-marriage')
   }
 })
 
@@ -449,13 +459,27 @@ router.post('*/maiden-name-married', function (req, res) {
   }
 })
 
+// Married journey: if the mother's previous name at current marriage was the same as the first-married maiden name, keep it; otherwise capture the surname used when marrying the father/parent.
+// router.post('*/last-name-married-now', function (req, res) {
+//   var currentMarriedNameSameAsFirst = req.session.data['last-name-married-now']
+//
+//   if (currentMarriedNameSameAsFirst === 'yes') {
+//     req.session.data['maiden-name-current-marriage'] = req.session.data['maiden-name-first-married']
+//     res.redirect('other-names')
+//   } else if (currentMarriedNameSameAsFirst === 'no') {
+//     res.redirect('other-names')
+//   } else {
+//     res.redirect('maiden-name-married-now')
+//   }
+// })
+
 // Fathers's other names routing
 router.post('*/other-names-father', function (req, res) {
   var otherNames = req.session.data['other-names-father']
 if (otherNames === 'Yes') {
     res.redirect('add-previous-names')
 } else {
-    res.redirect('country-of-birth')
+    res.redirect('name-prefix')
  }
 })
 
@@ -573,4 +597,17 @@ router.post('*/sign-parenthood-agreement', function (req, res) {
     res.redirect('parenthood-agreement')
   }
 })
+
+// Show name input page based on value of other-names (Mother)
+router.post('*/otherwise-v3', function (req, res) {
+  var nowKnownAs = req.session.data['other-names']
+  if (nowKnownAs === 'Yes') {
+    res.redirect('name-otherwise')
+  } else {
+    res.redirect('name-prefix')
+  }
+})
+
+
+
 

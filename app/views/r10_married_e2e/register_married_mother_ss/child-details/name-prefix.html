@@ -1,0 +1,79 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Child's name – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+{% if data ['declaration-change'] == 'true'%}
+  <form class="form" action="../declaration/declaration" method="post">
+{% elif data ['change-link'] == 'true' %}
+  <form class="form" action="check-details" method="post">
+{% else %}
+  <form class="form" action="name-suffix" method="post">
+{% endif %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Part 1 of 4: Child’s details</span>
+      <h1 class="govuk-heading-xl">
+        Does the child have any hereditary titles?
+      </h1>
+        
+      <div class="govuk-inset-text">
+        Only enter official or inherited titles - such as ‘HRH’
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="child-prefix-yes" name="child-prefix" type="radio" value="yes" data-aria-controls="conditional-child-prefix" {{ checked('child-prefix', 'yes') }}>
+              <label class="govuk-label govuk-radios__label" for="child-prefix-yes">
+                Yes
+              </label>
+            </div>
+
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-child-prefix">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="prefix">
+                  Hereditary title
+                </label>
+                <input class="govuk-input govuk-!-width-half" id="prefix" name="prefix" type="text" value="{{ data['prefix'] }}">
+              </div>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="child-prefix-no" name="child-prefix" type="radio" value="no" {{ checked('child-prefix', 'no') }}>
+              <label class="govuk-label govuk-radios__label" for="child-prefix-no">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+     
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

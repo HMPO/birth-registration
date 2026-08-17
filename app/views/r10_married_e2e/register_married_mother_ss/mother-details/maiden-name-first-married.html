@@ -1,0 +1,69 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Mother's name – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+{% if data ['declaration-change'] == 'true'%}
+  <form class="form" action="../declaration/declaration" method="post">
+{% elif data['change-link-mother'] == 'true' %}
+  <form class="form" action="check-details" method="post">
+{% else %}
+<form class="form" action="maiden-name-married-now" method="post">
+{% endif %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <span class="govuk-caption-xl">Part 2 of 4: Mother’s details</span>    
+            <h1 class="govuk-fieldset__heading">
+              What was {{data['mother-first-name']}} {{data['mother-middle-name']}} {{data['mother-last-name']}}'s last name (surname) when getting married for the first time?
+            </h1>
+          </legend>
+
+      <p class="govuk-body">
+        Known as the mother’s ‘maiden name’. It is recorded as part of the birth registration, even if it’s the mother’s current last name (surname). 
+      </p>
+
+      <p class="govuk-body">
+        Last name (surname) when the mother first got married.
+      </p>
+
+      <P class="govuk-hint">
+        This is the surname on the marriage certificate
+      </P>
+        
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+         
+           <div class="govuk-form-group">
+            <input class="govuk-input" id="maiden-name-first-married" name="maiden-name-first-married" type="text" value="{{ data['maiden-name-first-married'] }}">
+          </div>
+
+        </fieldset>
+      </div>
+     
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

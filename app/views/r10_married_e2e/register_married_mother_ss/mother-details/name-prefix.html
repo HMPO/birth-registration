@@ -1,0 +1,81 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Mother's prefix – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+{% if data ['declaration-change'] == 'true'%}
+  <form class="form" action="../declaration/declaration" method="post">
+{% elif data ['change-link'] == 'true' %}
+  <form class="form" action="check-details" method="post">
+{% else %}
+  <form class="form" action="name-suffix" method="post">
+{% endif %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+        <span class="govuk-caption-xl">Part 2 of 4: Mother’s details</span>    
+        <h1 class="govuk-fieldset__heading">
+          Does {{data['mother-first-name']}} {{data['mother-middle-name']}} {{data['mother-last-name']}} have any hereditary titles?
+        </h1>
+      </legend>
+        
+      <div class="govuk-inset-text">
+        Only enter official or inherited titles - such as ‘HRH’
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="mother-prefix-yes" name="mother-prefix" type="radio" value="yes" data-aria-controls="conditional-mother-prefix">
+              <label class="govuk-label govuk-radios__label" for="mother-prefix-yes">
+                Yes
+              </label>
+            </div>
+
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-mother-prefix">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="mother-prefix-text">
+                  Hereditary title
+                </label>
+                <input class="govuk-input govuk-!-width-half" id="mother-prefix-text" name="mother-prefix-text" type="text">
+              </div>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="mother-prefix-no" name="mother-prefix" type="radio" value="no" {{ checked('mother-prefix', 'no') }}>
+              <label class="govuk-label govuk-radios__label" for="mother-prefix-no">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+     
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

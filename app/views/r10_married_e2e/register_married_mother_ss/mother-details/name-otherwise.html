@@ -14,15 +14,17 @@
 {% block content %}
 
 
-<form class="form" action="country-of-birth" method="post">
+<form class="form" action="name-prefix" method="post">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">Part 2 of 4: Mother’ details</span>
-      <h1 class="govuk-heading-xl">
-       What other name does mother use?
-      </h1>
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+        <span class="govuk-caption-xl">Part 2 of 4: Mother’s details</span>    
+        <h1 class="govuk-fieldset__heading">
+          What other name does {{data['mother-first-name']}} {{data['mother-middle-name']}} {{data['mother-last-name']}} use?
+        </h1>
+      </legend>
         
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
@@ -46,22 +48,7 @@
             </label>
             <input class="govuk-input" id="mother-otherwise-last-name" name="mother-otherwise-last-name" type="text" value="{{ data['mother-otherwise-last-name'] }}">
           </div>
-           <div class="govuk-form-group">
-            <label class="govuk-label" for="mother-otherwise-prefix">
-              Hereditary or bestowed titles (optional)
-            </label>
-            <div id="child-first-name-hint" class="govuk-hint">
-              Do not include titles such as ‘Mr’ or Miss’. Only add legally inherited or awarded titles, such as ‘Lady’ or ‘OBE’
-            </div>
-            <input class="govuk-input" id="mother-otherwise-prefix" name="mother-otherwise-prefix" type="text" value="{{ data['mother-otherwise-prefix'] }}">
-          </div>
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="mother-otherwise-suffix">
-              Suffix (optional)
-            </label>
-           
-            <input class="govuk-input" id="mother-otherwise-suffix" name="mother-sotherwise-uffix" type="text" value="{{ data['mother-otherwise-suffix'] }}">
-          </div>
+
         </fieldset>
       </div>
      

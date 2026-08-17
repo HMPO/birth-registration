@@ -19,10 +19,12 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">Part 2 of 4: Mother’ details</span>
-      <h1 class="govuk-heading-xl">
-       What was the previous name?
-      </h1>
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+        <span class="govuk-caption-xl">Part 2 of 4: Mother’s details</span>    
+        <h1 class="govuk-fieldset__heading">
+          What's {{data['mother-first-name']}} {{data['mother-middle-name']}} {{data['mother-last-name']}}'s previous name?
+        </h1>
+      </legend>
         
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
@@ -46,22 +48,7 @@
             </label>
             <input class="govuk-input" id="mother-formerly-known-us-last-name" name="mother-formerly-known-us-last-name" type="text" value="{{ data['mother-formerly-known-us-last-name'] }}">
           </div>
-           <div class="govuk-form-group">
-            <label class="govuk-label" for="mother-formerly-known-us-prefix">
-              Hereditary or bestowed titles (optional)
-            </label>
-            <div id="child-first-name-hint" class="govuk-hint">
-              Do not include titles such as ‘Mr’ or Miss’. Only add legally inherited or awarded titles, such as ‘Lady’ or ‘OBE’
-            </div>
-            <input class="govuk-input" id="mother-formerly-known-us-prefix" name="mother-formerly-known-us-prefix" type="text" value="{{ data['mother-formerly-known-us-prefix'] }}">
-          </div>
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="mother-formerly-known-us-suffix">
-              Suffix (optional)
-            </label>
-           
-            <input class="govuk-input" id="mother-formerly-known-us-suffix" name="mother-sformerly-known-us-uffix" type="text" value="{{ data['mother-formerly-known-us-suffix'] }}">
-          </div>
+
         </fieldset>
       </div>
      

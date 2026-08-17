@@ -1,0 +1,77 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+   Is this mother's first marriage? – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+{% if data ['declaration-change'] == 'true'%}
+  <form class="form" action="../declaration/declaration" method="post">
+{% elif data['change-link-mother'] == 'true' %}
+  <form class="form" action="check-details" method="post">
+{% else %}
+<form class="form" action="maiden-name-first-married" method="post">
+{% endif %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+        
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <span class="govuk-caption-xl">Part 2 of 4: Mother’s details</span>    
+            <h1 class="govuk-fieldset__heading">
+              Is this {{data['mother-first-name']}} {{data['mother-middle-name']}} {{data['mother-last-name']}}'s first marriage?
+            </h1>
+          </legend>
+            
+            <p class="govuk-body">
+              Mother’s last name (surname) when they got married is included in the registration. 
+            </p>
+
+            <p class="govuk-body">
+              This is to keep an accurate record of someone at different points in time.
+            </p>
+            
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="first-marriage-yes" name="first-marriage" type="radio" value="yes" {{checked("first-marriage", "yes")}}>
+                <label class="govuk-label govuk-radios__label" for="first-marriage-yes">
+                 Yes
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="first-marriage-no" name="first-marriage" type="radio" value="no" {{checked("first-marriage", "no")}}>
+                <label class="govuk-label govuk-radios__label" for="first-marriage-no">
+                  No
+                </label>
+              </div>
+            </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}
