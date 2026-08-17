@@ -24,9 +24,13 @@
         Check mother’s details
       </h1>
 
-      <div class="govuk-inset-text">
-        Information will be shown on the birth certificate exactly as provided in this service
-      </div>
+      <p class="govuk-body">
+        Check this information carefully. It will be recorded exactly as you have entered it.
+      </p>
+
+      <p class="govuk-body">
+        It may not be possible to make any changes after registration. You need to apply, and usually pay a fee.
+      </p>
   
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
@@ -47,10 +51,10 @@
             Maiden name
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['maiden-name'] }} 
+            {{ data['maiden-name-first-married'] }} 
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="is-the-name-maiden-name?change-link-mother=true">Change<span class="govuk-visually-hidden">maiden name</span></a>
+            <a class="govuk-link" href="maiden-name-first-married?change-link-mother=true">Change<span class="govuk-visually-hidden">maiden name</span></a>
           </dd>
         </div>
         {% else %}

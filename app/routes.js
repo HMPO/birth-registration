@@ -459,6 +459,20 @@ router.post('*/maiden-name-married', function (req, res) {
   }
 })
 
+// Married journey: maiden-name-first-married routing
+// If first marriage is 'yes', go to other-names
+// If first marriage is 'no', go to maiden-name-married-now to capture surname at current marriage
+router.post('*/maiden-name-first-married-continue', function (req, res) {
+  var firstMarriage = req.session.data['first-marriage']
+  if (firstMarriage === 'yes') {
+    res.redirect('other-names')
+  } else if (firstMarriage === 'no') {
+    res.redirect('maiden-name-married-now')
+  } else {
+    res.redirect('maiden-name-married-now')
+  }
+})
+
 // Married journey: if the mother's previous name at current marriage was the same as the first-married maiden name, keep it; otherwise capture the surname used when marrying the father/parent.
 // router.post('*/last-name-married-now', function (req, res) {
 //   var currentMarriedNameSameAsFirst = req.session.data['last-name-married-now']
@@ -607,6 +621,8 @@ router.post('*/otherwise-v3', function (req, res) {
     res.redirect('name-prefix')
   }
 })
+
+// Show maiden name married now page based on value of first marriage page (Mother)
 
 
 
