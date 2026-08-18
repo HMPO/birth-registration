@@ -1,0 +1,68 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Are you married or in civil partnership? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form class="form" action="married-parents-ss" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-fieldset__heading">
+                Were you and the other parent married or in a civil partnership at the time of the fertility treatment?
+              </h1>
+            </legend>
+            <div id="signIn-hint" class="govuk-hint">
+            A civil partnership is a legal relationship, like marriage
+            </div>
+            <p>Both parents must join the online service to enter information if you were not married at the time of the fertility treatment (or before the birth).</p>
+            
+            <div class="govuk-radios" data-module="govuk-radios">
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="second-parent-married-yes" name="are-you-married-parent" type="radio" value="yes"  {{checked("are-you-married-parent", "yes")}}>
+                <label class="govuk-label govuk-radios__label" for="second-parent-married-yes">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="second-parent-married-no" name="are-you-married-parent" type="radio" value="no"  {{checked("are-you-married-parent", "no")}}>
+                <label class="govuk-label govuk-radios__label" for="second-parent-married-no">
+                  No
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="second-parent-married-before-birth" name="are-you-married-parent" type="radio" value="married-before-birth"  {{checked("are-you-married-parent", "married-before-birth")}}>
+                <label class="govuk-label govuk-radios__label" for="second-parent-married-before-birth">
+                  No, but we got married before the child was born
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

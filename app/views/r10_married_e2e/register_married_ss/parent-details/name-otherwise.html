@@ -1,0 +1,66 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   parent'otherwise-s name – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+<form class="form" action="name-prefix" method="post">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Part 3 of 4: Parent's details</span>
+      <h1 class="govuk-heading-xl">
+       What other name does {{data['parent-first-name']}} {{data['parent-middle-name']}} {{data['parent-last-name']}} use?
+      </h1>
+        
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+         
+           <div class="govuk-form-group">
+            <label class="govuk-label" for="parent-otherwise-first-name">
+              First name
+            </label>
+            
+            <input class="govuk-input" id="parent-otherwise-first-name" name="parent-otherwise-first-name" type="text" value="{{ data['parent-otherwise-first-name'] }}">
+          </div>
+           <div class="govuk-form-group">
+            <label class="govuk-label" for="parent-otherwise-middle-name">
+              Middle names (optional)
+            </label>
+            <input class="govuk-input" id="parent-otherwise-middle-name" name="parent-otherwise-middle-name" type="text" value="{{ data['parent-otherwise-middle-name'] }}">
+          </div>
+           <div class="govuk-form-group">
+            <label class="govuk-label" for="parent-otherwise-last-name">
+              Last name
+            </label>
+            <input class="govuk-input" id="parent-otherwise-last-name" name="parent-otherwise-last-name" type="text" value="{{ data['parent-otherwise-last-name'] }}">
+          </div>
+
+        </fieldset>
+      </div>
+     
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

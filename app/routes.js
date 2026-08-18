@@ -525,6 +525,8 @@ router.post('*/register-other-parent', function (req, res) {
   var whoRegisters = req.session.data['who-registers']
   if (whoRegisters === 'Father') {
     res.redirect('fertility-treatment')
+  } else if (whoRegisters === 'Parent') {
+    res.redirect('fertility-treatment')
   } else {
     res.redirect('registering-other-parent')
   }
@@ -581,6 +583,22 @@ router.post('*/married-parents-v3', function (req, res) {
   }
 })
 
+// Triage routing for v.3 - Show different pages based on are-you-married-parent answer (same-sex marriage)
+// are-you-married-parent values: 'yes' or 'no' or 'married-before-birth'
+router.post('*/married-parents-ss', function (req, res) {
+  var marriedStatus = req.session.data['are-you-married-parent']
+  
+  if (marriedStatus === 'yes') {
+    // Yes - were married at time of fertility treatment - go to outcome-eligible
+    res.redirect('outcome-eligible')
+  } else if (marriedStatus === 'no' || marriedStatus === 'married-before-birth') {
+    // No or No, but married before birth - go to parenthood-agreement
+    res.redirect('parenthood-agreement')
+  } else {
+    res.redirect('are-you-married-parent')
+  }
+})
+
 // Triage routing for v.3 - donor-sperm page
 // Checks if donor sperm was used and routes accordingly
 router.post('*/fertility-treatment-donor', function (req, res) {
@@ -596,7 +614,7 @@ router.post('*/fertility-treatment-donor', function (req, res) {
   }
 })
 
-// Triage routing for v.3 - parenthood-agreement page
+// Triage routing for v.3 - parenthood-agreement page (opposite sex)
 // Checks whether a parenthood agreement was signed and routes accordingly
 router.post('*/sign-parenthood-agreement', function (req, res) {
   var parenthoodAgreement = req.session.data['parenthoodAgreement']
@@ -607,6 +625,34 @@ router.post('*/sign-parenthood-agreement', function (req, res) {
   } else if (parenthoodAgreement === 'yes') {
     // Yes to parenthood agreement - go to joint mother outcome
     res.redirect('outcome-joint-mother')
+  } else {
+    res.redirect('parenthood-agreement')
+  }
+})
+
+// Triage routing for v.3 - parenthood-agreement page (same sex)
+// Routes based on whether married before birth and parenthood agreement status
+// Also considers who started the journey (Parent or Mother)
+router.post('*/sign-parenthood-agreement-same-sex', function (req, res) {
+  var marriedStatus = req.session.data['are-you-married-parent']
+  var parenthoodAgreement = req.session.data['parenthoodAgreement']
+  var whoRegisters = req.session.data['who-registers']
+  
+  if (marriedStatus === 'married-before-birth' && parenthoodAgreement === 'yes') {
+    // Married before birth and yes to parenthood agreement - go to outcome-eligible
+    res.redirect('outcome-eligible')
+  } else if (marriedStatus === 'no' && parenthoodAgreement === 'no') {
+    // Not married and no to parenthood agreement - go to single parent outcome
+    res.redirect('outcome-register-as-single-parent')
+  } else if (marriedStatus === 'no' && parenthoodAgreement === 'yes') {
+    // Not married but yes to parenthood agreement - go to joint outcome based on who started
+    if (whoRegisters === 'Parent') {
+      res.redirect('outcome-joint-parent')
+    } else if (whoRegisters === 'Mother') {
+      res.redirect('outcome-joint-mother')
+    } else {
+      res.redirect('parenthood-agreement')
+    }
   } else {
     res.redirect('parenthood-agreement')
   }

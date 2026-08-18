@@ -1,0 +1,81 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Parent's suffix – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+{% if data ['declaration-change'] == 'true'%}
+  <form class="form" action="../declaration/declaration" method="post">
+{% elif data ['change-link'] == 'true' %}
+  <form class="form" action="check-details" method="post">
+{% else %}
+  <form class="form" action="country-of-birth" method="post">
+{% endif %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+        <span class="govuk-caption-xl">Part 3 of 4: Parent's details</span>    
+        <h1 class="govuk-fieldset__heading">
+          Does {{data['parent-first-name']}} {{data['parent-middle-name']}} {{data['parent-last-name']}} have any suffixes in their name?
+        </h1>
+      </legend>
+        
+      <div class="govuk-inset-text">
+        Suffixes (such as ‘junior’, ‘senior’, ‘II’, ‘III’) are sometimes used when someone shares a name with a living relative 
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="parent-suffix-yes" name="parent-suffix" type="radio" value="yes" data-aria-controls="conditional-parent-suffix" {{ checked('parent-suffix', 'yes') }}>
+              <label class="govuk-label govuk-radios__label" for="parent-suffix-yes">
+                Yes
+              </label>
+            </div>
+
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-parent-suffix">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="parent-suffix-text">
+                  Suffix
+                </label>
+                <input class="govuk-input govuk-!-width-half" id="parent-suffix-text" name="parent-suffix-text" type="text">
+              </div>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="parent-suffix-no" name="parent-suffix" type="radio" value="no" {{ checked('parent-suffix', 'no') }}>
+              <label class="govuk-label govuk-radios__label" for="parent-suffix-no">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+     
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

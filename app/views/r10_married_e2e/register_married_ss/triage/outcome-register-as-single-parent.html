@@ -1,0 +1,46 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Registration options – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        You may not be able to register with mother and parent
+      </h1>
+
+      <p class="govuk-body">
+        You cannot record a parent (the mother’s female partner) if you:
+      </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>did not sign a parenthood agreement at a UK licensed clinic</li>
+        <li>were unmarried (nor civil partners) before the birth</li>
+      </ul>
+
+      <p class="govuk-body">
+        The mother can register the birth without recording the other parent online or in person.
+      </p>
+
+      <!--
+      {{ govukButton({
+        text: "Continue",
+        href: "../find-nhs-record/find-nhs-record"
+      }) }}
+    -->
+
+    </div>
+  </div>
+
+{% endblock %}

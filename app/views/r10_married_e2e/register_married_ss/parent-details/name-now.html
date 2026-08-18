@@ -1,0 +1,71 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Father's current name – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+{% if data ['declaration-change'] == 'true'%}
+  <form class="form" action="../declaration/declaration" method="post">
+{% elif data['change-link-parent'] == 'true' %}
+  <form class="form" action="check-details" method="post">
+{% else %}
+<form class="form" action="other-names" method="post">
+{% endif %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Part 3 of 4: Parent's details</span>
+      <h1 class="govuk-heading-xl">
+      What’s the parent's current name?
+      </h1>
+        
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+         
+           <div class="govuk-form-group">
+            <label class="govuk-label" for="parent-now-first-name">
+              First name
+            </label>
+            
+            <input class="govuk-input" id="parent-now-first-name" name="parent-now-first-name" type="text" value="{{ data['parent-now-first-name'] }}">
+          </div>
+           <div class="govuk-form-group">
+            <label class="govuk-label" for="parent-now-middle-name">
+              Middle names (optional)
+            </label>
+            <input class="govuk-input" id="parent-now-middle-name" name="parent-now-middle-name" type="text" value="{{ data['parent-now-middle-name'] }}">
+          </div>
+           <div class="govuk-form-group">
+            <label class="govuk-label" for="parent-now-last-name">
+              Last name
+            </label>
+            <input class="govuk-input" id="parent-now-last-name" name="parent-now-last-name" type="text" value="{{ data['parent-now-last-name'] }}">
+          </div>
+        </fieldset>
+      </div>
+     
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

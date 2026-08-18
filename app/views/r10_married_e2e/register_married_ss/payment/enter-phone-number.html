@@ -1,0 +1,51 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+   Enter phone number – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="contact-preference" method="post">
+
+
+      <div class="govuk-form-group">
+        <span class="govuk-caption-xl">Find NHS record</span>
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="phone-number">
+            What is your UK contact phone number?
+          </label>
+        </h1>
+        
+        <div id="phone-number-hint" class="govuk-hint">We’ll send your receipt and updates about the registration by text message (SMS) or call you if we need to speak to you about registration</div>
+
+        <input class="govuk-input" id="phone-number" name="phone-number" value="{{data['phone-number']}}" type="text" aria-describedby="phone-number-hint">
+      </div>    
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+     
+    </form>  
+      
+    </div>
+
+
+  </div>
+
+
+
+{% endblock %}

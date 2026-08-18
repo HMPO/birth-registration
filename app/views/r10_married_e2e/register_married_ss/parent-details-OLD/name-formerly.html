@@ -1,0 +1,87 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   parent'formerly-known-us-s name – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+<form class="form" action="is-the-name-now" method="post">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">
+        {%if data['second-parent'] == 'Father' or data['who-registers'] == 'Father'%}
+          Part 3 of 4: Father’s details
+          {%else%}
+          Part 3 of 4: Parent’s details
+        {%endif%}   
+      </span>
+      <h1 class="govuk-heading-xl">
+       What’s the previous name used?
+      </h1>
+        
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+         
+           <div class="govuk-form-group">
+            <label class="govuk-label" for="parent-formerly-known-us-first-name">
+              First name
+            </label>
+            
+            <input class="govuk-input" id="parent-formerly-known-us-first-name" name="parent-formerly-known-us-first-name" type="text" value="{{ data['parent-formerly-known-us-first-name'] }}">
+          </div>
+           <div class="govuk-form-group">
+            <label class="govuk-label" for="parent-formerly-known-us-middle-name">
+              Middle names (optional)
+            </label>
+            <input class="govuk-input" id="parent-formerly-known-us-middle-name" name="parent-formerly-known-us-middle-name" type="text" value="{{ data['parent-formerly-known-us-middle-name'] }}">
+          </div>
+           <div class="govuk-form-group">
+            <label class="govuk-label" for="parent-formerly-known-us-last-name">
+              Last name
+            </label>
+            <input class="govuk-input" id="parent-formerly-known-us-last-name" name="parent-formerly-known-us-last-name" type="text" value="{{ data['parent-formerly-known-us-last-name'] }}">
+          </div>
+           <div class="govuk-form-group">
+            <label class="govuk-label" for="parent-formerly-known-us-prefix">
+              Hereditary or bestowed titles (optional)
+            </label>
+            <div id="child-first-name-hint" class="govuk-hint">
+              Do not include titles such as ‘Mr’ or Miss’. Only add legally inherited or awarded titles, such as ‘Lady’ or ‘OBE’
+            </div>
+            <input class="govuk-input" id="parent-formerly-known-us-prefix" name="parent-formerly-known-us-prefix" type="text" value="{{ data['parent-formerly-known-us-prefix'] }}">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="parent-formerly-known-us-suffix">
+              Suffix (optional)
+            </label>
+           
+            <input class="govuk-input" id="parent-formerly-known-us-suffix" name="parent-sformerly-known-us-uffix" type="text" value="{{ data['parent-formerly-known-us-suffix'] }}">
+          </div>
+        </fieldset>
+      </div>
+     
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

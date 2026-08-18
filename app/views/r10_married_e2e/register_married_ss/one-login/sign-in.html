@@ -1,0 +1,48 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Registration options – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Create your GOV.UK One Login or sign in
+      </h1>
+
+      <p class="govuk-body">You can use your GOV.UK One Login to access some government services.</p>
+
+      <p class="govuk-body">In the future, you’ll be able to use it to access all services on GOV.UK.</p>
+
+      <p class="govuk-body">You’ll need:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>an email address</li>
+        <li>a way to get security codes - this can be a UK mobile phone number or an authenticator app</li>
+      </ul>
+
+      <p class="govuk-body">You can prove your identity after you’ve created your GOV.UK One Login. You only need to do this for some services.</p>
+
+      <div class="govuk-inset-text">
+        You can also 
+        <a href="#">use GOV.UK One Login in Welsh (Cymraeg)</a>.
+      </div>
+
+      {{ govukButton({
+        text: "Continue",
+        href: "email-address"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

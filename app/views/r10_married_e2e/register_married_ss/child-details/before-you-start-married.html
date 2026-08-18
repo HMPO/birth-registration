@@ -1,0 +1,81 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Register a birth – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+            Before you start
+        </h1>
+
+        <h2 class="govuk-heading-l">
+            What you need to provide
+        </h2>
+        
+        <!--married mother - See OLD register-a-birth page in triage for original logic-->
+
+
+        <p>A registrar will check this information after you submit the application.</p>
+
+        <p>You’ll be told when the registration is complete, or if there are any errors to correct.</p>
+
+        <h3 class="govuk-heading-m">Part 1: Child’s details </h3>
+
+        <p class="govuk-body">Including name, place and date of birth, and sex.</p>
+
+        <h3 class="govuk-heading-m">Part 2: Mother’s details.</h3>
+
+        <p class="govuk-body">Including name, place of birth, job role, and previous names.</p>
+
+        <h3 class="govuk-heading-m">Part 3: Father or parent’s details</h3>
+
+        <p class="govuk-body">Including name, place of birth, job role, and previous names.</p>
+
+        <h3 class="govuk-heading-m">Part 4: Questions for government services</h3>
+
+        <p class="govuk-body">For example, parents’ ages and employment status.</p>
+
+        <div class="govuk-inset-text">
+        Child and parents’ details are recorded on the birth certificate of registration.
+      </div>
+        
+        <h2 class="govuk-heading-l">Saving your answers</h2>
+
+        <p class="govuk-body">You can save your progress if you need to stop and continue later.</p>
+
+        <p>For data protection, applications are deleted if you do not submit within 14 days.</p>
+
+        <h2 class="govuk-heading-l">Birth certificates</h2>
+
+        <p class="govuk-body">You can pay for birth certificates in advance. Each copy is £12.50. They’ll be sent when the register office confirms the registration.</p>
+
+        <p class="govuk-body">Birth certificates are used to apply for passports, benefits and other services.</p>
+
+        <p>You can order copies online any time after the registration.</p>
+
+      {{ govukButton({
+        text: "Continue to child’s details",
+        href: "name"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}

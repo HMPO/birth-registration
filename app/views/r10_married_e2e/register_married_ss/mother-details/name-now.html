@@ -1,0 +1,66 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   Mother'now-s name – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+<form class="form" action="first-marriage" method="post">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Part 2 of 4: Mother’ details</span>
+      <h1 class="govuk-heading-xl">
+      What’s the current name used?
+      </h1>
+        
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+         
+           <div class="govuk-form-group">
+            <label class="govuk-label" for="mother-now-first-name"> 
+              First name
+            </label>
+            
+            <input class="govuk-input" id="mother-now-first-name" name="mother-now-first-name" type="text" value="{{ data['mother-now-first-name'] }}">
+          </div>
+           <div class="govuk-form-group">
+            <label class="govuk-label" for="mother-now-middle-name">
+              Middle names (optional)
+            </label>
+            <input class="govuk-input" id="mother-now-middle-name" name="mother-now-middle-name" type="text" value="{{ data['mother-now-middle-name'] }}">
+          </div>
+           <div class="govuk-form-group">
+            <label class="govuk-label" for="mother-now-last-name">
+              Last name
+            </label>
+            <input class="govuk-input" id="mother-now-last-name" name="mother-now-last-name" type="text" value="{{ data['mother-now-last-name'] }}">
+          </div>
+          
+        </fieldset>
+      </div>
+     
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      
+    </div>
+
+
+  </div>
+
+</form>  
+
+{% endblock %}
